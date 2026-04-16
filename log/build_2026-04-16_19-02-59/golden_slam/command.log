@@ -1,0 +1,6 @@
+Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/goldenboy/git_version/GoldenSLAM -DCMAKE_INSTALL_PREFIX=/home/goldenboy/git_version/GoldenSLAM/install/golden_slam
+Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/goldenboy/git_version/GoldenSLAM -DCMAKE_INSTALL_PREFIX=/home/goldenboy/git_version/GoldenSLAM/install/golden_slam
+Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
+Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
+Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/goldenboy/git_version/GoldenSLAM/build/golden_slam
+Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/goldenboy/git_version/GoldenSLAM/build/golden_slam

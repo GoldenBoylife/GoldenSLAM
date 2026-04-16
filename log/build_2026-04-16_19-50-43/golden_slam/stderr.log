@@ -1,0 +1,8 @@
+[01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:[m[K In member function ‘[01m[Kint GoldenSlamApp::run()[m[K’:
+[01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:26:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krcl[m[K’ has not been declared
+   26 |     [01;31m[Krcl[m[K::cpp::shutdown();
+      |     [01;31m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/golden_slam_node.dir/build.make:90: CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o] 오류 1
+gmake[2]: *** 끝나지 않은 작업을 기다리고 있습니다....
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/golden_slam_node.dir/all] 오류 2
+gmake: *** [Makefile:146: all] 오류 2

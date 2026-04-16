@@ -1,0 +1,40 @@
+[0.006s] Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
+[0.025s] [35m[1mConsolidate compiler generated dependencies of target golden_slam_node[0m
+[0.034s] [ 20%] [32mBuilding CXX object CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o[0m
+[1.171s] [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:[m[K In member function ‘[01m[Kint GoldenSlamApp::run()[m[K’:
+[1.171s] [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:22:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[1.171s]    22 | [01;35m[K}[m[K
+[1.171s]       | [01;35m[K^[m[K
+[1.455s] [ 40%] [32m[1mLinking CXX executable golden_slam_node[0m
+[1.686s] [100%] Built target golden_slam_node
+[1.691s] Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
+[1.697s] Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/goldenboy/git_version/GoldenSLAM/build/golden_slam
+[1.700s] -- Install configuration: "Release"
+[1.701s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node
+[1.701s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node" to ""
+[1.701s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch
+[1.701s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch/golden_slam.launch.py
+[1.701s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include/
+[1.701s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform/ros_bridge.hpp
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//ui
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app/golden_slam_app.hpp
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/slam_core.hpp
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/package_run_dependencies/golden_slam
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/parent_prefix_path/golden_slam
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.sh
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.dsv
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.sh
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.dsv
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.bash
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.sh
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.zsh
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.dsv
+[1.702s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.dsv
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/packages/golden_slam
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig.cmake
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig-version.cmake
+[1.702s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.xml
+[1.703s] Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/goldenboy/git_version/GoldenSLAM/build/golden_slam

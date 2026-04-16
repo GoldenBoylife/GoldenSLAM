@@ -1,0 +1,145 @@
+[0.008s] Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/goldenboy/git_version/GoldenSLAM -DCMAKE_INSTALL_PREFIX=/home/goldenboy/git_version/GoldenSLAM/install/golden_slam
+[0.121s] -- The C compiler identification is GNU 11.4.0
+[0.341s] -- The CXX compiler identification is GNU 11.4.0
+[0.498s] -- Detecting C compiler ABI info
+[0.565s] -- Detecting C compiler ABI info - done
+[0.568s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.568s] -- Detecting C compile features
+[0.569s] -- Detecting C compile features - done
+[0.571s] -- Detecting CXX compiler ABI info
+[0.635s] -- Detecting CXX compiler ABI info - done
+[0.639s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.639s] -- Detecting CXX compile features
+[0.639s] -- Detecting CXX compile features - done
+[0.639s] -- Project: golden_slam
+[0.639s] -- Build type: Release
+[0.639s] -- CPU architecture: x86_64
+[0.642s] [0mProcesser number:  24[0m
+[0.642s] [0mcore for MP: 3[0m
+[0.914s] -- OpenMP found
+[0.918s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.989s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.041s] -- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)
+[1.126s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.130s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.136s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.146s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.157s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.189s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.191s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.723s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.294s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.308s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.315s] -- Looking for pthread.h
+[3.386s] -- Looking for pthread.h - found
+[3.386s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.454s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.455s] -- Found Threads: TRUE  
+[3.493s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[3.514s] -- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)
+[3.527s] -- Found std_srvs: 4.9.1 (/opt/ros/humble/share/std_srvs/cmake)
+[3.536s] -- Found tf2: 0.25.19 (/opt/ros/humble/share/tf2/cmake)
+[3.543s] -- Found tf2_ros: 0.25.19 (/opt/ros/humble/share/tf2_ros/cmake)
+[3.605s] -- Found tf2_geometry_msgs: 0.25.19 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[3.627s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[3.628s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[3.628s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[3.636s] -- Checking for module 'eigen3'
+[3.642s] --   Found eigen3, version 3.4.0
+[3.654s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[3.654s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[3.666s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization 
+[3.692s] -- Checking for module 'libusb-1.0'
+[3.697s] --   Found libusb-1.0, version 1.0.25
+[3.741s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[3.742s] -- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") 
+[3.742s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[3.821s] -- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") 
+[3.821s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[3.821s] [0m** WARNING ** io features related to pcap will be disabled[0m
+[3.821s] [0m** WARNING ** io features related to png will be disabled[0m
+[3.840s] -- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  
+[3.873s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX 
+[3.978s] -- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") 
+[3.978s] -- Found MPI: TRUE (found version "3.1") found components: C 
+[3.980s] -- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") 
+[4.168s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+[4.424s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
+[4.436s] -- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") 
+[4.835s] -- Found X11: /usr/include   
+[4.835s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[4.902s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[4.902s] -- Looking for gethostbyname
+[4.962s] -- Looking for gethostbyname - found
+[4.962s] -- Looking for connect
+[5.024s] -- Looking for connect - found
+[5.024s] -- Looking for remove
+[5.083s] -- Looking for remove - found
+[5.083s] -- Looking for shmat
+[5.146s] -- Looking for shmat - found
+[5.146s] -- Looking for IceConnectionNumber in ICE
+[5.216s] -- Looking for IceConnectionNumber in ICE - found
+[5.529s] -- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") 
+[5.530s] -- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  
+[5.532s] -- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") 
+[5.533s] -- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") 
+[5.622s] -- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") 
+[5.684s] -- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  
+[5.686s] -- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") 
+[5.690s] -- Found utf8cpp: /usr/include/utf8cpp  
+[5.710s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[5.710s] -- looking for PCL_COMMON
+[5.710s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[5.710s] -- looking for PCL_OCTREE
+[5.711s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[5.711s] -- looking for PCL_IO
+[5.711s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[5.711s] -- Found PCL: pcl_common;pcl_octree;pcl_io;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt  
+[5.712s] -- Eigen3 include dir: /usr/include/eigen3
+[5.712s] -- PCL include dirs: /usr/include/pcl-1.12;/usr/include/eigen3;/usr/include;/usr/include/ni;/usr/include/openni2
+[5.745s] -- Configuring done
+[5.767s] -- Generating done
+[5.771s] -- Build files have been written to: /home/goldenboy/git_version/GoldenSLAM/build/golden_slam
+[5.779s] Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/goldenboy/git_version/GoldenSLAM -DCMAKE_INSTALL_PREFIX=/home/goldenboy/git_version/GoldenSLAM/install/golden_slam
+[5.780s] Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
+[5.802s] [ 80%] [32mBuilding CXX object CMakeFiles/golden_slam_node.dir/src/app/main.cpp.o[0m
+[5.802s] [ 80%] [32mBuilding CXX object CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o[0m
+[5.802s] [ 80%] [32mBuilding CXX object CMakeFiles/golden_slam_node.dir/src/core/slam_core.cpp.o[0m
+[5.802s] [ 80%] [32mBuilding CXX object CMakeFiles/golden_slam_node.dir/src/platform/ros_bridge.cpp.o[0m
+[7.170s] [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:[m[K In member function ‘[01m[Kint GoldenSlamApp::run()[m[K’:
+[7.170s] [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:20:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[7.170s]    20 | [01;35m[K}[m[K
+[7.170s]       | [01;35m[K^[m[K
+[7.467s] [100%] [32m[1mLinking CXX executable golden_slam_node[0m
+[7.681s] [100%] Built target golden_slam_node
+[7.686s] Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
+[7.690s] Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/goldenboy/git_version/GoldenSLAM/build/golden_slam
+[7.693s] -- Install configuration: "Release"
+[7.694s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node
+[7.694s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node" to ""
+[7.694s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch
+[7.694s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch/golden_slam.launch.py
+[7.694s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include/
+[7.694s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform
+[7.694s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform/ros_bridge.hpp
+[7.695s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//ui
+[7.695s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app
+[7.695s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app/golden_slam_app.hpp
+[7.695s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core
+[7.695s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/slam_core.hpp
+[7.696s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/package_run_dependencies/golden_slam
+[7.696s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/parent_prefix_path/golden_slam
+[7.696s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.sh
+[7.696s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.dsv
+[7.696s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.sh
+[7.696s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.dsv
+[7.696s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.bash
+[7.696s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.sh
+[7.697s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.zsh
+[7.697s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.dsv
+[7.697s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.dsv
+[7.697s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/packages/golden_slam
+[7.697s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig.cmake
+[7.697s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig-version.cmake
+[7.697s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.xml
+[7.698s] Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/goldenboy/git_version/GoldenSLAM/build/golden_slam

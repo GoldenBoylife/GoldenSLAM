@@ -1,0 +1,33 @@
+[0.009s] Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
+[0.051s] [35m[1mConsolidate compiler generated dependencies of target golden_slam_node[0m
+[0.060s] [ 20%] [32mBuilding CXX object CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o[0m
+[1.356s] [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:[m[K In member function ‘[01m[Kint GoldenSlamApp::run()[m[K’:
+[1.356s] [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:22:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[1.356s]    22 | [01;35m[K}[m[K
+[1.357s]       | [01;35m[K^[m[K
+[1.539s] In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+[1.539s]                  from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+[1.539s]                  from [01m[K/usr/include/c++/11/memory:64[m[K,
+[1.539s]                  from [01m[K/home/goldenboy/git_version/GoldenSLAM/include/app/golden_slam_app.hpp:3[m[K,
+[1.539s]                  from [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:1[m[K:
+[1.539s] /usr/include/c++/11/ext/new_allocator.h: In instantiation of ‘[01m[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = RosBridge; _Args = {}; _Tp = RosBridge][m[K’:
+[1.539s] [01m[K/usr/include/c++/11/bits/alloc_traits.h:516:17:[m[K   required from ‘[01m[Kstatic void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = RosBridge; _Args = {}; _Tp = RosBridge; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<RosBridge>][m[K’
+[1.540s] [01m[K/usr/include/c++/11/bits/shared_ptr_base.h:519:39:[m[K   required from ‘[01m[Kstd::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {}; _Tp = RosBridge; _Alloc = std::allocator<RosBridge>; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[1.540s] [01m[K/usr/include/c++/11/bits/shared_ptr_base.h:650:16:[m[K   required from ‘[01m[Kstd::__shared_count<_Lp>::__shared_count(_Tp*&, std::_Sp_alloc_shared_tag<_Alloc>, _Args&& ...) [with _Tp = RosBridge; _Alloc = std::allocator<RosBridge>; _Args = {}; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[1.540s] [01m[K/usr/include/c++/11/bits/shared_ptr_base.h:1342:14:[m[K   required from ‘[01m[Kstd::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<RosBridge>; _Args = {}; _Tp = RosBridge; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[1.540s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:409:59:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<RosBridge>; _Args = {}; _Tp = RosBridge][m[K’
+[1.540s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:862:14:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = RosBridge; _Alloc = std::allocator<RosBridge>; _Args = {}][m[K’
+[1.540s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:878:39:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = RosBridge; _Args = {}][m[K’
+[1.540s] [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:10:46:[m[K   required from here
+[1.540s] [01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KRosBridge::RosBridge()[m[K’
+[1.540s]   162 |         { [01;31m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[1.540s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.540s] In file included from [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:3[m[K:
+[1.540s] [01m[K/home/goldenboy/git_version/GoldenSLAM/include/platform/ros_bridge.hpp:16:14:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KRosBridge::RosBridge(SlamCore*)[m[K’
+[1.540s]    16 |     explicit [01;36m[KRosBridge[m[K(SlamCore* core);
+[1.540s]       |              [01;36m[K^~~~~~~~~[m[K
+[1.540s] [01m[K/home/goldenboy/git_version/GoldenSLAM/include/platform/ros_bridge.hpp:16:14:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[1.576s] gmake[2]: *** [CMakeFiles/golden_slam_node.dir/build.make:90: CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o] 오류 1
+[1.576s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/golden_slam_node.dir/all] 오류 2
+[1.576s] gmake: *** [Makefile:146: all] 오류 2
+[1.577s] Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
