@@ -1,0 +1,13 @@
+[0.007s] Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
+[0.029s] [35m[1mConsolidate compiler generated dependencies of target golden_slam_node[0m
+[0.039s] [ 20%] [32mBuilding CXX object CMakeFiles/golden_slam_node.dir/src/platform/ros_bridge.cpp.o[0m
+[0.040s] [ 40%] [32mBuilding CXX object CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o[0m
+[1.348s] [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:[m[K In member function ‘[01m[Kint GoldenSlamApp::run()[m[K’:
+[1.348s] [01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:26:5:[m[K [01;31m[Kerror: [m[K‘[01m[Krcl[m[K’ has not been declared
+[1.348s]    26 |     [01;31m[Krcl[m[K::cpp::shutdown();
+[1.348s]       |     [01;31m[K^~~[m[K
+[1.577s] gmake[2]: *** [CMakeFiles/golden_slam_node.dir/build.make:90: CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o] 오류 1
+[1.577s] gmake[2]: *** 끝나지 않은 작업을 기다리고 있습니다....
+[1.658s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/golden_slam_node.dir/all] 오류 2
+[1.658s] gmake: *** [Makefile:146: all] 오류 2
+[1.660s] Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/golden_slam -- -j24 -l24
