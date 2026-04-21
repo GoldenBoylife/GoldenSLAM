@@ -4,6 +4,13 @@
 #include <rclcpp/rclcpp.hpp>
 #include <chrono>
 
+#include <sensor_msgs/msg/imu.hpp>
+#include <sensor_msgs/msg/point_cloud2.hpp>
+#include <livox_ros_driver2/msg/custom_msg.hpp>
+#include <livox_ros_driver2/msg/custom_msg.hpp>
+
+#include <std_srvs/srv/trigger.hpp>
+
 
 
 
@@ -25,7 +32,9 @@ private:
     void onMapPublishTimer(); // rviz에서 보여지기 위함 1hz
 
     void onImuCB(const sensor_msgs::msg::Imu::SharedPtr msg);
-    void onLidarCB(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
+    // void onLidarCB(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
+    void onLidarCB(const livox_ros_driver2::msg::CustomMsg::SharedPtr msg);
+    void mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res);
 
 
 private:
@@ -45,9 +54,22 @@ private:
 
 
 
+    
+    rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr map_save_srv_;
+
+
+    /*topic sub*/
+    rclcpp::Subscription<livox_ros_driver2::msg::CustomMsg>::SharedPtr lidar_sub_;
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_sub_;
+
+    /*topic pub*/
+    
+    /*timer*/
     rclcpp::TimerBase::SharedPtr frontend_timer_;
     rclcpp::TimerBase::SharedPtr map_publish_timer_;
 
-    rclcpp:Service<std_srvs::srv::Trigger>::SharedPtr map_save_srv_;
+
+
+
 
 };
