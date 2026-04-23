@@ -1,8 +1,0 @@
-[0mProcesser number:  24[0m
-[0mcore for MP: 3[0m
-[0m** WARNING ** io features related to pcap will be disabled[0m
-[0m** WARNING ** io features related to png will be disabled[0m
-[01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:[m[K In member function ‘[01m[Kint GoldenSlamApp::run()[m[K’:
-[01m[K/home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:20:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
-   20 | [01;35m[K}[m[K
-      | [01;35m[K^[m[K

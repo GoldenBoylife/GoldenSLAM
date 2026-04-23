@@ -1,6 +1,8 @@
 #include "platform/ros_bridge.hpp"
 #include "core/slam_core.hpp"
 
+
+
 using namespace std::chrono_literals;
 
 RosBridge::RosBridge(SlamCore* core)
@@ -11,6 +13,7 @@ RosBridge::RosBridge(SlamCore* core)
 
     loadParameters();
     setupSubscribers();
+    setupPublishers();
     setupTimer();
     setupServices();
 }
@@ -42,6 +45,12 @@ void RosBridge::setupSubscribers()
 
 
 }
+void RosBridge::setupPublishers()
+{
+    auto qos = rclcpp::QoS(rclcpp::KeepLast(10)).reliable();
+    lidar_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+        "/preprocess/lidar", qos);
+}
 
 void RosBridge::setupTimer()
 {
@@ -72,26 +81,46 @@ void RosBridge::setupServices()
 
 void RosBridge::onFrontendTimer()
 {
-    RCLCPP_INFO(this->get_logger(), "Frontend timer tick.");
-    // std::cout << "333" << std::endl;
+    // RCLCPP_INFO(this->get_logger(), "Frontend timer tick.");
+    std::cout << "onFrontendTimer" << std::endl;
+    core_->spinFrontendOnce();
 }
 
 void RosBridge::onMapPublishTimer()
 {
     // std::cout << "444" << std::endl;
+    //나중에 core에서 map snapshot 이미 만들어진 것을 요청하고 여기서 publish할것임. 
 }
 
 void RosBridge::onImuCB(const sensor_msgs::msg::Imu::SharedPtr msg)
 {
     // std::cout << "222" << std::endl;
+    core_->pushImuMsg(msg);
 }
 void RosBridge::onLidarCB(const livox_ros_driver2::msg::CustomMsg::SharedPtr msg)
 {
-    // std::cout << "111" << std::endl;
+
+     auto cloud = preprocess_.lidarConvert(msg);
+
+
+     sensor_msgs::msg::PointCloud2 cloud_msg;
+     pcl::toROSMsg(*cloud, cloud_msg);
+
+     cloud_msg.header.stamp = msg->header.stamp;
+    //  cloud_msg.header.frame_id = "livox_frame"; //일단 센서 프레임
+     cloud_msg.header.frame_id = "map"; //일단 센서 프레임
+     lidar_pub_->publish(cloud_msg);
+
+    LidarFrame lidar_frame;
+    lidar_frame.frame_beg_time = 
+                    static_cast<double>(msg->header.stamp.sec) +
+                    static_cast<double>(msg->header.stamp.nanosec) * 1e-9;
+    lidar_frame.cloud = cloud;
+    core_->pushLidarFrame(lidar_frame); //나중에 core로 넘기기
 }
 
 
 void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)
 {
-    std::cout << "mapSaveCB" << std::endl;
+    // std::cout << "mapSaveCB" << std::endl;
 }
