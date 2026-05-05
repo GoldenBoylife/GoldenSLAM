@@ -40,7 +40,7 @@ private:
     // void onLidarCB(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
     void onLidarCB(const livox_ros_driver2::msg::CustomMsg::SharedPtr msg);
     void mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res);
-
+    
 
 private:
     SlamCore* core_;
@@ -70,6 +70,9 @@ private:
 
     /*topic pub*/
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr lidar_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr debug_preprocess_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr undistorted_pub_;
+
     /*timer*/
     rclcpp::TimerBase::SharedPtr frontend_timer_;
     rclcpp::TimerBase::SharedPtr map_publish_timer_;

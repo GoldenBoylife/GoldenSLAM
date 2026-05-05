@@ -50,6 +50,13 @@ void RosBridge::setupPublishers()
     auto qos = rclcpp::QoS(rclcpp::KeepLast(10)).reliable();
     lidar_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
         "/preprocess/lidar", qos);
+
+    // 같은 frame pair 비교용
+    debug_preprocess_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+        "/debug/preprocess_lidar", qos);
+
+    undistorted_pub_  = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+        "/debug/undistorted_lidar", qos);
 }
 
 void RosBridge::setupTimer()
@@ -77,15 +84,41 @@ void RosBridge::setupServices()
 
 }
 
-
-
 void RosBridge::onFrontendTimer()
 {
-    // RCLCPP_INFO(this->get_logger(), "Frontend timer tick.");
-    std::cout << "onFrontendTimer" << std::endl;
     core_->spinFrontendOnce();
-}
 
+    auto preprocess_cloud = core_->getDebugPreprocessCloud();
+    auto undistorted_cloud = core_->getUndistortedCloud();
+
+    if (!preprocess_cloud || preprocess_cloud->points.empty()) {
+        return;
+    }
+
+    if (!undistorted_cloud || undistorted_cloud->points.empty()) {
+        return;
+    }
+
+    const double stamp_sec = core_->getLastProcessedFrameTime();
+    const auto sec = static_cast<int32_t>(stamp_sec);
+    const auto nanosec =
+        static_cast<uint32_t>((stamp_sec - static_cast<double>(sec)) * 1e9);
+
+    sensor_msgs::msg::PointCloud2 preprocess_msg;
+    pcl::toROSMsg(*preprocess_cloud, preprocess_msg);
+    preprocess_msg.header.stamp.sec = sec;
+    preprocess_msg.header.stamp.nanosec = nanosec;
+    preprocess_msg.header.frame_id = "map";
+
+    sensor_msgs::msg::PointCloud2 undistorted_msg;
+    pcl::toROSMsg(*undistorted_cloud, undistorted_msg);
+    undistorted_msg.header.stamp.sec = sec;
+    undistorted_msg.header.stamp.nanosec = nanosec;
+    undistorted_msg.header.frame_id = "map";
+
+    debug_preprocess_pub_->publish(preprocess_msg);
+    undistorted_pub_->publish(undistorted_msg);
+}
 void RosBridge::onMapPublishTimer()
 {
     // std::cout << "444" << std::endl;
