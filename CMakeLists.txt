@@ -101,11 +101,11 @@ find_package(tf2_geometry_msgs REQUIRED)
 # Third-party libraries
 # =========================
 find_package(Eigen3 REQUIRED)
-find_package(PCL REQUIRED COMPONENTS common io)
+find_package(PCL REQUIRED COMPONENTS common io registration search filters kdtree)
 find_package(pcl_conversions REQUIRED)
-
-
-
+add_definitions(${PCL_DEFINITIONS})
+message(STATUS "PCL libraries: ${PCL_LIBRARIES}")
+message(STATUS "PCL include dirs: ${PCL_INCLUDE_DIRS}")
 message(STATUS "Eigen3 include dir: ${EIGEN3_INCLUDE_DIR}")
 message(STATUS "PCL include dirs: ${PCL_INCLUDE_DIRS}")
 
@@ -136,6 +136,7 @@ add_executable(${PKG_NODE}
   src/platform/ros_bridge.cpp
   
 )
+target_compile_definitions(${PKG_NODE} PRIVATE PCL_NO_PRECOMPILE)
 
 target_include_directories(${PKG_NODE} PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -143,7 +144,6 @@ target_include_directories(${PKG_NODE} PUBLIC
   include
   ./
 )
-
 
 ament_target_dependencies(${PKG_NODE}
   ${ROS_DEPS}
@@ -179,6 +179,11 @@ install(DIRECTORY config
 
 install(DIRECTORY include/
   DESTINATION include/
+)
+
+install(DIRECTORY rviz
+  DESTINATION share/${PROJECT_NAME}
+  OPTIONAL
 )
 
 # =========================
