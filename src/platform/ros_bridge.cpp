@@ -29,16 +29,17 @@ void RosBridge::loadParameters()
 
 void RosBridge::setupSubscribers()
 {
-
+    auto lidar_qos = rclcpp::QoS(rclcpp::KeepLast(100)).best_effort();
+    auto imu_qos   = rclcpp::QoS(rclcpp::KeepLast(5000)).best_effort();
 
     lidar_sub_ = this->create_subscription<livox_ros_driver2::msg::CustomMsg>(
         lidar_topic_,
-        rclcpp::SensorDataQoS(),
+        lidar_qos,
         std::bind(&RosBridge::onLidarCB,this, std::placeholders::_1)
     );
     imu_sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
         imu_topic_,
-        rclcpp::SensorDataQoS(),
+        imu_qos,
         std::bind(&RosBridge::onImuCB,this, std::placeholders::_1)
     );
 
@@ -57,6 +58,13 @@ void RosBridge::setupPublishers()
 
     undistorted_pub_  = this->create_publisher<sensor_msgs::msg::PointCloud2>(
         "/debug/undistorted_lidar", qos);
+
+    world_frame_pub_ =this->create_publisher<sensor_msgs::msg::PointCloud2>(
+        "/debug/world_frame_cloud", qos);
+    
+    accumulated_map_pub_ =this->create_publisher<sensor_msgs::msg::PointCloud2>(
+        "/debug/accumulated_map", qos);
+    
 }
 
 void RosBridge::setupTimer()
@@ -67,7 +75,7 @@ void RosBridge::setupTimer()
             std::chrono::duration<double>(10.0 / 1000.0));
     auto map_publish_period =
         std::chrono::duration_cast<std::chrono::nanoseconds>(
-            std::chrono::duration<double>(1000.0 / 1000.0));
+            std::chrono::duration<double>(2000.0 / 1000.0));
 
     frontend_timer_ = rclcpp::create_timer(this, this->get_clock(),frontend_period, 
                         std::bind(&RosBridge::onFrontendTimer,this));
@@ -88,41 +96,77 @@ void RosBridge::onFrontendTimer()
 {
     core_->spinFrontendOnce();
 
-    auto preprocess_cloud = core_->getDebugPreprocessCloud();
+    // auto preprocess_cloud = core_->getDebugPreprocessCloud();
     auto undistorted_cloud = core_->getUndistortedCloud();
+    // auto world_frame_cloud = core_->getWorldFrameCloud();
+    // auto accumulated_map_cloud = core_->getAccumulatedMapCloud();
 
-    if (!preprocess_cloud || preprocess_cloud->points.empty()) {
-        return;
-    }
 
-    if (!undistorted_cloud || undistorted_cloud->points.empty()) {
-        return;
-    }
 
     const double stamp_sec = core_->getLastProcessedFrameTime();
     const auto sec = static_cast<int32_t>(stamp_sec);
     const auto nanosec =
         static_cast<uint32_t>((stamp_sec - static_cast<double>(sec)) * 1e9);
+//  if (preprocess_cloud && !preprocess_cloud->points.empty()) {
+//         sensor_msgs::msg::PointCloud2 msg;
+//         pcl::toROSMsg(*preprocess_cloud, msg);
+//         msg.header.stamp.sec = sec;
+//         msg.header.stamp.nanosec = nanosec;
+//         msg.header.frame_id = "map";
+//         debug_preprocess_pub_->publish(msg);
+//     }
 
-    sensor_msgs::msg::PointCloud2 preprocess_msg;
-    pcl::toROSMsg(*preprocess_cloud, preprocess_msg);
-    preprocess_msg.header.stamp.sec = sec;
-    preprocess_msg.header.stamp.nanosec = nanosec;
-    preprocess_msg.header.frame_id = "map";
+    if (undistorted_cloud && !undistorted_cloud->points.empty()) {
+        sensor_msgs::msg::PointCloud2 msg;
+        pcl::toROSMsg(*undistorted_cloud, msg);
+        msg.header.stamp.sec = sec;
+        msg.header.stamp.nanosec = nanosec;
+        msg.header.frame_id = "map";
+        undistorted_pub_->publish(msg);
+    }
 
-    sensor_msgs::msg::PointCloud2 undistorted_msg;
-    pcl::toROSMsg(*undistorted_cloud, undistorted_msg);
-    undistorted_msg.header.stamp.sec = sec;
-    undistorted_msg.header.stamp.nanosec = nanosec;
-    undistorted_msg.header.frame_id = "map";
+    // if (world_frame_cloud && !world_frame_cloud->points.empty()) {
+    //     sensor_msgs::msg::PointCloud2 msg;
+    //     pcl::toROSMsg(*world_frame_cloud, msg);
+    //     msg.header.stamp.sec = sec;
+    //     msg.header.stamp.nanosec = nanosec;
+    //     msg.header.frame_id = "map";
+    //     world_frame_pub_->publish(msg);
+    // }
 
-    debug_preprocess_pub_->publish(preprocess_msg);
-    undistorted_pub_->publish(undistorted_msg);
+    // // if (accumulated_map_cloud && !accumulated_map_cloud->points.empty()) {
+    //     sensor_msgs::msg::PointCloud2 msg;
+    //     pcl::toROSMsg(*accumulated_map_cloud, msg);
+    //     msg.header.stamp.sec = sec;
+    //     msg.header.stamp.nanosec = nanosec;
+    //     msg.header.frame_id = "map";
+    //     accumulated_map_pub_->publish(msg);
+    // }
+    
 }
 void RosBridge::onMapPublishTimer()
 {
     // std::cout << "444" << std::endl;
     //나중에 core에서 map snapshot 이미 만들어진 것을 요청하고 여기서 publish할것임. 
+    auto accumulated_map_cloud = core_->getAccumulatedMapCloud();
+
+    if (!accumulated_map_cloud || accumulated_map_cloud->points.empty()) {
+        return;
+    }
+
+    const double stamp_sec = core_->getLastProcessedFrameTime();
+
+    const auto sec = static_cast<int32_t>(stamp_sec);
+    const auto nanosec =
+        static_cast<uint32_t>((stamp_sec - static_cast<double>(sec)) * 1e9);
+
+    sensor_msgs::msg::PointCloud2 msg;
+    pcl::toROSMsg(*accumulated_map_cloud, msg);
+    msg.header.stamp.sec = sec;
+    msg.header.stamp.nanosec = nanosec;
+    msg.header.frame_id = "map";
+
+    accumulated_map_pub_->publish(msg);
 }
 
 void RosBridge::onImuCB(const sensor_msgs::msg::Imu::SharedPtr msg)

@@ -73,6 +73,10 @@ private:
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr debug_preprocess_pub_;
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr undistorted_pub_;
 
+        /*poseEstimate */
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr world_frame_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr accumulated_map_pub_;
+
     /*timer*/
     rclcpp::TimerBase::SharedPtr frontend_timer_;
     rclcpp::TimerBase::SharedPtr map_publish_timer_;
