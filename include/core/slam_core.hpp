@@ -19,7 +19,7 @@ struct LidarFrame
 
 struct MeasureGroup 
 {
-    LidarFrame lidarframe;
+    LidarFrame lidar_frame;
     std::deque<sensor_msgs::msg::Imu::ConstSharedPtr> imus; 
 };
 
@@ -50,7 +50,7 @@ private:
 
 private: 
     bool is_first_lidar_;
-    bool lidar_pushed_;
+    bool lidar_frame_pushed_;
     
     /*syncMeasure*/
     
@@ -61,6 +61,7 @@ private:
     double last_timestamp_imu_=0.0;
     double last_imu_time_ =0.0;
     std::size_t imu_count_  = 0;
+    LidarFrame current_lidar_frame_;
         /*          syncMeasure*/
 
 
