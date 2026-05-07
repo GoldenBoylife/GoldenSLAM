@@ -7,7 +7,6 @@ RosBridge::RosBridge(SlamCore* core)
     : rclcpp::Node("golden_slam"), core_(core)
 {
     RCLCPP_INFO(this->get_logger(), "RosBridge started.");
-    std::cout << "RosBridge started"<< std::endl;
 
     loadParameters();
     setupSubscribers();
@@ -27,6 +26,7 @@ void RosBridge::loadParameters()
 
 void RosBridge::setupSubscribers()
 {
+    auto imu_qos = rclcpp::QoS(rclcpp::KeepLast(2000)).best_effort();
 
 
     lidar_sub_ = this->create_subscription<livox_ros_driver2::msg::CustomMsg>(
@@ -36,7 +36,7 @@ void RosBridge::setupSubscribers()
     );
     imu_sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
         imu_topic_,
-        rclcpp::SensorDataQoS(),
+        imu_qos,
         std::bind(&RosBridge::onImuCB,this, std::placeholders::_1)
     );
 }
@@ -44,6 +44,7 @@ void RosBridge::setupSubscribers()
 void RosBridge::setupPublishers() 
 {
     auto qos = rclcpp::QoS(rclcpp::KeepLast(10)).reliable();
+
     lidar_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
         "/preprocess/lidar", qos);
 }
@@ -78,7 +79,7 @@ void RosBridge::setupServices()
 void RosBridge::onFrontendTimer()
 {
 
-    RCLCPP_INFO(this->get_logger(), "Frontend timer tick.");
+    // RCLCPP_INFO(this->get_logger(), "Frontend timer tick.");
     core_->spinFrontendOnce();
     // std::cout << "333" << std::endl;
 }
@@ -91,6 +92,7 @@ void RosBridge::onMapPublishTimer()
 void RosBridge::onImuCB(const sensor_msgs::msg::Imu::SharedPtr msg)
 {
     // std::cout << "222" << std::endl;
+    core_->pushImu(msg);
 }
 void RosBridge::onLidarCB(const livox_ros_driver2::msg::CustomMsg::SharedPtr msg)
 {
@@ -144,6 +146,5 @@ void RosBridge::onLidarCB(const livox_ros_driver2::msg::CustomMsg::SharedPtr msg
 
 void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)
 {
-    std::cout << "mapSaveCB" << std::endl;
 
 }
