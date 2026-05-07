@@ -10,12 +10,14 @@
 #include <livox_ros_driver2/msg/custom_msg.hpp>
 
 #include <std_srvs/srv/trigger.hpp>
+#include "core/preprocess.hpp" //전방 선언 아님, 소유권은 RosBridge가 가짐
+
 
 
 
 
 class SlamCore;
-
+class Preprocess;
 class RosBridge : public rclcpp::Node
 {
 
@@ -27,6 +29,7 @@ private:
     void setupSubscribers();
     void setupTimer();
     void setupServices();
+    void setupPublishers();
 
     void onFrontendTimer(); // 100hz
     void onMapPublishTimer(); // rviz에서 보여지기 위함 1hz
@@ -41,6 +44,7 @@ private:
     SlamCore* core_;
     //나는 소유자는 아니고, 누가 만든거 가져다 쓰겠다는 뜻
     // 진짜 주인은 GoldenSlamApp임
+    Preprocess preprocess_;
 
     std::string imu_topic_;
     std::string lidar_topic_;
@@ -63,7 +67,7 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr imu_sub_;
 
     /*topic pub*/
-    
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr lidar_pub_;
     /*timer*/
     rclcpp::TimerBase::SharedPtr frontend_timer_;
     rclcpp::TimerBase::SharedPtr map_publish_timer_;

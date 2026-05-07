@@ -11,6 +11,7 @@ RosBridge::RosBridge(SlamCore* core)
 
     loadParameters();
     setupSubscribers();
+    setupPublishers();
     setupTimer();
     setupServices();
 }
@@ -38,9 +39,13 @@ void RosBridge::setupSubscribers()
         rclcpp::SensorDataQoS(),
         std::bind(&RosBridge::onImuCB,this, std::placeholders::_1)
     );
+}
 
-
-
+void RosBridge::setupPublishers() 
+{
+    auto qos = rclcpp::QoS(rclcpp::KeepLast(10)).reliable();
+    lidar_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+        "/preprocess/lidar", qos);
 }
 
 void RosBridge::setupTimer()
@@ -72,7 +77,9 @@ void RosBridge::setupServices()
 
 void RosBridge::onFrontendTimer()
 {
+
     RCLCPP_INFO(this->get_logger(), "Frontend timer tick.");
+    core_->spinFrontendOnce();
     // std::cout << "333" << std::endl;
 }
 
@@ -87,11 +94,31 @@ void RosBridge::onImuCB(const sensor_msgs::msg::Imu::SharedPtr msg)
 }
 void RosBridge::onLidarCB(const livox_ros_driver2::msg::CustomMsg::SharedPtr msg)
 {
-    // std::cout << "111" << std::endl;
+
+    
+    auto cloud= preprocess_.lidarConvert(msg);
+                            
+    sensor_msgs::msg::PointCloud2 cloud_msg;
+
+    /*debug*/
+    const auto raw_size = msg->point_num;
+    const auto preprocced_size = cloud->points.size();
+
+    std::cout << 
+    "raw : " << raw_size << " processed : " <<  preprocced_size << std::endl;
+
+    /*     debug*/
+
+    cloud_msg.header.stamp = msg->header.stamp;
+    cloud_msg.header.frame_id = "map";
+    lidar_pub_->publish(cloud_msg);
+
+    // core_->pushLidarFrame(cloud);
 }
 
 
 void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)
 {
     std::cout << "mapSaveCB" << std::endl;
+
 }
