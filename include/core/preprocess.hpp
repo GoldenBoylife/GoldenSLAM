@@ -12,7 +12,8 @@ class Preprocess
 {
 public: 
     Preprocess() = default;
-    CloudTPtr lidarConvert(const livox_ros_driver2::msg::CustomMsg::SharedPtr& msg);
+    // CloudTPtr lidarConvert(const livox_ros_driver2::msg::CustomMsg::SharedPtr& msg);
+    LidarConvertResult lidarConvert(const livox_ros_driver2::msg::CustomMsg::SharedPtr& msg);
 
     sensor_msgs::msg::Imu::SharedPtr imuConvert(const sensor_msgs::msg::Imu::SharedPtr& msg);
 

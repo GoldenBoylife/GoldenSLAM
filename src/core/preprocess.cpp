@@ -1,7 +1,8 @@
 #include "core/preprocess.hpp"
 
 
-CloudTPtr Preprocess::lidarConvert(const livox_ros_driver2::msg::CustomMsg::SharedPtr& msg)
+
+LidarConvertResult Preprocess::lidarConvert(const livox_ros_driver2::msg::CustomMsg::SharedPtr& msg)
 {
     /*
     순서
@@ -18,13 +19,25 @@ CloudTPtr Preprocess::lidarConvert(const livox_ros_driver2::msg::CustomMsg::Shar
    //push_back으로 반복하게되면, 수천, 수만번 재할당시 부담이 심해서 처음부터 재할당하면 성능 좋아짐.
 
 
+    LidarConvertResult  result;
+    result.cloud = std::make_shared<CloudT>();
+    result.cloud->points.reserve(msg->point_num);
+
    uint8_t valid_num =0;
    PointT prev_pt{};
    bool has_prev = false;
 
+   double max_relative_time =0.0;
+
    for(uint32_t i =1; i< msg->point_num; ++i) 
    {
     const auto& src = msg->points[i];
+
+    const double relative_time = 
+        static_cast<double>(src.offset_time)* 1e-9;
+
+    if(relative_time > max_relative_time) 
+        max_relative_time = relative_time;
 
     if(!isValidLivoxPoint(src)) 
     {
@@ -45,13 +58,15 @@ CloudTPtr Preprocess::lidarConvert(const livox_ros_driver2::msg::CustomMsg::Shar
         continue;
     }
 
-    cloud->points.push_back(pt);
+    result.cloud->points.push_back(pt);
+    prev_pt = pt;
     has_prev = true;
 
    }
 
-   finalizeCloud(cloud);
-   return cloud;
+   finalizeCloud(result.cloud);
+   result.max_relative_time = max_relative_time;
+   return result;
 
 
 }

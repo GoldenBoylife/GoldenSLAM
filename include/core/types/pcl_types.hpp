@@ -2,6 +2,9 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <Eigen/Core>
+#include "core/types/pcl_types.hpp"
+
+
 
 /*PCL이 요구하는 매크로가 붙음*/
 //PCL_ADD_POINT4D : x,y,z넣는게 아니라, 정렬 최적화 위해서 씀
@@ -22,6 +25,13 @@ using CloudT = pcl::PointCloud<PointT>; //포인트 여러개 모인것
 using CloudTPtr = std::shared_ptr<CloudT>;
 using CloudTConstPtr = std::shared_ptr<const CloudT>;
 //std::shared_ptr<const PointCloudXYZIT> : 읽기 전용 객체 포인터
+
+
+struct LidarConvertResult
+{
+    CloudTPtr cloud = nullptr;
+    double max_relative_time = 0.0;
+};
 
 
 

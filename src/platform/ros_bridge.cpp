@@ -96,8 +96,24 @@ void RosBridge::onLidarCB(const livox_ros_driver2::msg::CustomMsg::SharedPtr msg
 {
 
     
-    auto cloud= preprocess_.lidarConvert(msg);
-                            
+    auto preprocess_result = preprocess_.lidarConvert(msg);
+    auto cloud = preprocess_result .cloud;               
+    if(!cloud || cloud->points.empty())
+    {
+        std::cout << "[onLidarCB] empty cloud" << std::endl;
+        return;
+    }
+
+    LidarFrame lidarframe;
+    lidarframe.cloud = cloud;
+    lidarframe.frame_beg_time =
+        rclcpp::Time(msg->header.stamp).seconds();
+    lidarframe.frame_end_time = 
+        lidarframe.frame_beg_time + preprocess_result .max_relative_time;
+
+
+
+
     sensor_msgs::msg::PointCloud2 cloud_msg;
 
     /*debug*/
@@ -107,13 +123,22 @@ void RosBridge::onLidarCB(const livox_ros_driver2::msg::CustomMsg::SharedPtr msg
     std::cout << 
     "raw : " << raw_size << " processed : " <<  preprocced_size << std::endl;
 
+    std::cout
+        << "[onLidarCB] raw=" << msg->point_num
+        << ", processed=" << cloud->points.size()
+        << ", beg=" << std::fixed << std::setprecision(9)
+        << lidarframe.frame_beg_time
+        << ", end=" << lidarframe.frame_end_time
+        << ", duration=" << preprocess_result .max_relative_time
+        << std::endl;
+
     /*     debug*/
 
-    cloud_msg.header.stamp = msg->header.stamp;
-    cloud_msg.header.frame_id = "map";
-    lidar_pub_->publish(cloud_msg);
+    // cloud_msg.header.stamp = msg->header.stamp;
+    // cloud_msg.header.frame_id = "map";
+    // lidar_pub_->publish(cloud_msg);
 
-    // core_->pushLidarFrame(cloud);
+    core_->pushLidarFrame(lidarframe);
 }
 
 
