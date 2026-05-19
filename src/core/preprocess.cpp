@@ -13,8 +13,8 @@ LidarConvertResult Preprocess::lidarConvert(const livox_ros_driver2::msg::Custom
         5. blind 제거
         6. 중복점 제거
     */
-   auto cloud = std::make_shared<CloudT>();
-   cloud->points.reserve(msg->point_num); 
+//    auto cloud = std::make_shared<CloudT>();
+//    cloud->points.reserve(msg->point_num); 
    //메모리 미리 확보 
    //push_back으로 반복하게되면, 수천, 수만번 재할당시 부담이 심해서 처음부터 재할당하면 성능 좋아짐.
 
@@ -23,7 +23,7 @@ LidarConvertResult Preprocess::lidarConvert(const livox_ros_driver2::msg::Custom
     result.cloud = std::make_shared<CloudT>();
     result.cloud->points.reserve(msg->point_num);
 
-   uint8_t valid_num =0;
+   uint32_t valid_num =0;
    PointT prev_pt{};
    bool has_prev = false;
 
@@ -36,6 +36,7 @@ LidarConvertResult Preprocess::lidarConvert(const livox_ros_driver2::msg::Custom
     const double relative_time = 
         static_cast<double>(src.offset_time)* 1e-9;
 
+    /*frame_end_time 계산용이므로 raw point 기준으로 봐도 됨*/
     if(relative_time > max_relative_time) 
         max_relative_time = relative_time;
 
@@ -66,6 +67,34 @@ LidarConvertResult Preprocess::lidarConvert(const livox_ros_driver2::msg::Custom
 
    finalizeCloud(result.cloud);
    result.max_relative_time = max_relative_time;
+
+
+   /*relative_time이 살아 있는지 확인*/
+   float min_rt = std::numeric_limits<float>::max();
+   float max_rt = 0.0f;
+   int zero_count = 0;
+
+   for(const auto& p : result.cloud->points) 
+   {
+    min_rt = std::min(min_rt, p.relative_time);
+    max_rt = std::max(max_rt, p.relative_time);
+
+    if(std::abs(p.relative_time) <1e-9f) 
+    {
+        ++zero_count;
+    }
+   }
+
+std::cout
+    << "[Preprocess::lidarConvert]"
+    << " raw=" << msg->point_num
+    << " processed=" << result.cloud->size()
+    << " min_rt=" << min_rt
+    << " max_rt=" << max_rt
+    << " zero_count=" << zero_count
+    << " max_relative_time=" << result.max_relative_time
+    << std::endl;
+
    return result;
 
 
@@ -83,7 +112,11 @@ bool Preprocess::isValidLivoxPoint(const livox_ros_driver2::msg::CustomPoint& sr
 
 bool Preprocess::isEveryNthPoint(uint32_t valid_num) const
 {
-    return (valid_num % point_filter_num_) ==0;
+
+    // return (valid_num % point_filter_num_) ==0;
+
+    if(point_filter_num_ <=1) return true;
+    return (valid_num  % point_filter_num_) ==0;
 }
 
 

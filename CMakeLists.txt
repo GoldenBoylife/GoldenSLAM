@@ -119,6 +119,7 @@ set(ROS_DEPS
   tf2
   tf2_ros
   tf2_geometry_msgs
+  pcl_conversions
 )
 
 
@@ -130,7 +131,9 @@ add_executable(${PKG_NODE}
   src/app/golden_slam_app.cpp
   src/core/slam_core.cpp
   src/core/preprocess.cpp
+  src/core/imu_processor.cpp
   src/platform/ros_bridge.cpp
+  
   
 )
 target_compile_definitions(${PKG_NODE} PRIVATE PCL_NO_PRECOMPILE)
@@ -160,18 +163,15 @@ endif()
 # =======================
 # Install
 # =======================
-
 install(TARGETS ${PKG_NODE}
-  DESTINATION lib/${PROJECT_NAME}
+  RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch
+install(DIRECTORY
+  launch
+  config
+  rviz
   DESTINATION share/${PROJECT_NAME}
-)
-
-install(DIRECTORY config
-  DESTINATION share/${PROJECT_NAME}
-  OPTIONAL
 )
 
 install(DIRECTORY include/

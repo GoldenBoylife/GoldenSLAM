@@ -1,6 +1,6 @@
 #include "platform/ros_bridge.hpp"
 #include "core/slam_core.hpp"
-
+#include <pcl_conversions/pcl_conversions.h>
 using namespace std::chrono_literals;
 
 RosBridge::RosBridge(SlamCore* core)
@@ -22,6 +22,7 @@ void RosBridge::loadParameters()
 {
     imu_topic_ =  "/livox/imu";
     lidar_topic_ =  "/livox/lidar";
+    last_published_snapshot_stamp_ = -1.0;
 }
 
 void RosBridge::setupSubscribers()
@@ -39,6 +40,8 @@ void RosBridge::setupSubscribers()
         imu_qos,
         std::bind(&RosBridge::onImuCB,this, std::placeholders::_1)
     );
+    
+
 }
 
 void RosBridge::setupPublishers() 
@@ -47,6 +50,20 @@ void RosBridge::setupPublishers()
 
     lidar_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
         "/preprocess/lidar", qos);
+
+    predicted_odom_pub_ =
+        this->create_publisher<nav_msgs::msg::Odometry>(
+            "/golden_slam/odom_predicted", qos);
+
+    cloud_world_pred_pub_ =
+        this->create_publisher<sensor_msgs::msg::PointCloud2>(
+            "/golden_slam/cloud_world_predicted", qos);
+
+    debug_map_pred_pub_ =
+        this->create_publisher<sensor_msgs::msg::PointCloud2>(
+            "/golden_slam/debug_map_predicted", qos);
+
+
 }
 
 void RosBridge::setupTimer()
@@ -75,18 +92,38 @@ void RosBridge::setupServices()
 }
 
 
-
+/*
+계산만 100hz
+- buffer 확인
+- syncMaeausre
+- IMU propagation
+- cloud_world_predicted 생성
+- debug_map 갱신
+- lastest_frontend_snapshot 저장
+*/
 void RosBridge::onFrontendTimer()
 {
 
     // RCLCPP_INFO(this->get_logger(), "Frontend timer tick.");
     core_->spinFrontendOnce();
     // std::cout << "333" << std::endl;
+    // auto  = core_->getPredictedPackage();
+
 }
 
 void RosBridge::onMapPublishTimer()
 {
     // std::cout << "444" << std::endl;
+    const auto snapshot = core_->getFrontendSnapshot();
+
+    if (!snapshot.valid)
+        return;
+
+    if(snapshot.stamp <= last_published_snapshot_stamp_)    return;
+
+    
+    pubFrontendSnapshot(snapshot);
+    last_published_snapshot_stamp_ = snapshot.stamp;
 }
 
 void RosBridge::onImuCB(const sensor_msgs::msg::Imu::SharedPtr msg)
@@ -122,17 +159,17 @@ void RosBridge::onLidarCB(const livox_ros_driver2::msg::CustomMsg::SharedPtr msg
     const auto raw_size = msg->point_num;
     const auto preprocced_size = cloud->points.size();
 
-    std::cout << 
-    "raw : " << raw_size << " processed : " <<  preprocced_size << std::endl;
+    // std::cout << 
+    // "raw : " << raw_size << " processed : " <<  preprocced_size << std::endl;
 
-    std::cout
-        << "[onLidarCB] raw=" << msg->point_num
-        << ", processed=" << cloud->points.size()
-        << ", beg=" << std::fixed << std::setprecision(9)
-        << lidarframe.frame_beg_time
-        << ", end=" << lidarframe.frame_end_time
-        << ", duration=" << preprocess_result .max_relative_time
-        << std::endl;
+    // std::cout
+    //     << "[onLidarCB] raw=" << msg->point_num
+    //     << ", processed=" << cloud->points.size()
+    //     << ", beg=" << std::fixed << std::setprecision(9)
+    //     << lidarframe.frame_beg_time
+    //     << ", end=" << lidarframe.frame_end_time
+    //     << ", duration=" << preprocess_result .max_relative_time
+    //     << std::endl;
 
     /*     debug*/
 
@@ -148,3 +185,92 @@ void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, s
 {
 
 }
+
+
+/*imu_propagate*/
+void RosBridge::pubFrontendSnapshot(
+    const FrontendSnapshot& snapshot)
+{
+    pubPredictedOdom(snapshot.predicted_state, snapshot.stamp);
+    //로봇의 위치 자세 pub
+
+    pubCloud(
+        snapshot.cloud_world_predicted,
+        snapshot.stamp,
+        "map",
+        cloud_world_pred_pub_
+    );
+
+    pubCloud(
+        snapshot.debug_map_predicted,
+        snapshot.stamp,
+        "map",
+        debug_map_pred_pub_
+    );
+}
+
+void RosBridge::pubPredictedOdom(const State& state, double stamp_sec)
+{
+    if(!predicted_odom_pub_)    return;
+
+    nav_msgs::msg::Odometry odom;
+
+    odom.header.stamp = toRosTime(stamp_sec);
+    odom.header.frame_id= "map";
+    odom.child_frame_id = "base_link";
+
+    odom.pose.pose.position.x = state.position.x();
+    odom.pose.pose.position.y = state.position.y();
+    odom.pose.pose.position.z = state.position.z();
+
+    odom.pose.pose.orientation.x = state.rotation.x();
+    odom.pose.pose.orientation.y = state.rotation.y();
+    odom.pose.pose.orientation.z = state.rotation.z();
+    odom.pose.pose.orientation.w = state.rotation.w();
+
+    odom.twist.twist.linear.x = state.velocity.x();
+    odom.twist.twist.linear.y = state.velocity.y();
+    odom.twist.twist.linear.z = state.velocity.z();
+
+    predicted_odom_pub_->publish(odom);
+
+}
+void RosBridge::pubCloud(const CloudTConstPtr& cloud, double stamp_sec, const std::string& frame_id, const rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr& pub)
+{
+    if(!pub)    return;
+    if(!cloud || cloud->empty())    return;
+
+    sensor_msgs::msg::PointCloud2 msg;
+    pcl::toROSMsg(*cloud,msg);
+
+    msg.header.stamp = toRosTime(stamp_sec);
+    msg.header.frame_id = frame_id;
+
+    pub->publish(msg);
+}
+
+builtin_interfaces::msg::Time RosBridge::toRosTime(double stamp_sec) const
+{
+    builtin_interfaces::msg::Time stamp;
+
+    const auto sec = static_cast<int32_t>(std::floor(stamp_sec));
+    auto nsec = static_cast<uint32_t>(
+        (stamp_sec - static_cast<double>(sec)) * 1e9
+    );
+
+    if (nsec >= 1000000000u)
+    {
+        nsec -= 1000000000u;
+        stamp.sec = sec + 1;
+    }
+    else
+    {
+        stamp.sec = sec;
+    }
+
+    stamp.nanosec = nsec;
+
+    return stamp;
+}
+
+/*      imu_propagate*/

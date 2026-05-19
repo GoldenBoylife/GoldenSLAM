@@ -5,23 +5,18 @@
 #include <deque>
 #include <mutex>
 
-#include "core/slam_core.hpp"
-#include "core/types/pcl_types.hpp"
 #include <sensor_msgs/msg/imu.hpp>
 
-struct LidarFrame
-{
-    double frame_end_time =0.0; 
-    double frame_beg_time =0.0; 
-    CloudTPtr cloud = nullptr; 
 
-};
+#include "core/slam_core.hpp"
+#include "core/types/pcl_types.hpp"
+#include "core/types/state.hpp"
+#include "core/types/frontend_snapshot.hpp"
 
-struct MeasureGroup 
-{
-    LidarFrame lidar_frame;
-    std::deque<sensor_msgs::msg::Imu::ConstSharedPtr> imus; 
-};
+#include "core/imu_processor.hpp"
+
+#include <nav_msgs/msg/odometry.hpp>
+#include <sensor_msgs/msg/point_cloud2.hpp>
 
 
 class SlamCore
@@ -39,6 +34,9 @@ public:
     void pushImu(const sensor_msgs::msg::Imu::SharedPtr msg);
     /*      push*/
 
+    FrontendSnapshot getFrontendSnapshot() const;
+
+
 private: 
     /*syncMeasure*/
     bool syncMeasure(MeasureGroup& meas);
@@ -46,6 +44,14 @@ private:
     void debugImuDt(const double imu_time);
     // bool isValidLidarHz();
     /*          syncMeasure*/
+
+    /*imu_propagate*/
+    CloudTPtr transformCloudToWorld(const CloudTConstPtr& cloud, const State& state);
+    void updateDebugMap(const CloudTConstPtr& cloud_world);
+    void updateFrontendSnapshot(const MeasureGroup& meas,const State& predicted_state,const CloudTPtr& cloud_world_predicted);
+
+
+    /*      imu_propagate*/
     
 
 private: 
@@ -64,5 +70,16 @@ private:
     LidarFrame current_lidar_frame_;
         /*          syncMeasure*/
 
+    /*imu_propagate*/
+    
+
+    ImuProcessor imu_processor_;
+    State current_state_;
+
+    mutable std::mutex snapshot_mutex_;
+    FrontendSnapshot latest_frontend_snapshot_;
+    CloudTPtr debug_map_;   
+
+    /*      imu_propagate*/
 
 };

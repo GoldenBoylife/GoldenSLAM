@@ -7,12 +7,12 @@ import os
 
 
 def generate_launch_description():
-
     rviz_config = os.path.join(
         get_package_share_directory('golden_slam'),
         'rviz',
         'golden_slam.rviz'
     )
+    print(f"[golden_slam.launch] rviz_config = {rviz_config}")
 
     slam_node = Node(
         package='golden_slam',
