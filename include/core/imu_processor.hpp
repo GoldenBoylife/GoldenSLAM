@@ -4,6 +4,8 @@
 
 #include "core/types/measure_group.hpp"
 #include "core/types/state.hpp"
+#include "core/types/imu_propagated_pose.hpp"
+
 
 /*Imu값을 입력 받고 적분하여서 pose를 상태예측*/
 //rotation
@@ -24,7 +26,7 @@ public:
 
 
     /*imu_propagate*/
-    void propagate(const MeasureGroup& meas, State& state);
+    void propagate(const MeasureGroup& meas, State& state,ImuPropagatedPoseHistory& pose_history);
     //rotation예측
     //velocity예측
     //position예측
