@@ -27,11 +27,6 @@ using CloudTConstPtr = std::shared_ptr<const CloudT>;
 //std::shared_ptr<const PointCloudXYZIT> : 읽기 전용 객체 포인터
 
 
-struct LidarConvertResult
-{
-    CloudTPtr cloud = nullptr;
-    double max_relative_time = 0.0;
-};
 
 
 

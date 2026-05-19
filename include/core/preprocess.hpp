@@ -6,7 +6,7 @@
 #include <livox_ros_driver2/msg/custom_msg.hpp>
 
 #include "core/types/pcl_types.hpp"
-
+#include "core/types/lidar_frame.hpp"
 
 class Preprocess 
 {
