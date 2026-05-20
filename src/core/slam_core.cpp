@@ -315,7 +315,7 @@ void SlamCore::updateDebugMapDeskewed(
 
     *debug_map_deskewed_ += *cloud_world;
 
-    constexpr std::size_t MAX_DEBUG_MAP_POINTS = 300000;
+    constexpr std::size_t MAX_DEBUG_MAP_POINTS = 3000000;
 
     if (debug_map_deskewed_->points.size() > MAX_DEBUG_MAP_POINTS)
     {
