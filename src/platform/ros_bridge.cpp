@@ -51,31 +51,15 @@ void RosBridge::setupPublishers()
     lidar_pub_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
         "/preprocess/lidar", qos);
 
-    predicted_odom_pub_ =
+    odom_pub_ =
         this->create_publisher<nav_msgs::msg::Odometry>(
-            "/golden_slam/odom_predicted", qos);
+            "/golden_slam/odom", qos);
 
-    cloud_world_pred_pub_ =
+    map_pub_ =
         this->create_publisher<sensor_msgs::msg::PointCloud2>(
-            "/golden_slam/cloud_world_predicted", qos);
+            "/golden_slam/map", qos);
 
-    debug_map_pred_pub_ =
-        this->create_publisher<sensor_msgs::msg::PointCloud2>(
-            "/golden_slam/debug_map_predicted", qos);
 
-    cloud_deskewed_pub_ = 
-        this->create_publisher<sensor_msgs::msg::PointCloud2>(
-            "/golden_slam/cloud_deskewed", qos);
-
-    cloud_world_deskewed_pub_ =
-    this->create_publisher<sensor_msgs::msg::PointCloud2>(
-        "/golden_slam/cloud_world_deskewed",
-        qos);
-
-    debug_map_deskewed_pub_ =
-        this->create_publisher<sensor_msgs::msg::PointCloud2>(
-            "/golden_slam/debug_map_deskewed",
-            qos);
 }
 
 void RosBridge::setupTimer()
@@ -200,44 +184,17 @@ void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, s
 
 
 /*imu_propagate*/
-void RosBridge::pubFrontendSnapshot(
-    const FrontendSnapshot& snapshot)
+void RosBridge::pubFrontendSnapshot(const FrontendSnapshot& snapshot)
 {
-    pubPredictedOdom(snapshot.predicted_state, snapshot.stamp);
+    pubOdom(snapshot.state, snapshot.stamp);
     //로봇의 위치 자세 pub
 
-    pubCloud(
-    snapshot.cloud_world_predicted,
-    snapshot.stamp,
-    "map",
-    cloud_world_pred_pub_
-    );
-
-    pubCloud(
-        snapshot.cloud_world_deskewed,
-        snapshot.stamp,
-        "map",
-        cloud_world_deskewed_pub_
-    );
-
-    pubCloud(
-        snapshot.debug_map_predicted,
-        snapshot.stamp,
-        "map",
-        debug_map_pred_pub_
-    );
-
-    pubCloud(
-        snapshot.debug_map_deskewed,
-        snapshot.stamp,
-        "map",
-        debug_map_deskewed_pub_
-    );
+    pubCloud(snapshot.map_cloud,snapshot.stamp,"map",map_pub_ );
 }
 
-void RosBridge::pubPredictedOdom(const State& state, double stamp_sec)
+void RosBridge::pubOdom(const State& state, double stamp_sec)
 {
-    if(!predicted_odom_pub_)    return;
+    if(!odom_pub_)    return;
 
     nav_msgs::msg::Odometry odom;
 
@@ -258,7 +215,7 @@ void RosBridge::pubPredictedOdom(const State& state, double stamp_sec)
     odom.twist.twist.linear.y = state.velocity.y();
     odom.twist.twist.linear.z = state.velocity.z();
 
-    predicted_odom_pub_->publish(odom);
+    odom_pub_->publish(odom);
 
 }
 void RosBridge::pubCloud(const CloudTConstPtr& cloud, double stamp_sec, const std::string& frame_id, const rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr& pub)
