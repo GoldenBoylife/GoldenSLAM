@@ -131,8 +131,9 @@ bool ImuProcessor::isInitialized() const
 
 /*imu_propagate*/
 // IMU 값 2개 사이의 시간 간격 dt 동안, 현재 state가 어떻게 변했을지를 적분해서 다음 state를 예측하는 코드
-void ImuProcessor::propagate(const MeasureGroup& meas, State& state)
+void ImuProcessor::propagate(const MeasureGroup& meas, State& state,ImuPropagatedPoseHistory& pose_history)
 {
+    pose_history.clear();
     /*초기화 안되어 있으면 초기화*/
     if(!initialized_) 
     {
@@ -219,22 +220,31 @@ void ImuProcessor::propagate(const MeasureGroup& meas, State& state)
     state.timestamp = t_next;
     //이미 행동이 이뤄진 상태에서의 시간이 필요하다. 그래서 t_next 넣음. 
 
-std::cout
-    << "[propagate]"
-    << " dt=" << dt
-    << " acc_raw=" << acc_body_raw.transpose()
-    << " acc_scaled=" << acc_body.transpose()
-    << " acc_scale=" << acc_scale_
-    << " acc_unbias=" << acc_unbias.transpose()
-    << " acc_world=" << acc_world.transpose()
-    << " vel=" << state.velocity.transpose()
-    << " pos=" << state.position.transpose()
-    << std::endl;
-    }
+    pose_history.push_back({
+        state.timestamp,
+        state.rotation,
+        state.position,
+        state.velocity
+    });
+
+// std::cout
+//     << "[propagate]"
+//     << " dt=" << dt
+//     << " acc_raw=" << acc_body_raw.transpose()
+//     << " acc_scaled=" << acc_body.transpose()
+//     << " acc_scale=" << acc_scale_
+//     << " acc_unbias=" << acc_unbias.transpose()
+//     << " acc_world=" << acc_world.transpose()
+//     << " vel=" << state.velocity.transpose()
+//     << " pos=" << state.position.transpose()
+//     << std::endl;
+    
+    } //for
 
 
 
 }
+
 
 double ImuProcessor::getImuTime(const sensor_msgs::msg::Imu::ConstSharedPtr& imu) const
 {

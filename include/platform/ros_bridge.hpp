@@ -77,7 +77,11 @@ private:
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr lidar_pub_;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr predicted_odom_pub_;
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr cloud_world_pred_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr cloud_deskewed_pub_;
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr debug_map_pred_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr cloud_world_deskewed_pub_;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr debug_map_deskewed_pub_;
+
     /*timer*/
     rclcpp::TimerBase::SharedPtr frontend_timer_;
     rclcpp::TimerBase::SharedPtr map_publish_timer_;
@@ -88,8 +92,7 @@ private:
     FrontendSnapshot lastest_frontend_snapshot_;
     CloudTPtr debug_map_;
     double last_published_snapshot_stamp_ ;
-    
-
+   
 
 
     /*      imu_propagate*/

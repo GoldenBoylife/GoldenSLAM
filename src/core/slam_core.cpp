@@ -7,6 +7,9 @@ SlamCore::SlamCore()
 {
     is_first_lidar_ = true;
     lidar_frame_pushed_ = false;
+    debug_map_predicted_ = std::make_shared<CloudT>();
+    debug_map_deskewed_ = std::make_shared<CloudT>();
+ 
 }
  SlamCore::~SlamCore()
  {
@@ -24,16 +27,58 @@ SlamCore::SlamCore()
 
     State predicted_state = current_state_;
     //이번 frame에서만 쓰니까 지역변수
-    imu_processor_.propagate(meas, predicted_state);
+
+    ImuPropagatedPoseHistory imu_pose_history;
+
+    imu_processor_.propagate(meas, predicted_state,imu_pose_history);
     //로봇의 누적되는 상태가 predicted_state로 들어간다. 
     //이 값은 결국 world 좌표계로 tf할때 쓰인다. 
 
-    /*1. transform to World*/
-    auto cloud_world_predicted = transformCloudToWorld(meas.lidar_frame.cloud, predicted_state);
+    
 
-    updateDebugMap(cloud_world_predicted);
+    /*debug*/
+    if(!imu_pose_history.empty()) 
+    {
+        std::cout
+        << "[Undistort prep]"
+        << " pose_count=" << imu_pose_history.size()
+        << " pose_first=" << std::fixed << std::setprecision(9)
+        << imu_pose_history.front().timestamp
+        << " pose_last=" << imu_pose_history.back().timestamp
+        << " lidar_beg=" << meas.lidar_frame.frame_beg_time
+        << " lidar_end=" << meas.lidar_frame.frame_end_time
+        << std::endl;
+    }
+    else
+    {
+        std::cout << "[Undistort prep] imu_pose_history empty" << std::endl;
+    }
 
-    updateFrontendSnapshot(meas, predicted_state, cloud_world_predicted);
+
+   auto cloud_deskewed =
+    pointcloud_deskew_.deskew(
+        meas.lidar_frame,
+        imu_pose_history);
+
+    auto cloud_world_predicted =
+        transformCloudToWorld(
+            meas.lidar_frame.cloud,
+            predicted_state);
+
+    auto cloud_world_deskewed =
+        transformCloudToWorld(
+            cloud_deskewed,
+            predicted_state);
+
+    updateDebugMapPredicted(cloud_world_predicted);
+    updateDebugMapDeskewed(cloud_world_deskewed);
+
+    updateFrontendSnapshot(
+        meas,
+        predicted_state,
+        cloud_world_predicted,
+        cloud_deskewed,
+        cloud_world_deskewed);
 
 
 
@@ -140,11 +185,11 @@ void SlamCore::pushImu(const sensor_msgs::msg::Imu::SharedPtr msg)
     */
    if(last_timestamp_imu_ < current_lidar_frame_.frame_end_time)  
    {
-        std::cout
+        // std::cout
         // << "[syncMeasure] wait imu"
         // << " imu=" << last_timestamp_imu_
         // << " lidar_end=" << current_lidar_frame_.frame_end_time
-        << std::endl;
+        // << std::endl;
 
         return false;
    }
@@ -229,55 +274,98 @@ CloudTPtr SlamCore::transformCloudToWorld(const CloudTConstPtr& cloud, const Sta
 
     return cloud_world;
 }
-
-void SlamCore::updateDebugMap(const CloudTConstPtr& cloud_world)
-{
-    if(!cloud_world || cloud_world->empty()) return;
-
-    if(!debug_map_) 
-    {
-        debug_map_ = std::make_shared<CloudT>();
-    }
-    *debug_map_+= *cloud_world;
-
-    constexpr std::size_t MAX_DEBUG_MAP_POINTS = 300000;
-
-    if (debug_map_->points.size() > MAX_DEBUG_MAP_POINTS)
-    {
-        const std::size_t remove_count =
-            debug_map_->points.size() - MAX_DEBUG_MAP_POINTS;
-
-        debug_map_->points.erase(
-            debug_map_->points.begin(),
-            debug_map_->points.begin() + static_cast<long>(remove_count)
-        );
-    }
-    debug_map_->width =
-        static_cast<std::uint32_t>(debug_map_->points.size());
-    debug_map_->height = 1;
-    debug_map_->is_dense = false;
-}
 void SlamCore::updateFrontendSnapshot(
     const MeasureGroup& meas,
     const State& predicted_state,
-    const CloudTPtr& cloud_world_predicted)
+    const CloudTPtr& cloud_world_predicted,
+    const CloudTPtr& cloud_deskewed,
+    const CloudTPtr& cloud_world_deskewed)
 {
     FrontendSnapshot snapshot;
 
     snapshot.valid = true;
     snapshot.stamp = meas.lidar_frame.frame_end_time;
     snapshot.predicted_state = predicted_state;
+
     snapshot.cloud_world_predicted = cloud_world_predicted;
-    snapshot.debug_map_predicted = debug_map_;
+    snapshot.cloud_deskewed = cloud_deskewed;
+    snapshot.cloud_world_deskewed = cloud_world_deskewed;
+
+    snapshot.debug_map_predicted = debug_map_predicted_;
+    snapshot.debug_map_deskewed = debug_map_deskewed_;
 
     std::lock_guard<std::mutex> lock(snapshot_mutex_);
     latest_frontend_snapshot_ = snapshot;
 }
-
 FrontendSnapshot SlamCore::getFrontendSnapshot() const
 {
     std::lock_guard<std::mutex> lock(snapshot_mutex_);
     return latest_frontend_snapshot_;
 }
 
+void SlamCore::updateDebugMapDeskewed(
+    const CloudTConstPtr& cloud_world)
+{
+    if (!cloud_world || cloud_world->empty()) return;
+
+    if (!debug_map_deskewed_)
+    {
+        debug_map_deskewed_ = std::make_shared<CloudT>();
+    }
+
+    *debug_map_deskewed_ += *cloud_world;
+
+    constexpr std::size_t MAX_DEBUG_MAP_POINTS = 3000000;
+
+    if (debug_map_deskewed_->points.size() > MAX_DEBUG_MAP_POINTS)
+    {
+        const std::size_t remove_count =
+            debug_map_deskewed_->points.size() - MAX_DEBUG_MAP_POINTS;
+
+        debug_map_deskewed_->points.erase(
+            debug_map_deskewed_->points.begin(),
+            debug_map_deskewed_->points.begin() + static_cast<long>(remove_count)
+        );
+    }
+
+    debug_map_deskewed_->width =
+        static_cast<std::uint32_t>(debug_map_deskewed_->points.size());
+    debug_map_deskewed_->height = 1;
+    debug_map_deskewed_->is_dense = false;
+}
+
+
+void SlamCore::updateDebugMapPredicted(
+    const CloudTConstPtr& cloud_world)
+{
+    if (!cloud_world || cloud_world->empty())
+    {
+        return;
+    }
+
+    if (!debug_map_predicted_)
+    {
+        debug_map_predicted_ = std::make_shared<CloudT>();
+    }
+
+    *debug_map_predicted_ += *cloud_world;
+
+    constexpr std::size_t MAX_DEBUG_MAP_POINTS = 300000;
+
+    if (debug_map_predicted_->points.size() > MAX_DEBUG_MAP_POINTS)
+    {
+        const std::size_t remove_count =
+            debug_map_predicted_->points.size() - MAX_DEBUG_MAP_POINTS;
+
+        debug_map_predicted_->points.erase(
+            debug_map_predicted_->points.begin(),
+            debug_map_predicted_->points.begin() + static_cast<long>(remove_count)
+        );
+    }
+
+    debug_map_predicted_->width =
+        static_cast<std::uint32_t>(debug_map_predicted_->points.size());
+    debug_map_predicted_->height = 1;
+    debug_map_predicted_->is_dense = false;
+}
  /*     imu_propagate*/

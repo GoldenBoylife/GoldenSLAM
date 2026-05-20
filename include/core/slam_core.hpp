@@ -8,17 +8,17 @@
 #include <sensor_msgs/msg/imu.hpp>
 
 
-#include "core/slam_core.hpp"
 #include "core/types/pcl_types.hpp"
 #include "core/types/state.hpp"
 #include "core/types/frontend_snapshot.hpp"
+#include "core/pointcloud_deskew.hpp"
 
 #include "core/imu_processor.hpp"
 
 #include <nav_msgs/msg/odometry.hpp>
 #include <sensor_msgs/msg/point_cloud2.hpp>
 
-
+constexpr double  MAX_DEBUG_MAP_POINTS = 3000000; //RViz 상 최대 점 갯수
 class SlamCore
 {
 public:
@@ -45,13 +45,25 @@ private:
     // bool isValidLidarHz();
     /*          syncMeasure*/
 
-    /*imu_propagate*/
-    CloudTPtr transformCloudToWorld(const CloudTConstPtr& cloud, const State& state);
-    void updateDebugMap(const CloudTConstPtr& cloud_world);
-    void updateFrontendSnapshot(const MeasureGroup& meas,const State& predicted_state,const CloudTPtr& cloud_world_predicted);
+    /*imu_propagate + undistortion*/
+    CloudTPtr transformCloudToWorld(
+        const CloudTConstPtr& cloud,
+        const State& state);
 
+    void updateDebugMapPredicted(
+        const CloudTConstPtr& cloud_world);
 
-    /*      imu_propagate*/
+    void updateDebugMapDeskewed(
+        const CloudTConstPtr& cloud_world);
+
+    void updateFrontendSnapshot(
+        const MeasureGroup& meas,
+        const State& predicted_state,
+        const CloudTPtr& cloud_world_predicted,
+        const CloudTPtr& cloud_deskewed,
+        const CloudTPtr& cloud_world_deskewed);
+
+    /*      imu_propagate + undistortion*/
     
 
 private: 
@@ -78,8 +90,13 @@ private:
 
     mutable std::mutex snapshot_mutex_;
     FrontendSnapshot latest_frontend_snapshot_;
-    CloudTPtr debug_map_;   
-
+    CloudTPtr debug_map_predicted_;    //raw cloud 기반 map
+    CloudTPtr debug_map_deskewed_;      //deskewed cloud 기반 map
     /*      imu_propagate*/
+
+    /*undistortion*/
+    PointCloudDeskew pointcloud_deskew_;
+
+    /*      undistortion*/
 
 };

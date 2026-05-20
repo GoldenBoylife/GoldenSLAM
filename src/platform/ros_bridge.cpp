@@ -63,7 +63,19 @@ void RosBridge::setupPublishers()
         this->create_publisher<sensor_msgs::msg::PointCloud2>(
             "/golden_slam/debug_map_predicted", qos);
 
+    cloud_deskewed_pub_ = 
+        this->create_publisher<sensor_msgs::msg::PointCloud2>(
+            "/golden_slam/cloud_deskewed", qos);
 
+    cloud_world_deskewed_pub_ =
+    this->create_publisher<sensor_msgs::msg::PointCloud2>(
+        "/golden_slam/cloud_world_deskewed",
+        qos);
+
+    debug_map_deskewed_pub_ =
+        this->create_publisher<sensor_msgs::msg::PointCloud2>(
+            "/golden_slam/debug_map_deskewed",
+            qos);
 }
 
 void RosBridge::setupTimer()
@@ -195,10 +207,17 @@ void RosBridge::pubFrontendSnapshot(
     //로봇의 위치 자세 pub
 
     pubCloud(
-        snapshot.cloud_world_predicted,
+    snapshot.cloud_world_predicted,
+    snapshot.stamp,
+    "map",
+    cloud_world_pred_pub_
+    );
+
+    pubCloud(
+        snapshot.cloud_world_deskewed,
         snapshot.stamp,
         "map",
-        cloud_world_pred_pub_
+        cloud_world_deskewed_pub_
     );
 
     pubCloud(
@@ -206,6 +225,13 @@ void RosBridge::pubFrontendSnapshot(
         snapshot.stamp,
         "map",
         debug_map_pred_pub_
+    );
+
+    pubCloud(
+        snapshot.debug_map_deskewed,
+        snapshot.stamp,
+        "map",
+        debug_map_deskewed_pub_
     );
 }
 

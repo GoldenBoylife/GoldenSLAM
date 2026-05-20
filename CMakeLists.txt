@@ -132,6 +132,7 @@ add_executable(${PKG_NODE}
   src/core/slam_core.cpp
   src/core/preprocess.cpp
   src/core/imu_processor.cpp
+  src/core/pointcloud_deskew.cpp
   src/platform/ros_bridge.cpp
   
   

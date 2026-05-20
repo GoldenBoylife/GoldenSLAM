@@ -9,7 +9,12 @@ struct FrontendSnapshot
     double stamp = 0.0;
     State predicted_state;
 
-    CloudTPtr cloud_world_predicted;
-    CloudTPtr debug_map_predicted;
+    CloudTConstPtr cloud_world_predicted;
+    CloudTConstPtr cloud_deskewed;
+    CloudTConstPtr cloud_world_deskewed;
+
+    CloudTConstPtr debug_map_predicted;
+    CloudTConstPtr debug_map_deskewed;
+    
     /*나중에 undistort와 iEKF 생기면 추가*/
 };
