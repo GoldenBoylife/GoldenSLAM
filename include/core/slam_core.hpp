@@ -14,11 +14,17 @@
 #include "core/pointcloud_deskew.hpp"
 
 #include "core/imu_processor.hpp"
+#include "core/ikd_tree_map.hpp"
+
 
 #include <nav_msgs/msg/odometry.hpp>
 #include <sensor_msgs/msg/point_cloud2.hpp>
 
+
+
 constexpr double  MAX_DEBUG_MAP_POINTS = 3000000; //RViz 상 최대 점 갯수
+constexpr float MAP_VOXEL_SIZE = 0.2;
+
 class SlamCore
 {
 public:
@@ -46,29 +52,28 @@ private:
     /*          syncMeasure*/
 
     /*imu_propagate + undistortion*/
-    CloudTPtr transformCloudToWorld(
-        const CloudTConstPtr& cloud,
-        const State& state);
+    CloudTPtr transformCloudToWorld(const CloudTConstPtr& cloud,const State& state);
 
-    void updateDebugMapPredicted(
-        const CloudTConstPtr& cloud_world);
+    // void accumulateDebugMap(const CloudTConstPtr& cloud_world);
 
-    void updateDebugMapDeskewed(
-        const CloudTConstPtr& cloud_world);
 
     void updateFrontendSnapshot(
         const MeasureGroup& meas,
         const State& predicted_state,
-        const CloudTPtr& cloud_world_predicted,
-        const CloudTPtr& cloud_deskewed,
-        const CloudTPtr& cloud_world_deskewed);
+        const CloudTPtr& map_cloud);
 
     /*      imu_propagate + undistortion*/
-    
+    /*ikd-tree*/
+    CloudTPtr downsampleCloud(const CloudTConstPtr& cloud, float voxel_size) const;
+    void debugNearestSearch(const CloudTConstPtr& cloud_world);
+    /*      ikd-tree */
+
 
 private: 
     bool is_first_lidar_;
     bool lidar_frame_pushed_;
+
+
     
     /*syncMeasure*/
     
@@ -90,13 +95,16 @@ private:
 
     mutable std::mutex snapshot_mutex_;
     FrontendSnapshot latest_frontend_snapshot_;
-    CloudTPtr debug_map_predicted_;    //raw cloud 기반 map
-    CloudTPtr debug_map_deskewed_;      //deskewed cloud 기반 map
+    // CloudTPtr debug_map_;
     /*      imu_propagate*/
 
     /*undistortion*/
     PointCloudDeskew pointcloud_deskew_;
-
     /*      undistortion*/
 
+    /*ikd-tree*/
+    IkdTreeMap ikd_tree_map_;
+
+    /*      ikd-tree*/
+    
 };

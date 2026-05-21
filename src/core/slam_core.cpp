@@ -3,12 +3,15 @@
 #include "core/slam_core.hpp"
 #include <sensor_msgs/msg/imu.hpp>
 
+#include <pcl/filters/voxel_grid.h>
+
+
 SlamCore::SlamCore() 
 {
     is_first_lidar_ = true;
     lidar_frame_pushed_ = false;
-    debug_map_predicted_ = std::make_shared<CloudT>();
-    debug_map_deskewed_ = std::make_shared<CloudT>();
+    // debug_map_ = std::make_shared<CloudT>();
+
  
 }
  SlamCore::~SlamCore()
@@ -36,51 +39,40 @@ SlamCore::SlamCore()
 
     
 
-    /*debug*/
-    if(!imu_pose_history.empty()) 
-    {
-        std::cout
-        << "[Undistort prep]"
-        << " pose_count=" << imu_pose_history.size()
-        << " pose_first=" << std::fixed << std::setprecision(9)
-        << imu_pose_history.front().timestamp
-        << " pose_last=" << imu_pose_history.back().timestamp
-        << " lidar_beg=" << meas.lidar_frame.frame_beg_time
-        << " lidar_end=" << meas.lidar_frame.frame_end_time
-        << std::endl;
-    }
-    else
-    {
-        std::cout << "[Undistort prep] imu_pose_history empty" << std::endl;
-    }
+    auto cloud_deskewed = pointcloud_deskew_.deskew(meas.lidar_frame,imu_pose_history);
 
 
-   auto cloud_deskewed =
-    pointcloud_deskew_.deskew(
-        meas.lidar_frame,
-        imu_pose_history);
+    auto cloud_downsampled = downsampleCloud(cloud_deskewed, MAP_VOXEL_SIZE);
 
-    auto cloud_world_predicted =
-        transformCloudToWorld(
-            meas.lidar_frame.cloud,
-            predicted_state);
+    size_t input_count = cloud_deskewed->size();
+    size_t output_count = cloud_downsampled->size();
+    
+    // std::cout 
+    //     << "[Downsample] voxel size = " << MAP_VOXEL_SIZE
+    //     << "input = " << input_count 
+    //     << " output = " << output_count 
+    //     << 
+    // std::endl;
 
-    auto cloud_world_deskewed =
-        transformCloudToWorld(
-            cloud_deskewed,
-            predicted_state);
-
-    updateDebugMapPredicted(cloud_world_predicted);
-    updateDebugMapDeskewed(cloud_world_deskewed);
-
-    updateFrontendSnapshot(
-        meas,
-        predicted_state,
-        cloud_world_predicted,
-        cloud_deskewed,
-        cloud_world_deskewed);
+    auto cloud_world = transformCloudToWorld(cloud_downsampled, predicted_state);
 
 
+    debugNearestSearch(cloud_world);
+
+    ikd_tree_map_.insertCloud(cloud_world);
+
+    // std::cout 
+    //     << "[IkdTreeMap]  add= "
+    //     << cloud_world->size()
+    //     << " total = " << ikd_tree_map_.size()
+    //     << std::endl;
+
+
+    // accumulateDebugMap(cloud_world);
+    //
+    updateFrontendSnapshot(meas,predicted_state,ikd_tree_map_.getDisplayMap());
+    //debug_map_ : 실제 cloud 데이터를 누적해서 들고 있는 저장소
+    // FrontendSnapshot은 publish해야 할 최신 결과 묶음.
 
 
     /*나중에 여기서 EKF update*/
@@ -99,7 +91,7 @@ void SlamCore::pushLidarFrame(const LidarFrame& lidar_frame)
 
     // imu_buffer_.push_back(msg);
     lidar_frame_buffer_.push_back(lidar_frame);
-    std::cout << "lidar_buffer_.size(): " << lidar_frame_buffer_.size() <<std::endl;
+    // std::cout << "lidar_buffer_.size(): " << lidar_frame_buffer_.size() <<std::endl;
 
 
 
@@ -251,6 +243,9 @@ void SlamCore::pushImu(const sensor_msgs::msg::Imu::SharedPtr msg)
 CloudTPtr SlamCore::transformCloudToWorld(const CloudTConstPtr& cloud, const State& state)
 {
     auto cloud_world = std::make_shared<CloudT>();
+
+    if(!cloud || cloud->empty()) return cloud_world;
+
     cloud_world->points.reserve(cloud->points.size());
 
     const Eigen::Matrix3d R = state.rotation.toRotationMatrix();
@@ -276,23 +271,19 @@ CloudTPtr SlamCore::transformCloudToWorld(const CloudTConstPtr& cloud, const Sta
 }
 void SlamCore::updateFrontendSnapshot(
     const MeasureGroup& meas,
-    const State& predicted_state,
-    const CloudTPtr& cloud_world_predicted,
-    const CloudTPtr& cloud_deskewed,
-    const CloudTPtr& cloud_world_deskewed)
+    const State& state,
+    const CloudTPtr& map_cloud)
 {
     FrontendSnapshot snapshot;
 
     snapshot.valid = true;
     snapshot.stamp = meas.lidar_frame.frame_end_time;
-    snapshot.predicted_state = predicted_state;
+    snapshot.state = state;
 
-    snapshot.cloud_world_predicted = cloud_world_predicted;
-    snapshot.cloud_deskewed = cloud_deskewed;
-    snapshot.cloud_world_deskewed = cloud_world_deskewed;
-
-    snapshot.debug_map_predicted = debug_map_predicted_;
-    snapshot.debug_map_deskewed = debug_map_deskewed_;
+    if(map_cloud)
+        snapshot.map_cloud = std::make_shared<CloudT>(*map_cloud);
+    else 
+        snapshot.map_cloud = std::make_shared<CloudT>();
 
     std::lock_guard<std::mutex> lock(snapshot_mutex_);
     latest_frontend_snapshot_ = snapshot;
@@ -303,69 +294,84 @@ FrontendSnapshot SlamCore::getFrontendSnapshot() const
     return latest_frontend_snapshot_;
 }
 
-void SlamCore::updateDebugMapDeskewed(
-    const CloudTConstPtr& cloud_world)
-{
-    if (!cloud_world || cloud_world->empty()) return;
+/*누적한다.*/
+// void SlamCore::accumulateDebugMap(const CloudTConstPtr& cloud_world)
+// {
+//     if (!cloud_world || cloud_world->empty())
+//     {
+//         return;
+//     }
 
-    if (!debug_map_deskewed_)
-    {
-        debug_map_deskewed_ = std::make_shared<CloudT>();
-    }
+//     if (!debug_map_)
+//     {
+//         debug_map_ = std::make_shared<CloudT>();
+//     }
 
-    *debug_map_deskewed_ += *cloud_world;
+//     *debug_map_ += *cloud_world;
 
-    constexpr std::size_t MAX_DEBUG_MAP_POINTS = 3000000;
+//     constexpr std::size_t kMaxDebugMapPoints = 300000;
 
-    if (debug_map_deskewed_->points.size() > MAX_DEBUG_MAP_POINTS)
-    {
-        const std::size_t remove_count =
-            debug_map_deskewed_->points.size() - MAX_DEBUG_MAP_POINTS;
+//     if (debug_map_->points.size() > kMaxDebugMapPoints)
+//     {
+//         const std::size_t remove_count =
+//             debug_map_->points.size() - kMaxDebugMapPoints;
 
-        debug_map_deskewed_->points.erase(
-            debug_map_deskewed_->points.begin(),
-            debug_map_deskewed_->points.begin() + static_cast<long>(remove_count)
-        );
-    }
+//         debug_map_->points.erase(
+//             debug_map_->points.begin(),
+//             debug_map_->points.begin() + static_cast<std::ptrdiff_t>(remove_count)
+//         );
+//     }
 
-    debug_map_deskewed_->width =
-        static_cast<std::uint32_t>(debug_map_deskewed_->points.size());
-    debug_map_deskewed_->height = 1;
-    debug_map_deskewed_->is_dense = false;
-}
+//     debug_map_->width = static_cast<std::uint32_t>(debug_map_->points.size());
+//     debug_map_->height = 1;
+//     debug_map_->is_dense = false;
+// }
 
-
-void SlamCore::updateDebugMapPredicted(
-    const CloudTConstPtr& cloud_world)
-{
-    if (!cloud_world || cloud_world->empty())
-    {
-        return;
-    }
-
-    if (!debug_map_predicted_)
-    {
-        debug_map_predicted_ = std::make_shared<CloudT>();
-    }
-
-    *debug_map_predicted_ += *cloud_world;
-
-    constexpr std::size_t MAX_DEBUG_MAP_POINTS = 300000;
-
-    if (debug_map_predicted_->points.size() > MAX_DEBUG_MAP_POINTS)
-    {
-        const std::size_t remove_count =
-            debug_map_predicted_->points.size() - MAX_DEBUG_MAP_POINTS;
-
-        debug_map_predicted_->points.erase(
-            debug_map_predicted_->points.begin(),
-            debug_map_predicted_->points.begin() + static_cast<long>(remove_count)
-        );
-    }
-
-    debug_map_predicted_->width =
-        static_cast<std::uint32_t>(debug_map_predicted_->points.size());
-    debug_map_predicted_->height = 1;
-    debug_map_predicted_->is_dense = false;
-}
  /*     imu_propagate*/
+
+
+ /*ikd-tree*/
+CloudTPtr SlamCore::downsampleCloud(const CloudTConstPtr& cloud, const float voxel_size) const
+{
+    auto cloud_downsampled = std::make_shared<CloudT>();
+
+    if(!cloud || cloud->empty())    return cloud_downsampled;
+
+    if(voxel_size <= 0.0)
+    {
+        *cloud_downsampled = *cloud;
+        return cloud_downsampled;
+    }
+    pcl::VoxelGrid<PointT> voxel_filter;
+    voxel_filter.setInputCloud(cloud);
+    voxel_filter.setLeafSize(voxel_size,voxel_size, voxel_size);
+
+    voxel_filter.filter(*cloud_downsampled);
+
+    return cloud_downsampled;
+}
+
+
+void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
+{
+    if(ikd_tree_map_.empty()) return;
+    if(!cloud_world || cloud_world->empty()) return;
+
+    const PointT& query_point = cloud_world->points.front();
+
+    std::vector<PointT> nearest_points;
+    std::vector<float> squared_distances;
+
+    const bool search_ok = ikd_tree_map_.nearestSearch(query_point,5,nearest_points,squared_distances);
+
+    std::cout << "[IkdTreeMap::NearestSearch]"
+            << " ok = " << search_ok
+            << " found= " << nearest_points.size();
+
+    if(!squared_distances.empty()) 
+    {
+        std::cout << " first_sq_dist = " << squared_distances.front();
+    }
+    std::cout << std::endl;
+}
+ /*     ikd-tree */

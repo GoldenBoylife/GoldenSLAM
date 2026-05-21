@@ -30,7 +30,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: PointCloud2
 Visualization Manager:
   Class: ""
   Displays:
@@ -157,7 +157,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /golden_slam/odom_predicted
+        Value: /golden_slam/odom
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
@@ -174,7 +174,7 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 150
+      Max Intensity: 161
       Min Color: 0; 0; 0
       Min Intensity: 0
       Name: PointCloud2
@@ -189,7 +189,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /golden_slam/debug_map_deskewed
+        Value: /golden_slam/map
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -239,25 +239,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 26.698951721191406
+      Distance: 23.49507713317871
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 2.893004894256592
-        Y: -1.5213348865509033
-        Z: 6.274303913116455
+        X: 2.67138934135437
+        Y: -1.0712239742279053
+        Z: 3.169631242752075
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: -0.0446014329791069
+      Pitch: 0.09539856016635895
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.915395736694336
+      Yaw: 2.965394973754883
     Saved: ~
 Window Geometry:
   Displays:
@@ -275,5 +275,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1200
-  X: 458
-  Y: 31
+  X: 426
+  Y: -1

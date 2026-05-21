@@ -122,13 +122,13 @@ CloudTPtr PointCloudDeskew::deskew( const LidarFrame& lidar_frame,const ImuPropa
     deskewed_cloud->is_dense = false;
 
 
-    std::cout
-        << "[PointCloudDeskew]"
-        << " input=" << lidar_frame.cloud->points.size()
-        << " output=" << deskewed_cloud->points.size()
-        << " skipped=" << skipped_count
-        << " pose_count=" << imu_pose_history.size()
-        << std::endl;
+    // std::cout
+    //     << "[PointCloudDeskew]"
+    //     << " input=" << lidar_frame.cloud->points.size()
+    //     << " output=" << deskewed_cloud->points.size()
+    //     << " skipped=" << skipped_count
+    //     << " pose_count=" << imu_pose_history.size()
+    //     << std::endl;
 
     return deskewed_cloud;
 

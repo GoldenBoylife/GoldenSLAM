@@ -43,7 +43,7 @@ private:
     /*imu_propagate*/
     void pubFrontendSnapshot(const FrontendSnapshot& snapshot);
 
-    void pubPredictedOdom(const State& state, double stamp_sec);
+    void pubOdom(const State& state, double stamp_sec);
     void pubCloud(const CloudTConstPtr& cloud, double stamp_sec, const std::string& frame_id, const rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr& pub);
     builtin_interfaces::msg::Time toRosTime(double stamp_sec) const;
     /*      imu_propagate*/
@@ -75,12 +75,9 @@ private:
 
     /*topic pub*/
     rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr lidar_pub_;
-    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr predicted_odom_pub_;
-    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr cloud_world_pred_pub_;
-    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr cloud_deskewed_pub_;
-    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr debug_map_pred_pub_;
-    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr cloud_world_deskewed_pub_;
-    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr debug_map_deskewed_pub_;
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
+
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr map_pub_;
 
     /*timer*/
     rclcpp::TimerBase::SharedPtr frontend_timer_;

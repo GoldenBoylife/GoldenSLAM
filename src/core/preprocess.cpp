@@ -85,15 +85,15 @@ LidarConvertResult Preprocess::lidarConvert(const livox_ros_driver2::msg::Custom
     }
    }
 
-std::cout
-    << "[Preprocess::lidarConvert]"
-    << " raw=" << msg->point_num
-    << " processed=" << result.cloud->size()
-    << " min_rt=" << min_rt
-    << " max_rt=" << max_rt
-    << " zero_count=" << zero_count
-    << " max_relative_time=" << result.max_relative_time
-    << std::endl;
+// std::cout
+//     << "[Preprocess::lidarConvert]"
+//     << " raw=" << msg->point_num
+//     << " processed=" << result.cloud->size()
+//     << " min_rt=" << min_rt
+//     << " max_rt=" << max_rt
+//     << " zero_count=" << zero_count
+//     << " max_relative_time=" << result.max_relative_time
+//     << std::endl;
 
    return result;
 
