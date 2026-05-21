@@ -133,7 +133,12 @@ add_executable(${PKG_NODE}
   src/core/preprocess.cpp
   src/core/imu_processor.cpp
   src/core/pointcloud_deskew.cpp
+  src/core/ikd_tree_map.cpp
+
+
   src/platform/ros_bridge.cpp
+
+  third_party/ikd_tree/ikd_tree.cpp
   
   
 )
@@ -141,6 +146,7 @@ target_compile_definitions(${PKG_NODE} PRIVATE PCL_NO_PRECOMPILE)
 
 target_include_directories(${PKG_NODE} PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/third_party/ikd_tree
   ${PCL_INCLUDE_DIRS}
   include
   ./

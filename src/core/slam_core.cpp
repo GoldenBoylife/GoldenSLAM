@@ -10,7 +10,7 @@ SlamCore::SlamCore()
 {
     is_first_lidar_ = true;
     lidar_frame_pushed_ = false;
-    debug_map_ = std::make_shared<CloudT>();
+    // debug_map_ = std::make_shared<CloudT>();
 
  
 }
@@ -47,18 +47,30 @@ SlamCore::SlamCore()
     size_t input_count = cloud_deskewed->size();
     size_t output_count = cloud_downsampled->size();
     
-    std::cout 
-        << "[Downsample] voxel size = " << MAP_VOXEL_SIZE
-        << "input = " << input_count 
-        << " output = " << output_count 
-        << 
-    std::endl;
+    // std::cout 
+    //     << "[Downsample] voxel size = " << MAP_VOXEL_SIZE
+    //     << "input = " << input_count 
+    //     << " output = " << output_count 
+    //     << 
+    // std::endl;
 
     auto cloud_world = transformCloudToWorld(cloud_downsampled, predicted_state);
 
-    accumulateDebugMap(cloud_world);
+
+    debugNearestSearch(cloud_world);
+
+    ikd_tree_map_.insertCloud(cloud_world);
+
+    // std::cout 
+    //     << "[IkdTreeMap]  add= "
+    //     << cloud_world->size()
+    //     << " total = " << ikd_tree_map_.size()
+    //     << std::endl;
+
+
+    // accumulateDebugMap(cloud_world);
     //
-    updateFrontendSnapshot(meas,predicted_state,debug_map_);
+    updateFrontendSnapshot(meas,predicted_state,ikd_tree_map_.getDisplayMap());
     //debug_map_ : 실제 cloud 데이터를 누적해서 들고 있는 저장소
     // FrontendSnapshot은 publish해야 할 최신 결과 묶음.
 
@@ -79,7 +91,7 @@ void SlamCore::pushLidarFrame(const LidarFrame& lidar_frame)
 
     // imu_buffer_.push_back(msg);
     lidar_frame_buffer_.push_back(lidar_frame);
-    std::cout << "lidar_buffer_.size(): " << lidar_frame_buffer_.size() <<std::endl;
+    // std::cout << "lidar_buffer_.size(): " << lidar_frame_buffer_.size() <<std::endl;
 
 
 
@@ -283,37 +295,37 @@ FrontendSnapshot SlamCore::getFrontendSnapshot() const
 }
 
 /*누적한다.*/
-void SlamCore::accumulateDebugMap(const CloudTConstPtr& cloud_world)
-{
-    if (!cloud_world || cloud_world->empty())
-    {
-        return;
-    }
+// void SlamCore::accumulateDebugMap(const CloudTConstPtr& cloud_world)
+// {
+//     if (!cloud_world || cloud_world->empty())
+//     {
+//         return;
+//     }
 
-    if (!debug_map_)
-    {
-        debug_map_ = std::make_shared<CloudT>();
-    }
+//     if (!debug_map_)
+//     {
+//         debug_map_ = std::make_shared<CloudT>();
+//     }
 
-    *debug_map_ += *cloud_world;
+//     *debug_map_ += *cloud_world;
 
-    constexpr std::size_t kMaxDebugMapPoints = 300000;
+//     constexpr std::size_t kMaxDebugMapPoints = 300000;
 
-    if (debug_map_->points.size() > kMaxDebugMapPoints)
-    {
-        const std::size_t remove_count =
-            debug_map_->points.size() - kMaxDebugMapPoints;
+//     if (debug_map_->points.size() > kMaxDebugMapPoints)
+//     {
+//         const std::size_t remove_count =
+//             debug_map_->points.size() - kMaxDebugMapPoints;
 
-        debug_map_->points.erase(
-            debug_map_->points.begin(),
-            debug_map_->points.begin() + static_cast<std::ptrdiff_t>(remove_count)
-        );
-    }
+//         debug_map_->points.erase(
+//             debug_map_->points.begin(),
+//             debug_map_->points.begin() + static_cast<std::ptrdiff_t>(remove_count)
+//         );
+//     }
 
-    debug_map_->width = static_cast<std::uint32_t>(debug_map_->points.size());
-    debug_map_->height = 1;
-    debug_map_->is_dense = false;
-}
+//     debug_map_->width = static_cast<std::uint32_t>(debug_map_->points.size());
+//     debug_map_->height = 1;
+//     debug_map_->is_dense = false;
+// }
 
  /*     imu_propagate*/
 
@@ -337,5 +349,29 @@ CloudTPtr SlamCore::downsampleCloud(const CloudTConstPtr& cloud, const float vox
     voxel_filter.filter(*cloud_downsampled);
 
     return cloud_downsampled;
+}
+
+
+void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
+{
+    if(ikd_tree_map_.empty()) return;
+    if(!cloud_world || cloud_world->empty()) return;
+
+    const PointT& query_point = cloud_world->points.front();
+
+    std::vector<PointT> nearest_points;
+    std::vector<float> squared_distances;
+
+    const bool search_ok = ikd_tree_map_.nearestSearch(query_point,5,nearest_points,squared_distances);
+
+    std::cout << "[IkdTreeMap::NearestSearch]"
+            << " ok = " << search_ok
+            << " found= " << nearest_points.size();
+
+    if(!squared_distances.empty()) 
+    {
+        std::cout << " first_sq_dist = " << squared_distances.front();
+    }
+    std::cout << std::endl;
 }
  /*     ikd-tree */

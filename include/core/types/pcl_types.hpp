@@ -25,6 +25,7 @@ using CloudT = pcl::PointCloud<PointT>; //포인트 여러개 모인것
 using CloudTPtr = std::shared_ptr<CloudT>;
 using CloudTConstPtr = std::shared_ptr<const CloudT>;
 //std::shared_ptr<const PointCloudXYZIT> : 읽기 전용 객체 포인터
+//포인터가 가리키는 데이터를 수정하지않고 읽기만 하겠다는 
 
 
 
