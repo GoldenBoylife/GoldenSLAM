@@ -1,7 +1,10 @@
-
-
 #include "core/slam_core.hpp"
-#include <sensor_msgs/msg/imu.hpp>
+
+#include <algorithm>
+#include <cmath>
+#include <cstdint>
+#include <iostream>
+#include <vector>
 
 #include <pcl/filters/voxel_grid.h>
 
@@ -57,7 +60,8 @@ SlamCore::SlamCore()
     auto cloud_world = transformCloudToWorld(cloud_downsampled, predicted_state);
 
 
-    debugNearestSearch(cloud_world);
+    // debugNearestSearch(cloud_world);
+    debugBuildResidualCandidates(cloud_world);
 
     ikd_tree_map_.insertCloud(cloud_world);
 
@@ -364,14 +368,138 @@ void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
 
     const bool search_ok = ikd_tree_map_.nearestSearch(query_point,5,nearest_points,squared_distances);
 
-    std::cout << "[IkdTreeMap::NearestSearch]"
-            << " ok = " << search_ok
-            << " found= " << nearest_points.size();
+    // std::cout << "[IkdTreeMap::NearestSearch]"
+    //         << " ok = " << search_ok
+    //         << " found= " << nearest_points.size();
 
-    if(!squared_distances.empty()) 
-    {
-        std::cout << " first_sq_dist = " << squared_distances.front();
-    }
-    std::cout << std::endl;
+    // if(!squared_distances.empty()) 
+    // {
+    //     std::cout << " first_sq_dist = " << squared_distances.front();
+    // }
+    // std::cout << std::endl;
+
+    EstimatedPlane plane;
+    const bool plane_ok = plane_estimator_.estimate(nearest_points, plane);
+    std::cout << "plane_ok= " << plane_ok << std::endl;
+
+    if(!plane_ok|| !plane.valid)    return;
+
+    const Eigen::Vector3d q(
+        query_point.x,
+        query_point.y,
+        query_point.z
+    );
+
+    const double residual = plane.normal.dot(q) + plane.offset;
+
+
+
+    std::cout
+        << " residual=" << residual
+        << " abs_residual=" << std::abs(residual)
+        << " normal=("
+        << plane.normal.x() << ", "
+        << plane.normal.y() << ", "
+        << plane.normal.z() << ")"
+        << " offset=" << plane.offset
+        << " eig_min=" << plane.smallest_eigenvalue
+        << std::endl;
+    
 }
  /*     ikd-tree */
+
+
+ /*plane_residual */
+    /*현재 cloud에서 residual 후보들을 디버그용으로 만들어보고 통계만 출력하는 함수
+        현재 scan point 몇개 고름
+        ->기존 map에서 nearest search
+        -> 주변 map point로 plane fitting
+        -> point to plane residual 계산
+        -> valid 후보 개수와 residual 평균 최대값 출력
+
+        cloud_world point 하나 선택
+        -> ikd_tree_map_에서 가까운 map point 5개 찾기
+        -> 그 5개로 local plane 추정
+        -> query point가 plane에서 얼마나 떨어졌는지 residual 계산
+        -> 통계 출력
+
+    */
+ void SlamCore::debugBuildResidualCandidates(const CloudTConstPtr& cloud_world)
+{
+    if(ikd_tree_map_.empty()) return;
+    if(!cloud_world || cloud_world->empty())    return;
+
+    constexpr int K_NEAREST = 5; //3개여도 되지만 5개여야 안정적임
+    constexpr std::size_t MAX_QUERY_COUNT = 200;
+
+
+    std::size_t query_count =0;
+    std::size_t search_fail_count =0;
+    std::size_t candidate_fail_count =0;
+    std::size_t valid_count =0;
+
+    double sum_abs_residual =  0.0;
+    double max_abs_residual = 0.0;
+
+    std::vector<ResidualCandidate> candidates;
+    candidates.reserve(MAX_QUERY_COUNT);
+
+
+    /*디버그 단계에서는 모든 point 검사하지 않고 일정 간격으로 샘플링하기 위해서*/
+    // 50개마다 하나씩 뽑음. 즉, 10000개 중에서 200개만 query point로 사용함
+    const std::size_t step =  std::max<std::size_t>(1, cloud_world->points.size() / MAX_QUERY_COUNT); 
+    for(size_t i = 0; i< cloud_world->points.size() ; i+= step)
+    {
+        const PointT& query_point = cloud_world->points[i];
+        ++query_count;
+
+        std::vector<PointT> nearest_points;
+        std::vector<float> squared_distances;
+
+        const bool search_ok = ikd_tree_map_.nearestSearch(query_point, K_NEAREST, nearest_points, squared_distances);
+
+        if(!search_ok || nearest_points.size() <3)
+        {
+            ++search_fail_count;
+            continue;
+        }
+
+        ResidualCandidate candidate;
+
+        const bool candidate_ok = plane_estimator_.buildResidualCandidate(query_point, nearest_points, candidate);
+
+        if(!candidate_ok || !candidate.valid)
+        {
+            ++candidate_fail_count;
+            continue;
+        }
+        candidates.push_back(candidate);
+
+        ++valid_count;
+        sum_abs_residual += candidate.abs_residual;
+
+        if (candidate.abs_residual > max_abs_residual)
+        {
+            max_abs_residual = candidate.abs_residual;
+        }
+    }
+
+    const double mean_abs_residual =
+        valid_count > 0
+            ? sum_abs_residual / static_cast<double>(valid_count)
+            : 0.0;
+
+    std::cout
+        << "[ResidualCandidates]"
+        << " query=" << query_count
+        << " valid=" << valid_count
+        << " search_fail=" << search_fail_count
+        << " candidate_fail=" << candidate_fail_count
+        << " mean_abs=" << mean_abs_residual
+        << " max_abs=" << max_abs_residual
+        << std::endl;
+        
+}
+
+
+ /*     plane_residual */

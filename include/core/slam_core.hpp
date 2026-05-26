@@ -1,25 +1,18 @@
 #pragma once
 
-#include <iostream>
-
+#include <cstddef>
 #include <deque>
 #include <mutex>
 
 #include <sensor_msgs/msg/imu.hpp>
 
-
 #include "core/types/pcl_types.hpp"
 #include "core/types/state.hpp"
 #include "core/types/frontend_snapshot.hpp"
-#include "core/pointcloud_deskew.hpp"
-
 #include "core/imu_processor.hpp"
+#include "core/pointcloud_deskew.hpp"
 #include "core/ikd_tree_map.hpp"
-
-
-#include <nav_msgs/msg/odometry.hpp>
-#include <sensor_msgs/msg/point_cloud2.hpp>
-
+#include "core/plane_estimator.hpp"
 
 
 constexpr double  MAX_DEBUG_MAP_POINTS = 3000000; //RViz 상 최대 점 갯수
@@ -67,7 +60,10 @@ private:
     CloudTPtr downsampleCloud(const CloudTConstPtr& cloud, float voxel_size) const;
     void debugNearestSearch(const CloudTConstPtr& cloud_world);
     /*      ikd-tree */
+    /*plane_residual*/
+    void debugBuildResidualCandidates(const CloudTConstPtr& cloud_world);
 
+    /*      plane_residual*/
 
 private: 
     bool is_first_lidar_;
@@ -106,5 +102,8 @@ private:
     IkdTreeMap ikd_tree_map_;
 
     /*      ikd-tree*/
+    /*plane_residual*/
+    PlaneEstimator plane_estimator_;
+    /*      plane_residual*/
     
 };

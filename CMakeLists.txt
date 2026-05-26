@@ -134,7 +134,7 @@ add_executable(${PKG_NODE}
   src/core/imu_processor.cpp
   src/core/pointcloud_deskew.cpp
   src/core/ikd_tree_map.cpp
-
+  src/core/plane_estimator.cpp
 
   src/platform/ros_bridge.cpp
 
