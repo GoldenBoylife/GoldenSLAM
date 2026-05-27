@@ -209,8 +209,8 @@ IekfUpdateResult IekfUpdater::update(
     */
    /*일단 pose 6DoF에 대한 임시 prior covariance를 부여*/
     constexpr double ROT_PRIOR_VAR = 1e-4;
-    constexpr double POS_PRIOR_VAR = 1e-3;
-    constexpr double MEASUREMENT_VAR = 0.01;
+    constexpr double POS_PRIOR_VAR = 5e-4; // 1e-3, 보수 5e-4
+    constexpr double MEASUREMENT_VAR = 0.02; // 0.01 , 보수 0.02;
 
     Eigen::Matrix<double,6,6> P = Eigen::Matrix<double,6,6>::Zero();
 

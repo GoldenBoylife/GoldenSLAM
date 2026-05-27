@@ -3,6 +3,8 @@
 #include <cstddef>
 #include <deque>
 #include <mutex>
+#include <vector>
+#include <Eigen/Dense>
 
 #include <sensor_msgs/msg/imu.hpp>
 
@@ -19,7 +21,40 @@
 constexpr double  MAX_DEBUG_MAP_POINTS = 3000000; //RViz 상 최대 점 갯수
 constexpr float MAP_VOXEL_SIZE = 0.2;
 
+static constexpr double MAX_IEKF_DX_ROT_NORM = 0.010; // rad, 약 0.57도
+static constexpr double MAX_IEKF_DX_POS_NORM = 0.050;  // meter, 5cm
 
+static constexpr double MAX_IEKF_MEAN_ABS_RESIDUAL = 0.08;
+static constexpr double MAX_IEKF_MAX_ABS_RESIDUAL = 0.20;
+
+static constexpr std::size_t MIN_IEKF_RESIDUAL_COUNT = 100;
+static constexpr float MAX_NEAREST_POINT_DISTANCE = 1.0f; // meter
+static constexpr float MAX_NEAREST_POINT_SQ_DISTANCE = MAX_NEAREST_POINT_DISTANCE * MAX_NEAREST_POINT_DISTANCE;
+
+
+
+struct ResidualCandidateBuildResult
+{
+    std::vector<ResidualCandidate> residuals;
+
+    std::size_t query_count = 0;
+    std::size_t valid_count = 0;
+    std::size_t search_fail_count = 0;
+    std::size_t candidate_fail_count = 0;
+
+    double mean_abs_residual = 0.0;
+    double max_abs_residual = 0.0;
+};
+
+enum class FrontendUpdateMode
+{
+    PredictionOnly,
+    ShadowOnly,
+    ApplyCorrection
+};
+
+static constexpr FrontendUpdateMode FRONTEND_UPDATE_MODE = FrontendUpdateMode::ApplyCorrection;
+static constexpr std::size_t SHADOW_ONLY_BOOTSTRAP_MAP_FRAMES = 10;
 
 class SlamCore
 {
@@ -64,7 +99,7 @@ private:
     void debugNearestSearch(const CloudTConstPtr& cloud_world);
     /*      ikd-tree */
     /*plane_residual*/
-    IekfUpdateResult debugBuildResidualCandidates(
+    IekfUpdateResult runPoseOnlyIekfShadowUpdate(
         const CloudTConstPtr& cloud_body,
         const CloudTConstPtr& cloud_world,
         const State& predicted_state,
@@ -72,6 +107,15 @@ private:
     
 
     /*      plane_residual*/
+
+    /*iekf*/
+    ResidualCandidateBuildResult buildResidualCandidates(
+        const CloudTConstPtr& cloud_body,
+        const CloudTConstPtr& cloud_world);
+
+    Eigen::Vector3d transformLidarPointToBodyEigen(const PointT& point_lidar) const;
+    PointT transformLidarPointToBodyPoint(const PointT& point_lidar) const;
+    /*      iekf*/
 
 private: 
     bool is_first_lidar_;
@@ -116,6 +160,13 @@ private:
 
     /*iEFK*/
     IekfUpdater iekf_updater_;
+
+    Eigen::Matrix3d R_body_lidar_;
+    Eigen::Vector3d t_body_lidar_;
+
+
+    std::size_t frontend_frame_count_;
+    std::size_t map_insert_count_;
     /*      iEKF */
     
 };

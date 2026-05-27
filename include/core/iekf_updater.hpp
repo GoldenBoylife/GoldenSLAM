@@ -20,6 +20,20 @@ struct IekfUpdateResult
     double dx_rot_norm = 0.0;
     double dx_pos_norm = 0.0;
 
+
+    bool shadow_checked = false;
+    bool shadow_valid_kept = false;
+    bool shadow_mean_improved = false;
+    bool shadow_mean_improved_enough = false;
+
+    std::size_t shadow_before_valid = 0;
+    std::size_t shadow_after_valid = 0;
+
+    double shadow_before_mean_abs = 0.0;
+    double shadow_after_mean_abs = 0.0;
+    double shadow_before_max_abs = 0.0;
+    double shadow_after_max_abs = 0.0;
+
 };
 
 class IekfUpdater
