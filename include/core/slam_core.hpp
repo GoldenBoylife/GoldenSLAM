@@ -13,10 +13,13 @@
 #include "core/pointcloud_deskew.hpp"
 #include "core/ikd_tree_map.hpp"
 #include "core/plane_estimator.hpp"
+#include "core/iekf_updater.hpp"
 
 
 constexpr double  MAX_DEBUG_MAP_POINTS = 3000000; //RViz 상 최대 점 갯수
 constexpr float MAP_VOXEL_SIZE = 0.2;
+
+
 
 class SlamCore
 {
@@ -61,7 +64,12 @@ private:
     void debugNearestSearch(const CloudTConstPtr& cloud_world);
     /*      ikd-tree */
     /*plane_residual*/
-    void debugBuildResidualCandidates(const CloudTConstPtr& cloud_world);
+    IekfUpdateResult debugBuildResidualCandidates(
+        const CloudTConstPtr& cloud_body,
+        const CloudTConstPtr& cloud_world,
+        const State& predicted_state,
+        State& corrected_state);
+    
 
     /*      plane_residual*/
 
@@ -105,5 +113,9 @@ private:
     /*plane_residual*/
     PlaneEstimator plane_estimator_;
     /*      plane_residual*/
+
+    /*iEFK*/
+    IekfUpdater iekf_updater_;
+    /*      iEKF */
     
 };

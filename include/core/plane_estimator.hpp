@@ -26,25 +26,47 @@ struct EstimatedPlane
 
 
 /*scan point 하나에 대하여 만들어진 residual 후보 1개 */
+// + : query_point가 지금은 world 좌표계 point처럼 쓰이고 있지만, iEKF jacobian만들려면 보통 body 좌표계의 point도 필요함.
+//      따라서 point_body, point_world, normal, residual함께 저장해서 iEKF update 입력 형태로 정리한다.
+//      각 scan point 주변의 가까운 map point들로 local plane을 하나씩 만듬
+
+
 struct ResidualCandidate
 {
-    PointT query_point;
+
+    Eigen::Vector3d point_body = Eigen::Vector3d::Zero();
+    //scan end/body 좌표계 기준 point
+    //나중에 Jacobian 계산에 사용
+
+    Eigen::Vector3d point_world = Eigen::Vector3d::Zero();
+    //world 좌표계로 변환된 point
+    //현재 residual 계산에 사용
+
+
+    // PointT query_point; // 디버그용
     Eigen::Vector3d normal = Eigen::Vector3d::Zero();
+    //map local plane 정보
 
     double offset = 0.0;
+    //map plane에 대한 d값
     double residual = 0.0;
+    //iEKF measurement에 사용할 값
+
     double abs_residual = 0.0;
     double plane_eig_min = 0.0;
 
     bool valid = false;
 };
-static constexpr double MAX_ABS_RESIDUAL = 1.0;  // 1.0 이상 거리 되면 제외
-static constexpr double MAX_PLANE_EIG_MIN = 0.05; // 0.05이상이면 평면성이 약해서 제외
 
 class PlaneEstimator
 {
 public:
     bool estimate( const std::vector<PointT>& points, EstimatedPlane& plane) const;
     
-    bool buildResidualCandidate(const PointT& query_point, const std::vector<PointT>& nearest_points, ResidualCandidate& candidate) const;
+    bool buildResidualCandidate(
+        const PointT& query_point_body,
+        const PointT& query_point_world,
+        const std::vector<PointT>& nearest_points, 
+        const std::vector<float>& squared_distances,
+        ResidualCandidate& candidate) const;
 };

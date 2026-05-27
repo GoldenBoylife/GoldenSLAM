@@ -1,4 +1,6 @@
 #include "core/plane_estimator.hpp"
+static constexpr double MAX_ABS_RESIDUAL = 0.2;  // 0.3 이상 거리 되면 제외
+static constexpr double MAX_PLANE_EIG_MIN = 0.01; // 0.05이상이면 평면성이 약해서 제외
 
 /*
 estimate 
@@ -102,8 +104,29 @@ bool PlaneEstimator::estimate(const std::vector<PointT>& points, EstimatedPlane&
      return true;
 }
 
-bool PlaneEstimator::buildResidualCandidate(const PointT& query_point, const std::vector<PointT>& nearest_points, ResidualCandidate& candidate) const
+bool PlaneEstimator::buildResidualCandidate(
+    const PointT& query_point_body,
+    const PointT& query_point_world,
+    const std::vector<PointT>& nearest_points, 
+    const std::vector<float>& squared_distances,
+    ResidualCandidate& candidate) const
 {
+
+    static constexpr double MAX_NEAREST_DIST = 0.8; // meter
+    static constexpr double MAX_NEAREST_SQ_DIST =
+        MAX_NEAREST_DIST * MAX_NEAREST_DIST;
+
+    if (nearest_points.size() < 5)
+    {
+        return false;
+    }
+
+    if (squared_distances.size() >= 5 &&
+        squared_distances[4] > MAX_NEAREST_SQ_DIST)
+    {
+        return false;
+    }
+
     candidate = ResidualCandidate{};
     //후보 초기화
 
@@ -115,9 +138,10 @@ bool PlaneEstimator::buildResidualCandidate(const PointT& query_point, const std
     if(!plane_ok || !plane.valid)   return false;
     //추정 실패: plane 추정 실패
 
-    const Eigen::Vector3d q(query_point.x, query_point.y, query_point.z);
+    const Eigen::Vector3d pw(query_point_world.x, query_point_world.y, query_point_world.z);
+    const Eigen::Vector3d pb(query_point_body.x, query_point_body.y, query_point_body.z);
 
-    const double residual = plane.normal.dot(q) + plane.offset;
+    const double residual = plane.normal.dot(pw) + plane.offset;
     //거리 차이 
     const double abs_residual = std::abs(residual);
 
@@ -126,7 +150,10 @@ bool PlaneEstimator::buildResidualCandidate(const PointT& query_point, const std
     if(plane.smallest_eigenvalue > MAX_PLANE_EIG_MIN)       return false;
     if(abs_residual > MAX_ABS_RESIDUAL)     return false;
 
-    candidate.query_point = query_point;
+    candidate.point_body = pb;
+    candidate.point_world = pw;
+
+    // candidate.query_point = query_point;
     candidate.normal = plane.normal;
     candidate.offset = plane.offset;
     candidate.residual = residual;

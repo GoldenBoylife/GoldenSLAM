@@ -8,6 +8,12 @@
 
 #include <pcl/filters/voxel_grid.h>
 
+static constexpr  double MAX_IEKF_DX_ROT_NORM = 0.01; //rad, 0.05 :  2.8도,  0.01 : 0.57도
+static constexpr double MAX_IEKF_DX_POS_NORM = 0.05; //meter
+static constexpr double MAX_IEKF_MEAN_ABS_RESIDUAL = 0.07;
+static constexpr double MAX_IEKF_MAX_ABS_RESIDUAL = 0.25;
+static constexpr double MIN_IEKF_VALID_RATIO = 0.80;
+
 
 SlamCore::SlamCore() 
 {
@@ -40,10 +46,19 @@ SlamCore::SlamCore()
     //로봇의 누적되는 상태가 predicted_state로 들어간다. 
     //이 값은 결국 world 좌표계로 tf할때 쓰인다. 
 
-    
+    if (!imu_processor_.isInitialized())
+{
+    current_state_ = predicted_state;
+    return;
+}
+
 
     auto cloud_deskewed = pointcloud_deskew_.deskew(meas.lidar_frame,imu_pose_history);
-
+if (!cloud_deskewed || cloud_deskewed->empty())
+{
+    current_state_ = predicted_state;
+    return;
+}
 
     auto cloud_downsampled = downsampleCloud(cloud_deskewed, MAP_VOXEL_SIZE);
 
@@ -57,34 +72,116 @@ SlamCore::SlamCore()
     //     << 
     // std::endl;
 
-    auto cloud_world = transformCloudToWorld(cloud_downsampled, predicted_state);
+    auto cloud_world_predicted  = transformCloudToWorld(cloud_downsampled, predicted_state);
 
+
+    State corrected_state = predicted_state;
 
     // debugNearestSearch(cloud_world);
-    debugBuildResidualCandidates(cloud_world);
+    const auto update_result = debugBuildResidualCandidates(cloud_downsampled,cloud_world_predicted,predicted_state, corrected_state);
+
+    State frontend_state = predicted_state;
+    bool use_corrected_state = false;
+
+    std::cout
+        << "[FrontendState]"
+        << " updated=" << update_result.updated
+        << " use_corrected=" << use_corrected_state
+        << " residual_count=" << update_result.residual_count
+        << " mean_abs=" << update_result.mean_abs_residual
+        << " max_abs=" << update_result.max_abs_residual
+        << " dx_rot_norm=" << update_result.dx_rot_norm
+        << " dx_pos_norm=" << update_result.dx_pos_norm
+        << std::endl;
+
+    auto cloud_world =
+        transformCloudToWorld(
+            cloud_downsampled,
+            frontend_state);
 
     ikd_tree_map_.insertCloud(cloud_world);
 
-    // std::cout 
-    //     << "[IkdTreeMap]  add= "
-    //     << cloud_world->size()
-    //     << " total = " << ikd_tree_map_.size()
-    //     << std::endl;
+    updateFrontendSnapshot(
+        meas,
+        frontend_state,
+        ikd_tree_map_.getDisplayMap());
+
+    current_state_ = frontend_state;
+    // /*rejected 된것은 map아 안넣기 위해서*/
+    // static int rejected_insert_counter = 0;
+
+    // const bool enough_residuals =
+    //     update_result.residual_count >= 80;
+
+    // const bool unstable_reject =
+    //     update_result.updated && !use_corrected_state && enough_residuals;
+
+    // const bool frontier_or_lost =
+    //     !enough_residuals;
+
+    // bool insert_map = false;
+
+    // if (use_corrected_state)
+    // {
+    //     insert_map = true;
+    //     rejected_insert_counter = 0;
+    // }
+    // else if (frontier_or_lost)
+    // {
+    //     // 기존 map과 대응이 부족한 상태.
+    //     // 새 영역으로 들어가는 중일 수 있으므로 map을 완전히 막으면 안 됨.
+    //     ++rejected_insert_counter;
+
+    //     // 너무 많이 넣으면 다시 흐려지므로 몇 frame에 한 번만 seed로 넣는다.
+    //     insert_map = (rejected_insert_counter % 3 == 0);
+    // }
+    // else if (unstable_reject)
+    // {
+    //     // 대응은 충분한데 correction이 너무 큼.
+    //     // 이 경우는 map 오염 가능성이 높으므로 skip.
+    //     insert_map = false;
+    // }
+    // else
+    // {
+    //     insert_map = true;
+    // }
+
+    // if (insert_map)
+    // {
+    //     ikd_tree_map_.insertCloud(cloud_world);
+    // }
+    // else
+    // {
+    //     std::cout
+    //         << "[MapUpdate] skip insert"
+    //         << " residuals=" << update_result.residual_count
+    //         << " use_corrected=" << use_corrected_state
+    //         << " dx_rot_norm=" << update_result.dx_rot_norm
+    //         << " dx_pos_norm=" << update_result.dx_pos_norm
+    //         << std::endl;
+    // }
+
+    //     // std::cout 
+    //     //     << "[IkdTreeMap]  add= "
+    //     //     << cloud_world->size()
+    //     //     << " total = " << ikd_tree_map_.size()
+    //     //     << std::endl;
 
 
-    // accumulateDebugMap(cloud_world);
-    //
-    updateFrontendSnapshot(meas,predicted_state,ikd_tree_map_.getDisplayMap());
-    //debug_map_ : 실제 cloud 데이터를 누적해서 들고 있는 저장소
-    // FrontendSnapshot은 publish해야 할 최신 결과 묶음.
+    //     // accumulateDebugMap(cloud_world);
+    //     //
+    //     updateFrontendSnapshot(meas,frontend_state,ikd_tree_map_.getDisplayMap());
+    //     //debug_map_ : 실제 cloud 데이터를 누적해서 들고 있는 저장소
+    //     // FrontendSnapshot은 publish해야 할 최신 결과 묶음.
 
 
-    /*나중에 여기서 EKF update*/
+    //     /*나중에 여기서 EKF update*/
 
-    current_state_ = predicted_state;
-    //current_state_ 는 로봇의 누적되는 상태이므로 전역변수로 해야함. 
+    //     current_state_ = frontend_state;
+    //     //current_state_ 는 로봇의 누적되는 상태이므로 전역변수로 해야함. 
 
-    //EKF없이 예측값을 현재 상태로 임시 사용
+    //     //EKF없이 예측값을 현재 상태로 임시 사용
+
     
  }
 
@@ -424,16 +521,27 @@ void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
         -> 통계 출력
 
     */
- void SlamCore::debugBuildResidualCandidates(const CloudTConstPtr& cloud_world)
+IekfUpdateResult  SlamCore::debugBuildResidualCandidates(
+    const CloudTConstPtr& cloud_body,
+    const CloudTConstPtr& cloud_world,
+    const State& predicted_state,
+    State& corrected_state
+)
 {
-    if(ikd_tree_map_.empty()) return;
-    if(!cloud_world || cloud_world->empty())    return;
+    corrected_state  = predicted_state;
+    IekfUpdateResult empty_result;
+
+    if(ikd_tree_map_.empty()) return empty_result;
+    if(!cloud_body || cloud_body->empty())    return empty_result ;
+    if(!cloud_world || cloud_world->empty())    return empty_result ;
 
     constexpr int K_NEAREST = 5; //3개여도 되지만 5개여야 안정적임
     constexpr std::size_t MAX_QUERY_COUNT = 200;
 
 
-    std::size_t query_count =0;
+
+
+    int query_count =0;
     std::size_t search_fail_count =0;
     std::size_t candidate_fail_count =0;
     std::size_t valid_count =0;
@@ -450,13 +558,18 @@ void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
     const std::size_t step =  std::max<std::size_t>(1, cloud_world->points.size() / MAX_QUERY_COUNT); 
     for(size_t i = 0; i< cloud_world->points.size() ; i+= step)
     {
-        const PointT& query_point = cloud_world->points[i];
+        // const PointT& query_point = cloud_world->points[i];
+        const PointT& query_point_body = cloud_body->points[i];
+        const PointT& query_point_world = cloud_world->points[i];
+
         ++query_count;
 
         std::vector<PointT> nearest_points;
         std::vector<float> squared_distances;
 
-        const bool search_ok = ikd_tree_map_.nearestSearch(query_point, K_NEAREST, nearest_points, squared_distances);
+
+
+        const bool search_ok = ikd_tree_map_.nearestSearch(query_point_world, K_NEAREST, nearest_points, squared_distances);
 
         if(!search_ok || nearest_points.size() <3)
         {
@@ -466,7 +579,7 @@ void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
 
         ResidualCandidate candidate;
 
-        const bool candidate_ok = plane_estimator_.buildResidualCandidate(query_point, nearest_points, candidate);
+        const bool candidate_ok = plane_estimator_.buildResidualCandidate(query_point_body, query_point_world, nearest_points,squared_distances, candidate);
 
         if(!candidate_ok || !candidate.valid)
         {
@@ -474,6 +587,7 @@ void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
             continue;
         }
         candidates.push_back(candidate);
+
 
         ++valid_count;
         sum_abs_residual += candidate.abs_residual;
@@ -490,7 +604,7 @@ void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
             : 0.0;
 
     std::cout
-        << "[ResidualCandidates]"
+        << "[IekfResidualData]"
         << " query=" << query_count
         << " valid=" << valid_count
         << " search_fail=" << search_fail_count
@@ -499,6 +613,14 @@ void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
         << " max_abs=" << max_abs_residual
         << std::endl;
         
+    /*iEKF에 cadidate residual 넣고 jacobian 결과값 받기*/
+    
+    const auto update_result = iekf_updater_.update(predicted_state, candidates, corrected_state);
+
+    
+    return update_result;
+
+
 }
 
 
