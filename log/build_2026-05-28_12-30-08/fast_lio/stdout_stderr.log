@@ -1,0 +1,77 @@
+[  2%] Built target fast_lio__rs
+[  5%] Built target fast_lio__cpp
+[ 12%] Built target fast_lio__rosidl_generator_c
+[ 12%] Built target ament_cmake_python_copy_fast_lio
+[ 20%] Built target fast_lio__rosidl_typesupport_cpp
+[ 28%] Built target fast_lio__rosidl_typesupport_fastrtps_cpp
+[ 35%] Built target fast_lio__rosidl_typesupport_introspection_cpp
+[ 51%] Built target fast_lio__rosidl_typesupport_fastrtps_c
+[ 51%] Built target fast_lio__rosidl_typesupport_introspection_c
+[ 58%] Built target fast_lio__rosidl_typesupport_c
+[ 58%] Built target fast_lio
+[ 61%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o
+[ 64%] Built target fast_lio__py
+[ 66%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o
+[ 69%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o
+[ 74%] Built target fast_lio__rosidl_generator_py
+[ 89%] Built target fast_lio__rosidl_typesupport_c__pyext
+[ 89%] Built target fast_lio__rosidl_typesupport_introspection_c__pyext
+[ 89%] Built target fast_lio__rosidl_typesupport_fastrtps_c__pyext
+running egg_info
+writing fast_lio.egg-info/PKG-INFO
+writing dependency_links to fast_lio.egg-info/dependency_links.txt
+writing top-level names to fast_lio.egg-info/top_level.txt
+reading manifest file 'fast_lio.egg-info/SOURCES.txt'
+writing manifest file 'fast_lio.egg-info/SOURCES.txt'
+[ 89%] Built target ament_cmake_python_build_fast_lio_egg
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::onStandardLidarCB(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::UniquePtr)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:194:23: error: ‘_get_time_sec’ was not declared in this scope; did you mean ‘__get_time_sec’?
+  194 |     double cur_time = _get_time_sec(msg->header.stamp);
+      |                       ^~~~~~~~~~~~~
+      |                       __get_time_sec
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::onLivoxLidarCB(livox_ros_driver2::msg::CustomMsg_<std::allocator<void> >::UniquePtr)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:205:23: error: ‘_get_time_sec’ was not declared in this scope; did you mean ‘__get_time_sec’?
+  205 |     double cur_time = _get_time_sec(msg->header.stamp);
+      |                       ^~~~~~~~~~~~~
+      |                       __get_time_sec
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::publishOdometry(const SlamSnapshot&)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:279:38: error: ‘_get_ros_time’ was not declared in this scope; did you mean ‘__get_ros_time’?
+  279 |     odomAftMapped_.header.stamp    = _get_ros_time(snap.lidar_end_time);
+      |                                      ^~~~~~~~~~~~~
+      |                                      __get_ros_time
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::publishPath(const SlamSnapshot&)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:313:38: error: ‘_get_ros_time’ was not declared in this scope; did you mean ‘__get_ros_time’?
+  313 |     msg_body_pose_.header.stamp    = _get_ros_time(snap.lidar_end_time);
+      |                                      ^~~~~~~~~~~~~
+      |                                      __get_ros_time
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::publishFrameWorld(const SlamSnapshot&)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:350:37: error: ‘_get_ros_time’ was not declared in this scope; did you mean ‘__get_ros_time’?
+  350 |     laserCloudmsg.header.stamp    = _get_ros_time(snap.lidar_end_time);
+      |                                     ^~~~~~~~~~~~~
+      |                                     __get_ros_time
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::publishFrameBody(const SlamSnapshot&)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:374:37: error: ‘_get_ros_time’ was not declared in this scope; did you mean ‘__get_ros_time’?
+  374 |     laserCloudmsg.header.stamp    = _get_ros_time(snap.lidar_end_time);
+      |                                     ^~~~~~~~~~~~~
+      |                                     __get_ros_time
+In file included from /usr/include/boost/bind.hpp:30,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/IKFoM_toolkit/esekfom/esekfom.hpp:42,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/use-ikfom.hpp:4,
+                 from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:16:
+/usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.’
+   36 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::publishEffectWorld(const SlamSnapshot&)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:397:27: error: ‘_get_ros_time’ was not declared in this scope; did you mean ‘__get_ros_time’?
+  397 |     msg.header.stamp    = _get_ros_time(snap.lidar_end_time);
+      |                           ^~~~~~~~~~~~~
+      |                           __get_ros_time
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::publishMap(const SlamSnapshot&)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:409:37: error: ‘_get_ros_time’ was not declared in this scope; did you mean ‘__get_ros_time’?
+  409 |     laserCloudmsg.header.stamp    = _get_ros_time(snap.lidar_end_time);
+      |                                     ^~~~~~~~~~~~~
+      |                                     __get_ros_time
+gmake[2]: *** [CMakeFiles/fastlio_mapping.dir/build.make:118: CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o] 오류 1
+gmake[2]: *** 끝나지 않은 작업을 기다리고 있습니다....
+gmake[1]: *** [CMakeFiles/Makefile2:612: CMakeFiles/fastlio_mapping.dir/all] 오류 2
+gmake: *** [Makefile:146: all] 오류 2

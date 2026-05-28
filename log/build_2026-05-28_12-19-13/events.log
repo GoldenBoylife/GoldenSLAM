@@ -1,0 +1,753 @@
+[0.000000] (-) TimerEvent: {}
+[0.000084] (fast_lio) JobQueued: {'identifier': 'fast_lio', 'dependencies': OrderedDict()}
+[0.000538] (fast_lio) JobStarted: {'identifier': 'fast_lio'}
+[0.006952] (fast_lio) JobProgress: {'identifier': 'fast_lio', 'progress': 'cmake'}
+[0.008404] (fast_lio) Command: {'cmd': ['/usr/bin/cmake', '/home/goldenboy/git_version/GoldenSLAM', '-DCMAKE_INSTALL_PREFIX=/home/goldenboy/git_version/GoldenSLAM/install/fast_lio'], 'cwd': '/home/goldenboy/git_version/GoldenSLAM/build/fast_lio', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-152_agent'), ('USER', 'goldenboy'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('GIT_EDITOR', 'true'), ('VSCODE_WSL_EXT_LOCATION', '/mnt/c/Users/hwido/.vscode/extensions/ms-vscode-remote.remote-wsl-0.104.3'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.152'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/goldenboy'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-675e2777-4e54-4330-906d-89a7958e8675.sock'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'goldenboy'), ('NAME', 'Gini'), ('WSL_INTEROP', '/run/WSL/423_interop'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/goldenboy/.local/bin:/home/goldenboy/.local/bin:/home/goldenboy/dev-tools/flutter/bin:/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/bin/remote-cli:/home/goldenboy/.local/bin:/home/goldenboy/.local/bin:/home/goldenboy/dev-tools/flutter/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/STMicroelectronics/stlink_server:/mnt/c/ST/STM32CubeCLT_1.18.0:/mnt/c/ST/STM32CubeCLT_1.18.0/CMake/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/Ninja/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STLink-gdb-server/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STM32CubeProgrammer/bin:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/PuTTY/:/mnt/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/CMake/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/NVIDIA Corporation/SDK Manager:/mnt/c/Program Files/usbipd-win/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/hwido/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hwido/Development/flutter/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/snap/bin:/home/goldenboy/dev-tools/androidSDK/cmdline-tools/latest/bin:/home/goldenboy/dev-tools/androidSDK/platform-tools:/home/goldenboy/dev-tools/androidSDK/cmdline-tools/latest/bin:/home/goldenboy/dev-tools/androidSDK/platform-tools'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':0'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', '52d57278-11e0-4c5f-9517-32664ec3d6de'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('PWD', '/home/goldenboy/git_version/GoldenSLAM/build/fast_lio'), ('ANDROID_HOME', '/home/goldenboy/dev-tools/androidSDK'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/goldenboy/.vscode-server/extensions/anthropic.claude-code-2.1.152-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[0.099839] (-) TimerEvent: {}
+[0.139624] (fast_lio) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.199902] (-) TimerEvent: {}
+[0.300063] (-) TimerEvent: {}
+[0.359912] (fast_lio) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.400125] (-) TimerEvent: {}
+[0.498220] (fast_lio) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.500178] (-) TimerEvent: {}
+[0.590830] (fast_lio) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.594032] (fast_lio) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.594322] (fast_lio) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.594728] (fast_lio) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.596664] (fast_lio) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.600227] (-) TimerEvent: {}
+[0.665454] (fast_lio) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.668638] (fast_lio) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.668846] (fast_lio) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.669022] (fast_lio) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.669290] (fast_lio) StdoutLine: {'line': b'-- Current CPU architecture: x86_64\n'}
+[0.672316] (fast_lio) StdoutLine: {'line': b'-- Processor count: 24\n'}
+[0.672443] (fast_lio) StdoutLine: {'line': b'-- OMP cores for MP: 3\n'}
+[0.700330] (-) TimerEvent: {}
+[0.800494] (-) TimerEvent: {}
+[0.900655] (-) TimerEvent: {}
+[1.000815] (-) TimerEvent: {}
+[1.100994] (-) TimerEvent: {}
+[1.159657] (fast_lio) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found version "3.10.12") \n'}
+[1.163879] (fast_lio) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.201073] (-) TimerEvent: {}
+[1.235688] (fast_lio) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.297551] (fast_lio) StdoutLine: {'line': b'-- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.301111] (-) TimerEvent: {}
+[1.346000] (fast_lio) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.349415] (fast_lio) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.356019] (fast_lio) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.366391] (fast_lio) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.377516] (fast_lio) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.401203] (-) TimerEvent: {}
+[1.409541] (fast_lio) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.411798] (fast_lio) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.501278] (-) TimerEvent: {}
+[1.601443] (-) TimerEvent: {}
+[1.701608] (-) TimerEvent: {}
+[1.801748] (-) TimerEvent: {}
+[1.901925] (-) TimerEvent: {}
+[2.002104] (-) TimerEvent: {}
+[2.102277] (-) TimerEvent: {}
+[2.202448] (-) TimerEvent: {}
+[2.277034] (fast_lio) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[2.302537] (-) TimerEvent: {}
+[2.402703] (-) TimerEvent: {}
+[2.502825] (-) TimerEvent: {}
+[2.602984] (-) TimerEvent: {}
+[2.703145] (-) TimerEvent: {}
+[2.803291] (-) TimerEvent: {}
+[2.892206] (fast_lio) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[2.903362] (-) TimerEvent: {}
+[3.003499] (-) TimerEvent: {}
+[3.103675] (-) TimerEvent: {}
+[3.203820] (-) TimerEvent: {}
+[3.303995] (-) TimerEvent: {}
+[3.404168] (-) TimerEvent: {}
+[3.504339] (-) TimerEvent: {}
+[3.604489] (-) TimerEvent: {}
+[3.704657] (-) TimerEvent: {}
+[3.804827] (-) TimerEvent: {}
+[3.904968] (-) TimerEvent: {}
+[3.938305] (fast_lio) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[3.953218] (fast_lio) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[4.005070] (-) TimerEvent: {}
+[4.013310] (fast_lio) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[4.013524] (fast_lio) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[4.089924] (fast_lio) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[4.090483] (fast_lio) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[4.105144] (-) TimerEvent: {}
+[4.129545] (fast_lio) StdoutLine: {'line': b'-- Found rclcpp_components: 16.0.18 (/opt/ros/humble/share/rclcpp_components/cmake)\n'}
+[4.149674] (fast_lio) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[4.160518] (fast_lio) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[4.173001] (fast_lio) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[4.185049] (fast_lio) StdoutLine: {'line': b'-- Found std_srvs: 4.9.1 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[4.193032] (fast_lio) StdoutLine: {'line': b'-- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[4.205231] (-) TimerEvent: {}
+[4.206715] (fast_lio) StdoutLine: {'line': b'-- Found pcl_ros: 2.4.5 (/opt/ros/humble/share/pcl_ros/cmake)\n'}
+[4.234712] (fast_lio) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[4.239920] (fast_lio) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[4.252878] (fast_lio) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[4.253026] (fast_lio) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[4.305305] (-) TimerEvent: {}
+[4.405455] (-) TimerEvent: {}
+[4.505624] (-) TimerEvent: {}
+[4.605763] (-) TimerEvent: {}
+[4.705916] (-) TimerEvent: {}
+[4.806059] (-) TimerEvent: {}
+[4.842362] (fast_lio) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[4.848438] (fast_lio) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[4.906160] (-) TimerEvent: {}
+[5.000607] (fast_lio) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[5.000781] (fast_lio) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[5.006194] (-) TimerEvent: {}
+[5.106332] (-) TimerEvent: {}
+[5.206486] (-) TimerEvent: {}
+[5.306646] (-) TimerEvent: {}
+[5.406812] (-) TimerEvent: {}
+[5.506969] (-) TimerEvent: {}
+[5.607125] (-) TimerEvent: {}
+[5.707255] (-) TimerEvent: {}
+[5.807387] (-) TimerEvent: {}
+[5.907549] (-) TimerEvent: {}
+[6.007682] (-) TimerEvent: {}
+[6.107798] (-) TimerEvent: {}
+[6.207935] (-) TimerEvent: {}
+[6.308088] (-) TimerEvent: {}
+[6.408206] (-) TimerEvent: {}
+[6.508380] (-) TimerEvent: {}
+[6.608582] (-) TimerEvent: {}
+[6.708786] (-) TimerEvent: {}
+[6.808916] (-) TimerEvent: {}
+[6.909081] (-) TimerEvent: {}
+[7.003448] (fast_lio) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[7.008848] (fast_lio) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[7.009144] (-) TimerEvent: {}
+[7.079445] (fast_lio) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[7.080291] (fast_lio) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[7.109190] (-) TimerEvent: {}
+[7.183330] (fast_lio) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[7.209235] (-) TimerEvent: {}
+[7.309399] (-) TimerEvent: {}
+[7.409566] (-) TimerEvent: {}
+[7.509720] (-) TimerEvent: {}
+[7.609879] (-) TimerEvent: {}
+[7.710038] (-) TimerEvent: {}
+[7.810208] (-) TimerEvent: {}
+[7.887793] (fast_lio) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[7.890479] (fast_lio) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[7.893216] (fast_lio) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[7.910289] (-) TimerEvent: {}
+[8.010442] (-) TimerEvent: {}
+[8.110602] (-) TimerEvent: {}
+[8.210766] (-) TimerEvent: {}
+[8.310885] (-) TimerEvent: {}
+[8.411045] (-) TimerEvent: {}
+[8.511201] (-) TimerEvent: {}
+[8.546321] (fast_lio) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[8.611254] (-) TimerEvent: {}
+[8.711417] (-) TimerEvent: {}
+[8.811581] (-) TimerEvent: {}
+[8.911753] (-) TimerEvent: {}
+[9.011934] (-) TimerEvent: {}
+[9.112091] (-) TimerEvent: {}
+[9.186151] (fast_lio) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[9.212176] (-) TimerEvent: {}
+[9.312362] (-) TimerEvent: {}
+[9.412545] (-) TimerEvent: {}
+[9.512727] (-) TimerEvent: {}
+[9.612905] (-) TimerEvent: {}
+[9.713030] (-) TimerEvent: {}
+[9.813149] (-) TimerEvent: {}
+[9.823764] (fast_lio) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[9.824533] (fast_lio) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[9.824888] (fast_lio) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[9.825224] (fast_lio) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[9.825588] (fast_lio) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[9.825921] (fast_lio) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[9.826172] (fast_lio) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[9.826355] (fast_lio) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[9.826682] (fast_lio) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[9.827039] (fast_lio) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[9.827417] (fast_lio) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  \n'}
+[9.827759] (fast_lio) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  \n'}
+[9.828143] (fast_lio) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  \n'}
+[9.828521] (fast_lio) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  \n'}
+[9.828887] (fast_lio) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[9.829264] (fast_lio) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  \n'}
+[9.829654] (fast_lio) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  \n'}
+[9.830180] (fast_lio) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  \n'}
+[9.830534] (fast_lio) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  \n'}
+[9.830869] (fast_lio) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  \n'}
+[9.831285] (fast_lio) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[9.831460] (fast_lio) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[9.831758] (fast_lio) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[9.832051] (fast_lio) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  \n'}
+[9.832427] (fast_lio) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  \n'}
+[9.868731] (fast_lio) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[9.869835] (fast_lio) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[9.869979] (fast_lio) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[9.913213] (-) TimerEvent: {}
+[9.919004] (fast_lio) StdoutLine: {'line': b'-- Found livox_ros_driver2: 1.0.0 (/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/share/livox_ros_driver2/cmake)\n'}
+[9.931992] (fast_lio) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[9.940328] (fast_lio) StderrLine: {'line': b'CMake Warning (dev) at CMakeLists.txt:97 (find_package):\n'}
+[9.940426] (fast_lio) StderrLine: {'line': b'  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.\n'}
+[9.940452] (fast_lio) StderrLine: {'line': b'  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy\n'}
+[9.940473] (fast_lio) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[9.940494] (fast_lio) StderrLine: {'line': b'\n'}
+[9.940512] (fast_lio) StderrLine: {'line': b'  CMake variable PCL_ROOT is set to:\n'}
+[9.940531] (fast_lio) StderrLine: {'line': b'\n'}
+[9.940548] (fast_lio) StderrLine: {'line': b'    /usr\n'}
+[9.940564] (fast_lio) StderrLine: {'line': b'\n'}
+[9.940580] (fast_lio) StderrLine: {'line': b'  For compatibility, CMake is ignoring the variable.\n'}
+[9.940597] (fast_lio) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[9.940614] (fast_lio) StderrLine: {'line': b'\n'}
+[9.943746] (fast_lio) StdoutLine: {'line': b'-- Eigen3: /usr/include/eigen3\n'}
+[9.943828] (fast_lio) StdoutLine: {'line': b'-- PCL: /usr/include/pcl-1.12\n'}
+[10.013252] (-) TimerEvent: {}
+[10.070742] (fast_lio) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[10.113305] (-) TimerEvent: {}
+[10.213451] (-) TimerEvent: {}
+[10.223516] (fast_lio) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[10.279944] (fast_lio) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[10.313544] (-) TimerEvent: {}
+[10.330850] (fast_lio) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[10.332000] (fast_lio) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[10.342886] (fast_lio) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[10.342987] (fast_lio) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[10.343012] (fast_lio) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[10.343040] (fast_lio) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[10.352617] (fast_lio) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[10.413603] (-) TimerEvent: {}
+[10.434388] (fast_lio) StdoutLine: {'line': b'-- Configuring done\n'}
+[10.513698] (-) TimerEvent: {}
+[10.518016] (fast_lio) StdoutLine: {'line': b'-- Generating done\n'}
+[10.530091] (fast_lio) StdoutLine: {'line': b'-- Build files have been written to: /home/goldenboy/git_version/GoldenSLAM/build/fast_lio\n'}
+[10.541432] (fast_lio) CommandEnded: {'returncode': 0}
+[10.542010] (fast_lio) JobProgress: {'identifier': 'fast_lio', 'progress': 'build'}
+[10.542531] (fast_lio) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/goldenboy/git_version/GoldenSLAM/build/fast_lio', '--', '-j24', '-l24'], 'cwd': '/home/goldenboy/git_version/GoldenSLAM/build/fast_lio', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-152_agent'), ('USER', 'goldenboy'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('GIT_EDITOR', 'true'), ('VSCODE_WSL_EXT_LOCATION', '/mnt/c/Users/hwido/.vscode/extensions/ms-vscode-remote.remote-wsl-0.104.3'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.152'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/goldenboy'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-675e2777-4e54-4330-906d-89a7958e8675.sock'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'goldenboy'), ('NAME', 'Gini'), ('WSL_INTEROP', '/run/WSL/423_interop'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/goldenboy/.local/bin:/home/goldenboy/.local/bin:/home/goldenboy/dev-tools/flutter/bin:/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/bin/remote-cli:/home/goldenboy/.local/bin:/home/goldenboy/.local/bin:/home/goldenboy/dev-tools/flutter/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/STMicroelectronics/stlink_server:/mnt/c/ST/STM32CubeCLT_1.18.0:/mnt/c/ST/STM32CubeCLT_1.18.0/CMake/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/Ninja/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STLink-gdb-server/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STM32CubeProgrammer/bin:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/PuTTY/:/mnt/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/CMake/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/NVIDIA Corporation/SDK Manager:/mnt/c/Program Files/usbipd-win/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/hwido/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hwido/Development/flutter/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/snap/bin:/home/goldenboy/dev-tools/androidSDK/cmdline-tools/latest/bin:/home/goldenboy/dev-tools/androidSDK/platform-tools:/home/goldenboy/dev-tools/androidSDK/cmdline-tools/latest/bin:/home/goldenboy/dev-tools/androidSDK/platform-tools'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':0'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', '52d57278-11e0-4c5f-9517-32664ec3d6de'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('PWD', '/home/goldenboy/git_version/GoldenSLAM/build/fast_lio'), ('ANDROID_HOME', '/home/goldenboy/dev-tools/androidSDK'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/goldenboy/.vscode-server/extensions/anthropic.claude-code-2.1.152-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[10.563512] (fast_lio) StdoutLine: {'line': b'[  2%] Generating C code for ROS interfaces\n'}
+[10.567547] (fast_lio) StdoutLine: {'line': b'[  5%] Generating Rust code for ROS interfaces\n'}
+[10.567704] (fast_lio) StdoutLine: {'line': b'[  7%] Generating C++ code for ROS interfaces\n'}
+[10.571501] (fast_lio) StdoutLine: {'line': b'[  7%] Built target ament_cmake_python_copy_fast_lio\n'}
+[10.613784] (-) TimerEvent: {}
+[10.680709] (fast_lio) StdoutLine: {'line': b'running egg_info\n'}
+[10.680911] (fast_lio) StdoutLine: {'line': b'creating fast_lio.egg-info\n'}
+[10.681150] (fast_lio) StdoutLine: {'line': b'writing fast_lio.egg-info/PKG-INFO\n'}
+[10.681387] (fast_lio) StdoutLine: {'line': b'writing dependency_links to fast_lio.egg-info/dependency_links.txt\n'}
+[10.681470] (fast_lio) StdoutLine: {'line': b'writing top-level names to fast_lio.egg-info/top_level.txt\n'}
+[10.681603] (fast_lio) StdoutLine: {'line': b"writing manifest file 'fast_lio.egg-info/SOURCES.txt'\n"}
+[10.682771] (fast_lio) StdoutLine: {'line': b"reading manifest file 'fast_lio.egg-info/SOURCES.txt'\n"}
+[10.682990] (fast_lio) StdoutLine: {'line': b"writing manifest file 'fast_lio.egg-info/SOURCES.txt'\n"}
+[10.695368] (fast_lio) StdoutLine: {'line': b'[  7%] Built target ament_cmake_python_build_fast_lio_egg\n'}
+[10.710760] (fast_lio) StdoutLine: {'line': b'[  7%] Built target fast_lio__rs\n'}
+[10.713870] (-) TimerEvent: {}
+[10.715967] (fast_lio) StdoutLine: {'line': b'[  7%] Built target fast_lio__cpp\n'}
+[10.717817] (fast_lio) StdoutLine: {'line': b'[ 10%] Building C object CMakeFiles/fast_lio__rosidl_generator_c.dir/rosidl_generator_c/fast_lio/msg/detail/pose6_d__functions.c.o\n'}
+[10.719811] (fast_lio) StdoutLine: {'line': b'[ 12%] Generating C++ type support for eProsima Fast-RTPS\n'}
+[10.720133] (fast_lio) StdoutLine: {'line': b'[ 15%] Generating C++ introspection for ROS interfaces\n'}
+[10.720276] (fast_lio) StdoutLine: {'line': b'[ 17%] Generating C++ type support dispatch for ROS interfaces\n'}
+[10.780867] (fast_lio) StdoutLine: {'line': b'[ 20%] Linking C shared library libfast_lio__rosidl_generator_c.so\n'}
+[10.813955] (-) TimerEvent: {}
+[10.839939] (fast_lio) StdoutLine: {'line': b'[ 20%] Built target fast_lio__rosidl_generator_c\n'}
+[10.844656] (fast_lio) StdoutLine: {'line': b'[ 28%] Generating C introspection for ROS interfaces\n'}
+[10.844781] (fast_lio) StdoutLine: {'line': b'[ 28%] Generating C type support for eProsima Fast-RTPS\n'}
+[10.844818] (fast_lio) StdoutLine: {'line': b'[ 28%] Generating C type support dispatch for ROS interfaces\n'}
+[10.848355] (fast_lio) StdoutLine: {'line': b'[ 30%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/fast_lio/msg/pose6_d__type_support.cpp.o\n'}
+[10.857536] (fast_lio) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/fast_lio/msg/detail/pose6_d__type_support.cpp.o\n'}
+[10.861701] (fast_lio) StdoutLine: {'line': b'[ 35%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fast_lio/msg/detail/dds_fastrtps/pose6_d__type_support.cpp.o\n'}
+[10.914045] (-) TimerEvent: {}
+[10.978326] (fast_lio) StdoutLine: {'line': b'[ 38%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_c.dir/rosidl_typesupport_c/fast_lio/msg/pose6_d__type_support.cpp.o\n'}
+[10.990362] (fast_lio) StdoutLine: {'line': b'[ 41%] Building C object CMakeFiles/fast_lio__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fast_lio/msg/detail/pose6_d__type_support.c.o\n'}
+[10.993993] (fast_lio) StdoutLine: {'line': b'[ 43%] Linking CXX shared library libfast_lio__rosidl_typesupport_c.so\n'}
+[10.994358] (fast_lio) StdoutLine: {'line': b'[ 46%] Linking CXX shared library libfast_lio__rosidl_typesupport_cpp.so\n'}
+[10.999850] (fast_lio) StdoutLine: {'line': b'[ 48%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/fast_lio/msg/detail/pose6_d__type_support_c.cpp.o\n'}
+[11.014137] (-) TimerEvent: {}
+[11.021420] (fast_lio) StdoutLine: {'line': b'[ 51%] Linking C shared library libfast_lio__rosidl_typesupport_introspection_c.so\n'}
+[11.046327] (fast_lio) StdoutLine: {'line': b'[ 51%] Built target fast_lio__rosidl_typesupport_cpp\n'}
+[11.046569] (fast_lio) StdoutLine: {'line': b'[ 51%] Built target fast_lio__rosidl_typesupport_c\n'}
+[11.057067] (fast_lio) StdoutLine: {'line': b'[ 56%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o\n'}
+[11.057476] (fast_lio) StdoutLine: {'line': b'[ 56%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o\n'}
+[11.057537] (fast_lio) StdoutLine: {'line': b'[ 58%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o\n'}
+[11.057585] (fast_lio) StdoutLine: {'line': b'[ 61%] Building CXX object CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o\n'}
+[11.057863] (fast_lio) StdoutLine: {'line': b'[ 64%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/app/main.cpp.o\n'}
+[11.058332] (fast_lio) StdoutLine: {'line': b'[ 66%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o\n'}
+[11.062296] (fast_lio) StdoutLine: {'line': b'[ 69%] Linking CXX shared library libfast_lio__rosidl_typesupport_fastrtps_cpp.so\n'}
+[11.073813] (fast_lio) StdoutLine: {'line': b'[ 71%] Linking CXX shared library libfast_lio__rosidl_typesupport_introspection_cpp.so\n'}
+[11.100588] (fast_lio) StdoutLine: {'line': b'[ 71%] Built target fast_lio__rosidl_typesupport_introspection_c\n'}
+[11.114268] (-) TimerEvent: {}
+[11.157660] (fast_lio) StdoutLine: {'line': b'[ 71%] Built target fast_lio__rosidl_typesupport_introspection_cpp\n'}
+[11.173640] (fast_lio) StdoutLine: {'line': b'[ 71%] Built target fast_lio__rosidl_typesupport_fastrtps_cpp\n'}
+[11.174173] (fast_lio) StdoutLine: {'line': b'[ 74%] Linking CXX shared library libfast_lio__rosidl_typesupport_fastrtps_c.so\n'}
+[11.214416] (-) TimerEvent: {}
+[11.275605] (fast_lio) StdoutLine: {'line': b'[ 74%] Built target fast_lio__rosidl_typesupport_fastrtps_c\n'}
+[11.285634] (fast_lio) StdoutLine: {'line': b'[ 74%] Built target fast_lio\n'}
+[11.297321] (fast_lio) StdoutLine: {'line': b'[ 76%] Generating Python code for ROS interfaces\n'}
+[11.314641] (-) TimerEvent: {}
+[11.414898] (-) TimerEvent: {}
+[11.515086] (-) TimerEvent: {}
+[11.534584] (fast_lio) StdoutLine: {'line': b'[ 76%] Built target fast_lio__py\n'}
+[11.549956] (fast_lio) StdoutLine: {'line': b'[ 79%] Building C object CMakeFiles/fast_lio__rosidl_generator_py.dir/rosidl_generator_py/fast_lio/msg/_pose6_d_s.c.o\n'}
+[11.615175] (-) TimerEvent: {}
+[11.657540] (fast_lio) StdoutLine: {'line': b'[ 82%] Linking C shared library rosidl_generator_py/fast_lio/libfast_lio__rosidl_generator_py.so\n'}
+[11.715281] (-) TimerEvent: {}
+[11.727659] (fast_lio) StdoutLine: {'line': b'[ 82%] Built target fast_lio__rosidl_generator_py\n'}
+[11.739999] (fast_lio) StdoutLine: {'line': b'[ 87%] Building C object CMakeFiles/fast_lio__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/fast_lio/_fast_lio_s.ep.rosidl_typesupport_introspection_c.c.o\n'}
+[11.740246] (fast_lio) StdoutLine: {'line': b'[ 87%] Building C object CMakeFiles/fast_lio__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/fast_lio/_fast_lio_s.ep.rosidl_typesupport_fastrtps_c.c.o\n'}
+[11.742561] (fast_lio) StdoutLine: {'line': b'[ 89%] Building C object CMakeFiles/fast_lio__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/fast_lio/_fast_lio_s.ep.rosidl_typesupport_c.c.o\n'}
+[11.815434] (-) TimerEvent: {}
+[11.815788] (fast_lio) StdoutLine: {'line': b'[ 92%] Linking C shared library rosidl_generator_py/fast_lio/fast_lio_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[11.816169] (fast_lio) StdoutLine: {'line': b'[ 94%] Linking C shared library rosidl_generator_py/fast_lio/fast_lio_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[11.824349] (fast_lio) StdoutLine: {'line': b'[ 97%] Linking C shared library rosidl_generator_py/fast_lio/fast_lio_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[11.879577] (fast_lio) StdoutLine: {'line': b'[ 97%] Built target fast_lio__rosidl_typesupport_introspection_c__pyext\n'}
+[11.879806] (fast_lio) StdoutLine: {'line': b'[ 97%] Built target fast_lio__rosidl_typesupport_c__pyext\n'}
+[11.911471] (fast_lio) StdoutLine: {'line': b'[ 97%] Built target fast_lio__rosidl_typesupport_fastrtps_c__pyext\n'}
+[11.915528] (-) TimerEvent: {}
+[12.015785] (-) TimerEvent: {}
+[12.116052] (-) TimerEvent: {}
+[12.216257] (-) TimerEvent: {}
+[12.316475] (-) TimerEvent: {}
+[12.416723] (-) TimerEvent: {}
+[12.516997] (-) TimerEvent: {}
+[12.617198] (-) TimerEvent: {}
+[12.717397] (-) TimerEvent: {}
+[12.817593] (-) TimerEvent: {}
+[12.917806] (-) TimerEvent: {}
+[13.018021] (-) TimerEvent: {}
+[13.118240] (-) TimerEvent: {}
+[13.218398] (-) TimerEvent: {}
+[13.318649] (-) TimerEvent: {}
+[13.418942] (-) TimerEvent: {}
+[13.519165] (-) TimerEvent: {}
+[13.619345] (-) TimerEvent: {}
+[13.719547] (-) TimerEvent: {}
+[13.819795] (-) TimerEvent: {}
+[13.920073] (-) TimerEvent: {}
+[14.020312] (-) TimerEvent: {}
+[14.120659] (-) TimerEvent: {}
+[14.167844] (fast_lio) StderrLine: {'line': b'In file included from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:25,\n'}
+[14.168164] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:\n'}
+[14.168300] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/common_lib.h: In function \xe2\x80\x98double get_time_sec(const Time&)\xe2\x80\x99:\n'}
+[14.168351] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/common_lib.h:259:12: error: \xe2\x80\x98rclcpp\xe2\x80\x99 has not been declared\n'}
+[14.168471] (fast_lio) StderrLine: {'line': b'  259 |     return rclcpp::Time(time).seconds();\n'}
+[14.168571] (fast_lio) StderrLine: {'line': b'      |            ^~~~~~\n'}
+[14.170266] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/common_lib.h: At global scope:\n'}
+[14.170394] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/common_lib.h:264:1: error: \xe2\x80\x98rclcpp\xe2\x80\x99 does not name a type\n'}
+[14.170443] (fast_lio) StderrLine: {'line': b'  264 | rclcpp::Time get_ros_time(double timestamp)\n'}
+[14.170487] (fast_lio) StderrLine: {'line': b'      | ^~~~~~\n'}
+[14.195937] (fast_lio) StderrLine: {'line': b'In file included from /usr/include/boost/bind.hpp:30,\n'}
+[14.196176] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/IKFoM_toolkit/esekfom/esekfom.hpp:42,\n'}
+[14.196227] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/use-ikfom.hpp:4,\n'}
+[14.196273] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:26,\n'}
+[14.196328] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:\n'}
+[14.196372] (fast_lio) StderrLine: {'line': b'/usr/include/boost/bind.hpp:36:1: note: \xe2\x80\x98#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.\xe2\x80\x99\n'}
+[14.196419] (fast_lio) StderrLine: {'line': b'   36 | BOOST_PRAGMA_MESSAGE(\n'}
+[14.196461] (fast_lio) StderrLine: {'line': b'      | ^~~~~~~~~~~~~~~~~~~~\n'}
+[14.220722] (-) TimerEvent: {}
+[14.320910] (-) TimerEvent: {}
+[14.421104] (-) TimerEvent: {}
+[14.521407] (-) TimerEvent: {}
+[14.608182] (fast_lio) StderrLine: {'line': b'In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:\n'}
+[14.608370] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:121:10: error: \xe2\x80\x98condition_variable\xe2\x80\x99 in namespace \xe2\x80\x98std\xe2\x80\x99 does not name a type\n'}
+[14.608395] (fast_lio) StderrLine: {'line': b'  121 |     std::condition_variable sig_buffer_;\n'}
+[14.608414] (fast_lio) StderrLine: {'line': b'      |          ^~~~~~~~~~~~~~~~~~\n'}
+[14.608430] (fast_lio) StderrLine: {'line': b'In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:\n'}
+[14.608448] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:27:1: note: \xe2\x80\x98std::condition_variable\xe2\x80\x99 is defined in header \xe2\x80\x98<condition_variable>\xe2\x80\x99; did you forget to \xe2\x80\x98#include <condition_variable>\xe2\x80\x99?\n'}
+[14.608513] (fast_lio) StderrLine: {'line': b'   26 | #include "use-ikfom.hpp"\n'}
+[14.608532] (fast_lio) StderrLine: {'line': b'  +++ |+#include <condition_variable>\n'}
+[14.608551] (fast_lio) StderrLine: {'line': b'   27 | #include "IKFoM_toolkit/esekfom/esekfom.hpp"\n'}
+[14.621533] (-) TimerEvent: {}
+[14.628929] (fast_lio) StderrLine: {'line': b'In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:\n'}
+[14.629117] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:154:5: error: \xe2\x80\x98KD_TREE\xe2\x80\x99 does not name a type\n'}
+[14.629158] (fast_lio) StderrLine: {'line': b'  154 |     KD_TREE<PointType>         ikdtree_;\n'}
+[14.629179] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~\n'}
+[14.630489] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:155:5: error: \xe2\x80\x98BoxPointType\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98PointType\xe2\x80\x99?\n'}
+[14.630698] (fast_lio) StderrLine: {'line': b'  155 |     BoxPointType               LocalMap_Points_;\n'}
+[14.630803] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~~~~~~\n'}
+[14.630853] (fast_lio) StderrLine: {'line': b'      |     PointType\n'}
+[14.639418] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:17: error: \xe2\x80\x98BoxPointType\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98PointType\xe2\x80\x99?\n'}
+[14.639671] (fast_lio) StderrLine: {'line': b'  158 |     std::vector<BoxPointType>  cub_needrm_;\n'}
+[14.639755] (fast_lio) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[14.639828] (fast_lio) StderrLine: {'line': b'      |                 PointType\n'}
+[14.639929] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 1 is invalid\n'}
+[14.639977] (fast_lio) StderrLine: {'line': b'  158 |     std::vector<BoxPointType>  cub_needrm_;\n'}
+[14.640051] (fast_lio) StderrLine: {'line': b'      |                             ^\n'}
+[14.640097] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 2 is invalid\n'}
+[14.721626] (-) TimerEvent: {}
+[14.821993] (-) TimerEvent: {}
+[14.922230] (-) TimerEvent: {}
+[15.022451] (-) TimerEvent: {}
+[15.028342] (fast_lio) StderrLine: {'line': b'In file included from /usr/include/boost/bind.hpp:30,\n'}
+[15.028575] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/IKFoM_toolkit/esekfom/esekfom.hpp:42,\n'}
+[15.028605] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/use-ikfom.hpp:4,\n'}
+[15.028627] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:26,\n'}
+[15.028658] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:2:\n'}
+[15.028676] (fast_lio) StderrLine: {'line': b'/usr/include/boost/bind.hpp:36:1: note: \xe2\x80\x98#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.\xe2\x80\x99\n'}
+[15.028697] (fast_lio) StderrLine: {'line': b'   36 | BOOST_PRAGMA_MESSAGE(\n'}
+[15.028714] (fast_lio) StderrLine: {'line': b'      | ^~~~~~~~~~~~~~~~~~~~\n'}
+[15.122541] (-) TimerEvent: {}
+[15.222723] (-) TimerEvent: {}
+[15.289133] (fast_lio) StderrLine: {'line': b'In file included from /usr/include/boost/bind.hpp:30,\n'}
+[15.289286] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/IKFoM_toolkit/esekfom/esekfom.hpp:42,\n'}
+[15.289326] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/use-ikfom.hpp:4,\n'}
+[15.289347] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:26,\n'}
+[15.289366] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/platform/ros_bridge.hpp:18,\n'}
+[15.289383] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:1:\n'}
+[15.289400] (fast_lio) StderrLine: {'line': b'/usr/include/boost/bind.hpp:36:1: note: \xe2\x80\x98#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.\xe2\x80\x99\n'}
+[15.289420] (fast_lio) StderrLine: {'line': b'   36 | BOOST_PRAGMA_MESSAGE(\n'}
+[15.289438] (fast_lio) StderrLine: {'line': b'      | ^~~~~~~~~~~~~~~~~~~~\n'}
+[15.322857] (-) TimerEvent: {}
+[15.423097] (-) TimerEvent: {}
+[15.498940] (fast_lio) StderrLine: {'line': b'In file included from /home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:2:\n'}
+[15.499084] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:154:5: error: \xe2\x80\x98KD_TREE\xe2\x80\x99 does not name a type\n'}
+[15.499116] (fast_lio) StderrLine: {'line': b'  154 |     KD_TREE<PointType>         ikdtree_;\n'}
+[15.499135] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~\n'}
+[15.500936] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:155:5: error: \xe2\x80\x98BoxPointType\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98PointType\xe2\x80\x99?\n'}
+[15.501155] (fast_lio) StderrLine: {'line': b'  155 |     BoxPointType               LocalMap_Points_;\n'}
+[15.501211] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~~~~~~\n'}
+[15.501259] (fast_lio) StderrLine: {'line': b'      |     PointType\n'}
+[15.507828] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:17: error: \xe2\x80\x98BoxPointType\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98PointType\xe2\x80\x99?\n'}
+[15.508004] (fast_lio) StderrLine: {'line': b'  158 |     std::vector<BoxPointType>  cub_needrm_;\n'}
+[15.508029] (fast_lio) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[15.508050] (fast_lio) StderrLine: {'line': b'      |                 PointType\n'}
+[15.508068] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 1 is invalid\n'}
+[15.508086] (fast_lio) StderrLine: {'line': b'  158 |     std::vector<BoxPointType>  cub_needrm_;\n'}
+[15.508102] (fast_lio) StderrLine: {'line': b'      |                             ^\n'}
+[15.508118] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 2 is invalid\n'}
+[15.523204] (-) TimerEvent: {}
+[15.623345] (-) TimerEvent: {}
+[15.723531] (-) TimerEvent: {}
+[15.754246] (fast_lio) StderrLine: {'line': b'In file included from /home/goldenboy/git_version/GoldenSLAM/include/platform/ros_bridge.hpp:18,\n'}
+[15.754465] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:1:\n'}
+[15.754543] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:154:5: error: \xe2\x80\x98KD_TREE\xe2\x80\x99 does not name a type\n'}
+[15.754613] (fast_lio) StderrLine: {'line': b'  154 |     KD_TREE<PointType>         ikdtree_;\n'}
+[15.754689] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~\n'}
+[15.756938] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:155:5: error: \xe2\x80\x98BoxPointType\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98PointType\xe2\x80\x99?\n'}
+[15.757025] (fast_lio) StderrLine: {'line': b'  155 |     BoxPointType               LocalMap_Points_;\n'}
+[15.757062] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~~~~~~\n'}
+[15.757083] (fast_lio) StderrLine: {'line': b'      |     PointType\n'}
+[15.764036] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:17: error: \xe2\x80\x98BoxPointType\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98PointType\xe2\x80\x99?\n'}
+[15.764243] (fast_lio) StderrLine: {'line': b'  158 |     std::vector<BoxPointType>  cub_needrm_;\n'}
+[15.764275] (fast_lio) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~\n'}
+[15.764295] (fast_lio) StderrLine: {'line': b'      |                 PointType\n'}
+[15.764314] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 1 is invalid\n'}
+[15.764333] (fast_lio) StderrLine: {'line': b'  158 |     std::vector<BoxPointType>  cub_needrm_;\n'}
+[15.764351] (fast_lio) StderrLine: {'line': b'      |                             ^\n'}
+[15.764369] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 2 is invalid\n'}
+[15.823639] (-) TimerEvent: {}
+[15.923816] (-) TimerEvent: {}
+[16.024030] (-) TimerEvent: {}
+[16.124284] (-) TimerEvent: {}
+[16.147580] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function \xe2\x80\x98void RosBridge::onImuCB(sensor_msgs::msg::Imu_<std::allocator<void> >::UniquePtr)\xe2\x80\x99:\n'}
+[16.147776] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:199:5: error: \xe2\x80\x98last_timestamp_imu_\xe2\x80\x99 was not declared in this scope\n'}
+[16.147835] (fast_lio) StderrLine: {'line': b'  199 |     last_timestamp_imu_ = get_time_sec(msg_in->header.stamp);\n'}
+[16.147860] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~~~~~~~~~~~~~\n'}
+[16.224358] (-) TimerEvent: {}
+[16.324616] (-) TimerEvent: {}
+[16.424940] (-) TimerEvent: {}
+[16.525105] (-) TimerEvent: {}
+[16.625290] (-) TimerEvent: {}
+[16.725483] (-) TimerEvent: {}
+[16.728492] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::pushImu(sensor_msgs::msg::Imu_<std::allocator<void> >::SharedPtr)\xe2\x80\x99:\n'}
+[16.728653] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:150:25: error: \xe2\x80\x98get_ros_time\xe2\x80\x99 was not declared in this scope\n'}
+[16.728693] (fast_lio) StderrLine: {'line': b'  150 |     msg->header.stamp = get_ros_time(get_time_sec(msg_in->header.stamp) - time_diff_lidar_to_imu_);\n'}
+[16.728715] (fast_lio) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~\n'}
+[16.739764] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::pointsCacheCollect()\xe2\x80\x99:\n'}
+[16.740141] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:267:5: error: \xe2\x80\x98ikdtree_\xe2\x80\x99 was not declared in this scope\n'}
+[16.740195] (fast_lio) StderrLine: {'line': b'  267 |     ikdtree_.acquire_removed_points(points_history);\n'}
+[16.740217] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~~\n'}
+[16.740236] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::lasermapFovSegment()\xe2\x80\x99:\n'}
+[16.740255] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:273:17: error: request for member \xe2\x80\x98clear\xe2\x80\x99 in \xe2\x80\x98((SlamCore*)this)->SlamCore::cub_needrm_\xe2\x80\x99, which is of non-class type \xe2\x80\x98int\xe2\x80\x99\n'}
+[16.740285] (fast_lio) StderrLine: {'line': b'  273 |     cub_needrm_.clear();\n'}
+[16.740305] (fast_lio) StderrLine: {'line': b'      |                 ^~~~~\n'}
+[16.740323] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:278:21: error: no matching function for call to \xe2\x80\x98SlamCore::pointBodyToWorld(V3F&, Eigen::DenseCoeffsBase<Eigen::Matrix<float, 3, 1>, 1>::Scalar*)\xe2\x80\x99\n'}
+[16.740363] (fast_lio) StderrLine: {'line': b'  278 |     pointBodyToWorld(XAxisPoint_body_, &XAxisPoint_world_[0]);\n'}
+[16.740383] (fast_lio) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[16.740401] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:228:6: note: candidate: \xe2\x80\x98void SlamCore::pointBodyToWorld(const PointType*, PointType*) const\xe2\x80\x99\n'}
+[16.740420] (fast_lio) StderrLine: {'line': b'  228 | void SlamCore::pointBodyToWorld(PointType const* pi, PointType* po) const\n'}
+[16.740438] (fast_lio) StderrLine: {'line': b'      |      ^~~~~~~~\n'}
+[16.740455] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:228:50: note:   no known conversion for argument 1 from \xe2\x80\x98V3F\xe2\x80\x99 {aka \xe2\x80\x98Eigen::Matrix<float, 3, 1>\xe2\x80\x99} to \xe2\x80\x98const PointType*\xe2\x80\x99 {aka \xe2\x80\x98const pcl::PointXYZINormal*\xe2\x80\x99}\n'}
+[16.740474] (fast_lio) StderrLine: {'line': b'  228 | void SlamCore::pointBodyToWorld(PointType const* pi, PointType* po) const\n'}
+[16.740491] (fast_lio) StderrLine: {'line': b'      |                                 ~~~~~~~~~~~~~~~~~^~\n'}
+[16.740508] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:238:6: note: candidate: \xe2\x80\x98void SlamCore::pointBodyToWorld(const V3D&, V3D&) const\xe2\x80\x99\n'}
+[16.740525] (fast_lio) StderrLine: {'line': b'  238 | void SlamCore::pointBodyToWorld(const V3D& pi, V3D& po) const\n'}
+[16.740542] (fast_lio) StderrLine: {'line': b'      |      ^~~~~~~~\n'}
+[16.740558] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:238:53: note:   no known conversion for argument 2 from \xe2\x80\x98Eigen::DenseCoeffsBase<Eigen::Matrix<float, 3, 1>, 1>::Scalar*\xe2\x80\x99 {aka \xe2\x80\x98float*\xe2\x80\x99} to \xe2\x80\x98V3D&\xe2\x80\x99 {aka \xe2\x80\x98Eigen::Matrix<double, 3, 1>&\xe2\x80\x99}\n'}
+[16.740578] (fast_lio) StderrLine: {'line': b'  238 | void SlamCore::pointBodyToWorld(const V3D& pi, V3D& po) const\n'}
+[16.740594] (fast_lio) StderrLine: {'line': b'      |                                                ~~~~~^~\n'}
+[16.752149] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:296:13: error: \xe2\x80\x98LocalMap_Points_\xe2\x80\x99 was not declared in this scope\n'}
+[16.752295] (fast_lio) StderrLine: {'line': b'  296 |             LocalMap_Points_.vertex_min[i] = pos_LiD(i) - cube_len_ / 2.0;\n'}
+[16.752338] (fast_lio) StderrLine: {'line': b'      |             ^~~~~~~~~~~~~~~~\n'}
+[16.765370] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:308:52: error: \xe2\x80\x98LocalMap_Points_\xe2\x80\x99 was not declared in this scope\n'}
+[16.765544] (fast_lio) StderrLine: {'line': b'  308 |         dist_to_map_edge[i][0] = fabs(pos_LiD(i) - LocalMap_Points_.vertex_min[i]);\n'}
+[16.765568] (fast_lio) StderrLine: {'line': b'      |                                                    ^~~~~~~~~~~~~~~~\n'}
+[16.772982] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:316:5: error: \xe2\x80\x98BoxPointType\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98PointType\xe2\x80\x99?\n'}
+[16.773165] (fast_lio) StderrLine: {'line': b'  316 |     BoxPointType New_LocalMap_Points = LocalMap_Points_;\n'}
+[16.773189] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~~~~~~\n'}
+[16.773208] (fast_lio) StderrLine: {'line': b'      |     PointType\n'}
+[16.773226] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:317:17: error: expected \xe2\x80\x98;\xe2\x80\x99 before \xe2\x80\x98tmp_boxpoints\xe2\x80\x99\n'}
+[16.773245] (fast_lio) StderrLine: {'line': b'  317 |     BoxPointType tmp_boxpoints;\n'}
+[16.773263] (fast_lio) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~~~\n'}
+[16.773280] (fast_lio) StderrLine: {'line': b'      |                 ;\n'}
+[16.782155] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:322:9: error: \xe2\x80\x98tmp_boxpoints\xe2\x80\x99 was not declared in this scope\n'}
+[16.782307] (fast_lio) StderrLine: {'line': b'  322 |         tmp_boxpoints = LocalMap_Points_;\n'}
+[16.782375] (fast_lio) StderrLine: {'line': b'      |         ^~~~~~~~~~~~~\n'}
+[16.793390] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:322:25: error: \xe2\x80\x98LocalMap_Points_\xe2\x80\x99 was not declared in this scope\n'}
+[16.793527] (fast_lio) StderrLine: {'line': b'  322 |         tmp_boxpoints = LocalMap_Points_;\n'}
+[16.793548] (fast_lio) StderrLine: {'line': b'      |                         ^~~~~~~~~~~~~~~~\n'}
+[16.806496] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:325:13: error: \xe2\x80\x98New_LocalMap_Points\xe2\x80\x99 was not declared in this scope\n'}
+[16.806655] (fast_lio) StderrLine: {'line': b'  325 |             New_LocalMap_Points.vertex_max[i] -= mov_dist;\n'}
+[16.806679] (fast_lio) StderrLine: {'line': b'      |             ^~~~~~~~~~~~~~~~~~~\n'}
+[16.806697] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:328:25: error: request for member \xe2\x80\x98push_back\xe2\x80\x99 in \xe2\x80\x98((SlamCore*)this)->SlamCore::cub_needrm_\xe2\x80\x99, which is of non-class type \xe2\x80\x98int\xe2\x80\x99\n'}
+[16.806734] (fast_lio) StderrLine: {'line': b'  328 |             cub_needrm_.push_back(tmp_boxpoints);\n'}
+[16.806752] (fast_lio) StderrLine: {'line': b'      |                         ^~~~~~~~~\n'}
+[16.819633] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:332:13: error: \xe2\x80\x98New_LocalMap_Points\xe2\x80\x99 was not declared in this scope\n'}
+[16.819860] (fast_lio) StderrLine: {'line': b'  332 |             New_LocalMap_Points.vertex_max[i] += mov_dist;\n'}
+[16.819901] (fast_lio) StderrLine: {'line': b'      |             ^~~~~~~~~~~~~~~~~~~\n'}
+[16.819922] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:335:25: error: request for member \xe2\x80\x98push_back\xe2\x80\x99 in \xe2\x80\x98((SlamCore*)this)->SlamCore::cub_needrm_\xe2\x80\x99, which is of non-class type \xe2\x80\x98int\xe2\x80\x99\n'}
+[16.819944] (fast_lio) StderrLine: {'line': b'  335 |             cub_needrm_.push_back(tmp_boxpoints);\n'}
+[16.819963] (fast_lio) StderrLine: {'line': b'      |                         ^~~~~~~~~\n'}
+[16.825570] (-) TimerEvent: {}
+[16.830964] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:338:5: error: \xe2\x80\x98LocalMap_Points_\xe2\x80\x99 was not declared in this scope\n'}
+[16.831148] (fast_lio) StderrLine: {'line': b'  338 |     LocalMap_Points_ = New_LocalMap_Points;\n'}
+[16.831174] (fast_lio) StderrLine: {'line': b'      |     ^~~~~~~~~~~~~~~~\n'}
+[16.844755] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:338:24: error: \xe2\x80\x98New_LocalMap_Points\xe2\x80\x99 was not declared in this scope\n'}
+[16.844952] (fast_lio) StderrLine: {'line': b'  338 |     LocalMap_Points_ = New_LocalMap_Points;\n'}
+[16.844994] (fast_lio) StderrLine: {'line': b'      |                        ^~~~~~~~~~~~~~~~~~~\n'}
+[16.845016] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:342:22: error: request for member \xe2\x80\x98empty\xe2\x80\x99 in \xe2\x80\x98((SlamCore*)this)->SlamCore::cub_needrm_\xe2\x80\x99, which is of non-class type \xe2\x80\x98int\xe2\x80\x99\n'}
+[16.845036] (fast_lio) StderrLine: {'line': b'  342 |     if (!cub_needrm_.empty())\n'}
+[16.845057] (fast_lio) StderrLine: {'line': b'      |                      ^~~~~\n'}
+[16.850696] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:343:34: error: \xe2\x80\x98ikdtree_\xe2\x80\x99 was not declared in this scope\n'}
+[16.850826] (fast_lio) StderrLine: {'line': b'  343 |         kdtree_delete_counter_ = ikdtree_.Delete_Point_Boxes(cub_needrm_);\n'}
+[16.850850] (fast_lio) StderrLine: {'line': b'      |                                  ^~~~~~~~\n'}
+[16.856482] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::mapIncremental()\xe2\x80\x99:\n'}
+[16.856597] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:390:23: error: \xe2\x80\x98ikdtree_\xe2\x80\x99 was not declared in this scope\n'}
+[16.856622] (fast_lio) StderrLine: {'line': b'  390 |     add_point_size_ = ikdtree_.Add_Points(PointToAdd, true);\n'}
+[16.856643] (fast_lio) StderrLine: {'line': b'      |                       ^~~~~~~~\n'}
+[16.863180] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::h_share_model(state_ikfom&, esekfom::dyn_share_datastruct<double>&)\xe2\x80\x99:\n'}
+[16.863310] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:426:13: error: \xe2\x80\x98ikdtree_\xe2\x80\x99 was not declared in this scope\n'}
+[16.863334] (fast_lio) StderrLine: {'line': b'  426 |             ikdtree_.Nearest_Search(point_world, NUM_MATCH_POINTS, points_near, pointSearchSqDis);\n'}
+[16.863354] (fast_lio) StderrLine: {'line': b'      |             ^~~~~~~~\n'}
+[16.905132] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::spinFrontendOnce()\xe2\x80\x99:\n'}
+[16.905286] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:595:9: error: \xe2\x80\x98ikdtree_\xe2\x80\x99 was not declared in this scope\n'}
+[16.905337] (fast_lio) StderrLine: {'line': b'  595 |     if (ikdtree_.Root_Node == nullptr)\n'}
+[16.905359] (fast_lio) StderrLine: {'line': b'      |         ^~~~~~~~\n'}
+[16.910264] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:609:27: error: \xe2\x80\x98ikdtree_\xe2\x80\x99 was not declared in this scope\n'}
+[16.910384] (fast_lio) StderrLine: {'line': b'  609 |     int featsFromMapNum = ikdtree_.validnum();\n'}
+[16.910410] (fast_lio) StderrLine: {'line': b'      |                           ^~~~~~~~\n'}
+[16.925722] (-) TimerEvent: {}
+[17.025919] (-) TimerEvent: {}
+[17.126143] (-) TimerEvent: {}
+[17.226386] (-) TimerEvent: {}
+[17.326601] (-) TimerEvent: {}
+[17.426788] (-) TimerEvent: {}
+[17.526960] (-) TimerEvent: {}
+[17.627117] (-) TimerEvent: {}
+[17.727293] (-) TimerEvent: {}
+[17.827553] (-) TimerEvent: {}
+[17.927769] (-) TimerEvent: {}
+[18.027952] (-) TimerEvent: {}
+[18.128125] (-) TimerEvent: {}
+[18.228306] (-) TimerEvent: {}
+[18.328641] (-) TimerEvent: {}
+[18.428890] (-) TimerEvent: {}
+[18.529082] (-) TimerEvent: {}
+[18.629278] (-) TimerEvent: {}
+[18.729476] (-) TimerEvent: {}
+[18.802114] (fast_lio) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/fastlio_mapping.dir/build.make:90: CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o] \xec\x98\xa4\xeb\xa5\x98 1\n'}
+[18.802254] (fast_lio) StderrLine: {'line': b'gmake[2]: *** \xeb\x81\x9d\xeb\x82\x98\xec\xa7\x80 \xec\x95\x8a\xec\x9d\x80 \xec\x9e\x91\xec\x97\x85\xec\x9d\x84 \xea\xb8\xb0\xeb\x8b\xa4\xeb\xa6\xac\xea\xb3\xa0 \xec\x9e\x88\xec\x8a\xb5\xeb\x8b\x88\xeb\x8b\xa4....\n'}
+[18.829584] (-) TimerEvent: {}
+[18.929763] (-) TimerEvent: {}
+[19.030005] (-) TimerEvent: {}
+[19.130260] (-) TimerEvent: {}
+[19.230469] (-) TimerEvent: {}
+[19.330661] (-) TimerEvent: {}
+[19.430811] (-) TimerEvent: {}
+[19.530983] (-) TimerEvent: {}
+[19.631157] (-) TimerEvent: {}
+[19.731307] (-) TimerEvent: {}
+[19.831464] (-) TimerEvent: {}
+[19.931620] (-) TimerEvent: {}
+[19.959798] (fast_lio) StderrLine: {'line': b'In file included from /usr/include/eigen3/Eigen/Core:164,\n'}
+[19.959947] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:11,\n'}
+[19.959973] (fast_lio) StderrLine: {'line': b'                 from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:\n'}
+[19.960017] (fast_lio) StderrLine: {'line': b'/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h: In instantiation of \xe2\x80\x98void Eigen::internal::call_assignment_no_alias(Dst&, const Src&, const Func&) [with Dst = Eigen::Matrix<double, 24, 24, 0, 24, 24>; Src = Eigen::Matrix<double, 23, 23, 0, 23, 23>; Func = Eigen::internal::assign_op<double, double>]\xe2\x80\x99:\n'}
+[19.960046] (fast_lio) StderrLine: {'line': b'/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:858:27:   required from \xe2\x80\x98void Eigen::internal::call_assignment(Dst&, const Src&, const Func&, typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type) [with Dst = Eigen::Matrix<double, 24, 24, 0, 24, 24>; Src = Eigen::Matrix<double, 23, 23, 0, 23, 23>; Func = Eigen::internal::assign_op<double, double>; typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type = void*; typename Eigen::internal::evaluator_traits<SrcXprType>::Shape = Eigen::DenseShape]\xe2\x80\x99\n'}
+[19.960070] (fast_lio) StderrLine: {'line': b'/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:836:18:   required from \xe2\x80\x98void Eigen::internal::call_assignment(Dst&, const Src&) [with Dst = Eigen::Matrix<double, 24, 24, 0, 24, 24>; Src = Eigen::Matrix<double, 23, 23, 0, 23, 23>]\xe2\x80\x99\n'}
+[19.960090] (fast_lio) StderrLine: {'line': b'/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:779:32:   required from \xe2\x80\x98Derived& Eigen::PlainObjectBase<Derived>::_set(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = Eigen::Matrix<double, 23, 23, 0, 23, 23>; Derived = Eigen::Matrix<double, 24, 24, 0, 24, 24>]\xe2\x80\x99\n'}
+[19.960110] (fast_lio) StderrLine: {'line': b'/usr/include/eigen3/Eigen/src/Core/Matrix.h:225:24:   required from \xe2\x80\x98Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = Eigen::Matrix<double, 23, 23, 0, 23, 23>; _Scalar = double; int _Rows = 24; int _Cols = 24; int _Options = 0; int _MaxRows = 24; int _MaxCols = 24]\xe2\x80\x99\n'}
+[19.960129] (fast_lio) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:533:37:   required from here\n'}
+[19.960147] (fast_lio) StderrLine: {'line': b'/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3: error: static assertion failed: YOU_MIXED_MATRICES_OF_DIFFERENT_SIZES\n'}
+[19.960165] (fast_lio) StderrLine: {'line': b'  887 |   EIGEN_STATIC_ASSERT_SAME_MATRIX_SIZE(ActualDstTypeCleaned,Src)\n'}
+[19.960182] (fast_lio) StderrLine: {'line': b'      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[19.960198] (fast_lio) StderrLine: {'line': b'/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3: note: \xe2\x80\x98(((((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::Matrix<double, 24, 24, 0, 24, 24> >::ret) == 0) && (((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::Matrix<double, 23, 23, 0, 23, 23> >::ret) == 0)) || ((((((int)Eigen::Matrix<double, 24, 24, 0, 24, 24>::RowsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::Matrix<double, 23, 23, 0, 23, 23>::RowsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Matrix<double, 24, 24, 0, 24, 24>::RowsAtCompileTime) == ((int)Eigen::Matrix<double, 23, 23, 0, 23, 23>::RowsAtCompileTime))) && (((((int)Eigen::Matrix<double, 24, 24, 0, 24, 24>::ColsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::Matrix<double, 23, 23, 0, 23, 23>::ColsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Matrix<double, 24, 24, 0, 24, 24>::ColsAtCompileTime) == ((int)Eigen::Matrix<double, 23, 23, 0, 23, 23>::ColsAtCompileTime)))))\xe2\x80\x99 evaluates to false\n'}
+[20.031747] (-) TimerEvent: {}
+[20.131901] (-) TimerEvent: {}
+[20.232061] (-) TimerEvent: {}
+[20.332228] (-) TimerEvent: {}
+[20.432428] (-) TimerEvent: {}
+[20.532593] (-) TimerEvent: {}
+[20.632769] (-) TimerEvent: {}
+[20.732937] (-) TimerEvent: {}
+[20.833123] (-) TimerEvent: {}
+[20.933301] (-) TimerEvent: {}
+[21.033467] (-) TimerEvent: {}
+[21.133635] (-) TimerEvent: {}
+[21.233814] (-) TimerEvent: {}
+[21.334000] (-) TimerEvent: {}
+[21.434175] (-) TimerEvent: {}
+[21.534360] (-) TimerEvent: {}
+[21.634541] (-) TimerEvent: {}
+[21.734701] (-) TimerEvent: {}
+[21.834866] (-) TimerEvent: {}
+[21.935027] (-) TimerEvent: {}
+[22.035217] (-) TimerEvent: {}
+[22.056409] (fast_lio) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/fastlio_mapping.dir/build.make:118: CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o] \xec\x98\xa4\xeb\xa5\x98 1\n'}
+[22.135299] (-) TimerEvent: {}
+[22.235461] (-) TimerEvent: {}
+[22.335617] (-) TimerEvent: {}
+[22.435905] (-) TimerEvent: {}
+[22.536124] (-) TimerEvent: {}
+[22.636271] (-) TimerEvent: {}
+[22.736433] (-) TimerEvent: {}
+[22.836608] (-) TimerEvent: {}
+[22.936776] (-) TimerEvent: {}
+[23.036939] (-) TimerEvent: {}
+[23.137086] (-) TimerEvent: {}
+[23.237236] (-) TimerEvent: {}
+[23.337401] (-) TimerEvent: {}
+[23.437569] (-) TimerEvent: {}
+[23.537725] (-) TimerEvent: {}
+[23.637879] (-) TimerEvent: {}
+[23.738060] (-) TimerEvent: {}
+[23.838227] (-) TimerEvent: {}
+[23.938389] (-) TimerEvent: {}
+[24.038567] (-) TimerEvent: {}
+[24.138764] (-) TimerEvent: {}
+[24.238927] (-) TimerEvent: {}
+[24.339091] (-) TimerEvent: {}
+[24.439255] (-) TimerEvent: {}
+[24.539459] (-) TimerEvent: {}
+[24.639635] (-) TimerEvent: {}
+[24.739804] (-) TimerEvent: {}
+[24.839963] (-) TimerEvent: {}
+[24.940117] (-) TimerEvent: {}
+[25.040301] (-) TimerEvent: {}
+[25.140542] (-) TimerEvent: {}
+[25.240774] (-) TimerEvent: {}
+[25.340942] (-) TimerEvent: {}
+[25.441103] (-) TimerEvent: {}
+[25.541305] (-) TimerEvent: {}
+[25.641540] (-) TimerEvent: {}
+[25.741756] (-) TimerEvent: {}
+[25.841941] (-) TimerEvent: {}
+[25.942108] (-) TimerEvent: {}
+[26.042265] (-) TimerEvent: {}
+[26.142458] (-) TimerEvent: {}
+[26.242640] (-) TimerEvent: {}
+[26.342819] (-) TimerEvent: {}
+[26.443022] (-) TimerEvent: {}
+[26.543171] (-) TimerEvent: {}
+[26.643295] (-) TimerEvent: {}
+[26.743480] (-) TimerEvent: {}
+[26.843650] (-) TimerEvent: {}
+[26.943824] (-) TimerEvent: {}
+[27.043996] (-) TimerEvent: {}
+[27.144179] (-) TimerEvent: {}
+[27.244330] (-) TimerEvent: {}
+[27.344493] (-) TimerEvent: {}
+[27.444676] (-) TimerEvent: {}
+[27.544867] (-) TimerEvent: {}
+[27.645030] (-) TimerEvent: {}
+[27.745225] (-) TimerEvent: {}
+[27.845424] (-) TimerEvent: {}
+[27.945616] (-) TimerEvent: {}
+[28.045786] (-) TimerEvent: {}
+[28.145955] (-) TimerEvent: {}
+[28.246135] (-) TimerEvent: {}
+[28.346305] (-) TimerEvent: {}
+[28.446477] (-) TimerEvent: {}
+[28.546647] (-) TimerEvent: {}
+[28.646808] (-) TimerEvent: {}
+[28.746993] (-) TimerEvent: {}
+[28.847165] (-) TimerEvent: {}
+[28.947354] (-) TimerEvent: {}
+[29.047515] (-) TimerEvent: {}
+[29.147681] (-) TimerEvent: {}
+[29.247858] (-) TimerEvent: {}
+[29.348076] (-) TimerEvent: {}
+[29.448246] (-) TimerEvent: {}
+[29.548430] (-) TimerEvent: {}
+[29.648606] (-) TimerEvent: {}
+[29.748803] (-) TimerEvent: {}
+[29.848978] (-) TimerEvent: {}
+[29.949132] (-) TimerEvent: {}
+[30.049283] (-) TimerEvent: {}
+[30.149454] (-) TimerEvent: {}
+[30.249621] (-) TimerEvent: {}
+[30.349780] (-) TimerEvent: {}
+[30.449941] (-) TimerEvent: {}
+[30.550110] (-) TimerEvent: {}
+[30.650306] (-) TimerEvent: {}
+[30.750512] (-) TimerEvent: {}
+[30.850678] (-) TimerEvent: {}
+[30.950851] (-) TimerEvent: {}
+[31.051053] (-) TimerEvent: {}
+[31.151267] (-) TimerEvent: {}
+[31.251448] (-) TimerEvent: {}
+[31.351635] (-) TimerEvent: {}
+[31.451800] (-) TimerEvent: {}
+[31.551978] (-) TimerEvent: {}
+[31.652142] (-) TimerEvent: {}
+[31.752313] (-) TimerEvent: {}
+[31.852493] (-) TimerEvent: {}
+[31.952663] (-) TimerEvent: {}
+[32.052828] (-) TimerEvent: {}
+[32.152996] (-) TimerEvent: {}
+[32.253155] (-) TimerEvent: {}
+[32.353331] (-) TimerEvent: {}
+[32.453540] (-) TimerEvent: {}
+[32.553715] (-) TimerEvent: {}
+[32.653899] (-) TimerEvent: {}
+[32.754073] (-) TimerEvent: {}
+[32.854239] (-) TimerEvent: {}
+[32.954411] (-) TimerEvent: {}
+[33.054582] (-) TimerEvent: {}
+[33.154784] (-) TimerEvent: {}
+[33.255059] (-) TimerEvent: {}
+[33.355249] (-) TimerEvent: {}
+[33.455430] (-) TimerEvent: {}
+[33.555608] (-) TimerEvent: {}
+[33.655783] (-) TimerEvent: {}
+[33.755979] (-) TimerEvent: {}
+[33.856201] (-) TimerEvent: {}
+[33.956368] (-) TimerEvent: {}
+[34.056538] (-) TimerEvent: {}
+[34.156732] (-) TimerEvent: {}
+[34.256920] (-) TimerEvent: {}
+[34.357100] (-) TimerEvent: {}
+[34.457281] (-) TimerEvent: {}
+[34.557539] (-) TimerEvent: {}
+[34.657724] (-) TimerEvent: {}
+[34.757840] (-) TimerEvent: {}
+[34.858012] (-) TimerEvent: {}
+[34.958189] (-) TimerEvent: {}
+[35.058384] (-) TimerEvent: {}
+[35.158577] (-) TimerEvent: {}
+[35.258752] (-) TimerEvent: {}
+[35.358926] (-) TimerEvent: {}
+[35.459099] (-) TimerEvent: {}
+[35.559277] (-) TimerEvent: {}
+[35.659451] (-) TimerEvent: {}
+[35.759618] (-) TimerEvent: {}
+[35.859809] (-) TimerEvent: {}
+[35.960015] (-) TimerEvent: {}
+[36.060200] (-) TimerEvent: {}
+[36.146751] (fast_lio) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/fastlio_mapping.dir/build.make:104: CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o] \xec\x98\xa4\xeb\xa5\x98 1\n'}
+[36.147125] (fast_lio) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:612: CMakeFiles/fastlio_mapping.dir/all] \xec\x98\xa4\xeb\xa5\x98 2\n'}
+[36.147637] (fast_lio) StderrLine: {'line': b'gmake: *** [Makefile:146: all] \xec\x98\xa4\xeb\xa5\x98 2\n'}
+[36.153832] (fast_lio) CommandEnded: {'returncode': 2}
+[36.160224] (-) TimerEvent: {}
+[36.169237] (fast_lio) JobEnded: {'identifier': 'fast_lio', 'rc': 2}
+[36.179772] (-) EventReactorShutdown: {}

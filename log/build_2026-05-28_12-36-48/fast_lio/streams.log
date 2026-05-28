@@ -1,0 +1,185 @@
+[0.006s] Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/fast_lio': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/fast_lio -- -j24 -l24
+[0.035s] [ 10%] Built target fast_lio__cpp
+[0.035s] [ 10%] Built target fast_lio__rs
+[0.035s] [ 12%] Built target fast_lio__rosidl_generator_c
+[0.040s] [ 12%] Built target ament_cmake_python_copy_fast_lio
+[0.047s] [ 53%] Built target fast_lio__rosidl_typesupport_fastrtps_c
+[0.047s] [ 53%] Built target fast_lio__rosidl_typesupport_cpp
+[0.047s] [ 53%] Built target fast_lio__rosidl_typesupport_c
+[0.047s] [ 53%] Built target fast_lio__rosidl_typesupport_introspection_c
+[0.047s] [ 58%] Built target fast_lio__rosidl_typesupport_introspection_cpp
+[0.047s] [ 53%] Built target fast_lio__rosidl_typesupport_fastrtps_cpp
+[0.067s] Consolidate compiler generated dependencies of target fastlio_mapping
+[0.080s] [ 61%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o
+[0.156s] running egg_info
+[0.157s] writing fast_lio.egg-info/PKG-INFO
+[0.157s] writing dependency_links to fast_lio.egg-info/dependency_links.txt
+[0.157s] writing top-level names to fast_lio.egg-info/top_level.txt
+[0.158s] reading manifest file 'fast_lio.egg-info/SOURCES.txt'
+[0.158s] writing manifest file 'fast_lio.egg-info/SOURCES.txt'
+[0.173s] [ 61%] Built target ament_cmake_python_build_fast_lio_egg
+[0.183s] [ 61%] Built target fast_lio
+[0.193s] [ 64%] Built target fast_lio__py
+[0.203s] [ 69%] Built target fast_lio__rosidl_generator_py
+[0.214s] [ 84%] Built target fast_lio__rosidl_typesupport_introspection_c__pyext
+[0.214s] [ 84%] Built target fast_lio__rosidl_typesupport_fastrtps_c__pyext
+[0.214s] [ 84%] Built target fast_lio__rosidl_typesupport_c__pyext
+[13.281s] [ 87%] Linking CXX executable fastlio_mapping
+[13.935s] [100%] Built target fastlio_mapping
+[13.941s] Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/fast_lio' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/goldenboy/git_version/GoldenSLAM/build/fast_lio -- -j24 -l24
+[13.946s] Invoking command in '/home/goldenboy/git_version/GoldenSLAM/build/fast_lio': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/goldenboy/git_version/GoldenSLAM/build/fast_lio
+[13.950s] -- Install configuration: "Release"
+[13.951s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/ament_index/resource_index/rosidl_interfaces/fast_lio
+[13.951s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio
+[13.952s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg
+[13.952s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/pose6_d.h
+[13.952s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail
+[13.952s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__functions.c
+[13.952s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__functions.h
+[13.952s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__type_support.h
+[13.953s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__struct.h
+[13.953s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_generator_c__visibility_control.h
+[13.953s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/environment/library_path.sh
+[13.953s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/environment/library_path.dsv
+[13.954s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_generator_c.so
+[13.954s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_generator_c.so" to ""
+[13.954s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio
+[13.954s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg
+[13.954s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[13.954s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail
+[13.954s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__rosidl_typesupport_fastrtps_c.h
+[13.954s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_fastrtps_c.so
+[13.955s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_fastrtps_c.so" to ""
+[13.955s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio
+[13.955s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg
+[13.955s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/pose6_d.hpp
+[13.955s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_generator_cpp__visibility_control.hpp
+[13.955s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail
+[13.955s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__type_support.hpp
+[13.955s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__struct.hpp
+[13.955s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__traits.hpp
+[13.955s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__builder.hpp
+[13.955s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio
+[13.956s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg
+[13.956s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail
+[13.956s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/dds_fastrtps
+[13.956s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__rosidl_typesupport_fastrtps_cpp.hpp
+[13.956s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[13.956s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_fastrtps_cpp.so
+[13.956s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_fastrtps_cpp.so" to ""
+[13.956s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio
+[13.956s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg
+[13.956s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail
+[13.956s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__type_support.c
+[13.956s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__rosidl_typesupport_introspection_c.h
+[13.956s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[13.956s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_introspection_c.so
+[13.957s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_introspection_c.so" to ""
+[13.957s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_c.so
+[13.957s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_c.so" to ""
+[13.957s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio
+[13.957s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg
+[13.957s] -- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail
+[13.957s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__rosidl_typesupport_introspection_cpp.hpp
+[13.957s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/include/fast_lio/fast_lio/msg/detail/pose6_d__type_support.cpp
+[13.957s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_introspection_cpp.so
+[13.958s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_introspection_cpp.so" to ""
+[13.958s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_cpp.so
+[13.958s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_typesupport_cpp.so" to ""
+[13.958s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/environment/pythonpath.sh
+[13.958s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/environment/pythonpath.dsv
+[13.958s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio-0.0.0-py3.10.egg-info
+[13.959s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio-0.0.0-py3.10.egg-info/dependency_links.txt
+[13.959s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio-0.0.0-py3.10.egg-info/SOURCES.txt
+[13.959s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio-0.0.0-py3.10.egg-info/top_level.txt
+[13.959s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio-0.0.0-py3.10.egg-info/PKG-INFO
+[13.959s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio
+[13.959s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/__init__.py
+[13.960s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[13.960s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/_fast_lio_s.ep.rosidl_typesupport_c.c
+[13.960s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/libfast_lio__rosidl_generator_py.so
+[13.960s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/_fast_lio_s.ep.rosidl_typesupport_introspection_c.c
+[13.960s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg
+[13.960s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg/__init__.py
+[13.960s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg/_pose6_d.py
+[13.961s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg/_pose6_d_s.c
+[13.961s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[13.961s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/_fast_lio_s.ep.rosidl_typesupport_fastrtps_c.c
+[13.961s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[13.978s] Listing '/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio'...
+[13.978s] Compiling '/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/__init__.py'...
+[13.978s] Listing '/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg'...
+[13.978s] Compiling '/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg/__init__.py'...
+[13.978s] Compiling '/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/msg/_pose6_d.py'...
+[13.981s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[13.981s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[13.981s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[13.981s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[13.981s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[13.981s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/local/lib/python3.10/dist-packages/fast_lio/fast_lio_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[13.982s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_generator_py.so
+[13.982s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/libfast_lio__rosidl_generator_py.so" to ""
+[13.982s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/ament_index/resource_index/rust_packages/fast_lio
+[13.982s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rust
+[13.982s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rust/Cargo.toml
+[13.982s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rust/src
+[13.983s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rust/src/lib.rs
+[13.983s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rust/src/msg
+[13.983s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rust/src/msg/rmw.rs
+[13.983s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rust/src/msg.rs
+[13.984s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rust/build.rs
+[13.984s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/msg/Pose6D.idl
+[13.984s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/msg/Pose6D.msg
+[13.984s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/fast_lio/fastlio_mapping
+[13.985s] -- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/fast_lio/lib/fast_lio/fastlio_mapping" to ""
+[13.985s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/config
+[13.985s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/config/avia.yaml
+[13.986s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/config/horizon.yaml
+[13.986s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/config/ouster64.yaml
+[13.986s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/config/mid360.yaml
+[13.986s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/config/velodyne.yaml
+[13.986s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/launch
+[13.987s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/launch/gdb_debug_example.launch
+[13.987s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/launch/mapping.launch.py
+[13.987s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rviz
+[13.987s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/rviz/fastlio.rviz
+[13.988s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/ament_index/resource_index/package_run_dependencies/fast_lio
+[13.988s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/ament_index/resource_index/parent_prefix_path/fast_lio
+[13.988s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/environment/ament_prefix_path.sh
+[13.989s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/environment/ament_prefix_path.dsv
+[13.989s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/environment/path.sh
+[13.989s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/environment/path.dsv
+[13.990s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/local_setup.bash
+[13.990s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/local_setup.sh
+[13.990s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/local_setup.zsh
+[13.990s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/local_setup.dsv
+[13.991s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/package.dsv
+[13.991s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/ament_index/resource_index/packages/fast_lio
+[13.991s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_cExport.cmake
+[13.991s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_cExport-release.cmake
+[13.992s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_typesupport_fastrtps_cExport.cmake
+[13.992s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_typesupport_fastrtps_cExport-release.cmake
+[13.992s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_cppExport.cmake
+[13.993s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_typesupport_fastrtps_cppExport.cmake
+[13.993s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_typesupport_fastrtps_cppExport-release.cmake
+[13.993s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_introspection_cExport.cmake
+[13.993s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_introspection_cExport-release.cmake
+[13.994s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_cExport.cmake
+[13.994s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_cExport-release.cmake
+[13.994s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_introspection_cppExport.cmake
+[13.995s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_introspection_cppExport-release.cmake
+[13.995s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_cppExport.cmake
+[13.995s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lio__rosidl_typesupport_cppExport-release.cmake
+[13.996s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_pyExport.cmake
+[13.996s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/export_fast_lio__rosidl_generator_pyExport-release.cmake
+[13.997s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/rosidl_cmake-extras.cmake
+[13.997s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/ament_cmake_export_include_directories-extras.cmake
+[13.997s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/ament_cmake_export_libraries-extras.cmake
+[13.998s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/ament_cmake_export_targets-extras.cmake
+[13.998s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[13.998s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/ament_cmake_export_dependencies-extras.cmake
+[13.998s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[13.999s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lioConfig.cmake
+[13.999s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/cmake/fast_lioConfig-version.cmake
+[13.999s] -- Installing: /home/goldenboy/git_version/GoldenSLAM/install/fast_lio/share/fast_lio/package.xml
+[14.002s] Invoked command in '/home/goldenboy/git_version/GoldenSLAM/build/fast_lio' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/goldenboy/git_version/GoldenSLAM/build/fast_lio

@@ -1,0 +1,202 @@
+In file included from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:25,
+                 from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:
+/home/goldenboy/git_version/GoldenSLAM/include/common_lib.h: In function ‘double get_time_sec(const Time&)’:
+/home/goldenboy/git_version/GoldenSLAM/include/common_lib.h:259:12: error: ‘rclcpp’ has not been declared
+  259 |     return rclcpp::Time(time).seconds();
+      |            ^~~~~~
+/home/goldenboy/git_version/GoldenSLAM/include/common_lib.h: At global scope:
+/home/goldenboy/git_version/GoldenSLAM/include/common_lib.h:264:1: error: ‘rclcpp’ does not name a type
+  264 | rclcpp::Time get_ros_time(double timestamp)
+      | ^~~~~~
+In file included from /usr/include/boost/bind.hpp:30,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/IKFoM_toolkit/esekfom/esekfom.hpp:42,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/use-ikfom.hpp:4,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:26,
+                 from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:
+/usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.’
+   36 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:121:10: error: ‘condition_variable’ in namespace ‘std’ does not name a type
+  121 |     std::condition_variable sig_buffer_;
+      |          ^~~~~~~~~~~~~~~~~~
+In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:27:1: note: ‘std::condition_variable’ is defined in header ‘<condition_variable>’; did you forget to ‘#include <condition_variable>’?
+   26 | #include "use-ikfom.hpp"
+  +++ |+#include <condition_variable>
+   27 | #include "IKFoM_toolkit/esekfom/esekfom.hpp"
+In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:154:5: error: ‘KD_TREE’ does not name a type
+  154 |     KD_TREE<PointType>         ikdtree_;
+      |     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:155:5: error: ‘BoxPointType’ does not name a type; did you mean ‘PointType’?
+  155 |     BoxPointType               LocalMap_Points_;
+      |     ^~~~~~~~~~~~
+      |     PointType
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:17: error: ‘BoxPointType’ was not declared in this scope; did you mean ‘PointType’?
+  158 |     std::vector<BoxPointType>  cub_needrm_;
+      |                 ^~~~~~~~~~~~
+      |                 PointType
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 1 is invalid
+  158 |     std::vector<BoxPointType>  cub_needrm_;
+      |                             ^
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 2 is invalid
+In file included from /usr/include/boost/bind.hpp:30,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/IKFoM_toolkit/esekfom/esekfom.hpp:42,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/use-ikfom.hpp:4,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:26,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/platform/ros_bridge.hpp:18,
+                 from /home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:1:
+/usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.’
+   36 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/boost/bind.hpp:30,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/IKFoM_toolkit/esekfom/esekfom.hpp:42,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/use-ikfom.hpp:4,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:26,
+                 from /home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:2:
+/usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.’
+   36 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp:2:
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:154:5: error: ‘KD_TREE’ does not name a type
+  154 |     KD_TREE<PointType>         ikdtree_;
+      |     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:155:5: error: ‘BoxPointType’ does not name a type; did you mean ‘PointType’?
+  155 |     BoxPointType               LocalMap_Points_;
+      |     ^~~~~~~~~~~~
+      |     PointType
+In file included from /home/goldenboy/git_version/GoldenSLAM/include/platform/ros_bridge.hpp:18,
+                 from /home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:1:
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:154:5: error: ‘KD_TREE’ does not name a type
+  154 |     KD_TREE<PointType>         ikdtree_;
+      |     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:17: error: ‘BoxPointType’ was not declared in this scope; did you mean ‘PointType’?
+  158 |     std::vector<BoxPointType>  cub_needrm_;
+      |                 ^~~~~~~~~~~~
+      |                 PointType
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 1 is invalid
+  158 |     std::vector<BoxPointType>  cub_needrm_;
+      |                             ^
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 2 is invalid
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:155:5: error: ‘BoxPointType’ does not name a type; did you mean ‘PointType’?
+  155 |     BoxPointType               LocalMap_Points_;
+      |     ^~~~~~~~~~~~
+      |     PointType
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:17: error: ‘BoxPointType’ was not declared in this scope; did you mean ‘PointType’?
+  158 |     std::vector<BoxPointType>  cub_needrm_;
+      |                 ^~~~~~~~~~~~
+      |                 PointType
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 1 is invalid
+  158 |     std::vector<BoxPointType>  cub_needrm_;
+      |                             ^
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:158:29: error: template argument 2 is invalid
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::onImuCB(sensor_msgs::msg::Imu_<std::allocator<void> >::UniquePtr)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:199:5: error: ‘last_timestamp_imu_’ was not declared in this scope
+  199 |     last_timestamp_imu_ = get_time_sec(msg_in->header.stamp);
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::pushImu(sensor_msgs::msg::Imu_<std::allocator<void> >::SharedPtr)’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:150:25: error: ‘get_ros_time’ was not declared in this scope
+  150 |     msg->header.stamp = get_ros_time(get_time_sec(msg_in->header.stamp) - time_diff_lidar_to_imu_);
+      |                         ^~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::pointsCacheCollect()’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:267:5: error: ‘ikdtree_’ was not declared in this scope
+  267 |     ikdtree_.acquire_removed_points(points_history);
+      |     ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::lasermapFovSegment()’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:273:17: error: request for member ‘clear’ in ‘((SlamCore*)this)->SlamCore::cub_needrm_’, which is of non-class type ‘int’
+  273 |     cub_needrm_.clear();
+      |                 ^~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:278:21: error: no matching function for call to ‘SlamCore::pointBodyToWorld(V3F&, Eigen::DenseCoeffsBase<Eigen::Matrix<float, 3, 1>, 1>::Scalar*)’
+  278 |     pointBodyToWorld(XAxisPoint_body_, &XAxisPoint_world_[0]);
+      |     ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:228:6: note: candidate: ‘void SlamCore::pointBodyToWorld(const PointType*, PointType*) const’
+  228 | void SlamCore::pointBodyToWorld(PointType const* pi, PointType* po) const
+      |      ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:228:50: note:   no known conversion for argument 1 from ‘V3F’ {aka ‘Eigen::Matrix<float, 3, 1>’} to ‘const PointType*’ {aka ‘const pcl::PointXYZINormal*’}
+  228 | void SlamCore::pointBodyToWorld(PointType const* pi, PointType* po) const
+      |                                 ~~~~~~~~~~~~~~~~~^~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:238:6: note: candidate: ‘void SlamCore::pointBodyToWorld(const V3D&, V3D&) const’
+  238 | void SlamCore::pointBodyToWorld(const V3D& pi, V3D& po) const
+      |      ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:238:53: note:   no known conversion for argument 2 from ‘Eigen::DenseCoeffsBase<Eigen::Matrix<float, 3, 1>, 1>::Scalar*’ {aka ‘float*’} to ‘V3D&’ {aka ‘Eigen::Matrix<double, 3, 1>&’}
+  238 | void SlamCore::pointBodyToWorld(const V3D& pi, V3D& po) const
+      |                                                ~~~~~^~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:296:13: error: ‘LocalMap_Points_’ was not declared in this scope
+  296 |             LocalMap_Points_.vertex_min[i] = pos_LiD(i) - cube_len_ / 2.0;
+      |             ^~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:308:52: error: ‘LocalMap_Points_’ was not declared in this scope
+  308 |         dist_to_map_edge[i][0] = fabs(pos_LiD(i) - LocalMap_Points_.vertex_min[i]);
+      |                                                    ^~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:316:5: error: ‘BoxPointType’ was not declared in this scope; did you mean ‘PointType’?
+  316 |     BoxPointType New_LocalMap_Points = LocalMap_Points_;
+      |     ^~~~~~~~~~~~
+      |     PointType
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:317:17: error: expected ‘;’ before ‘tmp_boxpoints’
+  317 |     BoxPointType tmp_boxpoints;
+      |                 ^~~~~~~~~~~~~~
+      |                 ;
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:322:9: error: ‘tmp_boxpoints’ was not declared in this scope
+  322 |         tmp_boxpoints = LocalMap_Points_;
+      |         ^~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:322:25: error: ‘LocalMap_Points_’ was not declared in this scope
+  322 |         tmp_boxpoints = LocalMap_Points_;
+      |                         ^~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:325:13: error: ‘New_LocalMap_Points’ was not declared in this scope
+  325 |             New_LocalMap_Points.vertex_max[i] -= mov_dist;
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:328:25: error: request for member ‘push_back’ in ‘((SlamCore*)this)->SlamCore::cub_needrm_’, which is of non-class type ‘int’
+  328 |             cub_needrm_.push_back(tmp_boxpoints);
+      |                         ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:332:13: error: ‘New_LocalMap_Points’ was not declared in this scope
+  332 |             New_LocalMap_Points.vertex_max[i] += mov_dist;
+      |             ^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:335:25: error: request for member ‘push_back’ in ‘((SlamCore*)this)->SlamCore::cub_needrm_’, which is of non-class type ‘int’
+  335 |             cub_needrm_.push_back(tmp_boxpoints);
+      |                         ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:338:5: error: ‘LocalMap_Points_’ was not declared in this scope
+  338 |     LocalMap_Points_ = New_LocalMap_Points;
+      |     ^~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:338:24: error: ‘New_LocalMap_Points’ was not declared in this scope
+  338 |     LocalMap_Points_ = New_LocalMap_Points;
+      |                        ^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:342:22: error: request for member ‘empty’ in ‘((SlamCore*)this)->SlamCore::cub_needrm_’, which is of non-class type ‘int’
+  342 |     if (!cub_needrm_.empty())
+      |                      ^~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:343:34: error: ‘ikdtree_’ was not declared in this scope
+  343 |         kdtree_delete_counter_ = ikdtree_.Delete_Point_Boxes(cub_needrm_);
+      |                                  ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::mapIncremental()’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:390:23: error: ‘ikdtree_’ was not declared in this scope
+  390 |     add_point_size_ = ikdtree_.Add_Points(PointToAdd, true);
+      |                       ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::h_share_model(state_ikfom&, esekfom::dyn_share_datastruct<double>&)’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:426:13: error: ‘ikdtree_’ was not declared in this scope
+  426 |             ikdtree_.Nearest_Search(point_world, NUM_MATCH_POINTS, points_near, pointSearchSqDis);
+      |             ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::spinFrontendOnce()’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:595:9: error: ‘ikdtree_’ was not declared in this scope
+  595 |     if (ikdtree_.Root_Node == nullptr)
+      |         ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:609:27: error: ‘ikdtree_’ was not declared in this scope
+  609 |     int featsFromMapNum = ikdtree_.validnum();
+      |                           ^~~~~~~~
+gmake[2]: *** [CMakeFiles/fastlio_mapping.dir/build.make:90: CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o] 오류 1
+gmake[2]: *** 끝나지 않은 작업을 기다리고 있습니다....
+In file included from /usr/include/eigen3/Eigen/Core:164,
+                 from /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:11,
+                 from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h: In instantiation of ‘void Eigen::internal::call_assignment_no_alias(Dst&, const Src&, const Func&) [with Dst = Eigen::Matrix<double, 24, 24, 0, 24, 24>; Src = Eigen::Matrix<double, 23, 23, 0, 23, 23>; Func = Eigen::internal::assign_op<double, double>]’:
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:858:27:   required from ‘void Eigen::internal::call_assignment(Dst&, const Src&, const Func&, typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type) [with Dst = Eigen::Matrix<double, 24, 24, 0, 24, 24>; Src = Eigen::Matrix<double, 23, 23, 0, 23, 23>; Func = Eigen::internal::assign_op<double, double>; typename Eigen::internal::enable_if<(! Eigen::internal::evaluator_assume_aliasing<Src>::value), void*>::type = void*; typename Eigen::internal::evaluator_traits<SrcXprType>::Shape = Eigen::DenseShape]’
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:836:18:   required from ‘void Eigen::internal::call_assignment(Dst&, const Src&) [with Dst = Eigen::Matrix<double, 24, 24, 0, 24, 24>; Src = Eigen::Matrix<double, 23, 23, 0, 23, 23>]’
+/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:779:32:   required from ‘Derived& Eigen::PlainObjectBase<Derived>::_set(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = Eigen::Matrix<double, 23, 23, 0, 23, 23>; Derived = Eigen::Matrix<double, 24, 24, 0, 24, 24>]’
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:225:24:   required from ‘Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>& Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::operator=(const Eigen::DenseBase<OtherDerived>&) [with OtherDerived = Eigen::Matrix<double, 23, 23, 0, 23, 23>; _Scalar = double; int _Rows = 24; int _Cols = 24; int _Options = 0; int _MaxRows = 24; int _MaxCols = 24]’
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:533:37:   required from here
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3: error: static assertion failed: YOU_MIXED_MATRICES_OF_DIFFERENT_SIZES
+  887 |   EIGEN_STATIC_ASSERT_SAME_MATRIX_SIZE(ActualDstTypeCleaned,Src)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:887:3: note: ‘(((((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::Matrix<double, 24, 24, 0, 24, 24> >::ret) == 0) && (((int)Eigen::internal::size_of_xpr_at_compile_time<Eigen::Matrix<double, 23, 23, 0, 23, 23> >::ret) == 0)) || ((((((int)Eigen::Matrix<double, 24, 24, 0, 24, 24>::RowsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::Matrix<double, 23, 23, 0, 23, 23>::RowsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Matrix<double, 24, 24, 0, 24, 24>::RowsAtCompileTime) == ((int)Eigen::Matrix<double, 23, 23, 0, 23, 23>::RowsAtCompileTime))) && (((((int)Eigen::Matrix<double, 24, 24, 0, 24, 24>::ColsAtCompileTime) == ((int)Eigen::Dynamic)) || (((int)Eigen::Matrix<double, 23, 23, 0, 23, 23>::ColsAtCompileTime) == ((int)Eigen::Dynamic))) || (((int)Eigen::Matrix<double, 24, 24, 0, 24, 24>::ColsAtCompileTime) == ((int)Eigen::Matrix<double, 23, 23, 0, 23, 23>::ColsAtCompileTime)))))’ evaluates to false
+gmake[2]: *** [CMakeFiles/fastlio_mapping.dir/build.make:118: CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/fastlio_mapping.dir/build.make:104: CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o] 오류 1
+gmake[1]: *** [CMakeFiles/Makefile2:612: CMakeFiles/fastlio_mapping.dir/all] 오류 2
+gmake: *** [Makefile:146: all] 오류 2

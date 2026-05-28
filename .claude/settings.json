@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /home/goldenboy/git_version/GoldenSLAM log --oneline -20)",
+      "Bash(git -C /home/goldenboy/git_version/GoldenSLAM show retry1/base-core --stat)",
+      "Bash(git -C /home/goldenboy/git_version/GoldenSLAM ls-tree -r --name-only retry1/base-core)"
+    ]
+  }
+}
