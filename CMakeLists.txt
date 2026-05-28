@@ -137,6 +137,7 @@ add_executable(${PKG_NODE}
   src/core/plane_estimator.cpp
 
   src/platform/ros_bridge.cpp
+  src/core/iekf_updater.cpp
 
   third_party/ikd_tree/ikd_tree.cpp
   

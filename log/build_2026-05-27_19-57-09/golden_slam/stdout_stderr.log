@@ -1,0 +1,84 @@
+Consolidate compiler generated dependencies of target golden_slam_node
+[  8%] Building CXX object CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o
+[ 16%] Building CXX object CMakeFiles/golden_slam_node.dir/src/core/slam_core.cpp.o
+[ 25%] Building CXX object CMakeFiles/golden_slam_node.dir/src/platform/ros_bridge.cpp.o
+In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp: In constructor ‘SlamCore::SlamCore()’:
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:169:17: warning: ‘SlamCore::map_insert_count_’ will be initialized after [-Wreorder]
+  169 |     std::size_t map_insert_count_;
+      |                 ^~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:164:21: warning:   ‘Eigen::Matrix3d SlamCore::R_body_lidar_’ [-Wreorder]
+  164 |     Eigen::Matrix3d R_body_lidar_;
+      |                     ^~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:32:1: warning:   when initialized here [-Wreorder]
+   32 | SlamCore::SlamCore()
+      | ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::debugImuDt(double)’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:303:22: warning: unused variable ‘hz’ [-Wunused-variable]
+  303 |         const double hz = 1.0 / dt;
+      |                      ^~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::debugNearestSearch(const CloudTConstPtr&)’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:551:16: warning: unused variable ‘search_ok’ [-Wunused-variable]
+  551 |     const bool search_ok = ikd_tree_map_.nearestSearch(query_point,5,nearest_points,squared_distances);
+      |                ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::onLidarCB(livox_ros_driver2::msg::CustomMsg_<std::allocator<void> >::SharedPtr)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:155:16: warning: unused variable ‘raw_size’ [-Wunused-variable]
+  155 |     const auto raw_size = msg->point_num;
+      |                ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:156:16: warning: unused variable ‘preprocced_size’ [-Wunused-variable]
+  156 |     const auto preprocced_size = cloud->points.size();
+      |                ^~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::mapSaveCB(std_srvs::srv::Trigger_Request_<std::allocator<void> >::ConstSharedPtr, std_srvs::srv::Trigger_Response_<std::allocator<void> >::SharedPtr)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:180:75: warning: unused parameter ‘req’ [-Wunused-parameter]
+  180 | void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:180:124: warning: unused parameter ‘res’ [-Wunused-parameter]
+  180 | void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)
+      |                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+[ 33%] Linking CXX executable golden_slam_node
+[100%] Built target golden_slam_node
+-- Install configuration: "Release"
+-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node
+-- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node" to ""
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch/golden_slam.launch.py
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/config
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/config/avia.yaml
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/config/mid360.yaml
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/rviz
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/rviz/golden_slam.rviz
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include/
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform/ros_bridge.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app/golden_slam_app.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/imu_processor.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/plane_estimator.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/ikd_tree_map.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/lidar_frame.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/pcl_types.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/state.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/measure_group.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/frontend_snapshot.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/imu_propagated_pose.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/pointcloud_deskew.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/iekf_updater.hpp
+-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/slam_core.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/preprocess.hpp
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/package_run_dependencies/golden_slam
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/parent_prefix_path/golden_slam
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.sh
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.sh
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.dsv
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.bash
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.sh
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.zsh
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.dsv
+-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.dsv
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/packages/golden_slam
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig.cmake
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig-version.cmake
+-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.xml

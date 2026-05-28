@@ -8,12 +8,35 @@
 
 #include <pcl/filters/voxel_grid.h>
 
+namespace
+{
+const char* frontendUpdateModeToString(const FrontendUpdateMode mode)
+{
+    switch (mode)
+    {
+        case FrontendUpdateMode::PredictionOnly:
+            return "PredictionOnly";
+
+        case FrontendUpdateMode::ShadowOnly:
+            return "ShadowOnly";
+
+        case FrontendUpdateMode::ApplyCorrection:
+            return "ApplyCorrection";
+
+        default:
+            return "Unknown";
+    }
+}
+}
 
 SlamCore::SlamCore() 
+    : is_first_lidar_(true),
+      lidar_frame_pushed_(false),
+      frontend_frame_count_(0),
+      map_insert_count_(0),
+      R_body_lidar_(Eigen::Matrix3d::Identity()),
+      t_body_lidar_(Eigen::Vector3d::Zero())
 {
-    is_first_lidar_ = true;
-    lidar_frame_pushed_ = false;
-    // debug_map_ = std::make_shared<CloudT>();
 
  
 }
@@ -23,70 +46,203 @@ SlamCore::SlamCore()
 
  }
 
+void SlamCore::spinFrontendOnce()
+{
+    MeasureGroup meas;
 
- void SlamCore::spinFrontendOnce() 
- {
+    if (!syncMeasure(meas))
+    {
+        return;
+    }
 
-    MeasureGroup meas; 
-    //지역변수로 해야  다음 syncMeasure 호출때 유지되지 않음. 
-    if(!syncMeasure(meas))  return;
+    ++frontend_frame_count_;
 
     State predicted_state = current_state_;
-    //이번 frame에서만 쓰니까 지역변수
 
     ImuPropagatedPoseHistory imu_pose_history;
 
-    imu_processor_.propagate(meas, predicted_state,imu_pose_history);
-    //로봇의 누적되는 상태가 predicted_state로 들어간다. 
-    //이 값은 결국 world 좌표계로 tf할때 쓰인다. 
+    imu_processor_.propagate(
+        meas,
+        predicted_state,
+        imu_pose_history);
 
-    
+    if (!imu_processor_.isInitialized())
+    {
+        current_state_ = predicted_state;
+        return;
+    }
 
-    auto cloud_deskewed = pointcloud_deskew_.deskew(meas.lidar_frame,imu_pose_history);
+    auto cloud_deskewed =
+        pointcloud_deskew_.deskew(
+            meas.lidar_frame,
+            imu_pose_history);
 
+    if (!cloud_deskewed || cloud_deskewed->empty())
+    {
+        current_state_ = predicted_state;
+        return;
+    }
 
-    auto cloud_downsampled = downsampleCloud(cloud_deskewed, MAP_VOXEL_SIZE);
+    auto cloud_downsampled =
+        downsampleCloud(
+            cloud_deskewed,
+            MAP_VOXEL_SIZE);
 
-    size_t input_count = cloud_deskewed->size();
-    size_t output_count = cloud_downsampled->size();
-    
-    // std::cout 
-    //     << "[Downsample] voxel size = " << MAP_VOXEL_SIZE
-    //     << "input = " << input_count 
-    //     << " output = " << output_count 
-    //     << 
-    // std::endl;
+    if (!cloud_downsampled || cloud_downsampled->empty())
+    {
+        current_state_ = predicted_state;
+        return;
+    }
 
-    auto cloud_world = transformCloudToWorld(cloud_downsampled, predicted_state);
+    std::cout
+        << "[DeskewFrameCheck]"
+        << " frame=" << frontend_frame_count_
+        << " lidar_beg=" << meas.lidar_frame.frame_beg_time
+        << " lidar_end=" << meas.lidar_frame.frame_end_time
+        << " input=" << cloud_deskewed->points.size()
+        << " downsampled=" << cloud_downsampled->points.size()
+        << " predicted_pos=("
+        << predicted_state.position.x() << ", "
+        << predicted_state.position.y() << ", "
+        << predicted_state.position.z() << ")"
+        << std::endl;
 
+    auto cloud_world_predicted =
+        transformCloudToWorld(
+            cloud_downsampled,
+            predicted_state);
 
-    // debugNearestSearch(cloud_world);
-    debugBuildResidualCandidates(cloud_world);
+    State corrected_state = predicted_state;
+    IekfUpdateResult update_result;
 
-    ikd_tree_map_.insertCloud(cloud_world);
+    if (FRONTEND_UPDATE_MODE != FrontendUpdateMode::PredictionOnly)
+    {
+        update_result =
+            runPoseOnlyIekfShadowUpdate(
+                cloud_downsampled,
+                cloud_world_predicted,
+                predicted_state,
+                corrected_state);
+    }
 
-    // std::cout 
-    //     << "[IkdTreeMap]  add= "
-    //     << cloud_world->size()
-    //     << " total = " << ikd_tree_map_.size()
-    //     << std::endl;
+    const bool enough_residuals =
+        update_result.residual_count >= MIN_IEKF_RESIDUAL_COUNT;
 
+    const bool correction_is_small =
+        update_result.dx_rot_norm < MAX_IEKF_DX_ROT_NORM &&
+        update_result.dx_pos_norm < MAX_IEKF_DX_POS_NORM;
 
-    // accumulateDebugMap(cloud_world);
-    //
-    updateFrontendSnapshot(meas,predicted_state,ikd_tree_map_.getDisplayMap());
-    //debug_map_ : 실제 cloud 데이터를 누적해서 들고 있는 저장소
-    // FrontendSnapshot은 publish해야 할 최신 결과 묶음.
+    const bool residual_is_good =
+        update_result.mean_abs_residual < MAX_IEKF_MEAN_ABS_RESIDUAL &&
+        update_result.max_abs_residual < MAX_IEKF_MAX_ABS_RESIDUAL;
 
+    const bool shadow_is_good =
+        update_result.shadow_checked &&
+        update_result.shadow_valid_kept &&
+        update_result.shadow_mean_improved &&
+        update_result.shadow_after_mean_abs < MAX_IEKF_MEAN_ABS_RESIDUAL &&
+        update_result.shadow_after_max_abs < MAX_IEKF_MAX_ABS_RESIDUAL;
 
-    /*나중에 여기서 EKF update*/
+    const bool pass_update_gate =
+        update_result.updated &&
+        enough_residuals &&
+        correction_is_small &&
+        shadow_is_good;
 
-    current_state_ = predicted_state;
-    //current_state_ 는 로봇의 누적되는 상태이므로 전역변수로 해야함. 
+    State frontend_state = predicted_state;
+    bool use_corrected_state = false;
 
-    //EKF없이 예측값을 현재 상태로 임시 사용
-    
- }
+    if (FRONTEND_UPDATE_MODE == FrontendUpdateMode::ApplyCorrection &&
+        pass_update_gate)
+    {
+        frontend_state = corrected_state;
+        use_corrected_state = true;
+    }
+
+    /*
+        중요:
+        ShadowOnly에서는 corrected_state를 적용하지 않기 때문에,
+        predicted_state 기준 cloud를 계속 map에 넣으면 map이 IMU drift 방향으로 망가진다.
+
+        따라서 ShadowOnly에서는 초반 몇 프레임만 bootstrap용으로 map에 넣고,
+        그 이후에는 map을 freeze한다.
+    */
+    const bool map_is_empty =
+        ikd_tree_map_.empty();
+
+    const bool is_prediction_only =
+        FRONTEND_UPDATE_MODE == FrontendUpdateMode::PredictionOnly;
+
+    const bool is_shadow_only =
+        FRONTEND_UPDATE_MODE == FrontendUpdateMode::ShadowOnly;
+
+    const bool is_apply_correction =
+        FRONTEND_UPDATE_MODE == FrontendUpdateMode::ApplyCorrection;
+
+    const bool shadow_bootstrap_map =
+        is_shadow_only &&
+        map_insert_count_ < SHADOW_ONLY_BOOTSTRAP_MAP_FRAMES;
+
+    const bool apply_correction_bootstrap =
+        is_apply_correction &&
+        map_insert_count_ < SHADOW_ONLY_BOOTSTRAP_MAP_FRAMES;
+
+    const bool should_insert_map =
+        map_is_empty ||
+        is_prediction_only ||
+        shadow_bootstrap_map ||
+        apply_correction_bootstrap ||
+        (is_apply_correction && use_corrected_state);
+
+    std::cout
+        << "[FrontendState]"
+        << " mode=" << frontendUpdateModeToString(FRONTEND_UPDATE_MODE)
+        << " updated=" << update_result.updated
+        << " use_corrected=" << use_corrected_state
+        << " residual_count=" << update_result.residual_count
+        << " enough_residuals=" << enough_residuals
+        << " correction_small=" << correction_is_small
+        << " residual_good=" << residual_is_good
+        << " shadow_checked=" << update_result.shadow_checked
+        << " shadow_valid_kept=" << update_result.shadow_valid_kept
+        << " shadow_mean_improved=" << update_result.shadow_mean_improved
+        << " shadow_mean_improved_enough=" << update_result.shadow_mean_improved_enough
+        << " shadow_good=" << shadow_is_good
+        << " mean_abs=" << update_result.mean_abs_residual
+        << " max_abs=" << update_result.max_abs_residual
+        << " dx_rot_norm=" << update_result.dx_rot_norm
+        << " dx_pos_norm=" << update_result.dx_pos_norm
+        << " shadow_after_mean=" << update_result.shadow_after_mean_abs
+        << " shadow_after_max=" << update_result.shadow_after_max_abs
+        << std::endl;
+
+    std::cout
+        << "[MapUpdate]"
+        << " insert=" << should_insert_map
+        << " map_empty=" << map_is_empty
+        << " map_insert_count=" << map_insert_count_
+        << " shadow_bootstrap=" << shadow_bootstrap_map
+        << " use_corrected=" << use_corrected_state
+        << std::endl;
+
+    if (should_insert_map)
+    {
+        auto cloud_world =
+            transformCloudToWorld(
+                cloud_downsampled,
+                frontend_state);
+
+        ikd_tree_map_.insertCloud(cloud_world);
+        ++map_insert_count_;
+    }
+
+    updateFrontendSnapshot(
+        meas,
+        frontend_state,
+        ikd_tree_map_.getDisplayMap());
+
+    current_state_ = frontend_state;
+}
 
  /*push*/
 void SlamCore::pushLidarFrame(const LidarFrame& lidar_frame)
@@ -244,30 +400,55 @@ void SlamCore::pushImu(const sensor_msgs::msg::Imu::SharedPtr msg)
 
 
  /*imu_propagate*/
-CloudTPtr SlamCore::transformCloudToWorld(const CloudTConstPtr& cloud, const State& state)
+CloudTPtr SlamCore::transformCloudToWorld(
+    const CloudTConstPtr& cloud_lidar,
+    const State& state)
 {
     auto cloud_world = std::make_shared<CloudT>();
 
-    if(!cloud || cloud->empty()) return cloud_world;
-
-    cloud_world->points.reserve(cloud->points.size());
-
-    const Eigen::Matrix3d R = state.rotation.toRotationMatrix();
-    const Eigen::Vector3d t = state.position;
-
-    for(const auto& p  : cloud->points)
+    if (!cloud_lidar || cloud_lidar->empty())
     {
-        Eigen::Vector3d pb(p.x,p.y, p.z);
-        Eigen::Vector3d pw = R* pb + t;
-
-        PointT q  = p;
-        q.x = static_cast<float>(pw.x());
-        q.y = static_cast<float>(pw.y());
-        q.z = static_cast<float>(pw.z());
-
-        cloud_world->points.push_back(q);
+        return cloud_world;
     }
-    cloud_world->width = static_cast<std::uint32_t>(cloud_world->points.size());
+
+    cloud_world->points.reserve(cloud_lidar->points.size());
+
+    const Eigen::Matrix3d R_world_body =
+        state.rotation.toRotationMatrix();
+
+    const Eigen::Vector3d t_world_body =
+        state.position;
+
+    for (const auto& point_lidar : cloud_lidar->points)
+    {
+        /*
+            FAST-LIO2 계열에서 중요한 순서:
+
+            1. LiDAR frame point
+            2. Body/IMU frame point
+            3. World frame point
+
+            현재 extrinsic은 identity지만,
+            구조는 반드시 이 순서를 가져야 한다.
+        */
+        const Eigen::Vector3d point_body =
+            transformLidarPointToBodyEigen(point_lidar);
+
+        const Eigen::Vector3d point_world =
+            R_world_body * point_body + t_world_body;
+
+        PointT output_point = point_lidar;
+
+        output_point.x = static_cast<float>(point_world.x());
+        output_point.y = static_cast<float>(point_world.y());
+        output_point.z = static_cast<float>(point_world.z());
+
+        cloud_world->points.push_back(output_point);
+    }
+
+    cloud_world->width =
+        static_cast<std::uint32_t>(cloud_world->points.size());
+
     cloud_world->height = 1;
     cloud_world->is_dense = false;
 
@@ -424,58 +605,305 @@ void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
         -> 통계 출력
 
     */
- void SlamCore::debugBuildResidualCandidates(const CloudTConstPtr& cloud_world)
+IekfUpdateResult SlamCore::runPoseOnlyIekfShadowUpdate(
+    const CloudTConstPtr& cloud_lidar,
+    const CloudTConstPtr& cloud_world,
+    const State& predicted_state,
+    State& corrected_state)
 {
-    if(ikd_tree_map_.empty()) return;
-    if(!cloud_world || cloud_world->empty())    return;
+    IekfUpdateResult update_result;
+    corrected_state = predicted_state;
 
-    constexpr int K_NEAREST = 5; //3개여도 되지만 5개여야 안정적임
-    constexpr std::size_t MAX_QUERY_COUNT = 200;
+    /*
+        before: predicted_state 기준 residual.
+        shadow validation baseline이고, iter=0의 linearization point이기도 하다.
+    */
+    const auto before =
+        buildResidualCandidates(
+            cloud_lidar,
+            cloud_world);
+
+    std::cout
+        << "[IekfResidualData]"
+        << " query=" << before.query_count
+        << " valid=" << before.valid_count
+        << " search_fail=" << before.search_fail_count
+        << " candidate_fail=" << before.candidate_fail_count
+        << " mean_abs=" << before.mean_abs_residual
+        << " max_abs=" << before.max_abs_residual
+        << std::endl;
+
+    if (before.residuals.empty())
+    {
+        return update_result;
+    }
+
+    /*
+        iEKF iteration loop.
+        iter=0 : before residuals 재사용 (추가 cloud transform 없음).
+        iter=1+ : 직전 state_k 기준으로 cloud 재계산 후 residual 재생성.
+        수렴 조건 없이 MAX_IEKF_ITER 횟수만큼 돌리고, updated=false면 조기 종료.
+    */
+    static constexpr int MAX_IEKF_ITER = 3;
+
+    State state_k = predicted_state;
+    IekfUpdateResult last_iter_result;
+    bool any_updated = false;
+
+    for (int iter = 0; iter < MAX_IEKF_ITER; ++iter)
+    {
+        const std::vector<ResidualCandidate>* current_residuals;
+        ResidualCandidateBuildResult recomputed;
+
+        if (iter == 0)
+        {
+            current_residuals = &before.residuals;
+        }
+        else
+        {
+            CloudTPtr cloud_k =
+                transformCloudToWorld(cloud_lidar, state_k);
+
+            recomputed =
+                buildResidualCandidates(cloud_lidar, cloud_k);
+
+            if (recomputed.residuals.empty())
+            {
+                std::cout
+                    << "[IekfIter " << iter << "] residuals empty, stopping"
+                    << std::endl;
+                break;
+            }
+            current_residuals = &recomputed.residuals;
+        }
+
+        State state_next;
+        const IekfUpdateResult iter_result =
+            iekf_updater_.update(
+                state_k,
+                *current_residuals,
+                state_next);
+
+        std::cout
+            << "[IekfIter " << iter << "]"
+            << " updated=" << iter_result.updated
+            << " dx_rot=" << iter_result.dx_rot_norm
+            << " dx_pos=" << iter_result.dx_pos_norm
+            << " mean_abs=" << iter_result.mean_abs_residual
+            << std::endl;
+
+        if (!iter_result.updated)
+        {
+            break;
+        }
+
+        last_iter_result = iter_result;
+        state_k = state_next;
+        any_updated = true;
+    }
+
+    if (!any_updated)
+    {
+        return update_result;
+    }
+
+    corrected_state = state_k;
+
+    /*
+        update_result 채우기.
+        residual_count/mean/max: before 기준 (predicted_state에서의 초기 품질).
+        dx_rot_norm/dx_pos_norm: predicted → corrected 전체 누적 보정량.
+    */
+    update_result.updated = true;
+    update_result.residual_count = before.valid_count;
+    update_result.mean_abs_residual = before.mean_abs_residual;
+    update_result.max_abs_residual = before.max_abs_residual;
+    update_result.dx = last_iter_result.dx;
+
+    const Eigen::AngleAxisd total_daa(
+        predicted_state.rotation.inverse() * corrected_state.rotation);
+    update_result.dx_rot_norm = total_daa.angle();
+    update_result.dx_pos_norm =
+        (corrected_state.position - predicted_state.position).norm();
+
+    /*
+        Shadow validation.
+        corrected_state cloud residual이 before 대비 개선됐는지 확인한다.
+    */
+    {
+        auto cloud_world_corrected =
+            transformCloudToWorld(
+                cloud_lidar,
+                corrected_state);
+
+        const auto after =
+            buildResidualCandidates(
+                cloud_lidar,
+                cloud_world_corrected);
+
+        const bool valid_kept =
+            after.valid_count >=
+            static_cast<std::size_t>(
+                static_cast<double>(before.valid_count) * 0.8);
+
+        const bool mean_improved =
+            after.mean_abs_residual <
+            before.mean_abs_residual;
+
+        const bool mean_improved_enough =
+            after.mean_abs_residual <
+            before.mean_abs_residual * 0.9;
+
+        update_result.shadow_checked = true;
+        update_result.shadow_valid_kept = valid_kept;
+        update_result.shadow_mean_improved = mean_improved;
+        update_result.shadow_mean_improved_enough = mean_improved_enough;
+
+        update_result.shadow_before_valid = before.valid_count;
+        update_result.shadow_after_valid = after.valid_count;
+
+        update_result.shadow_before_mean_abs = before.mean_abs_residual;
+        update_result.shadow_after_mean_abs = after.mean_abs_residual;
+
+        update_result.shadow_before_max_abs = before.max_abs_residual;
+        update_result.shadow_after_max_abs = after.max_abs_residual;
+
+        std::cout
+            << "[IekfShadowValidation]"
+            << " before_valid=" << before.valid_count
+            << " after_valid=" << after.valid_count
+            << " before_mean=" << before.mean_abs_residual
+            << " after_mean=" << after.mean_abs_residual
+            << " before_max=" << before.max_abs_residual
+            << " after_max=" << after.max_abs_residual
+            << " valid_kept=" << valid_kept
+            << " mean_improved=" << mean_improved
+            << " mean_improved_enough=" << mean_improved_enough
+            << std::endl;
+    }
+
+    return update_result;
+}
 
 
-    std::size_t query_count =0;
-    std::size_t search_fail_count =0;
-    std::size_t candidate_fail_count =0;
-    std::size_t valid_count =0;
+ /*     plane_residual */
 
-    double sum_abs_residual =  0.0;
+
+ /*iekf*/
+ResidualCandidateBuildResult SlamCore::buildResidualCandidates(
+    const CloudTConstPtr& cloud_lidar,
+    const CloudTConstPtr& cloud_world)
+{
+    ResidualCandidateBuildResult result;
+
+    if (ikd_tree_map_.empty())
+    {
+        return result;
+    }
+
+    if (!cloud_lidar || !cloud_world)
+    {
+        return result;
+    }
+
+    if (cloud_lidar->empty() || cloud_world->empty())
+    {
+        return result;
+    }
+
+    const std::size_t point_count =
+        std::min(
+            cloud_lidar->points.size(),
+            cloud_world->points.size());
+
+    if (point_count == 0)
+    {
+        return result;
+    }
+
+    double sum_abs_residual = 0.0;
     double max_abs_residual = 0.0;
 
-    std::vector<ResidualCandidate> candidates;
-    candidates.reserve(MAX_QUERY_COUNT);
-
-
-    /*디버그 단계에서는 모든 point 검사하지 않고 일정 간격으로 샘플링하기 위해서*/
-    // 50개마다 하나씩 뽑음. 즉, 10000개 중에서 200개만 query point로 사용함
-    const std::size_t step =  std::max<std::size_t>(1, cloud_world->points.size() / MAX_QUERY_COUNT); 
-    for(size_t i = 0; i< cloud_world->points.size() ; i+= step)
+    for (std::size_t i = 0; i < point_count; ++i)
     {
-        const PointT& query_point = cloud_world->points[i];
-        ++query_count;
+        /*
+            cloud_lidar:
+                deskew + downsample 이후의 LiDAR frame point
+
+            query_point_body:
+                LiDAR -> Body extrinsic을 거친 point
+
+            query_point_world:
+                predicted_state 또는 corrected_state로 world에 올린 point
+        */
+        const PointT& query_point_lidar =
+            cloud_lidar->points[i];
+
+        const PointT query_point_body =
+            transformLidarPointToBodyPoint(query_point_lidar);
+
+        const PointT& query_point_world =
+            cloud_world->points[i];
+
+        ++result.query_count;
 
         std::vector<PointT> nearest_points;
         std::vector<float> squared_distances;
 
-        const bool search_ok = ikd_tree_map_.nearestSearch(query_point, K_NEAREST, nearest_points, squared_distances);
+        const bool search_ok =
+            ikd_tree_map_.nearestSearch(
+                query_point_world,
+                5,
+                nearest_points,
+                squared_distances);
 
-        if(!search_ok || nearest_points.size() <3)
+        if (!search_ok)
         {
-            ++search_fail_count;
+            ++result.search_fail_count;
+            continue;
+        }
+
+        /*
+            FAST-LIO2식 correspondence에서 중요한 gate.
+            query point 주변 map point들이 너무 멀면
+            local plane으로 믿으면 안 된다.
+        */
+        if (squared_distances.empty() ||
+            squared_distances.back() > MAX_NEAREST_POINT_SQ_DISTANCE)
+        {
+            ++result.candidate_fail_count;
             continue;
         }
 
         ResidualCandidate candidate;
 
-        const bool candidate_ok = plane_estimator_.buildResidualCandidate(query_point, nearest_points, candidate);
+        const bool candidate_ok =
+            plane_estimator_.buildResidualCandidate(
+                query_point_body,
+                query_point_world,
+                nearest_points,
+                squared_distances,
+                candidate);
 
-        if(!candidate_ok || !candidate.valid)
+        if (!candidate_ok || !candidate.valid)
         {
-            ++candidate_fail_count;
+            ++result.candidate_fail_count;
             continue;
         }
-        candidates.push_back(candidate);
 
-        ++valid_count;
+        /*
+            residual 자체가 너무 큰 후보는 update에 넣지 않는다.
+            지금은 기존 IEKF gate와 같은 값을 사용한다.
+        */
+        if (candidate.abs_residual > MAX_IEKF_MAX_ABS_RESIDUAL)
+        {
+            ++result.candidate_fail_count;
+            continue;
+        }
+
+        result.residuals.push_back(candidate);
+        ++result.valid_count;
+
         sum_abs_residual += candidate.abs_residual;
 
         if (candidate.abs_residual > max_abs_residual)
@@ -484,22 +912,42 @@ void SlamCore::debugNearestSearch(const CloudTConstPtr& cloud_world)
         }
     }
 
-    const double mean_abs_residual =
-        valid_count > 0
-            ? sum_abs_residual / static_cast<double>(valid_count)
-            : 0.0;
+    if (result.valid_count > 0)
+    {
+        result.mean_abs_residual =
+            sum_abs_residual / static_cast<double>(result.valid_count);
 
-    std::cout
-        << "[ResidualCandidates]"
-        << " query=" << query_count
-        << " valid=" << valid_count
-        << " search_fail=" << search_fail_count
-        << " candidate_fail=" << candidate_fail_count
-        << " mean_abs=" << mean_abs_residual
-        << " max_abs=" << max_abs_residual
-        << std::endl;
-        
+        result.max_abs_residual =
+            max_abs_residual;
+    }
+
+    return result;
 }
 
+Eigen::Vector3d SlamCore::transformLidarPointToBodyEigen(
+    const PointT& point_lidar) const
+{
+    const Eigen::Vector3d p_lidar(
+        point_lidar.x,
+        point_lidar.y,
+        point_lidar.z);
 
- /*     plane_residual */
+    return R_body_lidar_ * p_lidar + t_body_lidar_;
+}
+
+PointT SlamCore::transformLidarPointToBodyPoint(
+    const PointT& point_lidar) const
+{
+    const Eigen::Vector3d p_body =
+        transformLidarPointToBodyEigen(point_lidar);
+
+    PointT point_body = point_lidar;
+
+    point_body.x = static_cast<float>(p_body.x());
+    point_body.y = static_cast<float>(p_body.y());
+    point_body.z = static_cast<float>(p_body.z());
+
+    return point_body;
+}
+
+ /*     iekf*/
