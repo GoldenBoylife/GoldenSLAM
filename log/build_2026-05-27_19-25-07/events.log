@@ -1,0 +1,741 @@
+[0.000000] (-) TimerEvent: {}
+[0.000108] (golden_slam) JobQueued: {'identifier': 'golden_slam', 'dependencies': OrderedDict()}
+[0.000122] (golden_slam) JobStarted: {'identifier': 'golden_slam'}
+[0.005639] (golden_slam) JobProgress: {'identifier': 'golden_slam', 'progress': 'cmake'}
+[0.006174] (golden_slam) Command: {'cmd': ['/usr/bin/cmake', '/home/goldenboy/git_version/GoldenSLAM', '-DCMAKE_INSTALL_PREFIX=/home/goldenboy/git_version/GoldenSLAM/install/golden_slam'], 'cwd': '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-152_agent'), ('USER', 'goldenboy'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('GIT_EDITOR', 'true'), ('VSCODE_WSL_EXT_LOCATION', '/mnt/c/Users/hwido/.vscode/extensions/ms-vscode-remote.remote-wsl-0.104.3'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.152'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/goldenboy'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-be5f3a81-86f3-4ac9-a709-c4487cb7615c.sock'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'goldenboy'), ('NAME', 'Gini'), ('WSL_INTEROP', '/run/WSL/416_interop'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/bin/remote-cli:/home/goldenboy/.local/bin:/home/goldenboy/.local/bin:/home/goldenboy/dev-tools/flutter/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/STMicroelectronics/stlink_server:/mnt/c/ST/STM32CubeCLT_1.18.0:/mnt/c/ST/STM32CubeCLT_1.18.0/CMake/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/Ninja/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STLink-gdb-server/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STM32CubeProgrammer/bin:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/PuTTY/:/mnt/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/CMake/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/NVIDIA Corporation/SDK Manager:/mnt/c/Program Files/usbipd-win/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/hwido/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hwido/Development/flutter/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/snap/bin:/home/goldenboy/dev-tools/androidSDK/cmdline-tools/latest/bin:/home/goldenboy/dev-tools/androidSDK/platform-tools'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':0'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', 'f5e2f149-0845-4fe0-b34d-0d28fba3ed02'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('PWD', '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam'), ('ANDROID_HOME', '/home/goldenboy/dev-tools/androidSDK'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/goldenboy/.vscode-server/extensions/anthropic.claude-code-2.1.152-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[0.099344] (-) TimerEvent: {}
+[0.128500] (golden_slam) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.199443] (-) TimerEvent: {}
+[0.299597] (-) TimerEvent: {}
+[0.357887] (golden_slam) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.399698] (-) TimerEvent: {}
+[0.499868] (-) TimerEvent: {}
+[0.521008] (golden_slam) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.589146] (golden_slam) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.592492] (golden_slam) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.592886] (golden_slam) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.593413] (golden_slam) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.595428] (golden_slam) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.599939] (-) TimerEvent: {}
+[0.671908] (golden_slam) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.675388] (golden_slam) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.675587] (golden_slam) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.675834] (golden_slam) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.676172] (golden_slam) StdoutLine: {'line': b'-- Project: golden_slam\n'}
+[0.676240] (golden_slam) StdoutLine: {'line': b'-- Build type: Release\n'}
+[0.676264] (golden_slam) StdoutLine: {'line': b'-- CPU architecture: x86_64\n'}
+[0.679715] (golden_slam) StderrLine: {'line': b'Processer number:  24\n'}
+[0.679808] (golden_slam) StderrLine: {'line': b'core for MP: 3\n'}
+[0.700027] (-) TimerEvent: {}
+[0.800157] (-) TimerEvent: {}
+[0.900303] (-) TimerEvent: {}
+[0.969749] (golden_slam) StdoutLine: {'line': b'-- OpenMP found\n'}
+[0.980377] (golden_slam) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.000376] (-) TimerEvent: {}
+[1.059952] (golden_slam) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.100460] (-) TimerEvent: {}
+[1.120129] (golden_slam) StdoutLine: {'line': b'-- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.200540] (-) TimerEvent: {}
+[1.207923] (golden_slam) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.211515] (golden_slam) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.218845] (golden_slam) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.230367] (golden_slam) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.243113] (golden_slam) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.279956] (golden_slam) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.282297] (golden_slam) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.300647] (-) TimerEvent: {}
+[1.400825] (-) TimerEvent: {}
+[1.500957] (-) TimerEvent: {}
+[1.601063] (-) TimerEvent: {}
+[1.701225] (-) TimerEvent: {}
+[1.801386] (-) TimerEvent: {}
+[1.901541] (-) TimerEvent: {}
+[2.001827] (golden_slam) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[2.001931] (-) TimerEvent: {}
+[2.102018] (-) TimerEvent: {}
+[2.202192] (-) TimerEvent: {}
+[2.302347] (-) TimerEvent: {}
+[2.402623] (-) TimerEvent: {}
+[2.502789] (-) TimerEvent: {}
+[2.602944] (-) TimerEvent: {}
+[2.610083] (golden_slam) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[2.703048] (-) TimerEvent: {}
+[2.803172] (-) TimerEvent: {}
+[2.903296] (-) TimerEvent: {}
+[3.003412] (-) TimerEvent: {}
+[3.103570] (-) TimerEvent: {}
+[3.203727] (-) TimerEvent: {}
+[3.303885] (-) TimerEvent: {}
+[3.404056] (-) TimerEvent: {}
+[3.504230] (-) TimerEvent: {}
+[3.604389] (-) TimerEvent: {}
+[3.704548] (-) TimerEvent: {}
+[3.755265] (golden_slam) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[3.771093] (golden_slam) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[3.804646] (-) TimerEvent: {}
+[3.839821] (golden_slam) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[3.840019] (golden_slam) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[3.902677] (golden_slam) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[3.903321] (golden_slam) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[3.904704] (-) TimerEvent: {}
+[3.942274] (golden_slam) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[3.966229] (golden_slam) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.1 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[3.979276] (golden_slam) StdoutLine: {'line': b'-- Found livox_ros_driver2: 1.0.0 (/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/share/livox_ros_driver2/cmake)\n'}
+[4.004798] (-) TimerEvent: {}
+[4.032906] (golden_slam) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[4.038759] (golden_slam) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[4.051759] (golden_slam) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[4.051850] (golden_slam) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[4.104897] (-) TimerEvent: {}
+[4.205052] (-) TimerEvent: {}
+[4.305212] (-) TimerEvent: {}
+[4.405384] (-) TimerEvent: {}
+[4.505539] (-) TimerEvent: {}
+[4.605706] (-) TimerEvent: {}
+[4.614119] (golden_slam) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[4.620168] (golden_slam) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[4.705825] (-) TimerEvent: {}
+[4.781985] (golden_slam) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[4.782092] (golden_slam) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[4.805923] (-) TimerEvent: {}
+[4.906083] (-) TimerEvent: {}
+[5.006244] (-) TimerEvent: {}
+[5.106400] (-) TimerEvent: {}
+[5.206555] (-) TimerEvent: {}
+[5.306711] (-) TimerEvent: {}
+[5.406889] (-) TimerEvent: {}
+[5.507065] (-) TimerEvent: {}
+[5.607216] (-) TimerEvent: {}
+[5.707374] (-) TimerEvent: {}
+[5.807627] (-) TimerEvent: {}
+[5.907789] (-) TimerEvent: {}
+[6.008000] (-) TimerEvent: {}
+[6.108157] (-) TimerEvent: {}
+[6.208369] (-) TimerEvent: {}
+[6.308524] (-) TimerEvent: {}
+[6.408684] (-) TimerEvent: {}
+[6.508832] (-) TimerEvent: {}
+[6.608991] (-) TimerEvent: {}
+[6.709140] (-) TimerEvent: {}
+[6.738572] (golden_slam) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[6.743879] (golden_slam) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[6.787144] (golden_slam) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[6.787981] (golden_slam) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[6.809300] (-) TimerEvent: {}
+[6.879948] (golden_slam) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[6.909370] (-) TimerEvent: {}
+[7.009508] (-) TimerEvent: {}
+[7.109668] (-) TimerEvent: {}
+[7.209831] (-) TimerEvent: {}
+[7.309992] (-) TimerEvent: {}
+[7.410154] (-) TimerEvent: {}
+[7.510300] (-) TimerEvent: {}
+[7.569134] (golden_slam) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[7.572070] (golden_slam) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[7.575193] (golden_slam) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[7.610368] (-) TimerEvent: {}
+[7.710503] (-) TimerEvent: {}
+[7.810655] (-) TimerEvent: {}
+[7.910811] (-) TimerEvent: {}
+[8.010972] (-) TimerEvent: {}
+[8.111129] (-) TimerEvent: {}
+[8.211282] (-) TimerEvent: {}
+[8.220068] (golden_slam) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[8.311384] (-) TimerEvent: {}
+[8.411546] (-) TimerEvent: {}
+[8.511673] (-) TimerEvent: {}
+[8.611836] (-) TimerEvent: {}
+[8.712022] (-) TimerEvent: {}
+[8.812175] (-) TimerEvent: {}
+[8.888343] (golden_slam) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[8.912235] (-) TimerEvent: {}
+[9.012346] (-) TimerEvent: {}
+[9.112507] (-) TimerEvent: {}
+[9.212665] (-) TimerEvent: {}
+[9.312825] (-) TimerEvent: {}
+[9.412982] (-) TimerEvent: {}
+[9.513105] (-) TimerEvent: {}
+[9.540760] (golden_slam) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[9.541070] (golden_slam) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[9.541373] (golden_slam) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[9.541744] (golden_slam) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[9.542159] (golden_slam) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[9.542512] (golden_slam) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[9.542718] (golden_slam) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[9.542905] (golden_slam) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[9.543244] (golden_slam) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[9.543771] (golden_slam) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[9.544200] (golden_slam) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  \n'}
+[9.544569] (golden_slam) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  \n'}
+[9.545000] (golden_slam) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  \n'}
+[9.545536] (golden_slam) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  \n'}
+[9.546095] (golden_slam) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[9.546556] (golden_slam) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  \n'}
+[9.547018] (golden_slam) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  \n'}
+[9.547575] (golden_slam) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  \n'}
+[9.548104] (golden_slam) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  \n'}
+[9.548505] (golden_slam) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  \n'}
+[9.548950] (golden_slam) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[9.549140] (golden_slam) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[9.558564] (golden_slam) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[9.558974] (golden_slam) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  \n'}
+[9.559429] (golden_slam) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  \n'}
+[9.569101] (golden_slam) StdoutLine: {'line': b'-- Found std_srvs: 4.9.1 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[9.579895] (golden_slam) StdoutLine: {'line': b'-- Found tf2: 0.25.19 (/opt/ros/humble/share/tf2/cmake)\n'}
+[9.583205] (golden_slam) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.19 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[9.613196] (-) TimerEvent: {}
+[9.630195] (golden_slam) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.19 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[9.654664] (golden_slam) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[9.655868] (golden_slam) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[9.655943] (golden_slam) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[9.661268] (golden_slam) StdoutLine: {'line': b'-- PCL libraries: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_apps;pcl_outofcore;pcl_people;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN;QHULL::QHULL\n'}
+[9.661338] (golden_slam) StdoutLine: {'line': b'-- PCL include dirs: /usr/include/pcl-1.12\n'}
+[9.661362] (golden_slam) StdoutLine: {'line': b'-- Eigen3 include dir: /usr/include/eigen3\n'}
+[9.661381] (golden_slam) StdoutLine: {'line': b'-- PCL include dirs: /usr/include/pcl-1.12\n'}
+[9.703452] (golden_slam) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.713272] (-) TimerEvent: {}
+[9.755769] (golden_slam) StdoutLine: {'line': b'-- Generating done\n'}
+[9.761253] (golden_slam) StdoutLine: {'line': b'-- Build files have been written to: /home/goldenboy/git_version/GoldenSLAM/build/golden_slam\n'}
+[9.770796] (golden_slam) CommandEnded: {'returncode': 0}
+[9.771320] (golden_slam) JobProgress: {'identifier': 'golden_slam', 'progress': 'build'}
+[9.772110] (golden_slam) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam', '--', '-j24', '-l24'], 'cwd': '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-152_agent'), ('USER', 'goldenboy'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('GIT_EDITOR', 'true'), ('VSCODE_WSL_EXT_LOCATION', '/mnt/c/Users/hwido/.vscode/extensions/ms-vscode-remote.remote-wsl-0.104.3'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.152'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/goldenboy'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-be5f3a81-86f3-4ac9-a709-c4487cb7615c.sock'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'goldenboy'), ('NAME', 'Gini'), ('WSL_INTEROP', '/run/WSL/416_interop'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/bin/remote-cli:/home/goldenboy/.local/bin:/home/goldenboy/.local/bin:/home/goldenboy/dev-tools/flutter/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/STMicroelectronics/stlink_server:/mnt/c/ST/STM32CubeCLT_1.18.0:/mnt/c/ST/STM32CubeCLT_1.18.0/CMake/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/Ninja/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STLink-gdb-server/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STM32CubeProgrammer/bin:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/PuTTY/:/mnt/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/CMake/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/NVIDIA Corporation/SDK Manager:/mnt/c/Program Files/usbipd-win/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/hwido/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hwido/Development/flutter/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/snap/bin:/home/goldenboy/dev-tools/androidSDK/cmdline-tools/latest/bin:/home/goldenboy/dev-tools/androidSDK/platform-tools'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':0'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', 'f5e2f149-0845-4fe0-b34d-0d28fba3ed02'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('PWD', '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam'), ('ANDROID_HOME', '/home/goldenboy/dev-tools/androidSDK'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/goldenboy/.vscode-server/extensions/anthropic.claude-code-2.1.152-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[9.795874] (golden_slam) StdoutLine: {'line': b'[ 16%] Building CXX object CMakeFiles/golden_slam_node.dir/src/app/main.cpp.o\n'}
+[9.796017] (golden_slam) StdoutLine: {'line': b'[ 25%] Building CXX object CMakeFiles/golden_slam_node.dir/src/core/slam_core.cpp.o\n'}
+[9.796044] (golden_slam) StdoutLine: {'line': b'[ 25%] Building CXX object CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o\n'}
+[9.796085] (golden_slam) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/golden_slam_node.dir/src/core/preprocess.cpp.o\n'}
+[9.796190] (golden_slam) StdoutLine: {'line': b'[ 41%] Building CXX object CMakeFiles/golden_slam_node.dir/src/core/imu_processor.cpp.o\n'}
+[9.796240] (golden_slam) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/golden_slam_node.dir/src/core/pointcloud_deskew.cpp.o\n'}
+[9.797269] (golden_slam) StdoutLine: {'line': b'[ 58%] Building CXX object CMakeFiles/golden_slam_node.dir/third_party/ikd_tree/ikd_tree.cpp.o\n'}
+[9.797628] (golden_slam) StdoutLine: {'line': b'[ 66%] Building CXX object CMakeFiles/golden_slam_node.dir/src/platform/ros_bridge.cpp.o\n'}
+[9.797685] (golden_slam) StdoutLine: {'line': b'[ 75%] Building CXX object CMakeFiles/golden_slam_node.dir/src/core/ikd_tree_map.cpp.o\n'}
+[9.798443] (golden_slam) StdoutLine: {'line': b'[ 83%] Building CXX object CMakeFiles/golden_slam_node.dir/src/core/iekf_updater.cpp.o\n'}
+[9.798497] (golden_slam) StdoutLine: {'line': b'[ 91%] Building CXX object CMakeFiles/golden_slam_node.dir/src/core/plane_estimator.cpp.o\n'}
+[9.813342] (-) TimerEvent: {}
+[9.913465] (-) TimerEvent: {}
+[10.013651] (-) TimerEvent: {}
+[10.113844] (-) TimerEvent: {}
+[10.214123] (-) TimerEvent: {}
+[10.314470] (-) TimerEvent: {}
+[10.414806] (-) TimerEvent: {}
+[10.515074] (-) TimerEvent: {}
+[10.615328] (-) TimerEvent: {}
+[10.715691] (-) TimerEvent: {}
+[10.816041] (-) TimerEvent: {}
+[10.916284] (-) TimerEvent: {}
+[11.016567] (-) TimerEvent: {}
+[11.116960] (-) TimerEvent: {}
+[11.217382] (-) TimerEvent: {}
+[11.317845] (-) TimerEvent: {}
+[11.418191] (-) TimerEvent: {}
+[11.518451] (-) TimerEvent: {}
+[11.618790] (-) TimerEvent: {}
+[11.719115] (-) TimerEvent: {}
+[11.819399] (-) TimerEvent: {}
+[11.883118] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::multi_thread_rebuild() [with PointType = pcl::PointXYZ]\xe2\x80\x99:\n'}
+[11.883713] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.883828] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:332:17: warning: unused variable \xe2\x80\x98valid_old\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.883973] (golden_slam) StderrLine: {'line': b'  332 |             int valid_old = old_root_node->TreeSize - old_root_node->invalid_point_num;\n'}
+[11.884118] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~\n'}
+[11.884153] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:333:17: warning: unused variable \xe2\x80\x98valid_new\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.884186] (golden_slam) StderrLine: {'line': b'  333 |             int valid_new = new_root_node->TreeSize - new_root_node->invalid_point_num;\n'}
+[11.884224] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~\n'}
+[11.884251] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:234:33: warning: unused variable \xe2\x80\x98new_node_ptr\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.884281] (golden_slam) StderrLine: {'line': b'  234 |     KD_TREE_NODE *father_ptr, **new_node_ptr;\n'}
+[11.884314] (golden_slam) StderrLine: {'line': b'      |                                 ^~~~~~~~~~~~\n'}
+[11.884544] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Rebuild(KD_TREE<PointType>::KD_TREE_NODE**) [with PointType = pcl::PointXYZ]\xe2\x80\x99:\n'}
+[11.884654] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.884751] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:754:13: warning: unused variable \xe2\x80\x98size_rec\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.884835] (golden_slam) StderrLine: {'line': b'  754 |         int size_rec = (*root)->TreeSize;\n'}
+[11.885026] (golden_slam) StderrLine: {'line': b'      |             ^~~~~~~~\n'}
+[11.885483] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Delete_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool, bool) [with PointType = pcl::PointXYZ]\xe2\x80\x99:\n'}
+[11.885849] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.885931] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:805:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.886213] (golden_slam) StderrLine: {'line': b'  805 |     struct timespec Timeout;\n'}
+[11.886310] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.886484] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Delete_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool) [with PointType = pcl::PointXYZ]\xe2\x80\x99:\n'}
+[11.886687] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.887141] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:870:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.887234] (golden_slam) StderrLine: {'line': b'  870 |     struct timespec Timeout;\n'}
+[11.887313] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.887381] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool, int) [with PointType = pcl::PointXYZ]\xe2\x80\x99:\n'}
+[11.887498] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.887587] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1009:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.887643] (golden_slam) StderrLine: {'line': b' 1009 |     struct timespec Timeout;\n'}
+[11.887694] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.887763] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool) [with PointType = pcl::PointXYZ]\xe2\x80\x99:\n'}
+[11.887826] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.887875] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:949:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.887932] (golden_slam) StderrLine: {'line': b'  949 |     struct timespec Timeout;\n'}
+[11.888005] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.888093] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Search(KD_TREE<PointType>::KD_TREE_NODE*, int, PointType, KD_TREE<PointType>::MANUAL_HEAP&, float) [with PointType = pcl::PointXYZ]\xe2\x80\x99:\n'}
+[11.888165] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.888252] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1100:63: warning: suggest parentheses around \xe2\x80\x98&&\xe2\x80\x99 within \xe2\x80\x98||\xe2\x80\x99 [-Wparentheses]\n'}
+[11.888329] (golden_slam) StderrLine: {'line': b' 1100 |     if (q.size() < k_nearest || dist_left_node < q.top().dist && dist_right_node < q.top().dist)\n'}
+[11.888410] (golden_slam) StderrLine: {'line': b'      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.888483] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1097:9: warning: unused variable \xe2\x80\x98cur_search_counter\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.888546] (golden_slam) StderrLine: {'line': b' 1097 |     int cur_search_counter;\n'}
+[11.888598] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~~~~~~~~~~\n'}
+[11.892841] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Add_Points(KD_TREE<PointType>::PointVector&, bool) [with PointType = pcl::PointXYZ; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >]\xe2\x80\x99:\n'}
+[11.893481] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.893573] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:488:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.893662] (golden_slam) StderrLine: {'line': b'  488 |     for (int i = 0; i < PointToAdd.size(); i++)\n'}
+[11.893852] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~\n'}
+[11.894015] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:505:39: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.894193] (golden_slam) StderrLine: {'line': b'  505 |             for (int index = 0; index < Downsample_Storage.size(); index++)\n'}
+[11.894392] (golden_slam) StderrLine: {'line': b'      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.894581] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:481:9: warning: unused variable \xe2\x80\x98NewPointSize\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.894806] (golden_slam) StderrLine: {'line': b'  481 |     int NewPointSize = PointToAdd.size();\n'}
+[11.894875] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~~~~\n'}
+[11.895034] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:482:9: warning: unused variable \xe2\x80\x98tree_size\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.895249] (golden_slam) StderrLine: {'line': b'  482 |     int tree_size = size();\n'}
+[11.895296] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~\n'}
+[11.895327] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZ]\xe2\x80\x99:\n'}
+[11.895359] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.895380] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:579:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<BoxPointType>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.895407] (golden_slam) StderrLine: {'line': b'  579 |     for (int i = 0; i < BoxPoints.size(); i++)\n'}
+[11.895437] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~\n'}
+[11.895470] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Delete_Points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZ; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >]\xe2\x80\x99:\n'}
+[11.895505] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.895541] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:607:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.895581] (golden_slam) StderrLine: {'line': b'  607 |     for (int i = 0; i < PointToDel.size(); i++)\n'}
+[11.895623] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~\n'}
+[11.895660] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Delete_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZ]\xe2\x80\x99:\n'}
+[11.895691] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.895716] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:636:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<BoxPointType>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.895743] (golden_slam) StderrLine: {'line': b'  636 |     for (int i = 0; i < BoxPoints.size(); i++)\n'}
+[11.895775] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~\n'}
+[11.895797] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::acquire_removed_points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZ; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >]\xe2\x80\x99:\n'}
+[11.895819] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here\n'}
+[11.895842] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:665:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.895876] (golden_slam) StderrLine: {'line': b'  665 |     for (int i = 0; i < Points_deleted.size(); i++)\n'}
+[11.895909] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.895930] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:669:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.895953] (golden_slam) StderrLine: {'line': b'  669 |     for (int i = 0; i < Multithread_Points_deleted.size(); i++)\n'}
+[11.895972] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.897097] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::multi_thread_rebuild() [with PointType = pcl::PointXYZI]\xe2\x80\x99:\n'}
+[11.897246] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.897332] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:332:17: warning: unused variable \xe2\x80\x98valid_old\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.897409] (golden_slam) StderrLine: {'line': b'  332 |             int valid_old = old_root_node->TreeSize - old_root_node->invalid_point_num;\n'}
+[11.897566] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~\n'}
+[11.897633] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:333:17: warning: unused variable \xe2\x80\x98valid_new\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.897709] (golden_slam) StderrLine: {'line': b'  333 |             int valid_new = new_root_node->TreeSize - new_root_node->invalid_point_num;\n'}
+[11.897791] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~\n'}
+[11.897880] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:234:33: warning: unused variable \xe2\x80\x98new_node_ptr\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.897957] (golden_slam) StderrLine: {'line': b'  234 |     KD_TREE_NODE *father_ptr, **new_node_ptr;\n'}
+[11.898007] (golden_slam) StderrLine: {'line': b'      |                                 ^~~~~~~~~~~~\n'}
+[11.899011] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Rebuild(KD_TREE<PointType>::KD_TREE_NODE**) [with PointType = pcl::PointXYZI]\xe2\x80\x99:\n'}
+[11.899122] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.899171] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:754:13: warning: unused variable \xe2\x80\x98size_rec\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.899302] (golden_slam) StderrLine: {'line': b'  754 |         int size_rec = (*root)->TreeSize;\n'}
+[11.899451] (golden_slam) StderrLine: {'line': b'      |             ^~~~~~~~\n'}
+[11.899800] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Delete_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool, bool) [with PointType = pcl::PointXYZI]\xe2\x80\x99:\n'}
+[11.899904] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.900111] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:805:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.900533] (golden_slam) StderrLine: {'line': b'  805 |     struct timespec Timeout;\n'}
+[11.900598] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.900636] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Delete_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool) [with PointType = pcl::PointXYZI]\xe2\x80\x99:\n'}
+[11.900700] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.900910] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:870:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.900956] (golden_slam) StderrLine: {'line': b'  870 |     struct timespec Timeout;\n'}
+[11.900982] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.901002] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool, int) [with PointType = pcl::PointXYZI]\xe2\x80\x99:\n'}
+[11.901045] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.901104] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1009:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.901192] (golden_slam) StderrLine: {'line': b' 1009 |     struct timespec Timeout;\n'}
+[11.901275] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.901358] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool) [with PointType = pcl::PointXYZI]\xe2\x80\x99:\n'}
+[11.901415] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.901495] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:949:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.901571] (golden_slam) StderrLine: {'line': b'  949 |     struct timespec Timeout;\n'}
+[11.901628] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.901705] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Search(KD_TREE<PointType>::KD_TREE_NODE*, int, PointType, KD_TREE<PointType>::MANUAL_HEAP&, float) [with PointType = pcl::PointXYZI]\xe2\x80\x99:\n'}
+[11.901799] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.901867] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1100:63: warning: suggest parentheses around \xe2\x80\x98&&\xe2\x80\x99 within \xe2\x80\x98||\xe2\x80\x99 [-Wparentheses]\n'}
+[11.901950] (golden_slam) StderrLine: {'line': b' 1100 |     if (q.size() < k_nearest || dist_left_node < q.top().dist && dist_right_node < q.top().dist)\n'}
+[11.902041] (golden_slam) StderrLine: {'line': b'      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.902267] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1097:9: warning: unused variable \xe2\x80\x98cur_search_counter\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.902310] (golden_slam) StderrLine: {'line': b' 1097 |     int cur_search_counter;\n'}
+[11.902334] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~~~~~~~~~~\n'}
+[11.905831] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Add_Points(KD_TREE<PointType>::PointVector&, bool) [with PointType = pcl::PointXYZI; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >]\xe2\x80\x99:\n'}
+[11.906162] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.906231] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:488:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.906286] (golden_slam) StderrLine: {'line': b'  488 |     for (int i = 0; i < PointToAdd.size(); i++)\n'}
+[11.906330] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~\n'}
+[11.906846] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:505:39: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.906910] (golden_slam) StderrLine: {'line': b'  505 |             for (int index = 0; index < Downsample_Storage.size(); index++)\n'}
+[11.906979] (golden_slam) StderrLine: {'line': b'      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.907055] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:481:9: warning: unused variable \xe2\x80\x98NewPointSize\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.907120] (golden_slam) StderrLine: {'line': b'  481 |     int NewPointSize = PointToAdd.size();\n'}
+[11.907179] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~~~~\n'}
+[11.907230] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:482:9: warning: unused variable \xe2\x80\x98tree_size\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.907290] (golden_slam) StderrLine: {'line': b'  482 |     int tree_size = size();\n'}
+[11.907365] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~\n'}
+[11.907488] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZI]\xe2\x80\x99:\n'}
+[11.907671] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.907911] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:579:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<BoxPointType>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.907944] (golden_slam) StderrLine: {'line': b'  579 |     for (int i = 0; i < BoxPoints.size(); i++)\n'}
+[11.907965] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~\n'}
+[11.908000] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Delete_Points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZI; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >]\xe2\x80\x99:\n'}
+[11.908040] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.908073] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:607:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.908120] (golden_slam) StderrLine: {'line': b'  607 |     for (int i = 0; i < PointToDel.size(); i++)\n'}
+[11.908153] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~\n'}
+[11.908184] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Delete_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZI]\xe2\x80\x99:\n'}
+[11.908212] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.908235] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:636:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<BoxPointType>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.908267] (golden_slam) StderrLine: {'line': b'  636 |     for (int i = 0; i < BoxPoints.size(); i++)\n'}
+[11.908302] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~\n'}
+[11.908337] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::acquire_removed_points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZI; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >]\xe2\x80\x99:\n'}
+[11.908371] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here\n'}
+[11.908404] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:665:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.908441] (golden_slam) StderrLine: {'line': b'  665 |     for (int i = 0; i < Points_deleted.size(); i++)\n'}
+[11.908475] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.908510] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:669:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.908544] (golden_slam) StderrLine: {'line': b'  669 |     for (int i = 0; i < Multithread_Points_deleted.size(); i++)\n'}
+[11.908566] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.909309] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::multi_thread_rebuild() [with PointType = pcl::PointXYZINormal]\xe2\x80\x99:\n'}
+[11.909430] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.909498] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:332:17: warning: unused variable \xe2\x80\x98valid_old\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.909622] (golden_slam) StderrLine: {'line': b'  332 |             int valid_old = old_root_node->TreeSize - old_root_node->invalid_point_num;\n'}
+[11.909692] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~\n'}
+[11.909738] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:333:17: warning: unused variable \xe2\x80\x98valid_new\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.909817] (golden_slam) StderrLine: {'line': b'  333 |             int valid_new = new_root_node->TreeSize - new_root_node->invalid_point_num;\n'}
+[11.909892] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~\n'}
+[11.909964] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:234:33: warning: unused variable \xe2\x80\x98new_node_ptr\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.910033] (golden_slam) StderrLine: {'line': b'  234 |     KD_TREE_NODE *father_ptr, **new_node_ptr;\n'}
+[11.910091] (golden_slam) StderrLine: {'line': b'      |                                 ^~~~~~~~~~~~\n'}
+[11.911135] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Rebuild(KD_TREE<PointType>::KD_TREE_NODE**) [with PointType = pcl::PointXYZINormal]\xe2\x80\x99:\n'}
+[11.911242] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.911501] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:754:13: warning: unused variable \xe2\x80\x98size_rec\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.911586] (golden_slam) StderrLine: {'line': b'  754 |         int size_rec = (*root)->TreeSize;\n'}
+[11.911661] (golden_slam) StderrLine: {'line': b'      |             ^~~~~~~~\n'}
+[11.911724] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Delete_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool, bool) [with PointType = pcl::PointXYZINormal]\xe2\x80\x99:\n'}
+[11.912182] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.912498] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:805:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.912570] (golden_slam) StderrLine: {'line': b'  805 |     struct timespec Timeout;\n'}
+[11.912630] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.912933] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Delete_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool) [with PointType = pcl::PointXYZINormal]\xe2\x80\x99:\n'}
+[11.913016] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.913096] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:870:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.913265] (golden_slam) StderrLine: {'line': b'  870 |     struct timespec Timeout;\n'}
+[11.913461] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.913657] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool, int) [with PointType = pcl::PointXYZINormal]\xe2\x80\x99:\n'}
+[11.913867] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.914095] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1009:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.914313] (golden_slam) StderrLine: {'line': b' 1009 |     struct timespec Timeout;\n'}
+[11.914554] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.914661] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool) [with PointType = pcl::PointXYZINormal]\xe2\x80\x99:\n'}
+[11.914729] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.914794] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:949:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.914849] (golden_slam) StderrLine: {'line': b'  949 |     struct timespec Timeout;\n'}
+[11.915017] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.915254] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Search(KD_TREE<PointType>::KD_TREE_NODE*, int, PointType, KD_TREE<PointType>::MANUAL_HEAP&, float) [with PointType = pcl::PointXYZINormal]\xe2\x80\x99:\n'}
+[11.915291] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.915328] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1100:63: warning: suggest parentheses around \xe2\x80\x98&&\xe2\x80\x99 within \xe2\x80\x98||\xe2\x80\x99 [-Wparentheses]\n'}
+[11.915356] (golden_slam) StderrLine: {'line': b' 1100 |     if (q.size() < k_nearest || dist_left_node < q.top().dist && dist_right_node < q.top().dist)\n'}
+[11.915393] (golden_slam) StderrLine: {'line': b'      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.915424] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1097:9: warning: unused variable \xe2\x80\x98cur_search_counter\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.915460] (golden_slam) StderrLine: {'line': b' 1097 |     int cur_search_counter;\n'}
+[11.915500] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~~~~~~~~~~\n'}
+[11.919489] (-) TimerEvent: {}
+[11.921967] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Add_Points(KD_TREE<PointType>::PointVector&, bool) [with PointType = pcl::PointXYZINormal; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >]\xe2\x80\x99:\n'}
+[11.922262] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.922313] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:488:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.922352] (golden_slam) StderrLine: {'line': b'  488 |     for (int i = 0; i < PointToAdd.size(); i++)\n'}
+[11.922390] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~\n'}
+[11.922490] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:505:39: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.922581] (golden_slam) StderrLine: {'line': b'  505 |             for (int index = 0; index < Downsample_Storage.size(); index++)\n'}
+[11.922670] (golden_slam) StderrLine: {'line': b'      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.922844] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:481:9: warning: unused variable \xe2\x80\x98NewPointSize\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.922882] (golden_slam) StderrLine: {'line': b'  481 |     int NewPointSize = PointToAdd.size();\n'}
+[11.922903] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~~~~\n'}
+[11.922927] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:482:9: warning: unused variable \xe2\x80\x98tree_size\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.922959] (golden_slam) StderrLine: {'line': b'  482 |     int tree_size = size();\n'}
+[11.922979] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~\n'}
+[11.922999] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZINormal]\xe2\x80\x99:\n'}
+[11.923026] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.923088] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:579:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<BoxPointType>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.923177] (golden_slam) StderrLine: {'line': b'  579 |     for (int i = 0; i < BoxPoints.size(); i++)\n'}
+[11.923250] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~\n'}
+[11.923415] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Delete_Points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZINormal; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >]\xe2\x80\x99:\n'}
+[11.923463] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.923499] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:607:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.923524] (golden_slam) StderrLine: {'line': b'  607 |     for (int i = 0; i < PointToDel.size(); i++)\n'}
+[11.923568] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~\n'}
+[11.923606] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Delete_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZINormal]\xe2\x80\x99:\n'}
+[11.923652] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.923686] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:636:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<BoxPointType>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.923719] (golden_slam) StderrLine: {'line': b'  636 |     for (int i = 0; i < BoxPoints.size(); i++)\n'}
+[11.923741] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~\n'}
+[11.923991] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::acquire_removed_points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZINormal; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >]\xe2\x80\x99:\n'}
+[11.924065] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here\n'}
+[11.924141] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:665:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.924258] (golden_slam) StderrLine: {'line': b'  665 |     for (int i = 0; i < Points_deleted.size(); i++)\n'}
+[11.924470] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.924514] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:669:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.924543] (golden_slam) StderrLine: {'line': b'  669 |     for (int i = 0; i < Multithread_Points_deleted.size(); i++)\n'}
+[11.924564] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.927491] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::multi_thread_rebuild() [with PointType = PointT]\xe2\x80\x99:\n'}
+[11.927710] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.927790] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:332:17: warning: unused variable \xe2\x80\x98valid_old\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.927881] (golden_slam) StderrLine: {'line': b'  332 |             int valid_old = old_root_node->TreeSize - old_root_node->invalid_point_num;\n'}
+[11.927955] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~\n'}
+[11.928014] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:333:17: warning: unused variable \xe2\x80\x98valid_new\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.928074] (golden_slam) StderrLine: {'line': b'  333 |             int valid_new = new_root_node->TreeSize - new_root_node->invalid_point_num;\n'}
+[11.928149] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~\n'}
+[11.928205] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:234:33: warning: unused variable \xe2\x80\x98new_node_ptr\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.928269] (golden_slam) StderrLine: {'line': b'  234 |     KD_TREE_NODE *father_ptr, **new_node_ptr;\n'}
+[11.928316] (golden_slam) StderrLine: {'line': b'      |                                 ^~~~~~~~~~~~\n'}
+[11.929151] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Rebuild(KD_TREE<PointType>::KD_TREE_NODE**) [with PointType = PointT]\xe2\x80\x99:\n'}
+[11.929240] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.929327] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:754:13: warning: unused variable \xe2\x80\x98size_rec\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.929418] (golden_slam) StderrLine: {'line': b'  754 |         int size_rec = (*root)->TreeSize;\n'}
+[11.929580] (golden_slam) StderrLine: {'line': b'      |             ^~~~~~~~\n'}
+[11.929992] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Delete_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool, bool) [with PointType = PointT]\xe2\x80\x99:\n'}
+[11.930054] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.930100] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:805:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.930146] (golden_slam) StderrLine: {'line': b'  805 |     struct timespec Timeout;\n'}
+[11.930189] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.930233] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Delete_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool) [with PointType = PointT]\xe2\x80\x99:\n'}
+[11.930280] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.930410] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:870:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.930565] (golden_slam) StderrLine: {'line': b'  870 |     struct timespec Timeout;\n'}
+[11.930733] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.931251] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool, int) [with PointType = PointT]\xe2\x80\x99:\n'}
+[11.931322] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.931411] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1009:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.931594] (golden_slam) StderrLine: {'line': b' 1009 |     struct timespec Timeout;\n'}
+[11.931788] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.931951] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool) [with PointType = PointT]\xe2\x80\x99:\n'}
+[11.932148] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.932395] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:949:21: warning: unused variable \xe2\x80\x98Timeout\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.932502] (golden_slam) StderrLine: {'line': b'  949 |     struct timespec Timeout;\n'}
+[11.932584] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~\n'}
+[11.932741] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Search(KD_TREE<PointType>::KD_TREE_NODE*, int, PointType, KD_TREE<PointType>::MANUAL_HEAP&, float) [with PointType = PointT]\xe2\x80\x99:\n'}
+[11.932903] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.932954] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1100:63: warning: suggest parentheses around \xe2\x80\x98&&\xe2\x80\x99 within \xe2\x80\x98||\xe2\x80\x99 [-Wparentheses]\n'}
+[11.933001] (golden_slam) StderrLine: {'line': b' 1100 |     if (q.size() < k_nearest || dist_left_node < q.top().dist && dist_right_node < q.top().dist)\n'}
+[11.933046] (golden_slam) StderrLine: {'line': b'      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.933084] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1097:9: warning: unused variable \xe2\x80\x98cur_search_counter\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.933106] (golden_slam) StderrLine: {'line': b' 1097 |     int cur_search_counter;\n'}
+[11.933136] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~~~~~~~~~~\n'}
+[11.938566] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Add_Points(KD_TREE<PointType>::PointVector&, bool) [with PointType = PointT; KD_TREE<PointType>::PointVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >]\xe2\x80\x99:\n'}
+[11.938851] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.938969] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:488:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.939064] (golden_slam) StderrLine: {'line': b'  488 |     for (int i = 0; i < PointToAdd.size(); i++)\n'}
+[11.939117] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~\n'}
+[11.939181] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:505:39: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.939246] (golden_slam) StderrLine: {'line': b'  505 |             for (int index = 0; index < Downsample_Storage.size(); index++)\n'}
+[11.939727] (golden_slam) StderrLine: {'line': b'      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.939892] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:481:9: warning: unused variable \xe2\x80\x98NewPointSize\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.940080] (golden_slam) StderrLine: {'line': b'  481 |     int NewPointSize = PointToAdd.size();\n'}
+[11.940262] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~~~~\n'}
+[11.940572] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:482:9: warning: unused variable \xe2\x80\x98tree_size\xe2\x80\x99 [-Wunused-variable]\n'}
+[11.940644] (golden_slam) StderrLine: {'line': b'  482 |     int tree_size = size();\n'}
+[11.940711] (golden_slam) StderrLine: {'line': b'      |         ^~~~~~~~~\n'}
+[11.940790] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Add_Point_Boxes(std::vector<BoxPointType>&) [with PointType = PointT]\xe2\x80\x99:\n'}
+[11.940854] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.940912] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:579:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<BoxPointType>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.941031] (golden_slam) StderrLine: {'line': b'  579 |     for (int i = 0; i < BoxPoints.size(); i++)\n'}
+[11.941089] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~\n'}
+[11.941132] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::Delete_Points(KD_TREE<PointType>::PointVector&) [with PointType = PointT; KD_TREE<PointType>::PointVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >]\xe2\x80\x99:\n'}
+[11.941205] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.941259] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:607:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.941309] (golden_slam) StderrLine: {'line': b'  607 |     for (int i = 0; i < PointToDel.size(); i++)\n'}
+[11.941380] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~\n'}
+[11.941446] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98int KD_TREE<PointType>::Delete_Point_Boxes(std::vector<BoxPointType>&) [with PointType = PointT]\xe2\x80\x99:\n'}
+[11.941508] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.941566] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:636:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<BoxPointType>::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.941624] (golden_slam) StderrLine: {'line': b'  636 |     for (int i = 0; i < BoxPoints.size(); i++)\n'}
+[11.941672] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~\n'}
+[11.941745] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of \xe2\x80\x98void KD_TREE<PointType>::acquire_removed_points(KD_TREE<PointType>::PointVector&) [with PointType = PointT; KD_TREE<PointType>::PointVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >]\xe2\x80\x99:\n'}
+[11.941808] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here\n'}
+[11.941874] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:665:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.941921] (golden_slam) StderrLine: {'line': b'  665 |     for (int i = 0; i < Points_deleted.size(); i++)\n'}
+[11.941975] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~\n'}
+[11.942026] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:669:23: warning: comparison of integer expressions of different signedness: \xe2\x80\x98int\xe2\x80\x99 and \xe2\x80\x98std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type\xe2\x80\x99 {aka \xe2\x80\x98long unsigned int\xe2\x80\x99} [-Wsign-compare]\n'}
+[11.942103] (golden_slam) StderrLine: {'line': b'  669 |     for (int i = 0; i < Multithread_Points_deleted.size(); i++)\n'}
+[11.942157] (golden_slam) StderrLine: {'line': b'      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[12.019703] (-) TimerEvent: {}
+[12.120018] (-) TimerEvent: {}
+[12.220262] (-) TimerEvent: {}
+[12.320480] (-) TimerEvent: {}
+[12.420683] (-) TimerEvent: {}
+[12.520859] (-) TimerEvent: {}
+[12.621024] (-) TimerEvent: {}
+[12.642088] (golden_slam) StderrLine: {'line': b'In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:\n'}
+[12.642210] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp: In constructor \xe2\x80\x98SlamCore::SlamCore()\xe2\x80\x99:\n'}
+[12.642235] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:169:17: warning: \xe2\x80\x98SlamCore::map_insert_count_\xe2\x80\x99 will be initialized after [-Wreorder]\n'}
+[12.642257] (golden_slam) StderrLine: {'line': b'  169 |     std::size_t map_insert_count_;\n'}
+[12.642276] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~~~~~~\n'}
+[12.642294] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:164:21: warning:   \xe2\x80\x98Eigen::Matrix3d SlamCore::R_body_lidar_\xe2\x80\x99 [-Wreorder]\n'}
+[12.642313] (golden_slam) StderrLine: {'line': b'  164 |     Eigen::Matrix3d R_body_lidar_;\n'}
+[12.642330] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~~\n'}
+[12.642348] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:32:1: warning:   when initialized here [-Wreorder]\n'}
+[12.642365] (golden_slam) StderrLine: {'line': b'   32 | SlamCore::SlamCore()\n'}
+[12.642383] (golden_slam) StderrLine: {'line': b'      | ^~~~~~~~\n'}
+[12.654735] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::debugImuDt(double)\xe2\x80\x99:\n'}
+[12.654862] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:303:22: warning: unused variable \xe2\x80\x98hz\xe2\x80\x99 [-Wunused-variable]\n'}
+[12.654888] (golden_slam) StderrLine: {'line': b'  303 |         const double hz = 1.0 / dt;\n'}
+[12.654909] (golden_slam) StderrLine: {'line': b'      |                      ^~\n'}
+[12.675868] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::debugNearestSearch(const CloudTConstPtr&)\xe2\x80\x99:\n'}
+[12.675998] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:551:16: warning: unused variable \xe2\x80\x98search_ok\xe2\x80\x99 [-Wunused-variable]\n'}
+[12.676022] (golden_slam) StderrLine: {'line': b'  551 |     const bool search_ok = ikd_tree_map_.nearestSearch(query_point,5,nearest_points,squared_distances);\n'}
+[12.676049] (golden_slam) StderrLine: {'line': b'      |                ^~~~~~~~~\n'}
+[12.721132] (-) TimerEvent: {}
+[12.821275] (-) TimerEvent: {}
+[12.921471] (-) TimerEvent: {}
+[13.021682] (-) TimerEvent: {}
+[13.121879] (-) TimerEvent: {}
+[13.222089] (-) TimerEvent: {}
+[13.322319] (-) TimerEvent: {}
+[13.422508] (-) TimerEvent: {}
+[13.522708] (-) TimerEvent: {}
+[13.622849] (-) TimerEvent: {}
+[13.723057] (-) TimerEvent: {}
+[13.801219] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function \xe2\x80\x98void RosBridge::onLidarCB(livox_ros_driver2::msg::CustomMsg_<std::allocator<void> >::SharedPtr)\xe2\x80\x99:\n'}
+[13.801400] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:155:16: warning: unused variable \xe2\x80\x98raw_size\xe2\x80\x99 [-Wunused-variable]\n'}
+[13.801437] (golden_slam) StderrLine: {'line': b'  155 |     const auto raw_size = msg->point_num;\n'}
+[13.801459] (golden_slam) StderrLine: {'line': b'      |                ^~~~~~~~\n'}
+[13.801478] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:156:16: warning: unused variable \xe2\x80\x98preprocced_size\xe2\x80\x99 [-Wunused-variable]\n'}
+[13.801497] (golden_slam) StderrLine: {'line': b'  156 |     const auto preprocced_size = cloud->points.size();\n'}
+[13.801515] (golden_slam) StderrLine: {'line': b'      |                ^~~~~~~~~~~~~~~\n'}
+[13.803499] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function \xe2\x80\x98void RosBridge::mapSaveCB(std_srvs::srv::Trigger_Request_<std::allocator<void> >::ConstSharedPtr, std_srvs::srv::Trigger_Response_<std::allocator<void> >::SharedPtr)\xe2\x80\x99:\n'}
+[13.803541] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:180:75: warning: unused parameter \xe2\x80\x98req\xe2\x80\x99 [-Wunused-parameter]\n'}
+[13.803562] (golden_slam) StderrLine: {'line': b'  180 | void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)\n'}
+[13.803581] (golden_slam) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\n'}
+[13.803600] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:180:124: warning: unused parameter \xe2\x80\x98res\xe2\x80\x99 [-Wunused-parameter]\n'}
+[13.803618] (golden_slam) StderrLine: {'line': b'  180 | void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)\n'}
+[13.803637] (golden_slam) StderrLine: {'line': b'      |                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\n'}
+[13.823167] (-) TimerEvent: {}
+[13.923347] (-) TimerEvent: {}
+[14.023523] (-) TimerEvent: {}
+[14.123708] (-) TimerEvent: {}
+[14.223963] (-) TimerEvent: {}
+[14.324172] (-) TimerEvent: {}
+[14.424364] (-) TimerEvent: {}
+[14.524541] (-) TimerEvent: {}
+[14.624722] (-) TimerEvent: {}
+[14.725044] (-) TimerEvent: {}
+[14.825282] (-) TimerEvent: {}
+[14.925511] (-) TimerEvent: {}
+[15.025681] (-) TimerEvent: {}
+[15.125880] (-) TimerEvent: {}
+[15.226098] (-) TimerEvent: {}
+[15.326287] (-) TimerEvent: {}
+[15.426460] (-) TimerEvent: {}
+[15.526620] (-) TimerEvent: {}
+[15.626798] (-) TimerEvent: {}
+[15.726964] (-) TimerEvent: {}
+[15.827146] (-) TimerEvent: {}
+[15.927324] (-) TimerEvent: {}
+[16.029813] (-) TimerEvent: {}
+[16.130836] (-) TimerEvent: {}
+[16.233587] (-) TimerEvent: {}
+[16.334506] (-) TimerEvent: {}
+[16.437972] (-) TimerEvent: {}
+[16.538160] (-) TimerEvent: {}
+[16.639419] (-) TimerEvent: {}
+[16.743253] (-) TimerEvent: {}
+[16.844436] (-) TimerEvent: {}
+[16.944858] (-) TimerEvent: {}
+[17.045622] (-) TimerEvent: {}
+[17.146051] (-) TimerEvent: {}
+[17.246507] (-) TimerEvent: {}
+[17.348786] (-) TimerEvent: {}
+[17.452021] (-) TimerEvent: {}
+[17.552331] (-) TimerEvent: {}
+[17.654772] (-) TimerEvent: {}
+[17.757255] (-) TimerEvent: {}
+[17.857546] (-) TimerEvent: {}
+[17.960726] (-) TimerEvent: {}
+[18.063430] (-) TimerEvent: {}
+[18.166131] (-) TimerEvent: {}
+[18.266400] (-) TimerEvent: {}
+[18.367300] (-) TimerEvent: {}
+[18.470004] (-) TimerEvent: {}
+[18.570242] (-) TimerEvent: {}
+[18.670461] (-) TimerEvent: {}
+[18.772864] (-) TimerEvent: {}
+[18.875586] (-) TimerEvent: {}
+[18.978193] (-) TimerEvent: {}
+[19.079321] (-) TimerEvent: {}
+[19.181552] (-) TimerEvent: {}
+[19.282062] (-) TimerEvent: {}
+[19.383111] (-) TimerEvent: {}
+[19.485358] (-) TimerEvent: {}
+[19.585593] (-) TimerEvent: {}
+[19.685816] (-) TimerEvent: {}
+[19.786189] (-) TimerEvent: {}
+[19.886688] (-) TimerEvent: {}
+[19.987043] (-) TimerEvent: {}
+[20.087361] (-) TimerEvent: {}
+[20.189128] (-) TimerEvent: {}
+[20.289497] (-) TimerEvent: {}
+[20.390507] (-) TimerEvent: {}
+[20.492223] (-) TimerEvent: {}
+[20.592531] (-) TimerEvent: {}
+[20.693499] (-) TimerEvent: {}
+[20.793799] (-) TimerEvent: {}
+[20.895244] (-) TimerEvent: {}
+[20.996219] (-) TimerEvent: {}
+[21.097627] (-) TimerEvent: {}
+[21.197802] (-) TimerEvent: {}
+[21.288004] (golden_slam) StdoutLine: {'line': b'[100%] Linking CXX executable golden_slam_node\n'}
+[21.297885] (-) TimerEvent: {}
+[21.398266] (-) TimerEvent: {}
+[21.498584] (-) TimerEvent: {}
+[21.598898] (-) TimerEvent: {}
+[21.700208] (-) TimerEvent: {}
+[21.714745] (golden_slam) StdoutLine: {'line': b'[100%] Built target golden_slam_node\n'}
+[21.721477] (golden_slam) CommandEnded: {'returncode': 0}
+[21.722556] (golden_slam) JobProgress: {'identifier': 'golden_slam', 'progress': 'install'}
+[21.727043] (golden_slam) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam'], 'cwd': '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-152_agent'), ('USER', 'goldenboy'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('GIT_EDITOR', 'true'), ('VSCODE_WSL_EXT_LOCATION', '/mnt/c/Users/hwido/.vscode/extensions/ms-vscode-remote.remote-wsl-0.104.3'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.152'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/goldenboy'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-be5f3a81-86f3-4ac9-a709-c4487cb7615c.sock'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'goldenboy'), ('NAME', 'Gini'), ('WSL_INTEROP', '/run/WSL/416_interop'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/bin/remote-cli:/home/goldenboy/.local/bin:/home/goldenboy/.local/bin:/home/goldenboy/dev-tools/flutter/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/STMicroelectronics/stlink_server:/mnt/c/ST/STM32CubeCLT_1.18.0:/mnt/c/ST/STM32CubeCLT_1.18.0/CMake/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/Ninja/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STLink-gdb-server/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STM32CubeProgrammer/bin:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/PuTTY/:/mnt/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/CMake/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/NVIDIA Corporation/SDK Manager:/mnt/c/Program Files/usbipd-win/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/hwido/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hwido/Development/flutter/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/snap/bin:/home/goldenboy/dev-tools/androidSDK/cmdline-tools/latest/bin:/home/goldenboy/dev-tools/androidSDK/platform-tools'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':0'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', 'f5e2f149-0845-4fe0-b34d-0d28fba3ed02'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('PWD', '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam'), ('ANDROID_HOME', '/home/goldenboy/dev-tools/androidSDK'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/goldenboy/.vscode-server/extensions/anthropic.claude-code-2.1.152-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[21.731512] (golden_slam) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[21.731817] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node\n'}
+[21.732832] (golden_slam) StdoutLine: {'line': b'-- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node" to ""\n'}
+[21.732895] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch\n'}
+[21.733063] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch/golden_slam.launch.py\n'}
+[21.733349] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/config\n'}
+[21.733467] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/config/avia.yaml\n'}
+[21.733697] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/config/mid360.yaml\n'}
+[21.733910] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/rviz\n'}
+[21.734040] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/rviz/golden_slam.rviz\n'}
+[21.734273] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include/\n'}
+[21.734359] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform\n'}
+[21.734480] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform/ros_bridge.hpp\n'}
+[21.734648] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app\n'}
+[21.734723] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app/golden_slam_app.hpp\n'}
+[21.734794] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core\n'}
+[21.734945] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/imu_processor.hpp\n'}
+[21.734983] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/plane_estimator.hpp\n'}
+[21.735077] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/ikd_tree_map.hpp\n'}
+[21.735152] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types\n'}
+[21.735222] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/lidar_frame.hpp\n'}
+[21.735292] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/pcl_types.hpp\n'}
+[21.735363] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/state.hpp\n'}
+[21.735508] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/measure_group.hpp\n'}
+[21.735586] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/frontend_snapshot.hpp\n'}
+[21.735777] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/imu_propagated_pose.hpp\n'}
+[21.735811] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/pointcloud_deskew.hpp\n'}
+[21.735836] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/iekf_updater.hpp\n'}
+[21.735881] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/slam_core.hpp\n'}
+[21.735955] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/preprocess.hpp\n'}
+[21.736025] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/package_run_dependencies/golden_slam\n'}
+[21.736097] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/parent_prefix_path/golden_slam\n'}
+[21.736281] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.sh\n'}
+[21.736382] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.dsv\n'}
+[21.736454] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.sh\n'}
+[21.736527] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.dsv\n'}
+[21.736601] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.bash\n'}
+[21.736769] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.sh\n'}
+[21.736791] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.zsh\n'}
+[21.736810] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.dsv\n'}
+[21.736828] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.dsv\n'}
+[21.736846] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/packages/golden_slam\n'}
+[21.736867] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig.cmake\n'}
+[21.736887] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig-version.cmake\n'}
+[21.736905] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.xml\n'}
+[21.737976] (golden_slam) CommandEnded: {'returncode': 0}
+[21.751658] (golden_slam) JobEnded: {'identifier': 'golden_slam', 'rc': 0}
+[21.752155] (-) EventReactorShutdown: {}

@@ -139,7 +139,7 @@ void SlamCore::spinFrontendOnce()
     const bool shadow_is_good =
         update_result.shadow_checked &&
         update_result.shadow_valid_kept &&
-        update_result.shadow_mean_improved_enough &&
+        update_result.shadow_mean_improved &&
         update_result.shadow_after_mean_abs < MAX_IEKF_MEAN_ABS_RESIDUAL &&
         update_result.shadow_after_max_abs < MAX_IEKF_MAX_ABS_RESIDUAL;
 
@@ -147,7 +147,6 @@ void SlamCore::spinFrontendOnce()
         update_result.updated &&
         enough_residuals &&
         correction_is_small &&
-        residual_is_good &&
         shadow_is_good;
 
     State frontend_state = predicted_state;
@@ -822,17 +821,10 @@ ResidualCandidateBuildResult SlamCore::buildResidualCandidates(
         return result;
     }
 
-    constexpr std::size_t MAX_QUERY_POINTS = 200;
-
-    const std::size_t step =
-        std::max<std::size_t>(
-            1,
-            point_count / MAX_QUERY_POINTS);
-
     double sum_abs_residual = 0.0;
     double max_abs_residual = 0.0;
 
-    for (std::size_t i = 0; i < point_count; i += step)
+    for (std::size_t i = 0; i < point_count; ++i)
     {
         /*
             cloud_lidar:

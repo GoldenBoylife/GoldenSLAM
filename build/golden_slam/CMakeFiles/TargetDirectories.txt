@@ -1,0 +1,10 @@
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/uninstall.dir
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/golden_slam_uninstall.dir
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/golden_slam_node.dir
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/test.dir
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/edit_cache.dir
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/rebuild_cache.dir
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/list_install_components.dir
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/install.dir
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/install/local.dir
+/home/goldenboy/git_version/GoldenSLAM/build/golden_slam/CMakeFiles/install/strip.dir

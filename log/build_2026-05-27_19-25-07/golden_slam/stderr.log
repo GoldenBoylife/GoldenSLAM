@@ -1,0 +1,359 @@
+Processer number:  24
+core for MP: 3
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::multi_thread_rebuild() [with PointType = pcl::PointXYZ]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:332:17: warning: unused variable ‘valid_old’ [-Wunused-variable]
+  332 |             int valid_old = old_root_node->TreeSize - old_root_node->invalid_point_num;
+      |                 ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:333:17: warning: unused variable ‘valid_new’ [-Wunused-variable]
+  333 |             int valid_new = new_root_node->TreeSize - new_root_node->invalid_point_num;
+      |                 ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:234:33: warning: unused variable ‘new_node_ptr’ [-Wunused-variable]
+  234 |     KD_TREE_NODE *father_ptr, **new_node_ptr;
+      |                                 ^~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Rebuild(KD_TREE<PointType>::KD_TREE_NODE**) [with PointType = pcl::PointXYZ]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:754:13: warning: unused variable ‘size_rec’ [-Wunused-variable]
+  754 |         int size_rec = (*root)->TreeSize;
+      |             ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Delete_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool, bool) [with PointType = pcl::PointXYZ]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:805:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  805 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Delete_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool) [with PointType = pcl::PointXYZ]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:870:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  870 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool, int) [with PointType = pcl::PointXYZ]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1009:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+ 1009 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool) [with PointType = pcl::PointXYZ]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:949:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  949 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Search(KD_TREE<PointType>::KD_TREE_NODE*, int, PointType, KD_TREE<PointType>::MANUAL_HEAP&, float) [with PointType = pcl::PointXYZ]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1100:63: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+ 1100 |     if (q.size() < k_nearest || dist_left_node < q.top().dist && dist_right_node < q.top().dist)
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1097:9: warning: unused variable ‘cur_search_counter’ [-Wunused-variable]
+ 1097 |     int cur_search_counter;
+      |         ^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Add_Points(KD_TREE<PointType>::PointVector&, bool) [with PointType = pcl::PointXYZ; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:488:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  488 |     for (int i = 0; i < PointToAdd.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:505:39: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  505 |             for (int index = 0; index < Downsample_Storage.size(); index++)
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:481:9: warning: unused variable ‘NewPointSize’ [-Wunused-variable]
+  481 |     int NewPointSize = PointToAdd.size();
+      |         ^~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:482:9: warning: unused variable ‘tree_size’ [-Wunused-variable]
+  482 |     int tree_size = size();
+      |         ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZ]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:579:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<BoxPointType>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  579 |     for (int i = 0; i < BoxPoints.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Delete_Points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZ; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:607:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  607 |     for (int i = 0; i < PointToDel.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Delete_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZ]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:636:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<BoxPointType>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  636 |     for (int i = 0; i < BoxPoints.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::acquire_removed_points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZ; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1726:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:665:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  665 |     for (int i = 0; i < Points_deleted.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:669:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  669 |     for (int i = 0; i < Multithread_Points_deleted.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::multi_thread_rebuild() [with PointType = pcl::PointXYZI]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:332:17: warning: unused variable ‘valid_old’ [-Wunused-variable]
+  332 |             int valid_old = old_root_node->TreeSize - old_root_node->invalid_point_num;
+      |                 ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:333:17: warning: unused variable ‘valid_new’ [-Wunused-variable]
+  333 |             int valid_new = new_root_node->TreeSize - new_root_node->invalid_point_num;
+      |                 ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:234:33: warning: unused variable ‘new_node_ptr’ [-Wunused-variable]
+  234 |     KD_TREE_NODE *father_ptr, **new_node_ptr;
+      |                                 ^~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Rebuild(KD_TREE<PointType>::KD_TREE_NODE**) [with PointType = pcl::PointXYZI]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:754:13: warning: unused variable ‘size_rec’ [-Wunused-variable]
+  754 |         int size_rec = (*root)->TreeSize;
+      |             ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Delete_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool, bool) [with PointType = pcl::PointXYZI]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:805:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  805 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Delete_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool) [with PointType = pcl::PointXYZI]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:870:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  870 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool, int) [with PointType = pcl::PointXYZI]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1009:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+ 1009 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool) [with PointType = pcl::PointXYZI]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:949:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  949 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Search(KD_TREE<PointType>::KD_TREE_NODE*, int, PointType, KD_TREE<PointType>::MANUAL_HEAP&, float) [with PointType = pcl::PointXYZI]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1100:63: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+ 1100 |     if (q.size() < k_nearest || dist_left_node < q.top().dist && dist_right_node < q.top().dist)
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1097:9: warning: unused variable ‘cur_search_counter’ [-Wunused-variable]
+ 1097 |     int cur_search_counter;
+      |         ^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Add_Points(KD_TREE<PointType>::PointVector&, bool) [with PointType = pcl::PointXYZI; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:488:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  488 |     for (int i = 0; i < PointToAdd.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:505:39: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  505 |             for (int index = 0; index < Downsample_Storage.size(); index++)
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:481:9: warning: unused variable ‘NewPointSize’ [-Wunused-variable]
+  481 |     int NewPointSize = PointToAdd.size();
+      |         ^~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:482:9: warning: unused variable ‘tree_size’ [-Wunused-variable]
+  482 |     int tree_size = size();
+      |         ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZI]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:579:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<BoxPointType>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  579 |     for (int i = 0; i < BoxPoints.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Delete_Points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZI; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:607:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  607 |     for (int i = 0; i < PointToDel.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Delete_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZI]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:636:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<BoxPointType>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  636 |     for (int i = 0; i < BoxPoints.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::acquire_removed_points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZI; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1727:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:665:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  665 |     for (int i = 0; i < Points_deleted.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:669:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZI, Eigen::aligned_allocator<pcl::PointXYZI> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  669 |     for (int i = 0; i < Multithread_Points_deleted.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::multi_thread_rebuild() [with PointType = pcl::PointXYZINormal]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:332:17: warning: unused variable ‘valid_old’ [-Wunused-variable]
+  332 |             int valid_old = old_root_node->TreeSize - old_root_node->invalid_point_num;
+      |                 ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:333:17: warning: unused variable ‘valid_new’ [-Wunused-variable]
+  333 |             int valid_new = new_root_node->TreeSize - new_root_node->invalid_point_num;
+      |                 ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:234:33: warning: unused variable ‘new_node_ptr’ [-Wunused-variable]
+  234 |     KD_TREE_NODE *father_ptr, **new_node_ptr;
+      |                                 ^~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Rebuild(KD_TREE<PointType>::KD_TREE_NODE**) [with PointType = pcl::PointXYZINormal]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:754:13: warning: unused variable ‘size_rec’ [-Wunused-variable]
+  754 |         int size_rec = (*root)->TreeSize;
+      |             ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Delete_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool, bool) [with PointType = pcl::PointXYZINormal]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:805:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  805 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Delete_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool) [with PointType = pcl::PointXYZINormal]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:870:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  870 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool, int) [with PointType = pcl::PointXYZINormal]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1009:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+ 1009 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool) [with PointType = pcl::PointXYZINormal]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:949:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  949 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Search(KD_TREE<PointType>::KD_TREE_NODE*, int, PointType, KD_TREE<PointType>::MANUAL_HEAP&, float) [with PointType = pcl::PointXYZINormal]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1100:63: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+ 1100 |     if (q.size() < k_nearest || dist_left_node < q.top().dist && dist_right_node < q.top().dist)
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1097:9: warning: unused variable ‘cur_search_counter’ [-Wunused-variable]
+ 1097 |     int cur_search_counter;
+      |         ^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Add_Points(KD_TREE<PointType>::PointVector&, bool) [with PointType = pcl::PointXYZINormal; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:488:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  488 |     for (int i = 0; i < PointToAdd.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:505:39: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  505 |             for (int index = 0; index < Downsample_Storage.size(); index++)
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:481:9: warning: unused variable ‘NewPointSize’ [-Wunused-variable]
+  481 |     int NewPointSize = PointToAdd.size();
+      |         ^~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:482:9: warning: unused variable ‘tree_size’ [-Wunused-variable]
+  482 |     int tree_size = size();
+      |         ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZINormal]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:579:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<BoxPointType>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  579 |     for (int i = 0; i < BoxPoints.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Delete_Points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZINormal; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:607:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  607 |     for (int i = 0; i < PointToDel.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Delete_Point_Boxes(std::vector<BoxPointType>&) [with PointType = pcl::PointXYZINormal]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:636:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<BoxPointType>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  636 |     for (int i = 0; i < BoxPoints.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::acquire_removed_points(KD_TREE<PointType>::PointVector&) [with PointType = pcl::PointXYZINormal; KD_TREE<PointType>::PointVector = std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1728:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:665:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  665 |     for (int i = 0; i < Points_deleted.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:669:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<pcl::PointXYZINormal, Eigen::aligned_allocator<pcl::PointXYZINormal> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  669 |     for (int i = 0; i < Multithread_Points_deleted.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::multi_thread_rebuild() [with PointType = PointT]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:332:17: warning: unused variable ‘valid_old’ [-Wunused-variable]
+  332 |             int valid_old = old_root_node->TreeSize - old_root_node->invalid_point_num;
+      |                 ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:333:17: warning: unused variable ‘valid_new’ [-Wunused-variable]
+  333 |             int valid_new = new_root_node->TreeSize - new_root_node->invalid_point_num;
+      |                 ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:234:33: warning: unused variable ‘new_node_ptr’ [-Wunused-variable]
+  234 |     KD_TREE_NODE *father_ptr, **new_node_ptr;
+      |                                 ^~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Rebuild(KD_TREE<PointType>::KD_TREE_NODE**) [with PointType = PointT]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:754:13: warning: unused variable ‘size_rec’ [-Wunused-variable]
+  754 |         int size_rec = (*root)->TreeSize;
+      |             ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Delete_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool, bool) [with PointType = PointT]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:805:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  805 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Delete_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool) [with PointType = PointT]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:870:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  870 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_by_point(KD_TREE<PointType>::KD_TREE_NODE**, PointType, bool, int) [with PointType = PointT]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1009:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+ 1009 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_by_range(KD_TREE<PointType>::KD_TREE_NODE**, BoxPointType, bool) [with PointType = PointT]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:949:21: warning: unused variable ‘Timeout’ [-Wunused-variable]
+  949 |     struct timespec Timeout;
+      |                     ^~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Search(KD_TREE<PointType>::KD_TREE_NODE*, int, PointType, KD_TREE<PointType>::MANUAL_HEAP&, float) [with PointType = PointT]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1100:63: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+ 1100 |     if (q.size() < k_nearest || dist_left_node < q.top().dist && dist_right_node < q.top().dist)
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1097:9: warning: unused variable ‘cur_search_counter’ [-Wunused-variable]
+ 1097 |     int cur_search_counter;
+      |         ^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Add_Points(KD_TREE<PointType>::PointVector&, bool) [with PointType = PointT; KD_TREE<PointType>::PointVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:488:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  488 |     for (int i = 0; i < PointToAdd.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:505:39: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  505 |             for (int index = 0; index < Downsample_Storage.size(); index++)
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:481:9: warning: unused variable ‘NewPointSize’ [-Wunused-variable]
+  481 |     int NewPointSize = PointToAdd.size();
+      |         ^~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:482:9: warning: unused variable ‘tree_size’ [-Wunused-variable]
+  482 |     int tree_size = size();
+      |         ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Add_Point_Boxes(std::vector<BoxPointType>&) [with PointType = PointT]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:579:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<BoxPointType>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  579 |     for (int i = 0; i < BoxPoints.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::Delete_Points(KD_TREE<PointType>::PointVector&) [with PointType = PointT; KD_TREE<PointType>::PointVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:607:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  607 |     for (int i = 0; i < PointToDel.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘int KD_TREE<PointType>::Delete_Point_Boxes(std::vector<BoxPointType>&) [with PointType = PointT]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:636:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<BoxPointType>::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  636 |     for (int i = 0; i < BoxPoints.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp: In instantiation of ‘void KD_TREE<PointType>::acquire_removed_points(KD_TREE<PointType>::PointVector&) [with PointType = PointT; KD_TREE<PointType>::PointVector = std::vector<PointT, Eigen::aligned_allocator<PointT> >]’:
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:1729:16:   required from here
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:665:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  665 |     for (int i = 0; i < Points_deleted.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/third_party/ikd_tree/ikd_tree.cpp:669:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::vector<PointT, Eigen::aligned_allocator<PointT> >::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+  669 |     for (int i = 0; i < Multithread_Points_deleted.size(); i++)
+      |                     ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp: In constructor ‘SlamCore::SlamCore()’:
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:169:17: warning: ‘SlamCore::map_insert_count_’ will be initialized after [-Wreorder]
+  169 |     std::size_t map_insert_count_;
+      |                 ^~~~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:164:21: warning:   ‘Eigen::Matrix3d SlamCore::R_body_lidar_’ [-Wreorder]
+  164 |     Eigen::Matrix3d R_body_lidar_;
+      |                     ^~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:32:1: warning:   when initialized here [-Wreorder]
+   32 | SlamCore::SlamCore()
+      | ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::debugImuDt(double)’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:303:22: warning: unused variable ‘hz’ [-Wunused-variable]
+  303 |         const double hz = 1.0 / dt;
+      |                      ^~
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function ‘void SlamCore::debugNearestSearch(const CloudTConstPtr&)’:
+/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:551:16: warning: unused variable ‘search_ok’ [-Wunused-variable]
+  551 |     const bool search_ok = ikd_tree_map_.nearestSearch(query_point,5,nearest_points,squared_distances);
+      |                ^~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::onLidarCB(livox_ros_driver2::msg::CustomMsg_<std::allocator<void> >::SharedPtr)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:155:16: warning: unused variable ‘raw_size’ [-Wunused-variable]
+  155 |     const auto raw_size = msg->point_num;
+      |                ^~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:156:16: warning: unused variable ‘preprocced_size’ [-Wunused-variable]
+  156 |     const auto preprocced_size = cloud->points.size();
+      |                ^~~~~~~~~~~~~~~
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function ‘void RosBridge::mapSaveCB(std_srvs::srv::Trigger_Request_<std::allocator<void> >::ConstSharedPtr, std_srvs::srv::Trigger_Response_<std::allocator<void> >::SharedPtr)’:
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:180:75: warning: unused parameter ‘req’ [-Wunused-parameter]
+  180 | void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:180:124: warning: unused parameter ‘res’ [-Wunused-parameter]
+  180 | void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)
+      |                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~

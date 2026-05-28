@@ -1,0 +1,206 @@
+[0.000000] (-) TimerEvent: {}
+[0.000207] (golden_slam) JobQueued: {'identifier': 'golden_slam', 'dependencies': OrderedDict()}
+[0.000317] (golden_slam) JobStarted: {'identifier': 'golden_slam'}
+[0.004223] (golden_slam) JobProgress: {'identifier': 'golden_slam', 'progress': 'cmake'}
+[0.004769] (golden_slam) JobProgress: {'identifier': 'golden_slam', 'progress': 'build'}
+[0.005600] (golden_slam) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam', '--', '-j24', '-l24'], 'cwd': '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-152_agent'), ('USER', 'goldenboy'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('GIT_EDITOR', 'true'), ('VSCODE_WSL_EXT_LOCATION', '/mnt/c/Users/hwido/.vscode/extensions/ms-vscode-remote.remote-wsl-0.104.3'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.152'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/goldenboy'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-be5f3a81-86f3-4ac9-a709-c4487cb7615c.sock'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'goldenboy'), ('NAME', 'Gini'), ('WSL_INTEROP', '/run/WSL/416_interop'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/bin/remote-cli:/home/goldenboy/.local/bin:/home/goldenboy/.local/bin:/home/goldenboy/dev-tools/flutter/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/STMicroelectronics/stlink_server:/mnt/c/ST/STM32CubeCLT_1.18.0:/mnt/c/ST/STM32CubeCLT_1.18.0/CMake/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/Ninja/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STLink-gdb-server/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STM32CubeProgrammer/bin:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/PuTTY/:/mnt/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/CMake/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/NVIDIA Corporation/SDK Manager:/mnt/c/Program Files/usbipd-win/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/hwido/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hwido/Development/flutter/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/snap/bin:/home/goldenboy/dev-tools/androidSDK/cmdline-tools/latest/bin:/home/goldenboy/dev-tools/androidSDK/platform-tools'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':0'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', 'f5e2f149-0845-4fe0-b34d-0d28fba3ed02'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('PWD', '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam'), ('ANDROID_HOME', '/home/goldenboy/dev-tools/androidSDK'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/goldenboy/.vscode-server/extensions/anthropic.claude-code-2.1.152-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[0.048099] (golden_slam) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target golden_slam_node\n'}
+[0.060052] (golden_slam) StdoutLine: {'line': b'[  8%] Building CXX object CMakeFiles/golden_slam_node.dir/src/app/golden_slam_app.cpp.o\n'}
+[0.060936] (golden_slam) StdoutLine: {'line': b'[ 16%] Building CXX object CMakeFiles/golden_slam_node.dir/src/core/slam_core.cpp.o\n'}
+[0.061508] (golden_slam) StdoutLine: {'line': b'[ 25%] Building CXX object CMakeFiles/golden_slam_node.dir/src/platform/ros_bridge.cpp.o\n'}
+[0.099792] (-) TimerEvent: {}
+[0.199972] (-) TimerEvent: {}
+[0.300176] (-) TimerEvent: {}
+[0.400414] (-) TimerEvent: {}
+[0.500633] (-) TimerEvent: {}
+[0.600839] (-) TimerEvent: {}
+[0.701044] (-) TimerEvent: {}
+[0.801227] (-) TimerEvent: {}
+[0.901436] (-) TimerEvent: {}
+[1.001618] (-) TimerEvent: {}
+[1.101816] (-) TimerEvent: {}
+[1.202021] (-) TimerEvent: {}
+[1.302249] (-) TimerEvent: {}
+[1.402495] (-) TimerEvent: {}
+[1.502760] (-) TimerEvent: {}
+[1.603064] (-) TimerEvent: {}
+[1.703326] (-) TimerEvent: {}
+[1.803541] (-) TimerEvent: {}
+[1.903758] (-) TimerEvent: {}
+[2.003976] (-) TimerEvent: {}
+[2.032829] (golden_slam) StderrLine: {'line': b'In file included from /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:1:\n'}
+[2.033033] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp: In constructor \xe2\x80\x98SlamCore::SlamCore()\xe2\x80\x99:\n'}
+[2.033078] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:169:17: warning: \xe2\x80\x98SlamCore::map_insert_count_\xe2\x80\x99 will be initialized after [-Wreorder]\n'}
+[2.033104] (golden_slam) StderrLine: {'line': b'  169 |     std::size_t map_insert_count_;\n'}
+[2.033126] (golden_slam) StderrLine: {'line': b'      |                 ^~~~~~~~~~~~~~~~~\n'}
+[2.033146] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp:164:21: warning:   \xe2\x80\x98Eigen::Matrix3d SlamCore::R_body_lidar_\xe2\x80\x99 [-Wreorder]\n'}
+[2.033170] (golden_slam) StderrLine: {'line': b'  164 |     Eigen::Matrix3d R_body_lidar_;\n'}
+[2.033191] (golden_slam) StderrLine: {'line': b'      |                     ^~~~~~~~~~~~~\n'}
+[2.033210] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:32:1: warning:   when initialized here [-Wreorder]\n'}
+[2.033229] (golden_slam) StderrLine: {'line': b'   32 | SlamCore::SlamCore()\n'}
+[2.033250] (golden_slam) StderrLine: {'line': b'      | ^~~~~~~~\n'}
+[2.045623] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::debugImuDt(double)\xe2\x80\x99:\n'}
+[2.045790] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:303:22: warning: unused variable \xe2\x80\x98hz\xe2\x80\x99 [-Wunused-variable]\n'}
+[2.045836] (golden_slam) StderrLine: {'line': b'  303 |         const double hz = 1.0 / dt;\n'}
+[2.045859] (golden_slam) StderrLine: {'line': b'      |                      ^~\n'}
+[2.066077] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp: In member function \xe2\x80\x98void SlamCore::debugNearestSearch(const CloudTConstPtr&)\xe2\x80\x99:\n'}
+[2.066271] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp:551:16: warning: unused variable \xe2\x80\x98search_ok\xe2\x80\x99 [-Wunused-variable]\n'}
+[2.066321] (golden_slam) StderrLine: {'line': b'  551 |     const bool search_ok = ikd_tree_map_.nearestSearch(query_point,5,nearest_points,squared_distances);\n'}
+[2.066350] (golden_slam) StderrLine: {'line': b'      |                ^~~~~~~~~\n'}
+[2.104085] (-) TimerEvent: {}
+[2.204295] (-) TimerEvent: {}
+[2.304497] (-) TimerEvent: {}
+[2.404713] (-) TimerEvent: {}
+[2.504932] (-) TimerEvent: {}
+[2.605169] (-) TimerEvent: {}
+[2.705412] (-) TimerEvent: {}
+[2.805629] (-) TimerEvent: {}
+[2.905839] (-) TimerEvent: {}
+[3.006008] (-) TimerEvent: {}
+[3.106284] (-) TimerEvent: {}
+[3.206586] (-) TimerEvent: {}
+[3.256980] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function \xe2\x80\x98void RosBridge::onLidarCB(livox_ros_driver2::msg::CustomMsg_<std::allocator<void> >::SharedPtr)\xe2\x80\x99:\n'}
+[3.257159] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:155:16: warning: unused variable \xe2\x80\x98raw_size\xe2\x80\x99 [-Wunused-variable]\n'}
+[3.257202] (golden_slam) StderrLine: {'line': b'  155 |     const auto raw_size = msg->point_num;\n'}
+[3.257224] (golden_slam) StderrLine: {'line': b'      |                ^~~~~~~~\n'}
+[3.257245] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:156:16: warning: unused variable \xe2\x80\x98preprocced_size\xe2\x80\x99 [-Wunused-variable]\n'}
+[3.257267] (golden_slam) StderrLine: {'line': b'  156 |     const auto preprocced_size = cloud->points.size();\n'}
+[3.257285] (golden_slam) StderrLine: {'line': b'      |                ^~~~~~~~~~~~~~~\n'}
+[3.259381] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp: In member function \xe2\x80\x98void RosBridge::mapSaveCB(std_srvs::srv::Trigger_Request_<std::allocator<void> >::ConstSharedPtr, std_srvs::srv::Trigger_Response_<std::allocator<void> >::SharedPtr)\xe2\x80\x99:\n'}
+[3.259474] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:180:75: warning: unused parameter \xe2\x80\x98req\xe2\x80\x99 [-Wunused-parameter]\n'}
+[3.259500] (golden_slam) StderrLine: {'line': b'  180 | void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)\n'}
+[3.259521] (golden_slam) StderrLine: {'line': b'      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\n'}
+[3.259541] (golden_slam) StderrLine: {'line': b'/home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp:180:124: warning: unused parameter \xe2\x80\x98res\xe2\x80\x99 [-Wunused-parameter]\n'}
+[3.259560] (golden_slam) StderrLine: {'line': b'  180 | void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, std_srvs::srv::Trigger::Response::SharedPtr res)\n'}
+[3.259578] (golden_slam) StderrLine: {'line': b'      |                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\n'}
+[3.306640] (-) TimerEvent: {}
+[3.406829] (-) TimerEvent: {}
+[3.507062] (-) TimerEvent: {}
+[3.607327] (-) TimerEvent: {}
+[3.707602] (-) TimerEvent: {}
+[3.808069] (-) TimerEvent: {}
+[3.908436] (-) TimerEvent: {}
+[4.008653] (-) TimerEvent: {}
+[4.108877] (-) TimerEvent: {}
+[4.209105] (-) TimerEvent: {}
+[4.309316] (-) TimerEvent: {}
+[4.409501] (-) TimerEvent: {}
+[4.509685] (-) TimerEvent: {}
+[4.609896] (-) TimerEvent: {}
+[4.710095] (-) TimerEvent: {}
+[4.810288] (-) TimerEvent: {}
+[4.910487] (-) TimerEvent: {}
+[5.010755] (-) TimerEvent: {}
+[5.110994] (-) TimerEvent: {}
+[5.211191] (-) TimerEvent: {}
+[5.311389] (-) TimerEvent: {}
+[5.411594] (-) TimerEvent: {}
+[5.511803] (-) TimerEvent: {}
+[5.612102] (-) TimerEvent: {}
+[5.712302] (-) TimerEvent: {}
+[5.812628] (-) TimerEvent: {}
+[5.912968] (-) TimerEvent: {}
+[6.013211] (-) TimerEvent: {}
+[6.113426] (-) TimerEvent: {}
+[6.213641] (-) TimerEvent: {}
+[6.313858] (-) TimerEvent: {}
+[6.414054] (-) TimerEvent: {}
+[6.514264] (-) TimerEvent: {}
+[6.614554] (-) TimerEvent: {}
+[6.714773] (-) TimerEvent: {}
+[6.814981] (-) TimerEvent: {}
+[6.915165] (-) TimerEvent: {}
+[7.015373] (-) TimerEvent: {}
+[7.115570] (-) TimerEvent: {}
+[7.215760] (-) TimerEvent: {}
+[7.315947] (-) TimerEvent: {}
+[7.416136] (-) TimerEvent: {}
+[7.516317] (-) TimerEvent: {}
+[7.616528] (-) TimerEvent: {}
+[7.716741] (-) TimerEvent: {}
+[7.816933] (-) TimerEvent: {}
+[7.917181] (-) TimerEvent: {}
+[8.017426] (-) TimerEvent: {}
+[8.117658] (-) TimerEvent: {}
+[8.217904] (-) TimerEvent: {}
+[8.318071] (-) TimerEvent: {}
+[8.418262] (-) TimerEvent: {}
+[8.518463] (-) TimerEvent: {}
+[8.618664] (-) TimerEvent: {}
+[8.718812] (-) TimerEvent: {}
+[8.818986] (-) TimerEvent: {}
+[8.919169] (-) TimerEvent: {}
+[9.019366] (-) TimerEvent: {}
+[9.119546] (-) TimerEvent: {}
+[9.219719] (-) TimerEvent: {}
+[9.319921] (-) TimerEvent: {}
+[9.420112] (-) TimerEvent: {}
+[9.520288] (-) TimerEvent: {}
+[9.620465] (-) TimerEvent: {}
+[9.720640] (-) TimerEvent: {}
+[9.820842] (-) TimerEvent: {}
+[9.921079] (-) TimerEvent: {}
+[10.021305] (-) TimerEvent: {}
+[10.121467] (-) TimerEvent: {}
+[10.221644] (-) TimerEvent: {}
+[10.321867] (-) TimerEvent: {}
+[10.422082] (-) TimerEvent: {}
+[10.522262] (-) TimerEvent: {}
+[10.622452] (-) TimerEvent: {}
+[10.722660] (-) TimerEvent: {}
+[10.774222] (golden_slam) StdoutLine: {'line': b'[ 33%] Linking CXX executable golden_slam_node\n'}
+[10.822765] (-) TimerEvent: {}
+[10.922948] (-) TimerEvent: {}
+[11.023146] (-) TimerEvent: {}
+[11.048231] (golden_slam) StdoutLine: {'line': b'[100%] Built target golden_slam_node\n'}
+[11.053632] (golden_slam) CommandEnded: {'returncode': 0}
+[11.054603] (golden_slam) JobProgress: {'identifier': 'golden_slam', 'progress': 'install'}
+[11.058267] (golden_slam) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam'], 'cwd': '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code_2-1-152_agent'), ('USER', 'goldenboy'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en","osLocale":"en","resolvedLanguage":"en","defaultMessagesFile":"/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/out/nls.messages.json","locale":"en","availableLanguages":{}}'), ('GIT_EDITOR', 'true'), ('VSCODE_WSL_EXT_LOCATION', '/mnt/c/Users/hwido/.vscode/extensions/ms-vscode-remote.remote-wsl-0.104.3'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('CLAUDE_AGENT_SDK_VERSION', '0.3.152'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/goldenboy'), ('VSCODE_RECONNECTION_GRACE_TIME', '10800000'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-be5f3a81-86f3-4ac9-a709-c4487cb7615c.sock'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'goldenboy'), ('NAME', 'Gini'), ('WSL_INTEROP', '/run/WSL/416_interop'), ('VSCODE_HANDLES_SIGPIPE', 'true'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/home/goldenboy/.vscode-server/bin/034f571df509819cc10b0c8129f66ef77a542f0e/bin/remote-cli:/home/goldenboy/.local/bin:/home/goldenboy/.local/bin:/home/goldenboy/dev-tools/flutter/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/STMicroelectronics/stlink_server:/mnt/c/ST/STM32CubeCLT_1.18.0:/mnt/c/ST/STM32CubeCLT_1.18.0/CMake/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/Ninja/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/GNU-tools-for-STM32/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STLink-gdb-server/bin:/mnt/c/ST/STM32CubeCLT_1.18.0/STM32CubeProgrammer/bin:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/PuTTY/:/mnt/c/Program Files (x86)/STMicroelectronics/STM32 ST-LINK Utility/ST-LINK Utility:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/CMake/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/NVIDIA Corporation/SDK Manager:/mnt/c/Program Files/usbipd-win/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/hwido/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/hwido/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/hwido/Development/flutter/bin:/mnt/d/GBdevelop/Workspace/esp32_ws:/snap/bin:/home/goldenboy/dev-tools/androidSDK/cmdline-tools/latest/bin:/home/goldenboy/dev-tools/androidSDK/platform-tools'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('CLAUDE_EFFORT', 'high'), ('DISPLAY', ':0'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'ko_KR.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('ELECTRON_RUN_AS_NODE', '1'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('CLAUDE_CODE_SESSION_ID', 'f5e2f149-0845-4fe0-b34d-0d28fba3ed02'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('PWD', '/home/goldenboy/git_version/GoldenSLAM/build/golden_slam'), ('ANDROID_HOME', '/home/goldenboy/dev-tools/androidSDK'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/goldenboy/.vscode-server/extensions/anthropic.claude-code-2.1.152-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('CLAUDE_CODE_ENABLE_TASKS', '0'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[11.061724] (golden_slam) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[11.061875] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node\n'}
+[11.063552] (golden_slam) StdoutLine: {'line': b'-- Set runtime path of "/home/goldenboy/git_version/GoldenSLAM/install/golden_slam/lib/golden_slam/golden_slam_node" to ""\n'}
+[11.063943] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch\n'}
+[11.064175] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/launch/golden_slam.launch.py\n'}
+[11.064208] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/config\n'}
+[11.064231] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/config/avia.yaml\n'}
+[11.064252] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/config/mid360.yaml\n'}
+[11.064274] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/rviz\n'}
+[11.064295] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/rviz/golden_slam.rviz\n'}
+[11.064317] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include/\n'}
+[11.064337] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform\n'}
+[11.064358] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//platform/ros_bridge.hpp\n'}
+[11.064377] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app\n'}
+[11.064395] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//app/golden_slam_app.hpp\n'}
+[11.064413] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core\n'}
+[11.064432] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/imu_processor.hpp\n'}
+[11.064449] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/plane_estimator.hpp\n'}
+[11.064468] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/ikd_tree_map.hpp\n'}
+[11.064486] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types\n'}
+[11.064504] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/lidar_frame.hpp\n'}
+[11.064522] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/pcl_types.hpp\n'}
+[11.064541] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/state.hpp\n'}
+[11.064559] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/measure_group.hpp\n'}
+[11.064577] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/frontend_snapshot.hpp\n'}
+[11.064595] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/types/imu_propagated_pose.hpp\n'}
+[11.064613] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/pointcloud_deskew.hpp\n'}
+[11.064631] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/iekf_updater.hpp\n'}
+[11.064650] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/slam_core.hpp\n'}
+[11.064667] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/include//core/preprocess.hpp\n'}
+[11.064686] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/package_run_dependencies/golden_slam\n'}
+[11.064705] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/parent_prefix_path/golden_slam\n'}
+[11.064724] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.sh\n'}
+[11.064742] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/ament_prefix_path.dsv\n'}
+[11.065021] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.sh\n'}
+[11.065905] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/environment/path.dsv\n'}
+[11.066129] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.bash\n'}
+[11.066382] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.sh\n'}
+[11.066459] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.zsh\n'}
+[11.066527] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/local_setup.dsv\n'}
+[11.066595] (golden_slam) StdoutLine: {'line': b'-- Installing: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.dsv\n'}
+[11.066671] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/ament_index/resource_index/packages/golden_slam\n'}
+[11.066739] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig.cmake\n'}
+[11.066809] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/cmake/golden_slamConfig-version.cmake\n'}
+[11.066885] (golden_slam) StdoutLine: {'line': b'-- Up-to-date: /home/goldenboy/git_version/GoldenSLAM/install/golden_slam/share/golden_slam/package.xml\n'}
+[11.066953] (golden_slam) CommandEnded: {'returncode': 0}
+[11.074973] (golden_slam) JobEnded: {'identifier': 'golden_slam', 'rc': 0}
+[11.075507] (-) EventReactorShutdown: {}

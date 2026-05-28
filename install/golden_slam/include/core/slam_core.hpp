@@ -21,10 +21,10 @@
 constexpr double  MAX_DEBUG_MAP_POINTS = 3000000; //RViz 상 최대 점 갯수
 constexpr float MAP_VOXEL_SIZE = 0.2;
 
-static constexpr double MAX_IEKF_DX_ROT_NORM = 0.020; // rad, 약 1.14도
-static constexpr double MAX_IEKF_DX_POS_NORM = 0.200;  // meter, 20cm
+static constexpr double MAX_IEKF_DX_ROT_NORM = 0.010; // rad, 약 0.57도
+static constexpr double MAX_IEKF_DX_POS_NORM = 0.070;  // meter, 7cm
 
-static constexpr double MAX_IEKF_MEAN_ABS_RESIDUAL = 0.10;
+static constexpr double MAX_IEKF_MEAN_ABS_RESIDUAL = 0.08;
 static constexpr double MAX_IEKF_MAX_ABS_RESIDUAL = 0.20;
 
 static constexpr std::size_t MIN_IEKF_RESIDUAL_COUNT = 100;
