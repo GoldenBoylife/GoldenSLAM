@@ -97,10 +97,52 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/goldenboy/git_version/GoldenSLAM/src/app/golden_slam_app.cpp -o CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.s
 
+CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o: CMakeFiles/fastlio_mapping.dir/flags.make
+CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o: ../../src/algorithm/iekf.cpp
+CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o: CMakeFiles/fastlio_mapping.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o -MF CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o.d -o CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o -c /home/goldenboy/git_version/GoldenSLAM/src/algorithm/iekf.cpp
+
+CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/goldenboy/git_version/GoldenSLAM/src/algorithm/iekf.cpp > CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.i
+
+CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/goldenboy/git_version/GoldenSLAM/src/algorithm/iekf.cpp -o CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.s
+
+CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o: CMakeFiles/fastlio_mapping.dir/flags.make
+CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o: ../../src/algorithm/map_manager.cpp
+CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o: CMakeFiles/fastlio_mapping.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o -MF CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o.d -o CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o -c /home/goldenboy/git_version/GoldenSLAM/src/algorithm/map_manager.cpp
+
+CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/goldenboy/git_version/GoldenSLAM/src/algorithm/map_manager.cpp > CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.i
+
+CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/goldenboy/git_version/GoldenSLAM/src/algorithm/map_manager.cpp -o CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.s
+
+CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o: CMakeFiles/fastlio_mapping.dir/flags.make
+CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o: ../../src/algorithm/imu_processor.cpp
+CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o: CMakeFiles/fastlio_mapping.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o -MF CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o.d -o CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o -c /home/goldenboy/git_version/GoldenSLAM/src/algorithm/imu_processor.cpp
+
+CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/goldenboy/git_version/GoldenSLAM/src/algorithm/imu_processor.cpp > CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.i
+
+CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/goldenboy/git_version/GoldenSLAM/src/algorithm/imu_processor.cpp -o CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.s
+
 CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o: CMakeFiles/fastlio_mapping.dir/flags.make
 CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o: ../../src/core/slam_core.cpp
 CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o: CMakeFiles/fastlio_mapping.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o -MF CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o.d -o CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o -c /home/goldenboy/git_version/GoldenSLAM/src/core/slam_core.cpp
 
 CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.i: cmake_force
@@ -114,7 +156,7 @@ CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.s: cmake_force
 CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: CMakeFiles/fastlio_mapping.dir/flags.make
 CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: ../../src/platform/ros_bridge.cpp
 CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: CMakeFiles/fastlio_mapping.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o -MF CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o.d -o CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o -c /home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp
 
 CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.i: cmake_force
@@ -125,52 +167,58 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp -o CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.s
 
-CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o: CMakeFiles/fastlio_mapping.dir/flags.make
-CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o: ../../src/preprocess.cpp
-CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o: CMakeFiles/fastlio_mapping.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o -MF CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o.d -o CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o -c /home/goldenboy/git_version/GoldenSLAM/src/preprocess.cpp
+CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o: CMakeFiles/fastlio_mapping.dir/flags.make
+CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o: ../../src/algorithm/lidar_preprocess.cpp
+CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o: CMakeFiles/fastlio_mapping.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o -MF CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o.d -o CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o -c /home/goldenboy/git_version/GoldenSLAM/src/algorithm/lidar_preprocess.cpp
 
-CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/goldenboy/git_version/GoldenSLAM/src/preprocess.cpp > CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.i
+CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/goldenboy/git_version/GoldenSLAM/src/algorithm/lidar_preprocess.cpp > CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.i
 
-CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/goldenboy/git_version/GoldenSLAM/src/preprocess.cpp -o CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.s
+CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/goldenboy/git_version/GoldenSLAM/src/algorithm/lidar_preprocess.cpp -o CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.s
 
-CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o: CMakeFiles/fastlio_mapping.dir/flags.make
-CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o: ../../include/ikd-Tree/ikd_Tree.cpp
-CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o: CMakeFiles/fastlio_mapping.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o -MF CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o.d -o CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o -c /home/goldenboy/git_version/GoldenSLAM/include/ikd-Tree/ikd_Tree.cpp
+CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o: CMakeFiles/fastlio_mapping.dir/flags.make
+CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o: ../../include/third_party/ikd-Tree/ikd_Tree.cpp
+CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o: CMakeFiles/fastlio_mapping.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o -MF CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o.d -o CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o -c /home/goldenboy/git_version/GoldenSLAM/include/third_party/ikd-Tree/ikd_Tree.cpp
 
-CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/goldenboy/git_version/GoldenSLAM/include/ikd-Tree/ikd_Tree.cpp > CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.i
+CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/goldenboy/git_version/GoldenSLAM/include/third_party/ikd-Tree/ikd_Tree.cpp > CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.i
 
-CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/goldenboy/git_version/GoldenSLAM/include/ikd-Tree/ikd_Tree.cpp -o CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.s
+CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/goldenboy/git_version/GoldenSLAM/include/third_party/ikd-Tree/ikd_Tree.cpp -o CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.s
 
 # Object files for target fastlio_mapping
 fastlio_mapping_OBJECTS = \
 "CMakeFiles/fastlio_mapping.dir/src/app/main.cpp.o" \
 "CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o" \
+"CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o" \
+"CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o" \
+"CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o" \
 "CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o" \
 "CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o" \
-"CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o" \
-"CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o"
+"CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o" \
+"CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o"
 
 # External object files for target fastlio_mapping
 fastlio_mapping_EXTERNAL_OBJECTS =
 
 fastlio_mapping: CMakeFiles/fastlio_mapping.dir/src/app/main.cpp.o
 fastlio_mapping: CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o
+fastlio_mapping: CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o
+fastlio_mapping: CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o
+fastlio_mapping: CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o
 fastlio_mapping: CMakeFiles/fastlio_mapping.dir/src/core/slam_core.cpp.o
 fastlio_mapping: CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o
-fastlio_mapping: CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o
-fastlio_mapping: CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o
+fastlio_mapping: CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o
+fastlio_mapping: CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o
 fastlio_mapping: CMakeFiles/fastlio_mapping.dir/build.make
 fastlio_mapping: /usr/lib/libOpenNI.so
 fastlio_mapping: /usr/lib/x86_64-linux-gnu/libusb-1.0.so
@@ -526,7 +574,7 @@ fastlio_mapping: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.s
 fastlio_mapping: /opt/ros/humble/lib/librosidl_runtime_c.so
 fastlio_mapping: /opt/ros/humble/lib/librcutils.so
 fastlio_mapping: CMakeFiles/fastlio_mapping.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable fastlio_mapping"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable fastlio_mapping"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fastlio_mapping.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

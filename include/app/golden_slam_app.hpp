@@ -1,7 +1,6 @@
 #pragma once
 
 #include <memory>
-#include <rclcpp/rclcpp.hpp>
 
 class SlamCore;
 class RosBridge;

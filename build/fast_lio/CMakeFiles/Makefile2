@@ -610,12 +610,12 @@ CMakeFiles/fastlio_mapping.dir/all: CMakeFiles/fast_lio__cpp.dir/all
 CMakeFiles/fastlio_mapping.dir/all: CMakeFiles/fast_lio__rosidl_typesupport_cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=33,34,35,36,37,38,39 "Built target fastlio_mapping"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles --progress-num=33,34,35,36,37,38,39,40,41,42 "Built target fastlio_mapping"
 .PHONY : CMakeFiles/fastlio_mapping.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/fastlio_mapping.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/fastlio_mapping.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/CMakeFiles 0
 .PHONY : CMakeFiles/fastlio_mapping.dir/rule

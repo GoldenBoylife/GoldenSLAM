@@ -1,8 +1,9 @@
-CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
- /home/goldenboy/git_version/GoldenSLAM/src/platform/ros_bridge.cpp \
+CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o: \
+ /home/goldenboy/git_version/GoldenSLAM/src/algorithm/lidar_preprocess.cpp \
  /usr/include/stdc-predef.h \
- /home/goldenboy/git_version/GoldenSLAM/include/platform/ros_bridge.hpp \
- /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_algobase.h \
+ /home/goldenboy/git_version/GoldenSLAM/include/algorithm/lidar_preprocess.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
+ /usr/include/c++/11/csignal \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -13,7 +14,53 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
- /usr/include/c++/11/pstl/pstl_config.h \
+ /usr/include/c++/11/pstl/pstl_config.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/time64.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endianness.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
+ /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+ /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
+ /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstksz.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h \
+ /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+ /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+ /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+ /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/c++/11/bits/functexcept.h \
  /usr/include/c++/11/bits/exception_defines.h \
  /usr/include/c++/11/bits/cpp_type_traits.h \
@@ -42,9 +89,6 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h \
- /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
@@ -63,7 +107,6 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/c++/11/cwchar /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
@@ -81,10 +124,6 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
@@ -96,14 +135,7 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
- /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
- /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
- /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h \
@@ -117,8 +149,21 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/string \
- /usr/include/c++/11/bits/char_traits.h /usr/include/c++/11/cstdint \
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp \
+ /usr/include/c++/11/future /usr/include/c++/11/mutex \
+ /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
+ /usr/include/c++/11/cstdint /usr/include/c++/11/limits \
+ /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
+ /usr/include/c++/11/system_error \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
+ /usr/include/c++/11/cerrno /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+ /usr/include/c++/11/stdexcept /usr/include/c++/11/string \
+ /usr/include/c++/11/bits/char_traits.h \
  /usr/include/c++/11/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h \
  /usr/include/c++/11/clocale /usr/include/locale.h \
@@ -135,7 +180,6 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/select2.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
@@ -147,52 +191,10 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/11/cerrno \
- /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
- /usr/include/c++/11/csignal /usr/include/signal.h \
- /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
- /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
- /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
- /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
- /usr/include/x86_64-linux-gnu/bits/sigaction.h \
- /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
- /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
- /usr/include/x86_64-linux-gnu/sys/ucontext.h \
- /usr/include/x86_64-linux-gnu/bits/sigstack.h \
- /usr/include/x86_64-linux-gnu/bits/sigstksz.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h \
- /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
- /usr/include/x86_64-linux-gnu/bits/sigthread.h \
- /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
- /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp \
- /usr/include/c++/11/future /usr/include/c++/11/mutex \
- /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
- /usr/include/c++/11/limits /usr/include/c++/11/ctime \
- /usr/include/c++/11/bits/parse_numbers.h \
- /usr/include/c++/11/system_error \
- /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
- /usr/include/c++/11/stdexcept /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
  /usr/include/c++/11/condition_variable /usr/include/c++/11/atomic \
  /usr/include/c++/11/bits/atomic_futex.h \
@@ -627,292 +629,13 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/imu.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__builder.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__traits.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__type_support.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__struct.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__builder.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__traits.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__traits.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__type_support.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/odometry.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__builder.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist_with_covariance__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/twist__traits.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/odometry__type_support.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/path.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__builder.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp \
- /opt/ros/humble/include/nav_msgs/nav_msgs/msg/detail/path__type_support.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__type_support.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__type_support.hpp \
- /opt/ros/humble/include/std_srvs/std_srvs/srv/trigger.hpp \
- /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__struct.hpp \
- /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__builder.hpp \
- /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__traits.hpp \
- /opt/ros/humble/include/std_srvs/std_srvs/srv/detail/trigger__type_support.hpp \
- /opt/ros/humble/include/std_srvs/std_srvs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/tf2_ros/tf2_ros/transform_broadcaster.h \
- /opt/ros/humble/include/tf2_ros/tf2_ros/transform_broadcaster.hpp \
- /opt/ros/humble/include/tf2_ros/tf2_ros/visibility_control.hpp \
- /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp \
- /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp \
- /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__builder.hpp \
- /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__traits.hpp \
- /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__type_support.hpp \
- /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/tf2_ros/tf2_ros/qos.hpp \
- /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/custom_msg.hpp \
- /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__struct.hpp \
- /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__struct.hpp \
- /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__builder.hpp \
- /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__traits.hpp \
- /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__traits.hpp \
- /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__type_support.hpp \
- /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/rosidl_generator_cpp__visibility_control.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/core/slam_types.hpp \
- /usr/include/eigen3/Eigen/Core \
- /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
- /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
- /usr/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
- /usr/include/c++/11/complex \
- /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/omp.h \
- /usr/include/c++/11/cstddef /usr/include/c++/11/climits \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
- /usr/include/x86_64-linux-gnu/bits/local_lim.h \
- /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /usr/include/eigen3/Eigen/src/Core/util/Constants.h \
- /usr/include/eigen3/Eigen/src/Core/util/Meta.h \
- /usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
- /usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h \
- /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h \
- /usr/include/eigen3/Eigen/src/Core/util/Memory.h \
- /usr/include/eigen3/Eigen/src/Core/util/IntegralConstant.h \
- /usr/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h \
- /usr/include/eigen3/Eigen/src/Core/NumTraits.h \
- /usr/include/eigen3/Eigen/src/Core/MathFunctions.h \
- /usr/include/eigen3/Eigen/src/Core/GenericPacketMath.h \
- /usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
- /usr/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
- /usr/include/eigen3/Eigen/src/Core/arch/Default/Half.h \
- /usr/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h \
- /usr/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h \
- /usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
- /usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h \
- /usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h \
- /usr/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h \
- /usr/include/eigen3/Eigen/src/Core/arch/SSE/Complex.h \
- /usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h \
- /usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
- /usr/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/StlFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
- /usr/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h \
- /usr/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h \
- /usr/include/eigen3/Eigen/src/Core/ArithmeticSequence.h \
- /usr/include/eigen3/Eigen/src/Core/IO.h \
- /usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
- /usr/include/eigen3/Eigen/src/Core/DenseBase.h \
- /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
- /usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
- /usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
- /usr/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
- /usr/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
- /usr/include/eigen3/Eigen/src/Core/MatrixBase.h \
- /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
- /usr/include/eigen3/Eigen/src/Core/EigenBase.h \
- /usr/include/eigen3/Eigen/src/Core/Product.h \
- /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h \
- /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h \
- /usr/include/eigen3/Eigen/src/Core/Assign.h \
- /usr/include/eigen3/Eigen/src/Core/ArrayBase.h \
- /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
- /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
- /usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h \
- /usr/include/eigen3/Eigen/src/Core/DenseStorage.h \
- /usr/include/eigen3/Eigen/src/Core/NestByValue.h \
- /usr/include/eigen3/Eigen/src/Core/ReturnByValue.h \
- /usr/include/eigen3/Eigen/src/Core/NoAlias.h \
- /usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h \
- /usr/include/eigen3/Eigen/src/Core/Matrix.h \
- /usr/include/eigen3/Eigen/src/Core/Array.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h \
- /usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
- /usr/include/eigen3/Eigen/src/Core/Dot.h \
- /usr/include/eigen3/Eigen/src/Core/StableNorm.h \
- /usr/include/eigen3/Eigen/src/Core/Stride.h \
- /usr/include/eigen3/Eigen/src/Core/MapBase.h \
- /usr/include/eigen3/Eigen/src/Core/Map.h \
- /usr/include/eigen3/Eigen/src/Core/Ref.h \
- /usr/include/eigen3/Eigen/src/Core/Block.h \
- /usr/include/eigen3/Eigen/src/Core/VectorBlock.h \
- /usr/include/eigen3/Eigen/src/Core/IndexedView.h \
- /usr/include/eigen3/Eigen/src/Core/Reshaped.h \
- /usr/include/eigen3/Eigen/src/Core/Transpose.h \
- /usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/Diagonal.h \
- /usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h \
- /usr/include/eigen3/Eigen/src/Core/Redux.h \
- /usr/include/eigen3/Eigen/src/Core/Visitor.h \
- /usr/include/eigen3/Eigen/src/Core/Fuzzy.h \
- /usr/include/eigen3/Eigen/src/Core/Swap.h \
- /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h \
- /usr/include/eigen3/Eigen/src/Core/GeneralProduct.h \
- /usr/include/eigen3/Eigen/src/Core/Solve.h \
- /usr/include/eigen3/Eigen/src/Core/Inverse.h \
- /usr/include/eigen3/Eigen/src/Core/SolverBase.h \
- /usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/Transpositions.h \
- /usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
- /usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
- /usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
- /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
- /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
- /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h \
- /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
- /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
- /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
- /usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
- /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
- /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
- /usr/include/eigen3/Eigen/src/Core/BandMatrix.h \
- /usr/include/eigen3/Eigen/src/Core/CoreIterators.h \
- /usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h \
- /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h \
- /usr/include/eigen3/Eigen/src/Core/Select.h \
- /usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h \
- /usr/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h \
- /usr/include/eigen3/Eigen/src/Core/Random.h \
- /usr/include/eigen3/Eigen/src/Core/Replicate.h \
- /usr/include/eigen3/Eigen/src/Core/Reverse.h \
- /usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h \
- /usr/include/eigen3/Eigen/src/Core/StlIterators.h \
- /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
- /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
- /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
- /usr/include/eigen3/Eigen/LU /usr/include/eigen3/Eigen/src/misc/Kernel.h \
- /usr/include/eigen3/Eigen/src/misc/Image.h \
- /usr/include/eigen3/Eigen/src/LU/FullPivLU.h \
- /usr/include/eigen3/Eigen/src/LU/PartialPivLU.h \
- /usr/include/eigen3/Eigen/src/LU/Determinant.h \
- /usr/include/eigen3/Eigen/src/LU/InverseImpl.h \
- /usr/include/eigen3/Eigen/src/LU/arch/InverseSize4.h \
- /usr/include/eigen3/Eigen/Cholesky /usr/include/eigen3/Eigen/Jacobi \
- /usr/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
- /usr/include/eigen3/Eigen/src/Cholesky/LLT.h \
- /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h \
- /usr/include/eigen3/Eigen/QR /usr/include/eigen3/Eigen/Householder \
- /usr/include/eigen3/Eigen/src/Householder/Householder.h \
- /usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
- /usr/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
- /usr/include/eigen3/Eigen/src/QR/HouseholderQR.h \
- /usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
- /usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
- /usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
- /usr/include/eigen3/Eigen/SVD \
- /usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
- /usr/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
- /usr/include/eigen3/Eigen/src/SVD/SVDBase.h \
- /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
- /usr/include/eigen3/Eigen/src/SVD/BDCSVD.h \
- /usr/include/eigen3/Eigen/Geometry \
- /usr/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
- /usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
- /usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
- /usr/include/eigen3/Eigen/src/Geometry/RotationBase.h \
- /usr/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
- /usr/include/eigen3/Eigen/src/Geometry/Quaternion.h \
- /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
- /usr/include/eigen3/Eigen/src/Geometry/Transform.h \
- /usr/include/eigen3/Eigen/src/Geometry/Translation.h \
- /usr/include/eigen3/Eigen/src/Geometry/Scaling.h \
- /usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
- /usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
- /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
- /usr/include/eigen3/Eigen/src/Geometry/Umeyama.h \
- /usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h \
- /usr/include/eigen3/Eigen/Eigenvalues \
- /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
- /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
- /usr/include/eigen3/Eigen/Geometry \
- /usr/include/pcl-1.12/pcl/point_cloud.h \
- /usr/include/eigen3/Eigen/StdVector \
- /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h \
- /usr/include/eigen3/Eigen/src/StlSupport/details.h \
- /usr/include/pcl-1.12/pcl/PCLHeader.h /usr/include/pcl-1.12/pcl/memory.h \
+ /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h \
+ /usr/include/c++/11/cstddef \
+ /opt/ros/humble/include/message_filters/message_filters/message_event.h \
+ /opt/ros/humble/include/message_filters/message_filters/message_traits.h \
+ /usr/include/pcl-1.12/pcl/conversions.h \
+ /usr/include/pcl-1.12/pcl/PCLPointField.h \
+ /usr/include/pcl-1.12/pcl/memory.h \
  /usr/include/pcl-1.12/pcl/type_traits.h \
  /usr/include/pcl-1.12/pcl/point_struct_traits.h \
  /usr/include/boost/mpl/assert.hpp /usr/include/boost/mpl/not.hpp \
@@ -1095,44 +818,237 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp \
  /usr/include/boost/preprocessor/seq/enum.hpp \
  /usr/include/boost/preprocessor/seq/size.hpp \
- /usr/include/pcl-1.12/pcl/exceptions.h \
- /usr/include/boost/current_function.hpp \
+ /usr/include/eigen3/Eigen/Core \
+ /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
+ /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
+ /usr/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
+ /usr/include/c++/11/complex \
+ /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/omp.h \
+ /usr/include/c++/11/climits \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /usr/include/eigen3/Eigen/src/Core/util/Constants.h \
+ /usr/include/eigen3/Eigen/src/Core/util/Meta.h \
+ /usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
+ /usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h \
+ /usr/include/eigen3/Eigen/src/Core/util/XprHelper.h \
+ /usr/include/eigen3/Eigen/src/Core/util/Memory.h \
+ /usr/include/eigen3/Eigen/src/Core/util/IntegralConstant.h \
+ /usr/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h \
+ /usr/include/eigen3/Eigen/src/Core/NumTraits.h \
+ /usr/include/eigen3/Eigen/src/Core/MathFunctions.h \
+ /usr/include/eigen3/Eigen/src/Core/GenericPacketMath.h \
+ /usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/Default/Half.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/SSE/Complex.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h \
+ /usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
+ /usr/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
+ /usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
+ /usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
+ /usr/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
+ /usr/include/eigen3/Eigen/src/Core/functors/StlFunctors.h \
+ /usr/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
+ /usr/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h \
+ /usr/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h \
+ /usr/include/eigen3/Eigen/src/Core/ArithmeticSequence.h \
+ /usr/include/eigen3/Eigen/src/Core/IO.h \
+ /usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
+ /usr/include/eigen3/Eigen/src/Core/DenseBase.h \
+ /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+ /usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
+ /usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
+ /usr/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
+ /usr/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
+ /usr/include/eigen3/Eigen/src/Core/MatrixBase.h \
+ /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+ /usr/include/eigen3/Eigen/src/Core/EigenBase.h \
+ /usr/include/eigen3/Eigen/src/Core/Product.h \
+ /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h \
+ /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h \
+ /usr/include/eigen3/Eigen/src/Core/Assign.h \
+ /usr/include/eigen3/Eigen/src/Core/ArrayBase.h \
+ /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
+ /usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h \
+ /usr/include/eigen3/Eigen/src/Core/DenseStorage.h \
+ /usr/include/eigen3/Eigen/src/Core/NestByValue.h \
+ /usr/include/eigen3/Eigen/src/Core/ReturnByValue.h \
+ /usr/include/eigen3/Eigen/src/Core/NoAlias.h \
+ /usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h \
+ /usr/include/eigen3/Eigen/src/Core/Matrix.h \
+ /usr/include/eigen3/Eigen/src/Core/Array.h \
+ /usr/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
+ /usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
+ /usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
+ /usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
+ /usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h \
+ /usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
+ /usr/include/eigen3/Eigen/src/Core/Dot.h \
+ /usr/include/eigen3/Eigen/src/Core/StableNorm.h \
+ /usr/include/eigen3/Eigen/src/Core/Stride.h \
+ /usr/include/eigen3/Eigen/src/Core/MapBase.h \
+ /usr/include/eigen3/Eigen/src/Core/Map.h \
+ /usr/include/eigen3/Eigen/src/Core/Ref.h \
+ /usr/include/eigen3/Eigen/src/Core/Block.h \
+ /usr/include/eigen3/Eigen/src/Core/VectorBlock.h \
+ /usr/include/eigen3/Eigen/src/Core/IndexedView.h \
+ /usr/include/eigen3/Eigen/src/Core/Reshaped.h \
+ /usr/include/eigen3/Eigen/src/Core/Transpose.h \
+ /usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h \
+ /usr/include/eigen3/Eigen/src/Core/Diagonal.h \
+ /usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h \
+ /usr/include/eigen3/Eigen/src/Core/Redux.h \
+ /usr/include/eigen3/Eigen/src/Core/Visitor.h \
+ /usr/include/eigen3/Eigen/src/Core/Fuzzy.h \
+ /usr/include/eigen3/Eigen/src/Core/Swap.h \
+ /usr/include/eigen3/Eigen/src/Core/CommaInitializer.h \
+ /usr/include/eigen3/Eigen/src/Core/GeneralProduct.h \
+ /usr/include/eigen3/Eigen/src/Core/Solve.h \
+ /usr/include/eigen3/Eigen/src/Core/Inverse.h \
+ /usr/include/eigen3/Eigen/src/Core/SolverBase.h \
+ /usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h \
+ /usr/include/eigen3/Eigen/src/Core/Transpositions.h \
+ /usr/include/eigen3/Eigen/src/Core/TriangularMatrix.h \
+ /usr/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
+ /usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
+ /usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
+ /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
+ /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
+ /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
+ /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h \
+ /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
+ /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
+ /usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
+ /usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
+ /usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
+ /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
+ /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
+ /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
+ /usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
+ /usr/include/eigen3/Eigen/src/Core/BandMatrix.h \
+ /usr/include/eigen3/Eigen/src/Core/CoreIterators.h \
+ /usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h \
+ /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h \
+ /usr/include/eigen3/Eigen/src/Core/Select.h \
+ /usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h \
+ /usr/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h \
+ /usr/include/eigen3/Eigen/src/Core/Random.h \
+ /usr/include/eigen3/Eigen/src/Core/Replicate.h \
+ /usr/include/eigen3/Eigen/src/Core/Reverse.h \
+ /usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h \
+ /usr/include/eigen3/Eigen/src/Core/StlIterators.h \
+ /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
+ /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
+ /usr/include/pcl-1.12/pcl/types.h /usr/include/pcl-1.12/pcl/pcl_config.h \
  /usr/include/pcl-1.12/pcl/pcl_macros.h \
- /usr/include/pcl-1.12/pcl/pcl_config.h \
  /usr/include/boost/preprocessor/comparison/equal.hpp \
  /usr/include/boost/preprocessor/comparison/not_equal.hpp \
  /usr/include/boost/preprocessor/comparison/less.hpp \
  /usr/include/boost/preprocessor/comparison/less_equal.hpp \
  /usr/include/boost/preprocessor/logical/not.hpp \
- /usr/include/pcl-1.12/pcl/types.h \
+ /usr/include/pcl-1.12/pcl/PCLPointCloud2.h \
+ /usr/include/boost/predef/other/endian.h \
+ /usr/include/boost/predef/version_number.h \
+ /usr/include/boost/predef/make.h /usr/include/boost/predef/detail/test.h \
+ /usr/include/boost/predef/library/c/gnu.h \
+ /usr/include/boost/predef/library/c/_prefix.h \
+ /usr/include/boost/predef/detail/_cassert.h \
+ /usr/include/boost/predef/os/macos.h /usr/include/boost/predef/os/ios.h \
+ /usr/include/boost/predef/os/bsd.h \
+ /usr/include/boost/predef/os/bsd/bsdi.h \
+ /usr/include/boost/predef/os/bsd/dragonfly.h \
+ /usr/include/boost/predef/os/bsd/free.h \
+ /usr/include/boost/predef/os/bsd/open.h \
+ /usr/include/boost/predef/os/bsd/net.h \
+ /usr/include/boost/predef/platform/android.h \
+ /usr/include/pcl-1.12/pcl/PCLHeader.h \
+ /usr/include/pcl-1.12/pcl/PCLImage.h \
+ /usr/include/pcl-1.12/pcl/point_cloud.h \
+ /usr/include/eigen3/Eigen/StdVector /usr/include/eigen3/Eigen/Core \
+ /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h \
+ /usr/include/eigen3/Eigen/src/StlSupport/details.h \
+ /usr/include/eigen3/Eigen/Geometry /usr/include/eigen3/Eigen/SVD \
+ /usr/include/eigen3/Eigen/QR /usr/include/eigen3/Eigen/Cholesky \
+ /usr/include/eigen3/Eigen/Jacobi \
+ /usr/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
+ /usr/include/eigen3/Eigen/src/Cholesky/LLT.h \
+ /usr/include/eigen3/Eigen/src/Cholesky/LDLT.h \
+ /usr/include/eigen3/Eigen/Householder \
+ /usr/include/eigen3/Eigen/src/Householder/Householder.h \
+ /usr/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
+ /usr/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
+ /usr/include/eigen3/Eigen/src/QR/HouseholderQR.h \
+ /usr/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
+ /usr/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
+ /usr/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+ /usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
+ /usr/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
+ /usr/include/eigen3/Eigen/src/SVD/SVDBase.h \
+ /usr/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
+ /usr/include/eigen3/Eigen/src/SVD/BDCSVD.h /usr/include/eigen3/Eigen/LU \
+ /usr/include/eigen3/Eigen/src/misc/Kernel.h \
+ /usr/include/eigen3/Eigen/src/misc/Image.h \
+ /usr/include/eigen3/Eigen/src/LU/FullPivLU.h \
+ /usr/include/eigen3/Eigen/src/LU/PartialPivLU.h \
+ /usr/include/eigen3/Eigen/src/LU/Determinant.h \
+ /usr/include/eigen3/Eigen/src/LU/InverseImpl.h \
+ /usr/include/eigen3/Eigen/src/LU/arch/InverseSize4.h \
+ /usr/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
+ /usr/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
+ /usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
+ /usr/include/eigen3/Eigen/src/Geometry/RotationBase.h \
+ /usr/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
+ /usr/include/eigen3/Eigen/src/Geometry/Quaternion.h \
+ /usr/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
+ /usr/include/eigen3/Eigen/src/Geometry/Transform.h \
+ /usr/include/eigen3/Eigen/src/Geometry/Translation.h \
+ /usr/include/eigen3/Eigen/src/Geometry/Scaling.h \
+ /usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
+ /usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
+ /usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
+ /usr/include/eigen3/Eigen/src/Geometry/Umeyama.h \
+ /usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h \
+ /usr/include/pcl-1.12/pcl/exceptions.h \
+ /usr/include/boost/current_function.hpp \
  /usr/include/pcl-1.12/pcl/console/print.h \
  /usr/include/pcl-1.12/pcl/pcl_exports.h \
- /usr/include/pcl-1.12/pcl/point_types.h /usr/include/c++/11/bitset \
- /usr/include/pcl-1.12/pcl/impl/point_types.hpp \
- /usr/include/pcl-1.12/pcl/PCLPointField.h \
- /usr/include/pcl-1.12/pcl/register_point_struct.h \
- /usr/include/boost/preprocessor/seq/for_each.hpp \
- /usr/include/boost/preprocessor/repetition/for.hpp \
- /usr/include/boost/preprocessor/repetition/detail/for.hpp \
- /usr/include/boost/preprocessor/seq/seq.hpp \
- /usr/include/boost/preprocessor/seq/elem.hpp \
- /usr/include/boost/preprocessor/seq/detail/is_empty.hpp \
- /usr/include/boost/preprocessor/seq/transform.hpp \
- /usr/include/boost/preprocessor/seq/fold_left.hpp \
- /usr/include/boost/mpl/and.hpp \
+ /usr/include/pcl-1.12/pcl/for_each_type.h \
+ /usr/include/boost/mpl/is_sequence.hpp /usr/include/boost/mpl/and.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp \
- /usr/include/boost/mpl/contains.hpp \
- /usr/include/boost/mpl/contains_fwd.hpp \
- /usr/include/boost/mpl/sequence_tag.hpp \
- /usr/include/boost/mpl/sequence_tag_fwd.hpp \
- /usr/include/boost/mpl/aux_/has_begin.hpp \
- /usr/include/boost/mpl/aux_/contains_impl.hpp \
  /usr/include/boost/mpl/begin_end.hpp \
  /usr/include/boost/mpl/aux_/begin_end_impl.hpp \
+ /usr/include/boost/mpl/sequence_tag_fwd.hpp \
+ /usr/include/boost/mpl/aux_/has_begin.hpp \
  /usr/include/boost/mpl/aux_/traits_lambda_spec.hpp \
- /usr/include/boost/mpl/find.hpp /usr/include/boost/mpl/find_if.hpp \
- /usr/include/boost/mpl/aux_/find_if_pred.hpp \
- /usr/include/boost/mpl/aux_/iter_apply.hpp \
+ /usr/include/boost/mpl/sequence_tag.hpp /usr/include/boost/mpl/deref.hpp \
+ /usr/include/boost/mpl/aux_/msvc_type.hpp \
+ /usr/include/boost/mpl/remove_if.hpp /usr/include/boost/mpl/fold.hpp \
+ /usr/include/boost/mpl/O1_size.hpp \
+ /usr/include/boost/mpl/aux_/O1_size_impl.hpp \
+ /usr/include/boost/mpl/aux_/has_size.hpp \
+ /usr/include/boost/mpl/aux_/fold_impl.hpp \
  /usr/include/boost/mpl/apply.hpp /usr/include/boost/mpl/apply_fwd.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp \
  /usr/include/boost/mpl/placeholders.hpp /usr/include/boost/mpl/arg.hpp \
@@ -1157,50 +1073,7 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp \
- /usr/include/boost/mpl/deref.hpp \
- /usr/include/boost/mpl/aux_/msvc_type.hpp \
- /usr/include/boost/mpl/iter_fold_if.hpp \
- /usr/include/boost/mpl/logical.hpp /usr/include/boost/mpl/or.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
- /usr/include/boost/mpl/always.hpp \
- /usr/include/boost/mpl/aux_/preprocessor/default_params.hpp \
- /usr/include/boost/mpl/pair.hpp \
- /usr/include/boost/mpl/aux_/iter_fold_if_impl.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp \
- /usr/include/boost/mpl/same_as.hpp \
- /usr/include/boost/mpl/aux_/lambda_spec.hpp \
- /usr/include/boost/mpl/fold.hpp /usr/include/boost/mpl/O1_size.hpp \
- /usr/include/boost/mpl/aux_/O1_size_impl.hpp \
- /usr/include/boost/mpl/aux_/has_size.hpp \
- /usr/include/boost/mpl/aux_/fold_impl.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/quaternion.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__builder.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__type_support.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/algorithm/lidar_preprocess.hpp \
- /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h \
- /opt/ros/humble/include/message_filters/message_filters/message_event.h \
- /opt/ros/humble/include/message_filters/message_filters/message_traits.h \
- /usr/include/pcl-1.12/pcl/conversions.h \
- /usr/include/pcl-1.12/pcl/PCLPointCloud2.h \
- /usr/include/boost/predef/other/endian.h \
- /usr/include/boost/predef/version_number.h \
- /usr/include/boost/predef/make.h /usr/include/boost/predef/detail/test.h \
- /usr/include/boost/predef/library/c/gnu.h \
- /usr/include/boost/predef/library/c/_prefix.h \
- /usr/include/boost/predef/detail/_cassert.h \
- /usr/include/boost/predef/os/macos.h /usr/include/boost/predef/os/ios.h \
- /usr/include/boost/predef/os/bsd.h \
- /usr/include/boost/predef/os/bsd/bsdi.h \
- /usr/include/boost/predef/os/bsd/dragonfly.h \
- /usr/include/boost/predef/os/bsd/free.h \
- /usr/include/boost/predef/os/bsd/open.h \
- /usr/include/boost/predef/os/bsd/net.h \
- /usr/include/boost/predef/platform/android.h \
- /usr/include/pcl-1.12/pcl/PCLImage.h \
- /usr/include/pcl-1.12/pcl/for_each_type.h \
- /usr/include/boost/mpl/is_sequence.hpp \
- /usr/include/boost/mpl/remove_if.hpp \
  /usr/include/boost/mpl/reverse_fold.hpp \
  /usr/include/boost/mpl/aux_/reverse_fold_impl.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/reverse_fold_impl.hpp \
@@ -1214,6 +1087,21 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/boost/mpl/aux_/push_front_impl.hpp \
  /usr/include/boost/mpl/clear.hpp \
  /usr/include/boost/mpl/aux_/clear_impl.hpp \
+ /usr/include/boost/mpl/aux_/preprocessor/default_params.hpp \
+ /usr/include/boost/mpl/contains.hpp \
+ /usr/include/boost/mpl/contains_fwd.hpp \
+ /usr/include/boost/mpl/aux_/contains_impl.hpp \
+ /usr/include/boost/mpl/find.hpp /usr/include/boost/mpl/find_if.hpp \
+ /usr/include/boost/mpl/aux_/find_if_pred.hpp \
+ /usr/include/boost/mpl/aux_/iter_apply.hpp \
+ /usr/include/boost/mpl/iter_fold_if.hpp \
+ /usr/include/boost/mpl/logical.hpp /usr/include/boost/mpl/or.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
+ /usr/include/boost/mpl/always.hpp /usr/include/boost/mpl/pair.hpp \
+ /usr/include/boost/mpl/aux_/iter_fold_if_impl.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp \
+ /usr/include/boost/mpl/same_as.hpp \
+ /usr/include/boost/mpl/aux_/lambda_spec.hpp \
  /usr/include/boost/mpl/aux_/unwrap.hpp /usr/include/boost/ref.hpp \
  /usr/include/boost/core/ref.hpp /usr/include/boost/core/addressof.hpp \
  /usr/include/boost/foreach.hpp /usr/include/boost/noncopyable.hpp \
@@ -1286,7 +1174,9 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/boost/utility/addressof.hpp \
  /usr/include/boost/foreach_fwd.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/header.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__builder.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__type_support.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp \
@@ -1294,9 +1184,17 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__builder.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__traits.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__type_support.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_field.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__struct.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__traits.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__type_support.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__type_support.hpp \
  /usr/include/pcl-1.12/pcl/PointIndices.h \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/point_indices.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__struct.hpp \
@@ -1380,6 +1278,11 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/boost/concept/usage.hpp \
  /usr/include/boost/concept/detail/concept_def.hpp \
  /usr/include/boost/preprocessor/seq/for_each_i.hpp \
+ /usr/include/boost/preprocessor/repetition/for.hpp \
+ /usr/include/boost/preprocessor/repetition/detail/for.hpp \
+ /usr/include/boost/preprocessor/seq/seq.hpp \
+ /usr/include/boost/preprocessor/seq/elem.hpp \
+ /usr/include/boost/preprocessor/seq/detail/is_empty.hpp \
  /usr/include/boost/concept/detail/concept_undef.hpp \
  /usr/include/boost/iterator/iterator_concepts.hpp \
  /usr/include/boost/range/value_type.hpp \
@@ -1396,6 +1299,8 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/boost/utility/binary.hpp \
  /usr/include/boost/preprocessor/control/deduce_d.hpp \
  /usr/include/boost/preprocessor/seq/cat.hpp \
+ /usr/include/boost/preprocessor/seq/fold_left.hpp \
+ /usr/include/boost/preprocessor/seq/transform.hpp \
  /usr/include/boost/preprocessor/arithmetic/mod.hpp \
  /usr/include/boost/preprocessor/arithmetic/detail/div_base.hpp \
  /usr/include/boost/utility/identity_type.hpp \
@@ -1554,6 +1459,10 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/pcl-1.12/pcl/common/concatenate.h \
  /usr/include/pcl-1.12/pcl/common/copy_point.h \
  /usr/include/pcl-1.12/pcl/common/impl/copy_point.hpp \
+ /usr/include/pcl-1.12/pcl/point_types.h /usr/include/c++/11/bitset \
+ /usr/include/pcl-1.12/pcl/impl/point_types.hpp \
+ /usr/include/pcl-1.12/pcl/register_point_struct.h \
+ /usr/include/boost/preprocessor/seq/for_each.hpp \
  /usr/include/pcl-1.12/pcl/io/low_level_io.h \
  /usr/include/x86_64-linux-gnu/sys/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
@@ -1562,13 +1471,38 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mman-shared.h \
  /usr/include/x86_64-linux-gnu/sys/fcntl.h \
  /usr/include/pcl-1.12/pcl/io/lzf.h \
+ /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/custom_msg.hpp \
+ /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__struct.hpp \
+ /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__struct.hpp \
+ /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__builder.hpp \
+ /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__traits.hpp \
+ /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__traits.hpp \
+ /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__type_support.hpp \
+ /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/rosidl_generator_cpp__visibility_control.hpp \
  /home/goldenboy/git_version/GoldenSLAM/include/common_lib.h \
  /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
  /usr/include/c++/11/bits/deque.tcc \
  /home/goldenboy/git_version/GoldenSLAM/include/third_party/so3_math.h \
  /usr/include/c++/11/math.h /usr/include/eigen3/Eigen/Eigen \
- /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Sparse \
- /usr/include/eigen3/Eigen/SparseCore \
+ /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Geometry \
+ /usr/include/eigen3/Eigen/Eigenvalues \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+ /usr/include/eigen3/Eigen/Sparse /usr/include/eigen3/Eigen/SparseCore \
  /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
@@ -1646,117 +1580,15 @@ CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.o: \
  /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/rosidl_generator_cpp/fast_lio/msg/detail/pose6_d__traits.hpp \
  /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/rosidl_generator_cpp/fast_lio/msg/detail/pose6_d__type_support.hpp \
  /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/rosidl_generator_cpp/fast_lio/msg/rosidl_generator_cpp__visibility_control.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/use-ikfom.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/esekfom.hpp \
- /usr/include/boost/bind.hpp /usr/include/boost/bind/bind.hpp \
- /usr/include/boost/mem_fn.hpp /usr/include/boost/bind/mem_fn.hpp \
- /usr/include/boost/get_pointer.hpp \
- /usr/include/boost/config/no_tr1/memory.hpp \
- /usr/include/boost/bind/mem_fn_template.hpp \
- /usr/include/boost/bind/mem_fn_cc.hpp \
- /usr/include/boost/is_placeholder.hpp /usr/include/boost/bind/arg.hpp \
- /usr/include/boost/visit_each.hpp /usr/include/boost/core/is_same.hpp \
- /usr/include/boost/bind/storage.hpp /usr/include/boost/bind/bind_cc.hpp \
- /usr/include/boost/bind/bind_mf_cc.hpp \
- /usr/include/boost/bind/bind_mf2_cc.hpp \
- /usr/include/boost/bind/placeholders.hpp \
- /usr/include/eigen3/Eigen/Sparse \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/vect.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/../src/vectview.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/SOn.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/vect.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp \
- /usr/include/boost/math/tools/precision.hpp \
- /usr/include/boost/math/policies/policy.hpp \
- /usr/include/boost/mpl/list.hpp /usr/include/boost/mpl/limits/list.hpp \
- /usr/include/boost/mpl/list/list20.hpp \
- /usr/include/boost/mpl/list/list10.hpp \
- /usr/include/boost/mpl/list/list0.hpp \
- /usr/include/boost/mpl/list/aux_/push_front.hpp \
- /usr/include/boost/mpl/list/aux_/item.hpp \
- /usr/include/boost/mpl/list/aux_/tag.hpp \
- /usr/include/boost/mpl/list/aux_/pop_front.hpp \
- /usr/include/boost/mpl/list/aux_/push_back.hpp \
- /usr/include/boost/mpl/list/aux_/front.hpp \
- /usr/include/boost/mpl/list/aux_/clear.hpp \
- /usr/include/boost/mpl/list/aux_/O1_size.hpp \
- /usr/include/boost/mpl/list/aux_/size.hpp \
- /usr/include/boost/mpl/list/aux_/empty.hpp \
- /usr/include/boost/mpl/list/aux_/begin_end.hpp \
- /usr/include/boost/mpl/list/aux_/iterator.hpp \
- /usr/include/boost/mpl/list/aux_/include_preprocessed.hpp \
- /usr/include/boost/mpl/list/aux_/preprocessed/plain/list10.hpp \
- /usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/list.hpp \
- /usr/include/boost/mpl/at.hpp /usr/include/boost/mpl/aux_/at_impl.hpp \
- /usr/include/boost/mpl/advance.hpp /usr/include/boost/mpl/negate.hpp \
- /usr/include/boost/mpl/aux_/advance_forward.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp \
- /usr/include/boost/mpl/aux_/advance_backward.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp \
- /usr/include/boost/mpl/size.hpp \
- /usr/include/boost/mpl/aux_/size_impl.hpp \
- /usr/include/boost/mpl/distance.hpp /usr/include/boost/mpl/iter_fold.hpp \
- /usr/include/boost/mpl/aux_/iter_fold_impl.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_impl.hpp \
- /usr/include/boost/mpl/iterator_range.hpp \
- /usr/include/boost/mpl/comparison.hpp \
- /usr/include/boost/mpl/not_equal_to.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp \
- /usr/include/boost/mpl/greater.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/greater.hpp \
- /usr/include/boost/mpl/less_equal.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/less_equal.hpp \
- /usr/include/boost/mpl/greater_equal.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp \
- /usr/include/boost/math/tools/config.hpp \
- /usr/include/boost/predef/architecture/x86.h \
- /usr/include/boost/predef/architecture/x86/32.h \
- /usr/include/boost/predef/architecture/x86/64.h \
+ /home/goldenboy/git_version/GoldenSLAM/include/core/slam_types.hpp \
+ /usr/include/eigen3/Eigen/Dense \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/quaternion.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__builder.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__type_support.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /usr/include/pcl-1.12/pcl/common/common.h \
+ /usr/include/pcl-1.12/pcl/common/impl/common.hpp \
  /usr/include/c++/11/cfloat \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
- /usr/include/boost/math/tools/user.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/../src/../types/vect.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/S2.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/SOn.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/startIdx.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/src/SubManifold.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/src/vectview.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/src/vectview.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/build_manifold.hpp \
- /usr/include/boost/preprocessor/seq.hpp \
- /usr/include/boost/preprocessor/seq/filter.hpp \
- /usr/include/boost/preprocessor/control/expr_if.hpp \
- /usr/include/boost/preprocessor/seq/first_n.hpp \
- /usr/include/boost/preprocessor/seq/detail/split.hpp \
- /usr/include/boost/preprocessor/seq/fold_right.hpp \
- /usr/include/boost/preprocessor/seq/reverse.hpp \
- /usr/include/boost/preprocessor/seq/for_each_product.hpp \
- /usr/include/boost/preprocessor/seq/insert.hpp \
- /usr/include/boost/preprocessor/seq/rest_n.hpp \
- /usr/include/boost/preprocessor/seq/pop_back.hpp \
- /usr/include/boost/preprocessor/seq/pop_front.hpp \
- /usr/include/boost/preprocessor/seq/push_back.hpp \
- /usr/include/boost/preprocessor/seq/push_front.hpp \
- /usr/include/boost/preprocessor/seq/remove.hpp \
- /usr/include/boost/preprocessor/seq/replace.hpp \
- /usr/include/boost/preprocessor/seq/subseq.hpp \
- /usr/include/boost/preprocessor/seq/to_array.hpp \
- /usr/include/boost/preprocessor/seq/to_list.hpp \
- /usr/include/boost/preprocessor/punctuation/paren.hpp \
- /usr/include/boost/preprocessor/seq/detail/binary_transform.hpp \
- /usr/include/boost/preprocessor/variadic/detail/is_single_return.hpp \
- /usr/include/boost/preprocessor/seq/to_tuple.hpp \
- /usr/include/boost/preprocessor/seq/variadic_seq_to_seq.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/startIdx.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/util.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/src/mtkmath.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/third_party/ikd-Tree/ikd_Tree.h \
- /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_queue.h \
- /usr/include/memory.h /usr/include/pcl-1.12/pcl/filters/voxel_grid.h \
- /usr/include/pcl-1.12/pcl/filters/filter.h \
- /usr/include/pcl-1.12/pcl/pcl_base.h \
- /home/goldenboy/git_version/GoldenSLAM/include/algorithm/iekf.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/algorithm/map_manager.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/algorithm/imu_processor.hpp
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h

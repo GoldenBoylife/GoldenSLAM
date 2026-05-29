@@ -1,4 +1,5 @@
 #include "platform/ros_bridge.hpp"
+#include "core/slam_core.hpp"  // SlamCore 전체 정의 (ros_bridge.cpp 에서만 사용)
 
 #include <omp.h>
 #include <cmath>
@@ -6,20 +7,33 @@
 
 #define PUBFRAME_PERIOD (20)
 
-// Local helpers – common_lib.h can't be included here (multiple definitions)
-static double stamp_to_sec(const builtin_interfaces::msg::Time& t)
+static inline double stamp_to_sec(const builtin_interfaces::msg::Time& t)
 {
-    return rclcpp::Time(t).seconds();
+    return get_time_sec(t);
 }
-static rclcpp::Time sec_to_stamp(double ts)
+static inline rclcpp::Time sec_to_stamp(double ts)
 {
-    int32_t  sec  = static_cast<int32_t>(std::floor(ts));
-    uint32_t nsec = static_cast<uint32_t>((ts - sec) * 1e9);
-    if (nsec >= 1000000000u) { nsec -= 1000000000u; sec++; }
-    return rclcpp::Time(sec, nsec);
+    int32_t  sec     = static_cast<int32_t>(std::floor(ts));
+    uint32_t nanosec = static_cast<uint32_t>((ts - std::floor(ts)) * 1e9);
+    return rclcpp::Time(sec, nanosec);
 }
-using V3D = Eigen::Vector3d;
-using M3D = Eigen::Matrix3d;
+
+// ─── ROS 런타임 ──────────────────────────────────────────────────────────────
+void RosBridge::rosInit(int argc, char** argv)
+{
+    rclcpp::init(argc, argv);
+}
+
+void RosBridge::rosShutdown()
+{
+    if (rclcpp::ok()) rclcpp::shutdown();
+}
+
+void RosBridge::spin()
+{
+    rclcpp::spin(shared_from_this());
+    rclcpp::shutdown();
+}
 
 // ─── constructor ─────────────────────────────────────────────────────────────
 RosBridge::RosBridge(SlamCore* core)
@@ -107,7 +121,7 @@ void RosBridge::loadParameters()
     SlamParams sp;
     this->get_parameter_or("filter_size_surf",                    sp.filter_size_surf_min,      0.5);
     this->get_parameter_or("filter_size_map",                     sp.filter_size_map_min,       0.5);
-    this->get_parameter_or("cube_side_length",                    sp.cube_len,                  200.0);
+    this->get_parameter_or("cube_side_length",                    sp.box_len,                  200.0);
     this->get_parameter_or("mapping.det_range",                   sp.det_range,                 300.0f);
     this->get_parameter_or("mapping.fov_degree",                  sp.fov_deg,                   180.0);
     this->get_parameter_or("mapping.gyr_cov",                     sp.gyr_cov,                   0.1);
@@ -132,6 +146,7 @@ void RosBridge::loadParameters()
     imu_topic_     = imu_topic;
 
     core_->init(sp);
+    //어?? 여기에서 init하네 이래도 되는구나. 
 }
 
 // ─── setupSubscribers ────────────────────────────────────────────────────────
@@ -212,8 +227,15 @@ void RosBridge::onLivoxLidarCB(livox_ros_driver2::msg::CustomMsg::UniquePtr msg)
 // ─── onImuCB ─────────────────────────────────────────────────────────────────
 void RosBridge::onImuCB(sensor_msgs::msg::Imu::UniquePtr msg_in)
 {
-    auto msg = std::make_shared<sensor_msgs::msg::Imu>(*msg_in);
-    core_->pushImu(msg);
+    ImuData imu;
+    imu.timestamp = stamp_to_sec(msg_in->header.stamp);
+    imu.linear_acceleration << msg_in->linear_acceleration.x,
+                               msg_in->linear_acceleration.y,
+                               msg_in->linear_acceleration.z;
+    imu.angular_velocity    << msg_in->angular_velocity.x,
+                               msg_in->angular_velocity.y,
+                               msg_in->angular_velocity.z;
+    core_->pushImu(imu);
 }
 
 // ─── onFrontendTimer ─────────────────────────────────────────────────────────

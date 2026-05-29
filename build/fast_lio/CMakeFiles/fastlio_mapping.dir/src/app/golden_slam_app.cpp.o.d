@@ -118,43 +118,11 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
- /usr/include/c++/11/csignal /usr/include/signal.h \
- /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
- /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
- /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
- /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
- /usr/include/x86_64-linux-gnu/bits/sigaction.h \
- /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
- /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
- /usr/include/x86_64-linux-gnu/sys/ucontext.h \
- /usr/include/x86_64-linux-gnu/bits/sigstack.h \
- /usr/include/x86_64-linux-gnu/bits/sigstksz.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h \
- /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
- /usr/include/x86_64-linux-gnu/bits/sigthread.h \
- /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
- /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp \
- /usr/include/c++/11/future /usr/include/c++/11/mutex \
- /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
- /usr/include/c++/11/cstdint /usr/include/c++/11/limits \
- /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
+ /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp \
+ /usr/include/c++/11/mutex /usr/include/c++/11/chrono \
+ /usr/include/c++/11/ratio /usr/include/c++/11/cstdint \
+ /usr/include/c++/11/limits /usr/include/c++/11/ctime \
+ /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/system_error \
  /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
  /usr/include/c++/11/cerrno /usr/include/errno.h \
@@ -180,6 +148,7 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
  /usr/include/x86_64-linux-gnu/sys/select.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/select2.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
@@ -195,34 +164,12 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /usr/include/c++/11/bits/std_mutex.h \
- /usr/include/c++/11/bits/unique_lock.h \
- /usr/include/c++/11/condition_variable /usr/include/c++/11/atomic \
- /usr/include/c++/11/bits/atomic_futex.h \
- /usr/include/c++/11/bits/std_function.h \
- /usr/include/c++/11/bits/std_thread.h \
- /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp \
- /usr/include/c++/11/set /usr/include/c++/11/bits/stl_tree.h \
- /usr/include/c++/11/bits/node_handle.h \
- /usr/include/c++/11/bits/stl_set.h \
- /usr/include/c++/11/bits/stl_multiset.h \
- /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/thread \
- /usr/include/c++/11/bits/this_thread_sleep.h \
- /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/unordered_map.h \
- /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp \
- /usr/include/c++/11/algorithm /usr/include/c++/11/bits/stl_algo.h \
- /usr/include/c++/11/bits/algorithmfwd.h \
- /usr/include/c++/11/bits/stl_heap.h \
- /usr/include/c++/11/bits/uniform_int_dist.h \
- /usr/include/c++/11/pstl/glue_algorithm_defs.h \
- /usr/include/c++/11/functional /usr/include/c++/11/vector \
- /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/cassert \
- /usr/include/assert.h /usr/include/c++/11/iostream \
- /usr/include/c++/11/ostream /usr/include/c++/11/ios \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/fstream \
+ /usr/include/c++/11/istream /usr/include/c++/11/ios \
  /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \
  /usr/include/c++/11/bits/locale_classes.tcc \
@@ -234,236 +181,15 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/c++/11/bits/streambuf_iterator.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
  /usr/include/c++/11/bits/locale_facets.tcc \
- /usr/include/c++/11/bits/basic_ios.tcc \
- /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/list \
- /usr/include/c++/11/bits/stl_list.h /usr/include/c++/11/bits/list.tcc \
- /usr/include/c++/11/map /usr/include/c++/11/bits/stl_map.h \
- /usr/include/c++/11/bits/stl_multimap.h \
- /opt/ros/humble/include/rcl/rcl/guard_condition.h \
- /opt/ros/humble/include/rcl/rcl/allocator.h \
- /opt/ros/humble/include/rcutils/rcutils/allocator.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /opt/ros/humble/include/rcutils/rcutils/macros.h \
- /opt/ros/humble/include/rcutils/rcutils/testing/fault_injection.h \
- /opt/ros/humble/include/rcutils/rcutils/visibility_control.h \
- /opt/ros/humble/include/rcutils/rcutils/visibility_control_macros.h \
- /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h \
- /opt/ros/humble/include/rcl/rcl/context.h \
- /opt/ros/humble/include/rmw/rmw/init.h \
- /opt/ros/humble/include/rmw/rmw/init_options.h \
- /opt/ros/humble/include/rmw/rmw/domain_id.h \
- /opt/ros/humble/include/rmw/rmw/localhost.h \
- /opt/ros/humble/include/rmw/rmw/visibility_control.h \
- /opt/ros/humble/include/rmw/rmw/macros.h \
- /opt/ros/humble/include/rmw/rmw/ret_types.h \
- /opt/ros/humble/include/rmw/rmw/security_options.h \
- /opt/ros/humble/include/rcl/rcl/arguments.h \
- /opt/ros/humble/include/rcl/rcl/log_level.h \
- /opt/ros/humble/include/rcl/rcl/macros.h \
- /opt/ros/humble/include/rcl/rcl/types.h \
- /opt/ros/humble/include/rmw/rmw/types.h \
- /opt/ros/humble/include/rcutils/rcutils/logging.h \
- /opt/ros/humble/include/rcutils/rcutils/error_handling.h \
- /usr/include/c++/11/stdlib.h /usr/include/string.h \
- /usr/include/strings.h \
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /opt/ros/humble/include/rcutils/rcutils/snprintf.h \
- /opt/ros/humble/include/rcutils/rcutils/time.h \
- /opt/ros/humble/include/rcutils/rcutils/types.h \
- /opt/ros/humble/include/rcutils/rcutils/types/array_list.h \
- /opt/ros/humble/include/rcutils/rcutils/types/char_array.h \
- /opt/ros/humble/include/rcutils/rcutils/types/hash_map.h \
- /opt/ros/humble/include/rcutils/rcutils/types/string_array.h \
- /opt/ros/humble/include/rcutils/rcutils/qsort.h \
- /opt/ros/humble/include/rcutils/rcutils/types/string_map.h \
- /opt/ros/humble/include/rcutils/rcutils/types/uint8_array.h \
- /opt/ros/humble/include/rmw/rmw/events_statuses/events_statuses.h \
- /opt/ros/humble/include/rmw/rmw/events_statuses/incompatible_qos.h \
- /opt/ros/humble/include/rmw/rmw/qos_policy_kind.h \
- /opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_changed.h \
- /opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_lost.h \
- /opt/ros/humble/include/rmw/rmw/events_statuses/message_lost.h \
- /opt/ros/humble/include/rmw/rmw/events_statuses/offered_deadline_missed.h \
- /opt/ros/humble/include/rmw/rmw/events_statuses/requested_deadline_missed.h \
- /opt/ros/humble/include/rmw/rmw/serialized_message.h \
- /opt/ros/humble/include/rmw/rmw/subscription_content_filter_options.h \
- /opt/ros/humble/include/rmw/rmw/time.h \
- /opt/ros/humble/include/rcl/rcl/visibility_control.h \
- /opt/ros/humble/include/rcl_yaml_param_parser/rcl_yaml_param_parser/types.h \
- /opt/ros/humble/include/rcl/rcl/init_options.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdalign.h \
- /opt/ros/humble/include/rcl/rcl/wait.h \
- /opt/ros/humble/include/rcl/rcl/client.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
- /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
- /opt/ros/humble/include/rcl/rcl/event_callback.h \
- /opt/ros/humble/include/rmw/rmw/event_callback_type.h \
- /opt/ros/humble/include/rcl/rcl/node.h \
- /opt/ros/humble/include/rcl/rcl/node_options.h \
- /opt/ros/humble/include/rcl/rcl/domain_id.h \
- /opt/ros/humble/include/rcl/rcl/service.h \
- /opt/ros/humble/include/rcl/rcl/subscription.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
- /opt/ros/humble/include/rmw/rmw/message_sequence.h \
- /opt/ros/humble/include/rcl/rcl/timer.h \
- /opt/ros/humble/include/rcl/rcl/time.h \
- /opt/ros/humble/include/rmw/rmw/rmw.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/sequence_bound.h \
- /opt/ros/humble/include/rmw/rmw/event.h \
- /opt/ros/humble/include/rmw/rmw/publisher_options.h \
- /opt/ros/humble/include/rmw/rmw/qos_profiles.h \
- /opt/ros/humble/include/rmw/rmw/subscription_options.h \
- /opt/ros/humble/include/rcl/rcl/event.h \
- /opt/ros/humble/include/rcl/rcl/publisher.h \
- /opt/ros/humble/include/rcpputils/rcpputils/scope_exit.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/context.hpp \
- /usr/include/c++/11/typeindex /usr/include/c++/11/unordered_set \
- /usr/include/c++/11/bits/unordered_set.h \
- /opt/ros/humble/include/rclcpp/rclcpp/init_options.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/visibility_control.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/macros.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/contexts/default_context.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/guard_condition.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/client.hpp \
- /usr/include/c++/11/optional /usr/include/c++/11/sstream \
- /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/variant \
- /opt/ros/humble/include/rcl/rcl/error_handling.h \
- /opt/ros/humble/include/rclcpp/rclcpp/detail/cpp_callback_trampoline.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/exceptions.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/exceptions/exceptions.hpp \
- /opt/ros/humble/include/rcpputils/rcpputils/join.hpp \
- /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
- /opt/ros/humble/include/rclcpp/rclcpp/expand_topic_or_service_name.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/function_traits.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/logger.hpp \
- /opt/ros/humble/include/rcpputils/rcpputils/filesystem_helper.hpp \
- /opt/ros/humble/include/rcpputils/rcpputils/visibility_control.hpp \
- /opt/ros/humble/include/rcutils/rcutils/logging_macros.h \
- /opt/ros/humble/include/rclcpp/rclcpp/utilities.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp \
- /opt/ros/humble/include/rcl/rcl/graph.h \
- /opt/ros/humble/include/rmw/rmw/names_and_types.h \
- /opt/ros/humble/include/rmw/rmw/get_topic_names_and_types.h \
- /opt/ros/humble/include/rmw/rmw/topic_endpoint_info_array.h \
- /opt/ros/humble/include/rmw/rmw/topic_endpoint_info.h \
- /opt/ros/humble/include/rclcpp/rclcpp/event.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/detail/node_interfaces_helpers.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/qos.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/duration.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/traits.hpp \
- /usr/include/c++/11/codecvt /usr/include/c++/11/bits/codecvt.h \
- /usr/include/c++/11/iomanip /usr/include/c++/11/locale \
- /usr/include/c++/11/bits/locale_facets_nonio.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/11/bits/locale_facets_nonio.tcc \
- /usr/include/c++/11/bits/locale_conv.h \
- /usr/include/c++/11/bits/quoted_string.h \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__type_support.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp \
- /opt/ros/humble/include/rcl/rcl/logging_rosout.h \
- /opt/ros/humble/include/rmw/rmw/incompatible_qos_events_statuses.h \
- /opt/ros/humble/include/rclcpp/rclcpp/type_support_decl.hpp \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_type_support_decl.hpp \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/service_type_support_decl.hpp \
- /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp \
- /opt/ros/humble/include/rmw/rmw/error_handling.h \
- /opt/ros/humble/include/rmw/rmw/impl/cpp/demangle.hpp \
- /usr/include/c++/11/cxxabi.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/cxxabi_tweaks.h \
- /opt/ros/humble/include/rmw/rmw/impl/config.h \
- /opt/ros/humble/include/rclcpp/rclcpp/publisher_base.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/network_flow_endpoint.hpp \
- /opt/ros/humble/include/rcl/rcl/network_flow_endpoints.h \
- /opt/ros/humble/include/rmw/rmw/network_flow_endpoint.h \
- /opt/ros/humble/include/rmw/rmw/network_flow_endpoint_array.h \
- /opt/ros/humble/include/rclcpp/rclcpp/qos_event.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/waitable.hpp \
- /opt/ros/humble/include/rcpputils/rcpputils/time.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/service.hpp \
- /opt/ros/humble/include/tracetools/tracetools/tracetools.h \
- /opt/ros/humble/include/tracetools/tracetools/config.h \
- /opt/ros/humble/include/tracetools/tracetools/visibility_control.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp \
- /opt/ros/humble/include/tracetools/tracetools/utils.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/subscription_base.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/any_subscription_callback.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/allocator/allocator_common.hpp \
- /usr/include/c++/11/cstring \
- /opt/ros/humble/include/rclcpp/rclcpp/allocator/allocator_deleter.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/detail/subscription_callback_type_helper.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/message_info.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/serialized_message.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/type_adapter.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp \
- /usr/include/c++/11/shared_mutex \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/ros_message_intra_process_buffer.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_base.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/intra_process_buffer.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_buffer.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/ring_buffer_implementation.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/intra_process_buffer_type.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/subscription_content_filter_options.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/timer.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/clock.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/time.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/time.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__builder.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__traits.hpp \
- /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/rate.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_base_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_use_intra_process.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/intra_process_setting.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_intra_process_buffer_type.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/message_memory_strategy.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/detail/rmw_implementation_specific_subscription_payload.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/detail/rmw_implementation_specific_payload.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__type_support.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/topic_statistics_state.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/subscription_traits.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp \
- /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp \
- /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp \
- /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp \
- /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__builder.hpp \
- /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__traits.hpp \
- /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__traits.hpp \
- /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__type_support.hpp \
- /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/visibility_control.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/types.hpp \
- /usr/include/c++/11/cmath /usr/include/math.h \
+ /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
+ /usr/include/c++/11/bits/ostream.tcc \
+ /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc \
+ /home/goldenboy/git_version/GoldenSLAM/include/common_lib.h \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/so3_math.h \
+ /usr/include/c++/11/math.h /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -484,153 +210,7 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
- /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/constants.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_age.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/constants.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/topic_statistics_collector.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/collector.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp \
- /usr/include/c++/11/numeric /usr/include/c++/11/bits/stl_numeric.h \
- /usr/include/c++/11/pstl/glue_numeric_defs.h \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/types.hpp \
- /opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp \
- /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_period.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/get_message_type_support_handle.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/is_ros_compatible_type.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/loaned_message.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/publisher_options.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/detail/rmw_implementation_specific_publisher_payload.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/future_return_code.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/list_parameters_result.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__type_support.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__type_support.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_event.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__type_support.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/generic_publisher.hpp \
- /opt/ros/humble/include/rcpputils/rcpputils/shared_library.hpp \
- /opt/ros/humble/include/rcutils/rcutils/shared_library.h \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_topics_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_timers_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/publisher_factory.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/subscription_factory.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/typesupport_helpers.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/generic_subscription.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_clock_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_logging_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_parameters_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/parameter.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__type_support.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__type_support.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_value.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__type_support.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_services_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_time_source_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_waitables_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_options.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/create_client.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/create_generic_publisher.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/create_generic_subscription.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/create_publisher.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_topics_interface.hpp \
- /opt/ros/humble/include/rcpputils/rcpputils/pointer_traits.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_topics_interface_traits.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/detail/qos_parameters.hpp \
- /opt/ros/humble/include/rmw/rmw/qos_string_conversions.h \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_parameters_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_parameters_interface_traits.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/create_service.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/create_subscription.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_enable_topic_statistics.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_timers_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_timers_interface_traits.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/create_timer.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_base_interface.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/executors/static_single_threaded_executor.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/executors/static_executor_entities_collector.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/experimental/executable_list.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/parameter_client.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__type_support.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameter_types.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__type_support.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameters.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__type_support.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__type_support.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/set_parameters.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__type_support.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/set_parameters_atomically.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__struct.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__builder.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__traits.hpp \
- /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__type_support.hpp \
- /opt/ros/humble/include/rcl_yaml_param_parser/rcl_yaml_param_parser/parser.h \
- /opt/ros/humble/include/rcl_yaml_param_parser/rcl_yaml_param_parser/visibility_control.h \
- /opt/ros/humble/include/rclcpp/rclcpp/parameter_map.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/parameter_event_handler.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/parameter_service.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_set.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/dynamic_storage.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/subscription_wait_set_mask.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/storage_policy_common.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/sequential_synchronization.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_result.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_result_kind.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/synchronization_policy_common.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/static_storage.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp \
- /home/goldenboy/git_version/GoldenSLAM/include/core/slam_core.hpp \
- /usr/include/eigen3/Eigen/Core \
+ /usr/include/c++/11/tr1/riemann_zeta.tcc /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
  /usr/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h \
@@ -638,10 +218,26 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
- /usr/include/c++/11/complex \
+ /usr/include/c++/11/stdlib.h /usr/include/c++/11/complex \
+ /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/omp.h \
- /usr/include/c++/11/cstddef /usr/include/c++/11/climits \
+ /usr/include/c++/11/cstddef /usr/include/c++/11/cassert \
+ /usr/include/assert.h /usr/include/c++/11/functional \
+ /usr/include/c++/11/bits/std_function.h \
+ /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/unordered_map.h \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/bits/algorithmfwd.h \
+ /usr/include/c++/11/bits/stl_heap.h \
+ /usr/include/c++/11/bits/uniform_int_dist.h /usr/include/c++/11/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -650,6 +246,8 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /usr/include/c++/11/algorithm \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/include/eigen3/Eigen/src/Core/util/Constants.h \
  /usr/include/eigen3/Eigen/src/Core/util/Meta.h \
  /usr/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
@@ -746,6 +344,7 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
  /usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
  /usr/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
+ /usr/include/c++/11/atomic \
  /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
  /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
@@ -773,8 +372,9 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/eigen3/Eigen/src/Core/StlIterators.h \
  /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
- /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
- /usr/include/eigen3/Eigen/LU /usr/include/eigen3/Eigen/src/misc/Kernel.h \
+ /usr/include/eigen3/Eigen/Eigen /usr/include/eigen3/Eigen/Dense \
+ /usr/include/eigen3/Eigen/Core /usr/include/eigen3/Eigen/LU \
+ /usr/include/eigen3/Eigen/src/misc/Kernel.h \
  /usr/include/eigen3/Eigen/src/misc/Image.h \
  /usr/include/eigen3/Eigen/src/LU/FullPivLU.h \
  /usr/include/eigen3/Eigen/src/LU/PartialPivLU.h \
@@ -832,28 +432,86 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
- /usr/include/eigen3/Eigen/Geometry \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/imu.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__builder.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__traits.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__type_support.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/quaternion.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__builder.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__type_support.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
- /usr/include/pcl-1.12/pcl/point_cloud.h \
- /usr/include/eigen3/Eigen/StdVector \
- /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h \
- /usr/include/eigen3/Eigen/src/StlSupport/details.h \
- /usr/include/pcl-1.12/pcl/PCLHeader.h /usr/include/pcl-1.12/pcl/memory.h \
+ /usr/include/eigen3/Eigen/Sparse /usr/include/eigen3/Eigen/SparseCore \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
+ /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseAssign.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/AmbiVector.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseMap.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseVector.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseRef.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseBlock.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseDot.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseRedux.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseView.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseProduct.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
+ /usr/include/eigen3/Eigen/OrderingMethods \
+ /usr/include/eigen3/Eigen/src/OrderingMethods/Amd.h \
+ /usr/include/eigen3/Eigen/src/OrderingMethods/Ordering.h \
+ /usr/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h \
+ /usr/include/eigen3/Eigen/SparseCholesky \
+ /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h \
+ /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
+ /usr/include/eigen3/Eigen/SparseLU \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseColEtree.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU.h \
+ /usr/include/eigen3/Eigen/SparseQR \
+ /usr/include/eigen3/Eigen/src/SparseQR/SparseQR.h \
+ /usr/include/eigen3/Eigen/IterativeLinearSolvers \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
+ /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
+ /usr/include/c++/11/bits/list.tcc \
+ /usr/include/pcl-1.12/pcl/point_types.h /usr/include/c++/11/bitset \
+ /usr/include/pcl-1.12/pcl/impl/point_types.hpp \
+ /usr/include/pcl-1.12/pcl/memory.h \
  /usr/include/pcl-1.12/pcl/type_traits.h \
  /usr/include/pcl-1.12/pcl/point_struct_traits.h \
  /usr/include/boost/mpl/assert.hpp /usr/include/boost/mpl/not.hpp \
@@ -866,7 +524,15 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/boost/config/compiler/gcc.hpp \
  /usr/include/boost/config/detail/select_stdlib_config.hpp \
  /usr/include/c++/11/version \
- /usr/include/boost/config/stdlib/libstdcpp3.hpp \
+ /usr/include/boost/config/stdlib/libstdcpp3.hpp /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h \
  /usr/include/boost/config/detail/select_platform_config.hpp \
  /usr/include/boost/config/platform/linux.hpp \
  /usr/include/boost/config/detail/posix_features.hpp \
@@ -1036,21 +702,15 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp \
  /usr/include/boost/preprocessor/seq/enum.hpp \
  /usr/include/boost/preprocessor/seq/size.hpp \
- /usr/include/pcl-1.12/pcl/exceptions.h \
- /usr/include/boost/current_function.hpp \
- /usr/include/pcl-1.12/pcl/pcl_macros.h \
+ /usr/include/pcl-1.12/pcl/pcl_macros.h /usr/include/c++/11/iostream \
  /usr/include/pcl-1.12/pcl/pcl_config.h \
  /usr/include/boost/preprocessor/comparison/equal.hpp \
  /usr/include/boost/preprocessor/comparison/not_equal.hpp \
  /usr/include/boost/preprocessor/comparison/less.hpp \
  /usr/include/boost/preprocessor/comparison/less_equal.hpp \
  /usr/include/boost/preprocessor/logical/not.hpp \
- /usr/include/pcl-1.12/pcl/types.h \
- /usr/include/pcl-1.12/pcl/console/print.h \
- /usr/include/pcl-1.12/pcl/pcl_exports.h \
- /usr/include/pcl-1.12/pcl/point_types.h /usr/include/c++/11/bitset \
- /usr/include/pcl-1.12/pcl/impl/point_types.hpp \
  /usr/include/pcl-1.12/pcl/PCLPointField.h \
+ /usr/include/pcl-1.12/pcl/types.h \
  /usr/include/pcl-1.12/pcl/register_point_struct.h \
  /usr/include/boost/preprocessor/seq/for_each.hpp \
  /usr/include/boost/preprocessor/repetition/for.hpp \
@@ -1115,7 +775,669 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/boost/mpl/aux_/has_size.hpp \
  /usr/include/boost/mpl/aux_/fold_impl.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp \
+ /usr/include/pcl-1.12/pcl/point_cloud.h \
+ /usr/include/eigen3/Eigen/StdVector \
+ /usr/include/eigen3/Eigen/src/StlSupport/StdVector.h \
+ /usr/include/eigen3/Eigen/src/StlSupport/details.h \
+ /usr/include/eigen3/Eigen/Geometry /usr/include/pcl-1.12/pcl/PCLHeader.h \
+ /usr/include/pcl-1.12/pcl/exceptions.h \
+ /usr/include/boost/current_function.hpp \
+ /usr/include/pcl-1.12/pcl/console/print.h \
+ /usr/include/pcl-1.12/pcl/pcl_exports.h \
+ /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/rosidl_generator_cpp/fast_lio/msg/pose6_d.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/rosidl_generator_cpp/fast_lio/msg/detail/pose6_d__struct.hpp \
+ /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp \
+ /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp \
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
+ /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/rosidl_generator_cpp/fast_lio/msg/detail/pose6_d__builder.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/rosidl_generator_cpp/fast_lio/msg/detail/pose6_d__traits.hpp \
+ /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/traits.hpp \
+ /usr/include/c++/11/codecvt /usr/include/c++/11/iomanip \
+ /usr/include/c++/11/locale \
+ /usr/include/c++/11/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/11/bits/locale_conv.h \
+ /usr/include/c++/11/bits/quoted_string.h \
+ /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/rosidl_generator_cpp/fast_lio/msg/detail/pose6_d__type_support.hpp \
+ /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
+ /home/goldenboy/git_version/GoldenSLAM/build/fast_lio/rosidl_generator_cpp/fast_lio/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp \
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/time.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__builder.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__traits.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__type_support.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/core/slam_types.hpp \
+ /usr/include/eigen3/Eigen/Dense \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/quaternion.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__builder.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__type_support.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/use-ikfom.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/esekfom.hpp \
+ /usr/include/boost/bind.hpp /usr/include/boost/bind/bind.hpp \
+ /usr/include/boost/ref.hpp /usr/include/boost/core/ref.hpp \
+ /usr/include/boost/core/addressof.hpp /usr/include/boost/mem_fn.hpp \
+ /usr/include/boost/bind/mem_fn.hpp /usr/include/boost/get_pointer.hpp \
+ /usr/include/boost/config/no_tr1/memory.hpp \
+ /usr/include/boost/bind/mem_fn_template.hpp \
+ /usr/include/boost/bind/mem_fn_cc.hpp /usr/include/boost/type.hpp \
+ /usr/include/boost/is_placeholder.hpp /usr/include/boost/bind/arg.hpp \
+ /usr/include/boost/visit_each.hpp /usr/include/boost/core/enable_if.hpp \
+ /usr/include/boost/core/is_same.hpp /usr/include/boost/bind/storage.hpp \
+ /usr/include/boost/bind/bind_cc.hpp \
+ /usr/include/boost/bind/bind_mf_cc.hpp \
+ /usr/include/boost/bind/bind_mf2_cc.hpp \
+ /usr/include/boost/bind/placeholders.hpp \
+ /usr/include/boost/config/pragma_message.hpp \
+ /usr/include/eigen3/Eigen/Sparse \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/vect.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/../src/vectview.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/SOn.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/vect.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp \
+ /usr/include/boost/math/tools/precision.hpp \
+ /usr/include/boost/limits.hpp /usr/include/boost/assert.hpp \
+ /usr/include/boost/static_assert.hpp \
+ /usr/include/boost/math/policies/policy.hpp \
+ /usr/include/boost/mpl/list.hpp /usr/include/boost/mpl/limits/list.hpp \
+ /usr/include/boost/mpl/list/list20.hpp \
+ /usr/include/boost/mpl/list/list10.hpp \
+ /usr/include/boost/mpl/list/list0.hpp \
+ /usr/include/boost/mpl/list/aux_/push_front.hpp \
+ /usr/include/boost/mpl/list/aux_/item.hpp \
+ /usr/include/boost/mpl/list/aux_/tag.hpp \
+ /usr/include/boost/mpl/list/aux_/pop_front.hpp \
+ /usr/include/boost/mpl/list/aux_/push_back.hpp \
+ /usr/include/boost/mpl/list/aux_/front.hpp \
+ /usr/include/boost/mpl/list/aux_/clear.hpp \
+ /usr/include/boost/mpl/list/aux_/O1_size.hpp \
+ /usr/include/boost/mpl/list/aux_/size.hpp \
+ /usr/include/boost/mpl/list/aux_/empty.hpp \
+ /usr/include/boost/mpl/list/aux_/begin_end.hpp \
+ /usr/include/boost/mpl/list/aux_/iterator.hpp \
+ /usr/include/boost/mpl/list/aux_/include_preprocessed.hpp \
+ /usr/include/boost/mpl/list/aux_/preprocessed/plain/list10.hpp \
+ /usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/list.hpp \
+ /usr/include/boost/mpl/remove_if.hpp \
+ /usr/include/boost/mpl/reverse_fold.hpp \
+ /usr/include/boost/mpl/aux_/reverse_fold_impl.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/reverse_fold_impl.hpp \
+ /usr/include/boost/mpl/aux_/inserter_algorithm.hpp \
+ /usr/include/boost/mpl/back_inserter.hpp \
+ /usr/include/boost/mpl/push_back.hpp \
+ /usr/include/boost/mpl/aux_/push_back_impl.hpp \
+ /usr/include/boost/mpl/inserter.hpp \
+ /usr/include/boost/mpl/front_inserter.hpp \
+ /usr/include/boost/mpl/push_front.hpp \
+ /usr/include/boost/mpl/aux_/push_front_impl.hpp \
+ /usr/include/boost/mpl/clear.hpp \
+ /usr/include/boost/mpl/aux_/clear_impl.hpp /usr/include/boost/mpl/at.hpp \
+ /usr/include/boost/mpl/aux_/at_impl.hpp \
+ /usr/include/boost/mpl/advance.hpp /usr/include/boost/mpl/less.hpp \
+ /usr/include/boost/mpl/aux_/comparison_op.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/less.hpp \
+ /usr/include/boost/mpl/negate.hpp \
+ /usr/include/boost/mpl/aux_/advance_forward.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp \
+ /usr/include/boost/mpl/aux_/advance_backward.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp \
+ /usr/include/boost/mpl/size.hpp \
+ /usr/include/boost/mpl/aux_/size_impl.hpp \
+ /usr/include/boost/mpl/distance.hpp /usr/include/boost/mpl/iter_fold.hpp \
+ /usr/include/boost/mpl/aux_/iter_fold_impl.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_impl.hpp \
+ /usr/include/boost/mpl/iterator_range.hpp \
+ /usr/include/boost/mpl/comparison.hpp \
+ /usr/include/boost/mpl/equal_to.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp \
+ /usr/include/boost/mpl/not_equal_to.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/not_equal_to.hpp \
+ /usr/include/boost/mpl/greater.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/greater.hpp \
+ /usr/include/boost/mpl/less_equal.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/less_equal.hpp \
+ /usr/include/boost/mpl/greater_equal.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/greater_equal.hpp \
+ /usr/include/boost/math/tools/config.hpp \
+ /usr/include/boost/predef/architecture/x86.h \
+ /usr/include/boost/predef/architecture/x86/32.h \
+ /usr/include/boost/predef/version_number.h \
+ /usr/include/boost/predef/make.h /usr/include/boost/predef/detail/test.h \
+ /usr/include/boost/predef/architecture/x86/64.h \
+ /usr/include/boost/cstdint.hpp \
+ /usr/include/boost/type_traits/is_integral.hpp \
+ /usr/include/boost/config/no_tr1/cmath.hpp /usr/include/c++/11/cfloat \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+ /usr/include/boost/math/tools/user.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/../src/../types/vect.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/S2.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/types/SOn.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/startIdx.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/src/SubManifold.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/src/vectview.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/src/vectview.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/build_manifold.hpp \
+ /usr/include/boost/preprocessor/seq.hpp \
+ /usr/include/boost/preprocessor/seq/cat.hpp \
+ /usr/include/boost/preprocessor/seq/filter.hpp \
+ /usr/include/boost/preprocessor/control/expr_if.hpp \
+ /usr/include/boost/preprocessor/seq/first_n.hpp \
+ /usr/include/boost/preprocessor/seq/detail/split.hpp \
+ /usr/include/boost/preprocessor/seq/fold_right.hpp \
+ /usr/include/boost/preprocessor/seq/reverse.hpp \
+ /usr/include/boost/preprocessor/seq/for_each_i.hpp \
+ /usr/include/boost/preprocessor/seq/for_each_product.hpp \
+ /usr/include/boost/preprocessor/seq/insert.hpp \
+ /usr/include/boost/preprocessor/seq/rest_n.hpp \
+ /usr/include/boost/preprocessor/seq/pop_back.hpp \
+ /usr/include/boost/preprocessor/seq/pop_front.hpp \
+ /usr/include/boost/preprocessor/seq/push_back.hpp \
+ /usr/include/boost/preprocessor/seq/push_front.hpp \
+ /usr/include/boost/preprocessor/seq/remove.hpp \
+ /usr/include/boost/preprocessor/seq/replace.hpp \
+ /usr/include/boost/preprocessor/seq/subseq.hpp \
+ /usr/include/boost/preprocessor/seq/to_array.hpp \
+ /usr/include/boost/preprocessor/seq/to_list.hpp \
+ /usr/include/boost/preprocessor/punctuation/paren.hpp \
+ /usr/include/boost/preprocessor/seq/detail/binary_transform.hpp \
+ /usr/include/boost/preprocessor/variadic/detail/is_single_return.hpp \
+ /usr/include/boost/preprocessor/seq/to_tuple.hpp \
+ /usr/include/boost/preprocessor/seq/variadic_seq_to_seq.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/startIdx.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/util.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/IKFoM_toolkit/esekfom/../mtk/src/mtkmath.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/third_party/ikd-Tree/ikd_Tree.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_queue.h \
+ /usr/include/memory.h /usr/include/pcl-1.12/pcl/filters/voxel_grid.h \
+ /usr/include/pcl-1.12/pcl/filters/filter.h \
+ /usr/include/pcl-1.12/pcl/pcl_base.h \
+ /usr/include/pcl-1.12/pcl/PointIndices.h \
+ /usr/include/pcl-1.12/pcl/PCLPointCloud2.h \
+ /usr/include/boost/predef/other/endian.h \
+ /usr/include/boost/predef/library/c/gnu.h \
+ /usr/include/boost/predef/library/c/_prefix.h \
+ /usr/include/boost/predef/detail/_cassert.h \
+ /usr/include/boost/predef/os/macos.h /usr/include/boost/predef/os/ios.h \
+ /usr/include/boost/predef/os/bsd.h \
+ /usr/include/boost/predef/os/bsd/bsdi.h \
+ /usr/include/boost/predef/os/bsd/dragonfly.h \
+ /usr/include/boost/predef/os/bsd/free.h \
+ /usr/include/boost/predef/os/bsd/open.h \
+ /usr/include/boost/predef/os/bsd/net.h \
+ /usr/include/boost/predef/platform/android.h \
+ /usr/include/pcl-1.12/pcl/common/io.h /usr/include/c++/11/numeric \
+ /usr/include/c++/11/bits/stl_numeric.h \
+ /usr/include/c++/11/pstl/glue_numeric_defs.h \
+ /usr/include/pcl-1.12/pcl/PolygonMesh.h \
+ /usr/include/pcl-1.12/pcl/Vertices.h \
+ /usr/include/pcl-1.12/pcl/common/impl/io.hpp \
+ /usr/include/pcl-1.12/pcl/conversions.h \
+ /usr/include/pcl-1.12/pcl/PCLImage.h \
+ /usr/include/pcl-1.12/pcl/for_each_type.h \
+ /usr/include/boost/mpl/is_sequence.hpp \
+ /usr/include/boost/mpl/aux_/unwrap.hpp /usr/include/boost/foreach.hpp \
+ /usr/include/boost/noncopyable.hpp \
+ /usr/include/boost/core/noncopyable.hpp /usr/include/boost/range/end.hpp \
+ /usr/include/boost/range/config.hpp \
+ /usr/include/boost/range/detail/implementation_help.hpp \
+ /usr/include/boost/range/detail/common.hpp \
+ /usr/include/boost/range/detail/sfinae.hpp \
+ /usr/include/boost/type_traits/is_array.hpp \
+ /usr/include/boost/type_traits/detail/yes_no_type.hpp \
+ /usr/include/boost/type_traits/is_void.hpp \
+ /usr/include/boost/range/iterator.hpp \
+ /usr/include/boost/range/range_fwd.hpp \
+ /usr/include/boost/range/mutable_iterator.hpp \
+ /usr/include/boost/range/detail/extract_optional_type.hpp \
+ /usr/include/boost/type_traits/remove_reference.hpp \
+ /usr/include/boost/iterator/iterator_traits.hpp \
+ /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
+ /usr/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
+ /usr/include/boost/range/const_iterator.hpp \
+ /usr/include/boost/type_traits/remove_const.hpp \
+ /usr/include/boost/type_traits/is_const.hpp \
+ /usr/include/boost/range/begin.hpp /usr/include/boost/range/rend.hpp \
+ /usr/include/boost/range/reverse_iterator.hpp \
+ /usr/include/boost/iterator/reverse_iterator.hpp \
+ /usr/include/boost/iterator/iterator_adaptor.hpp \
+ /usr/include/boost/core/use_default.hpp \
+ /usr/include/boost/iterator/iterator_categories.hpp \
+ /usr/include/boost/iterator/detail/config_def.hpp \
+ /usr/include/boost/type_traits/is_convertible.hpp \
+ /usr/include/boost/type_traits/intrinsics.hpp \
+ /usr/include/boost/type_traits/detail/config.hpp \
+ /usr/include/boost/version.hpp \
+ /usr/include/boost/type_traits/is_complete.hpp \
+ /usr/include/boost/type_traits/declval.hpp \
+ /usr/include/boost/type_traits/add_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_reference.hpp \
+ /usr/include/boost/type_traits/is_lvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_function.hpp \
+ /usr/include/boost/type_traits/detail/is_function_cxx_11.hpp \
+ /usr/include/boost/type_traits/is_arithmetic.hpp \
+ /usr/include/boost/type_traits/is_floating_point.hpp \
+ /usr/include/boost/type_traits/is_abstract.hpp \
+ /usr/include/boost/type_traits/add_lvalue_reference.hpp \
+ /usr/include/boost/type_traits/add_reference.hpp \
+ /usr/include/boost/iterator/detail/config_undef.hpp \
+ /usr/include/boost/iterator/iterator_facade.hpp \
+ /usr/include/boost/iterator/interoperable.hpp \
+ /usr/include/boost/iterator/detail/facade_iterator_category.hpp \
+ /usr/include/boost/detail/indirect_traits.hpp \
+ /usr/include/boost/type_traits/is_pointer.hpp \
+ /usr/include/boost/type_traits/is_class.hpp \
+ /usr/include/boost/type_traits/is_volatile.hpp \
+ /usr/include/boost/type_traits/is_member_function_pointer.hpp \
+ /usr/include/boost/type_traits/detail/is_member_function_pointer_cxx_11.hpp \
+ /usr/include/boost/type_traits/is_member_pointer.hpp \
+ /usr/include/boost/type_traits/remove_cv.hpp \
+ /usr/include/boost/type_traits/remove_pointer.hpp \
+ /usr/include/boost/detail/select_type.hpp \
+ /usr/include/boost/iterator/detail/enable_if.hpp \
+ /usr/include/boost/type_traits/add_const.hpp \
+ /usr/include/boost/type_traits/add_pointer.hpp \
+ /usr/include/boost/type_traits/is_pod.hpp \
+ /usr/include/boost/type_traits/is_scalar.hpp \
+ /usr/include/boost/type_traits/is_enum.hpp \
+ /usr/include/boost/range/rbegin.hpp \
+ /usr/include/boost/type_traits/is_base_and_derived.hpp \
+ /usr/include/boost/utility/addressof.hpp \
+ /usr/include/boost/foreach_fwd.hpp \
+ /usr/include/pcl-1.12/pcl/common/concatenate.h \
+ /usr/include/pcl-1.12/pcl/common/copy_point.h \
+ /usr/include/pcl-1.12/pcl/common/impl/copy_point.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/algorithm/iekf.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/algorithm/map_manager.hpp \
+ /home/goldenboy/git_version/GoldenSLAM/include/algorithm/imu_processor.hpp \
  /home/goldenboy/git_version/GoldenSLAM/include/platform/ros_bridge.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp \
+ /usr/include/c++/11/csignal /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
+ /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+ /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+ /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
+ /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
+ /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+ /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp \
+ /usr/include/c++/11/future /usr/include/c++/11/condition_variable \
+ /usr/include/c++/11/bits/atomic_futex.h \
+ /usr/include/c++/11/bits/std_thread.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp \
+ /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/stl_multiset.h /usr/include/c++/11/thread \
+ /usr/include/c++/11/bits/this_thread_sleep.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp \
+ /opt/ros/humble/include/rcl/rcl/guard_condition.h \
+ /opt/ros/humble/include/rcl/rcl/allocator.h \
+ /opt/ros/humble/include/rcutils/rcutils/allocator.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
+ /opt/ros/humble/include/rcutils/rcutils/macros.h \
+ /opt/ros/humble/include/rcutils/rcutils/testing/fault_injection.h \
+ /opt/ros/humble/include/rcutils/rcutils/visibility_control.h \
+ /opt/ros/humble/include/rcutils/rcutils/visibility_control_macros.h \
+ /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h \
+ /opt/ros/humble/include/rcl/rcl/context.h \
+ /opt/ros/humble/include/rmw/rmw/init.h \
+ /opt/ros/humble/include/rmw/rmw/init_options.h \
+ /opt/ros/humble/include/rmw/rmw/domain_id.h \
+ /opt/ros/humble/include/rmw/rmw/localhost.h \
+ /opt/ros/humble/include/rmw/rmw/visibility_control.h \
+ /opt/ros/humble/include/rmw/rmw/macros.h \
+ /opt/ros/humble/include/rmw/rmw/ret_types.h \
+ /opt/ros/humble/include/rmw/rmw/security_options.h \
+ /opt/ros/humble/include/rcl/rcl/arguments.h \
+ /opt/ros/humble/include/rcl/rcl/log_level.h \
+ /opt/ros/humble/include/rcl/rcl/macros.h \
+ /opt/ros/humble/include/rcl/rcl/types.h \
+ /opt/ros/humble/include/rmw/rmw/types.h \
+ /opt/ros/humble/include/rcutils/rcutils/logging.h \
+ /opt/ros/humble/include/rcutils/rcutils/error_handling.h \
+ /opt/ros/humble/include/rcutils/rcutils/snprintf.h \
+ /opt/ros/humble/include/rcutils/rcutils/time.h \
+ /opt/ros/humble/include/rcutils/rcutils/types.h \
+ /opt/ros/humble/include/rcutils/rcutils/types/array_list.h \
+ /opt/ros/humble/include/rcutils/rcutils/types/char_array.h \
+ /opt/ros/humble/include/rcutils/rcutils/types/hash_map.h \
+ /opt/ros/humble/include/rcutils/rcutils/types/string_array.h \
+ /opt/ros/humble/include/rcutils/rcutils/qsort.h \
+ /opt/ros/humble/include/rcutils/rcutils/types/string_map.h \
+ /opt/ros/humble/include/rcutils/rcutils/types/uint8_array.h \
+ /opt/ros/humble/include/rmw/rmw/events_statuses/events_statuses.h \
+ /opt/ros/humble/include/rmw/rmw/events_statuses/incompatible_qos.h \
+ /opt/ros/humble/include/rmw/rmw/qos_policy_kind.h \
+ /opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_changed.h \
+ /opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_lost.h \
+ /opt/ros/humble/include/rmw/rmw/events_statuses/message_lost.h \
+ /opt/ros/humble/include/rmw/rmw/events_statuses/offered_deadline_missed.h \
+ /opt/ros/humble/include/rmw/rmw/events_statuses/requested_deadline_missed.h \
+ /opt/ros/humble/include/rmw/rmw/serialized_message.h \
+ /opt/ros/humble/include/rmw/rmw/subscription_content_filter_options.h \
+ /opt/ros/humble/include/rmw/rmw/time.h \
+ /opt/ros/humble/include/rcl/rcl/visibility_control.h \
+ /opt/ros/humble/include/rcl_yaml_param_parser/rcl_yaml_param_parser/types.h \
+ /opt/ros/humble/include/rcl/rcl/init_options.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdalign.h \
+ /opt/ros/humble/include/rcl/rcl/wait.h \
+ /opt/ros/humble/include/rcl/rcl/client.h \
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
+ /opt/ros/humble/include/rcl/rcl/event_callback.h \
+ /opt/ros/humble/include/rmw/rmw/event_callback_type.h \
+ /opt/ros/humble/include/rcl/rcl/node.h \
+ /opt/ros/humble/include/rcl/rcl/node_options.h \
+ /opt/ros/humble/include/rcl/rcl/domain_id.h \
+ /opt/ros/humble/include/rcl/rcl/service.h \
+ /opt/ros/humble/include/rcl/rcl/subscription.h \
+ /opt/ros/humble/include/rmw/rmw/message_sequence.h \
+ /opt/ros/humble/include/rcl/rcl/timer.h \
+ /opt/ros/humble/include/rcl/rcl/time.h \
+ /opt/ros/humble/include/rmw/rmw/rmw.h \
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/sequence_bound.h \
+ /opt/ros/humble/include/rmw/rmw/event.h \
+ /opt/ros/humble/include/rmw/rmw/publisher_options.h \
+ /opt/ros/humble/include/rmw/rmw/qos_profiles.h \
+ /opt/ros/humble/include/rmw/rmw/subscription_options.h \
+ /opt/ros/humble/include/rcl/rcl/event.h \
+ /opt/ros/humble/include/rcl/rcl/publisher.h \
+ /opt/ros/humble/include/rcpputils/rcpputils/scope_exit.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/context.hpp \
+ /usr/include/c++/11/typeindex /usr/include/c++/11/unordered_set \
+ /usr/include/c++/11/bits/unordered_set.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/init_options.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/visibility_control.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/macros.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/contexts/default_context.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/guard_condition.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/client.hpp \
+ /usr/include/c++/11/optional /usr/include/c++/11/variant \
+ /opt/ros/humble/include/rcl/rcl/error_handling.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/detail/cpp_callback_trampoline.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/exceptions.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/exceptions/exceptions.hpp \
+ /opt/ros/humble/include/rcpputils/rcpputils/join.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/expand_topic_or_service_name.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/function_traits.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/logger.hpp \
+ /opt/ros/humble/include/rcpputils/rcpputils/filesystem_helper.hpp \
+ /opt/ros/humble/include/rcpputils/rcpputils/visibility_control.hpp \
+ /opt/ros/humble/include/rcutils/rcutils/logging_macros.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/utilities.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp \
+ /opt/ros/humble/include/rcl/rcl/graph.h \
+ /opt/ros/humble/include/rmw/rmw/names_and_types.h \
+ /opt/ros/humble/include/rmw/rmw/get_topic_names_and_types.h \
+ /opt/ros/humble/include/rmw/rmw/topic_endpoint_info_array.h \
+ /opt/ros/humble/include/rmw/rmw/topic_endpoint_info.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/event.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/detail/node_interfaces_helpers.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/qos.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/duration.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/duration.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp \
+ /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__type_support.hpp \
+ /opt/ros/humble/include/rcl/rcl/logging_rosout.h \
+ /opt/ros/humble/include/rmw/rmw/incompatible_qos_events_statuses.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/type_support_decl.hpp \
+ /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_type_support_decl.hpp \
+ /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/service_type_support_decl.hpp \
+ /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp \
+ /opt/ros/humble/include/rmw/rmw/error_handling.h \
+ /opt/ros/humble/include/rmw/rmw/impl/cpp/demangle.hpp \
+ /usr/include/c++/11/cxxabi.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/cxxabi_tweaks.h \
+ /opt/ros/humble/include/rmw/rmw/impl/config.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/publisher_base.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/network_flow_endpoint.hpp \
+ /opt/ros/humble/include/rcl/rcl/network_flow_endpoints.h \
+ /opt/ros/humble/include/rmw/rmw/network_flow_endpoint.h \
+ /opt/ros/humble/include/rmw/rmw/network_flow_endpoint_array.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/qos_event.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/waitable.hpp \
+ /opt/ros/humble/include/rcpputils/rcpputils/time.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/service.hpp \
+ /opt/ros/humble/include/tracetools/tracetools/tracetools.h \
+ /opt/ros/humble/include/tracetools/tracetools/config.h \
+ /opt/ros/humble/include/tracetools/tracetools/visibility_control.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp \
+ /opt/ros/humble/include/tracetools/tracetools/utils.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/subscription_base.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/any_subscription_callback.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/allocator/allocator_common.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/allocator/allocator_deleter.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/detail/subscription_callback_type_helper.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/message_info.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/serialized_message.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/type_adapter.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp \
+ /usr/include/c++/11/shared_mutex \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/ros_message_intra_process_buffer.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_base.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/intra_process_buffer.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_buffer.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/ring_buffer_implementation.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/intra_process_buffer_type.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/subscription_content_filter_options.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/timer.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/clock.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/time.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/rate.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_base_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/subscription.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_use_intra_process.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/intra_process_setting.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_intra_process_buffer_type.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/message_memory_strategy.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/detail/rmw_implementation_specific_subscription_payload.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/detail/rmw_implementation_specific_payload.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__type_support.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/topic_statistics_state.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/subscription_traits.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp \
+ /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp \
+ /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp \
+ /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp \
+ /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__builder.hpp \
+ /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__traits.hpp \
+ /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__traits.hpp \
+ /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__type_support.hpp \
+ /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/visibility_control.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/types.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/constants.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_age.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/constants.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/topic_statistics_collector.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/collector.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/types.hpp \
+ /opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp \
+ /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_period.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/get_message_type_support_handle.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/is_ros_compatible_type.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/loaned_message.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/publisher_options.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/detail/rmw_implementation_specific_publisher_payload.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/future_return_code.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/list_parameters_result.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__type_support.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__type_support.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_event.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__type_support.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/generic_publisher.hpp \
+ /opt/ros/humble/include/rcpputils/rcpputils/shared_library.hpp \
+ /opt/ros/humble/include/rcutils/rcutils/shared_library.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_topics_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_timers_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/publisher_factory.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/subscription_factory.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/typesupport_helpers.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/generic_subscription.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_clock_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_logging_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_parameters_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/parameter.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__type_support.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__type_support.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_value.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__type_support.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_services_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_time_source_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_waitables_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_options.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/create_client.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/create_generic_publisher.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/create_generic_subscription.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/create_publisher.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_topics_interface.hpp \
+ /opt/ros/humble/include/rcpputils/rcpputils/pointer_traits.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_topics_interface_traits.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/detail/qos_parameters.hpp \
+ /opt/ros/humble/include/rmw/rmw/qos_string_conversions.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_parameters_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_parameters_interface_traits.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/create_service.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/create_subscription.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_enable_topic_statistics.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_timers_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_timers_interface_traits.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/create_timer.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_base_interface.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/executors/static_single_threaded_executor.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/executors/static_executor_entities_collector.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/experimental/executable_list.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/parameter_client.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__type_support.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameter_types.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__type_support.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameters.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__type_support.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__type_support.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/set_parameters.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__type_support.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/set_parameters_atomically.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__struct.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__builder.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__traits.hpp \
+ /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__type_support.hpp \
+ /opt/ros/humble/include/rcl_yaml_param_parser/rcl_yaml_param_parser/parser.h \
+ /opt/ros/humble/include/rcl_yaml_param_parser/rcl_yaml_param_parser/visibility_control.h \
+ /opt/ros/humble/include/rclcpp/rclcpp/parameter_map.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/parameter_event_handler.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/parameter_service.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_set.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/dynamic_storage.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/subscription_wait_set_mask.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/storage_policy_common.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/sequential_synchronization.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_result.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_result_kind.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/synchronization_policy_common.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/static_storage.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/imu.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__struct.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__traits.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/imu__type_support.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__struct.hpp \
@@ -1180,114 +1502,10 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_point__traits.hpp \
  /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/detail/custom_msg__type_support.hpp \
  /home/goldenboy/Workspaces/sensor_ws/install/livox_ros_driver2/include/livox_ros_driver2/livox_ros_driver2/msg/rosidl_generator_cpp__visibility_control.hpp \
- /home/goldenboy/git_version/GoldenSLAM/src/preprocess.h \
+ /home/goldenboy/git_version/GoldenSLAM/include/algorithm/lidar_preprocess.hpp \
  /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h \
  /opt/ros/humble/include/message_filters/message_filters/message_event.h \
  /opt/ros/humble/include/message_filters/message_filters/message_traits.h \
- /usr/include/pcl-1.12/pcl/conversions.h \
- /usr/include/pcl-1.12/pcl/PCLPointCloud2.h \
- /usr/include/boost/predef/other/endian.h \
- /usr/include/boost/predef/version_number.h \
- /usr/include/boost/predef/make.h /usr/include/boost/predef/detail/test.h \
- /usr/include/boost/predef/library/c/gnu.h \
- /usr/include/boost/predef/library/c/_prefix.h \
- /usr/include/boost/predef/detail/_cassert.h \
- /usr/include/boost/predef/os/macos.h /usr/include/boost/predef/os/ios.h \
- /usr/include/boost/predef/os/bsd.h \
- /usr/include/boost/predef/os/bsd/bsdi.h \
- /usr/include/boost/predef/os/bsd/dragonfly.h \
- /usr/include/boost/predef/os/bsd/free.h \
- /usr/include/boost/predef/os/bsd/open.h \
- /usr/include/boost/predef/os/bsd/net.h \
- /usr/include/boost/predef/platform/android.h \
- /usr/include/pcl-1.12/pcl/PCLImage.h \
- /usr/include/pcl-1.12/pcl/for_each_type.h \
- /usr/include/boost/mpl/is_sequence.hpp \
- /usr/include/boost/mpl/remove_if.hpp \
- /usr/include/boost/mpl/reverse_fold.hpp \
- /usr/include/boost/mpl/aux_/reverse_fold_impl.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/reverse_fold_impl.hpp \
- /usr/include/boost/mpl/aux_/inserter_algorithm.hpp \
- /usr/include/boost/mpl/back_inserter.hpp \
- /usr/include/boost/mpl/push_back.hpp \
- /usr/include/boost/mpl/aux_/push_back_impl.hpp \
- /usr/include/boost/mpl/inserter.hpp \
- /usr/include/boost/mpl/front_inserter.hpp \
- /usr/include/boost/mpl/push_front.hpp \
- /usr/include/boost/mpl/aux_/push_front_impl.hpp \
- /usr/include/boost/mpl/clear.hpp \
- /usr/include/boost/mpl/aux_/clear_impl.hpp \
- /usr/include/boost/mpl/aux_/unwrap.hpp /usr/include/boost/ref.hpp \
- /usr/include/boost/core/ref.hpp /usr/include/boost/core/addressof.hpp \
- /usr/include/boost/foreach.hpp /usr/include/boost/noncopyable.hpp \
- /usr/include/boost/core/noncopyable.hpp /usr/include/boost/range/end.hpp \
- /usr/include/boost/range/config.hpp \
- /usr/include/boost/range/detail/implementation_help.hpp \
- /usr/include/boost/range/detail/common.hpp \
- /usr/include/boost/range/detail/sfinae.hpp \
- /usr/include/boost/type_traits/is_array.hpp \
- /usr/include/boost/type_traits/detail/yes_no_type.hpp \
- /usr/include/boost/type_traits/is_void.hpp \
- /usr/include/boost/range/iterator.hpp \
- /usr/include/boost/range/range_fwd.hpp \
- /usr/include/boost/range/mutable_iterator.hpp \
- /usr/include/boost/range/detail/extract_optional_type.hpp \
- /usr/include/boost/type_traits/remove_reference.hpp \
- /usr/include/boost/iterator/iterator_traits.hpp \
- /usr/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
- /usr/include/boost/range/const_iterator.hpp \
- /usr/include/boost/type_traits/remove_const.hpp \
- /usr/include/boost/type_traits/is_const.hpp \
- /usr/include/boost/range/begin.hpp /usr/include/boost/range/rend.hpp \
- /usr/include/boost/range/reverse_iterator.hpp \
- /usr/include/boost/iterator/reverse_iterator.hpp \
- /usr/include/boost/iterator/iterator_adaptor.hpp \
- /usr/include/boost/static_assert.hpp \
- /usr/include/boost/core/use_default.hpp \
- /usr/include/boost/iterator/iterator_categories.hpp \
- /usr/include/boost/iterator/detail/config_def.hpp \
- /usr/include/boost/type_traits/is_convertible.hpp \
- /usr/include/boost/type_traits/intrinsics.hpp \
- /usr/include/boost/type_traits/detail/config.hpp \
- /usr/include/boost/version.hpp \
- /usr/include/boost/type_traits/is_complete.hpp \
- /usr/include/boost/type_traits/declval.hpp \
- /usr/include/boost/type_traits/add_rvalue_reference.hpp \
- /usr/include/boost/type_traits/is_reference.hpp \
- /usr/include/boost/type_traits/is_lvalue_reference.hpp \
- /usr/include/boost/type_traits/is_rvalue_reference.hpp \
- /usr/include/boost/type_traits/is_function.hpp \
- /usr/include/boost/type_traits/detail/is_function_cxx_11.hpp \
- /usr/include/boost/type_traits/is_arithmetic.hpp \
- /usr/include/boost/type_traits/is_integral.hpp \
- /usr/include/boost/type_traits/is_floating_point.hpp \
- /usr/include/boost/type_traits/is_abstract.hpp \
- /usr/include/boost/type_traits/add_lvalue_reference.hpp \
- /usr/include/boost/type_traits/add_reference.hpp \
- /usr/include/boost/iterator/detail/config_undef.hpp \
- /usr/include/boost/iterator/iterator_facade.hpp \
- /usr/include/boost/iterator/interoperable.hpp \
- /usr/include/boost/iterator/detail/facade_iterator_category.hpp \
- /usr/include/boost/detail/indirect_traits.hpp \
- /usr/include/boost/type_traits/is_pointer.hpp \
- /usr/include/boost/type_traits/is_class.hpp \
- /usr/include/boost/type_traits/is_volatile.hpp \
- /usr/include/boost/type_traits/is_member_function_pointer.hpp \
- /usr/include/boost/type_traits/detail/is_member_function_pointer_cxx_11.hpp \
- /usr/include/boost/type_traits/is_member_pointer.hpp \
- /usr/include/boost/type_traits/remove_cv.hpp \
- /usr/include/boost/type_traits/remove_pointer.hpp \
- /usr/include/boost/detail/select_type.hpp \
- /usr/include/boost/iterator/detail/enable_if.hpp \
- /usr/include/boost/type_traits/add_const.hpp \
- /usr/include/boost/type_traits/add_pointer.hpp \
- /usr/include/boost/type_traits/is_pod.hpp \
- /usr/include/boost/type_traits/is_scalar.hpp \
- /usr/include/boost/type_traits/is_enum.hpp \
- /usr/include/boost/range/rbegin.hpp \
- /usr/include/boost/type_traits/is_base_and_derived.hpp \
- /usr/include/boost/utility/addressof.hpp \
- /usr/include/boost/foreach_fwd.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/header.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__builder.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__type_support.hpp \
@@ -1300,7 +1518,6 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_field.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__builder.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__type_support.hpp \
- /usr/include/pcl-1.12/pcl/PointIndices.h \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/point_indices.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__struct.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/point_indices__builder.hpp \
@@ -1313,13 +1530,11 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__builder.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__traits.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/model_coefficients__type_support.hpp \
- /usr/include/pcl-1.12/pcl/Vertices.h \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/vertices.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/vertices__struct.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/vertices__builder.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/vertices__traits.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/vertices__type_support.hpp \
- /usr/include/pcl-1.12/pcl/PolygonMesh.h \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/polygon_mesh.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__struct.hpp \
  /opt/ros/humble/include/pcl_msgs/pcl_msgs/msg/detail/polygon_mesh__builder.hpp \
@@ -1328,16 +1543,11 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/pcl-1.12/pcl/io/pcd_io.h \
  /usr/include/pcl-1.12/pcl/io/file_io.h \
  /usr/include/boost/numeric/conversion/cast.hpp \
- /usr/include/boost/type.hpp \
  /usr/include/boost/numeric/conversion/converter.hpp \
  /usr/include/boost/numeric/conversion/conversion_traits.hpp \
  /usr/include/boost/numeric/conversion/detail/conversion_traits.hpp \
  /usr/include/boost/numeric/conversion/detail/meta.hpp \
- /usr/include/boost/mpl/equal_to.hpp \
- /usr/include/boost/mpl/aux_/comparison_op.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/equal_to.hpp \
  /usr/include/boost/numeric/conversion/detail/int_float_mixture.hpp \
- /usr/include/boost/limits.hpp \
  /usr/include/boost/numeric/conversion/int_float_mixture_enum.hpp \
  /usr/include/boost/numeric/conversion/detail/sign_mixture.hpp \
  /usr/include/boost/numeric/conversion/sign_mixture_enum.hpp \
@@ -1346,13 +1556,9 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/boost/numeric/conversion/detail/is_subranged.hpp \
  /usr/include/boost/mpl/multiplies.hpp /usr/include/boost/mpl/times.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/times.hpp \
- /usr/include/boost/mpl/less.hpp \
- /usr/include/boost/mpl/aux_/preprocessed/gcc/less.hpp \
  /usr/include/boost/numeric/conversion/converter_policies.hpp \
- /usr/include/boost/config/no_tr1/cmath.hpp \
  /usr/include/boost/throw_exception.hpp \
  /usr/include/boost/assert/source_location.hpp \
- /usr/include/boost/cstdint.hpp \
  /usr/include/boost/exception/exception.hpp \
  /usr/include/boost/numeric/conversion/detail/converter.hpp \
  /usr/include/boost/numeric/conversion/bounds.hpp \
@@ -1366,12 +1572,11 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/boost/range/as_literal.hpp \
  /usr/include/boost/range/iterator_range.hpp \
  /usr/include/boost/range/iterator_range_core.hpp \
- /usr/include/boost/assert.hpp /usr/include/boost/range/functions.hpp \
- /usr/include/boost/range/size.hpp /usr/include/boost/range/size_type.hpp \
+ /usr/include/boost/range/functions.hpp /usr/include/boost/range/size.hpp \
+ /usr/include/boost/range/size_type.hpp \
  /usr/include/boost/range/difference_type.hpp \
  /usr/include/boost/range/has_range_iterator.hpp \
  /usr/include/boost/utility/enable_if.hpp \
- /usr/include/boost/core/enable_if.hpp \
  /usr/include/boost/range/concepts.hpp \
  /usr/include/boost/concept_check.hpp \
  /usr/include/boost/concept/assert.hpp \
@@ -1382,7 +1587,6 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/boost/type_traits/conversion_traits.hpp \
  /usr/include/boost/concept/usage.hpp \
  /usr/include/boost/concept/detail/concept_def.hpp \
- /usr/include/boost/preprocessor/seq/for_each_i.hpp \
  /usr/include/boost/concept/detail/concept_undef.hpp \
  /usr/include/boost/iterator/iterator_concepts.hpp \
  /usr/include/boost/range/value_type.hpp \
@@ -1398,7 +1602,6 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/boost/preprocessor/repetition/repeat_from_to.hpp \
  /usr/include/boost/utility/binary.hpp \
  /usr/include/boost/preprocessor/control/deduce_d.hpp \
- /usr/include/boost/preprocessor/seq/cat.hpp \
  /usr/include/boost/preprocessor/arithmetic/mod.hpp \
  /usr/include/boost/preprocessor/arithmetic/detail/div_base.hpp \
  /usr/include/boost/utility/identity_type.hpp \
@@ -1489,7 +1692,6 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/boost/smart_ptr/detail/yield_k.hpp \
  /usr/include/boost/smart_ptr/detail/sp_thread_pause.hpp \
  /usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp \
- /usr/include/boost/config/pragma_message.hpp \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
  /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
@@ -1548,15 +1750,6 @@ CMakeFiles/fastlio_mapping.dir/src/app/golden_slam_app.cpp.o: \
  /usr/include/boost/algorithm/string/classification.hpp \
  /usr/include/boost/algorithm/string/detail/classification.hpp \
  /usr/include/boost/algorithm/string/predicate_facade.hpp \
- /usr/include/c++/11/fstream \
- /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc \
- /usr/include/pcl-1.12/pcl/common/io.h \
- /usr/include/pcl-1.12/pcl/common/impl/io.hpp \
- /usr/include/pcl-1.12/pcl/common/concatenate.h \
- /usr/include/pcl-1.12/pcl/common/copy_point.h \
- /usr/include/pcl-1.12/pcl/common/impl/copy_point.hpp \
  /usr/include/pcl-1.12/pcl/io/low_level_io.h \
  /usr/include/x86_64-linux-gnu/sys/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \

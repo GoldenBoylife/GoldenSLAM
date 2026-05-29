@@ -114,10 +114,13 @@ set(PKG_NODE fastlio_mapping)
 add_executable(${PKG_NODE}
   src/app/main.cpp
   src/app/golden_slam_app.cpp
+  src/algorithm/iekf.cpp
+  src/algorithm/map_manager.cpp
+  src/algorithm/imu_processor.cpp
   src/core/slam_core.cpp
   src/platform/ros_bridge.cpp
-  src/preprocess.cpp
-  include/ikd-Tree/ikd_Tree.cpp
+  src/algorithm/lidar_preprocess.cpp
+  include/third_party/ikd-Tree/ikd_Tree.cpp
 )
 
 target_include_directories(${PKG_NODE} PUBLIC

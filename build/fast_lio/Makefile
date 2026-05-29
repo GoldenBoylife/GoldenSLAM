@@ -431,29 +431,29 @@ fast_lio__rs/fast:
 	$(MAKE) $(MAKESILENT) -f fast_lio__rs/CMakeFiles/fast_lio__rs.dir/build.make fast_lio__rs/CMakeFiles/fast_lio__rs.dir/build
 .PHONY : fast_lio__rs/fast
 
-include/ikd-Tree/ikd_Tree.o: include/ikd-Tree/ikd_Tree.cpp.o
-.PHONY : include/ikd-Tree/ikd_Tree.o
+include/third_party/ikd-Tree/ikd_Tree.o: include/third_party/ikd-Tree/ikd_Tree.cpp.o
+.PHONY : include/third_party/ikd-Tree/ikd_Tree.o
 
 # target to build an object file
-include/ikd-Tree/ikd_Tree.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o
-.PHONY : include/ikd-Tree/ikd_Tree.cpp.o
+include/third_party/ikd-Tree/ikd_Tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.o
+.PHONY : include/third_party/ikd-Tree/ikd_Tree.cpp.o
 
-include/ikd-Tree/ikd_Tree.i: include/ikd-Tree/ikd_Tree.cpp.i
-.PHONY : include/ikd-Tree/ikd_Tree.i
+include/third_party/ikd-Tree/ikd_Tree.i: include/third_party/ikd-Tree/ikd_Tree.cpp.i
+.PHONY : include/third_party/ikd-Tree/ikd_Tree.i
 
 # target to preprocess a source file
-include/ikd-Tree/ikd_Tree.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.i
-.PHONY : include/ikd-Tree/ikd_Tree.cpp.i
+include/third_party/ikd-Tree/ikd_Tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.i
+.PHONY : include/third_party/ikd-Tree/ikd_Tree.cpp.i
 
-include/ikd-Tree/ikd_Tree.s: include/ikd-Tree/ikd_Tree.cpp.s
-.PHONY : include/ikd-Tree/ikd_Tree.s
+include/third_party/ikd-Tree/ikd_Tree.s: include/third_party/ikd-Tree/ikd_Tree.cpp.s
+.PHONY : include/third_party/ikd-Tree/ikd_Tree.s
 
 # target to generate assembly for a file
-include/ikd-Tree/ikd_Tree.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.s
-.PHONY : include/ikd-Tree/ikd_Tree.cpp.s
+include/third_party/ikd-Tree/ikd_Tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/include/third_party/ikd-Tree/ikd_Tree.cpp.s
+.PHONY : include/third_party/ikd-Tree/ikd_Tree.cpp.s
 
 rosidl_generator_c/fast_lio/msg/detail/pose6_d__functions.o: rosidl_generator_c/fast_lio/msg/detail/pose6_d__functions.c.o
 .PHONY : rosidl_generator_c/fast_lio/msg/detail/pose6_d__functions.o
@@ -719,6 +719,102 @@ rosidl_typesupport_introspection_cpp/fast_lio/msg/detail/pose6_d__type_support.c
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fast_lio__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/fast_lio__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/fast_lio/msg/detail/pose6_d__type_support.cpp.s
 .PHONY : rosidl_typesupport_introspection_cpp/fast_lio/msg/detail/pose6_d__type_support.cpp.s
 
+src/algorithm/iekf.o: src/algorithm/iekf.cpp.o
+.PHONY : src/algorithm/iekf.o
+
+# target to build an object file
+src/algorithm/iekf.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.o
+.PHONY : src/algorithm/iekf.cpp.o
+
+src/algorithm/iekf.i: src/algorithm/iekf.cpp.i
+.PHONY : src/algorithm/iekf.i
+
+# target to preprocess a source file
+src/algorithm/iekf.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.i
+.PHONY : src/algorithm/iekf.cpp.i
+
+src/algorithm/iekf.s: src/algorithm/iekf.cpp.s
+.PHONY : src/algorithm/iekf.s
+
+# target to generate assembly for a file
+src/algorithm/iekf.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/iekf.cpp.s
+.PHONY : src/algorithm/iekf.cpp.s
+
+src/algorithm/imu_processor.o: src/algorithm/imu_processor.cpp.o
+.PHONY : src/algorithm/imu_processor.o
+
+# target to build an object file
+src/algorithm/imu_processor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.o
+.PHONY : src/algorithm/imu_processor.cpp.o
+
+src/algorithm/imu_processor.i: src/algorithm/imu_processor.cpp.i
+.PHONY : src/algorithm/imu_processor.i
+
+# target to preprocess a source file
+src/algorithm/imu_processor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.i
+.PHONY : src/algorithm/imu_processor.cpp.i
+
+src/algorithm/imu_processor.s: src/algorithm/imu_processor.cpp.s
+.PHONY : src/algorithm/imu_processor.s
+
+# target to generate assembly for a file
+src/algorithm/imu_processor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/imu_processor.cpp.s
+.PHONY : src/algorithm/imu_processor.cpp.s
+
+src/algorithm/lidar_preprocess.o: src/algorithm/lidar_preprocess.cpp.o
+.PHONY : src/algorithm/lidar_preprocess.o
+
+# target to build an object file
+src/algorithm/lidar_preprocess.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.o
+.PHONY : src/algorithm/lidar_preprocess.cpp.o
+
+src/algorithm/lidar_preprocess.i: src/algorithm/lidar_preprocess.cpp.i
+.PHONY : src/algorithm/lidar_preprocess.i
+
+# target to preprocess a source file
+src/algorithm/lidar_preprocess.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.i
+.PHONY : src/algorithm/lidar_preprocess.cpp.i
+
+src/algorithm/lidar_preprocess.s: src/algorithm/lidar_preprocess.cpp.s
+.PHONY : src/algorithm/lidar_preprocess.s
+
+# target to generate assembly for a file
+src/algorithm/lidar_preprocess.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/lidar_preprocess.cpp.s
+.PHONY : src/algorithm/lidar_preprocess.cpp.s
+
+src/algorithm/map_manager.o: src/algorithm/map_manager.cpp.o
+.PHONY : src/algorithm/map_manager.o
+
+# target to build an object file
+src/algorithm/map_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.o
+.PHONY : src/algorithm/map_manager.cpp.o
+
+src/algorithm/map_manager.i: src/algorithm/map_manager.cpp.i
+.PHONY : src/algorithm/map_manager.i
+
+# target to preprocess a source file
+src/algorithm/map_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.i
+.PHONY : src/algorithm/map_manager.cpp.i
+
+src/algorithm/map_manager.s: src/algorithm/map_manager.cpp.s
+.PHONY : src/algorithm/map_manager.s
+
+# target to generate assembly for a file
+src/algorithm/map_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/algorithm/map_manager.cpp.s
+.PHONY : src/algorithm/map_manager.cpp.s
+
 src/app/golden_slam_app.o: src/app/golden_slam_app.cpp.o
 .PHONY : src/app/golden_slam_app.o
 
@@ -815,30 +911,6 @@ src/platform/ros_bridge.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/platform/ros_bridge.cpp.s
 .PHONY : src/platform/ros_bridge.cpp.s
 
-src/preprocess.o: src/preprocess.cpp.o
-.PHONY : src/preprocess.o
-
-# target to build an object file
-src/preprocess.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o
-.PHONY : src/preprocess.cpp.o
-
-src/preprocess.i: src/preprocess.cpp.i
-.PHONY : src/preprocess.i
-
-# target to preprocess a source file
-src/preprocess.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.i
-.PHONY : src/preprocess.cpp.i
-
-src/preprocess.s: src/preprocess.cpp.s
-.PHONY : src/preprocess.s
-
-# target to generate assembly for a file
-src/preprocess.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/fastlio_mapping.dir/build.make CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.s
-.PHONY : src/preprocess.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -872,9 +944,9 @@ help:
 	@echo "... fast_lio__rosidl_typesupport_introspection_c__pyext"
 	@echo "... fast_lio__rosidl_typesupport_introspection_cpp"
 	@echo "... fastlio_mapping"
-	@echo "... include/ikd-Tree/ikd_Tree.o"
-	@echo "... include/ikd-Tree/ikd_Tree.i"
-	@echo "... include/ikd-Tree/ikd_Tree.s"
+	@echo "... include/third_party/ikd-Tree/ikd_Tree.o"
+	@echo "... include/third_party/ikd-Tree/ikd_Tree.i"
+	@echo "... include/third_party/ikd-Tree/ikd_Tree.s"
 	@echo "... rosidl_generator_c/fast_lio/msg/detail/pose6_d__functions.o"
 	@echo "... rosidl_generator_c/fast_lio/msg/detail/pose6_d__functions.i"
 	@echo "... rosidl_generator_c/fast_lio/msg/detail/pose6_d__functions.s"
@@ -908,6 +980,18 @@ help:
 	@echo "... rosidl_typesupport_introspection_cpp/fast_lio/msg/detail/pose6_d__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/fast_lio/msg/detail/pose6_d__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/fast_lio/msg/detail/pose6_d__type_support.s"
+	@echo "... src/algorithm/iekf.o"
+	@echo "... src/algorithm/iekf.i"
+	@echo "... src/algorithm/iekf.s"
+	@echo "... src/algorithm/imu_processor.o"
+	@echo "... src/algorithm/imu_processor.i"
+	@echo "... src/algorithm/imu_processor.s"
+	@echo "... src/algorithm/lidar_preprocess.o"
+	@echo "... src/algorithm/lidar_preprocess.i"
+	@echo "... src/algorithm/lidar_preprocess.s"
+	@echo "... src/algorithm/map_manager.o"
+	@echo "... src/algorithm/map_manager.i"
+	@echo "... src/algorithm/map_manager.s"
 	@echo "... src/app/golden_slam_app.o"
 	@echo "... src/app/golden_slam_app.i"
 	@echo "... src/app/golden_slam_app.s"
@@ -920,9 +1004,6 @@ help:
 	@echo "... src/platform/ros_bridge.o"
 	@echo "... src/platform/ros_bridge.i"
 	@echo "... src/platform/ros_bridge.s"
-	@echo "... src/preprocess.o"
-	@echo "... src/preprocess.i"
-	@echo "... src/preprocess.s"
 .PHONY : help
 
 

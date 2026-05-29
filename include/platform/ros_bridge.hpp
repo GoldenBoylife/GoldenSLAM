@@ -15,16 +15,22 @@
 #include <tf2_ros/transform_broadcaster.h>
 #include <livox_ros_driver2/msg/custom_msg.hpp>
 
-#include "core/slam_core.hpp"
+#include "core/slam_types.hpp"
+#include "algorithm/lidar_preprocess.hpp"
 
-// preprocess.h lives in src/ — include with path
-#include "preprocess.h"
+class SlamCore;  // ros_bridge.hpp 는 SlamCore* 포인터만 사용 — 알고리즘 헤더 불필요
 
 class RosBridge : public rclcpp::Node
 {
 public:
+    // ROS 런타임 생명주기 — GoldenSlamApp 에서만 호출
+    static void rosInit(int argc, char** argv);
+    static void rosShutdown();
+
     explicit RosBridge(SlamCore* core);
     ~RosBridge() = default;
+
+    void spin();
 
 private:
     // ── setup ────────────────────────────────────────────────────────────────
