@@ -276,6 +276,7 @@ public:
 	}
 
 	// iterated error state EKF propogation
+	/*LiDAR 업데이터 없이, 이번 IMU값과 직전pose값과 dt를 사용해서 다음 pose를 예측해봄*/
 	void predict(double &dt, processnoisecovariance &Q, const input &i_in){
 		flatted_state f_ = f(x_, i_in);
 		cov_ f_x_ = f_x(x_, i_in);

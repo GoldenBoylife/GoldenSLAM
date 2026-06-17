@@ -21,10 +21,17 @@
 
 // };
 
+typedef Eigen::Vector3d V3D;
+typedef Eigen::Matrix3d M3D;
+typedef Eigen::Vector3f V3F;
+typedef Eigen::Matrix3f M3F;
+using Q12 = Eigen::Matrix<double,12,12>;
+
+
 
 struct ImuData
 {
-    double  timestamp ;
+    double  timestamp = 0.0;
     Eigen::Vector3d linear_acc  = Eigen::Vector3d::Zero();
     Eigen::Vector3d angular_vel     = Eigen::Vector3d::Zero();
 };
@@ -70,14 +77,14 @@ struct SlamParams
     // double box_len              = 200.0;
     // float  det_range             = 300.0f;
     // double fov_deg               = 180.0;
-    // double gyr_cov               = 0.1;
-    // double acc_cov               = 0.1;
-    // double b_gyr_cov             = 0.0001;
-    // double b_acc_cov             = 0.0001;
+    double gyr_cov               = 0.1;
+    double acc_cov               = 0.1;
+    double b_gyr_cov             = 0.0001;
+    double b_acc_cov             = 0.0001;
     std::vector<double> extrinT  = {0.0, 0.0, 0.0};
     std::vector<double> extrinR  = {1,0,0, 0,1,0, 0,0,1};
     // bool   extrinsic_est_en      = true;
-    // int    num_max_iterations    = 4;
+    int    num_max_iterations    = 4;
     // bool   time_sync_en          = false;
     // double time_diff_lidar_to_imu = 0.0;
     // bool   runtime_pos_log       = false;
