@@ -59,6 +59,12 @@ void RosBridge::loadParameters()
     
     sp.extrinT = this->declare_parameter<std::vector<double>>("mapping.extrinsic_T");
     sp.extrinR = this->declare_parameter<std::vector<double>>("mapping.extrinsic_R");
+
+
+    if(core_ !=nullptr) 
+    {
+        core_->setParams(sp);
+    }
 }
 
 
@@ -67,17 +73,32 @@ void RosBridge::loadParameters()
 void RosBridge::setupSubscribers()
 {
 
+    // auto imu_qos = rclcpp::QoS(rclcpp::KeepLast(2000)).best_effort();
+
+    // lidar_sub_ = this->create_subscription<livox_ros_driver2::msg::CustomMsg>(
+    //     lidar_topic_,
+    //     20,
+    //     std::bind(&RosBridge::onLidarCB,this,std::placeholders::_1)
+    // );
+    // imu_sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
+    //     imu_topic_,
+    //     10,
+    //     std::bind(&RosBridge::onImuCB,this,std::placeholders::_1)
+    // );
+
+    auto lidar_qos = rclcpp::QoS(rclcpp::KeepLast(200)).best_effort();
     auto imu_qos = rclcpp::QoS(rclcpp::KeepLast(2000)).best_effort();
 
     lidar_sub_ = this->create_subscription<livox_ros_driver2::msg::CustomMsg>(
         lidar_topic_,
-        20,
-        std::bind(&RosBridge::onLidarCB,this,std::placeholders::_1)
+        lidar_qos,
+        std::bind(&RosBridge::onLidarCB, this, std::placeholders::_1)
     );
+
     imu_sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
         imu_topic_,
-        10,
-        std::bind(&RosBridge::onImuCB,this,std::placeholders::_1)
+        imu_qos,
+        std::bind(&RosBridge::onImuCB, this, std::placeholders::_1)
     );
 }
 
@@ -137,6 +158,51 @@ void RosBridge::onImuCB(sensor_msgs::msg::Imu::SharedPtr msg_in)
 {
     ImuData imu;
     imu.timestamp = stamp_to_sec(msg_in->header.stamp);
+
+     static double last_raw_imu_time = 0.0;
+    static int imu_count = 0;
+    static int gap_count = 0;
+    static double max_raw_dt = 0.0;
+    static double sum_raw_dt = 0.0;
+
+
+    if(last_raw_imu_time > 0.0)
+    {
+        const double raw_dt = imu.timestamp - last_raw_imu_time;
+
+        sum_raw_dt += raw_dt;
+
+        if (raw_dt > max_raw_dt)
+        {
+            max_raw_dt = raw_dt;
+        }
+
+        if (raw_dt > 0.02)
+        {
+            ++gap_count;
+        }
+    }
+
+    last_raw_imu_time = imu.timestamp;
+    ++imu_count;
+
+    if (imu_count % 200 == 0)
+    {
+        const double avg_raw_dt = sum_raw_dt / static_cast<double>(imu_count - 1);
+
+        std::cout << "[RosBridge::onImuCB][raw imu stats] "
+                  << " count=" << imu_count
+                  << " avg_dt=" << avg_raw_dt
+                  << " max_dt=" << max_raw_dt
+                  << " gap_count=" << gap_count
+                  << std::endl;
+
+        gap_count = 0;
+        max_raw_dt = 0.0;
+        sum_raw_dt = 0.0;
+        imu_count = 0;
+    }
+
     imu.linear_acc << msg_in->linear_acceleration.x,
                       msg_in->linear_acceleration.y,
                       msg_in->linear_acceleration.z;

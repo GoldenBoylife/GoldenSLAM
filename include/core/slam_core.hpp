@@ -12,6 +12,8 @@
 #include "core/types/lidar_frame.hpp"
 #include "core/types/slam_types.hpp"
 
+#include "core/imu_processor.hpp"
+
 class SlamCore 
 {
 public: 
@@ -35,9 +37,11 @@ private:
 
     EsekfomApi esekfom_api_;
     IkdTreeApi ikd_tree_api_;
+    ImuProcessor imu_processor_;
 
     bool is_first_lidar_ ;
-
+    bool is_first_measure_group_;
+    double  first_lidar_time_;
 
     /*입력 버퍼*/
     std::mutex                          mtx_buffer_;
@@ -50,5 +54,10 @@ private:
     double  last_imu_timestamp_;
     double last_frame_timestamp_;
     /*syncMeasure*/
+
+    /*deskew*/
+    void runDeskew(const MeasureGroup& meas);
+
+    /*      deskew*/
 
 };

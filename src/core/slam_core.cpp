@@ -2,8 +2,17 @@
 
 SlamCore::SlamCore()
 {
+
+       std::cout << "[SlamCore::SlamCore] this=" << this
+              << " esekfom_api_=" << &esekfom_api_
+              << std::endl;
+
     is_first_lidar_  = true;
+    is_first_measure_group_ = true;
+    
     lidar_frame_pushed_ = false;
+
+    first_lidar_time_ = 0.0;
     last_imu_timestamp_ = 0.0;
     last_frame_timestamp_ = 0.0;
 }
@@ -16,49 +25,68 @@ SlamCore::~SlamCore()
 
 void SlamCore::setParams(SlamParams sp)
 {
+
+        std::cout << "[SlamCore::setParams] this=" << this
+              << " esekfom_api_=" << &esekfom_api_
+              << std::endl;
+    std::cout << "[SlamCore::setParams] called" << std::endl;
+
     sp_ = sp;
     esekfom_api_.setParams(sp_);
     ikd_tree_api_.setParams(sp_);
+    std::cout << "[SlamCore::setParams] finished" << std::endl;
+
     
 }
+/*순서
+    1. syncMeasure
+    2. first scan 처리
+    3. runDeskew()
+    4. IMU propagation 입력 검증
+    5. EsekfomApi propagation 연결
 
+
+
+*/
 void SlamCore::spinFrontendOnce()
 {
     // std::cout << "111" << std::endl;
     MeasureGroup meas;
     if(!syncMeasure(meas)) return;
-
+    //데이터 구조 묶기.
 
 
  
-    const double lidar_beg = meas.lidar_frame.frame_beg_time;
-    const double lidar_end = meas.lidar_frame.frame_end_time;
+    const double lidar_beg_time = meas.lidar_frame.frame_beg_time;
+    const double lidar_end_time = meas.lidar_frame.frame_end_time;
 
-    std::cout << "[spinFrontendOnce] "
-              << "lidar_beg=" << lidar_beg
-              << " lidar_end=" << lidar_end
-              << " lidar_dt=" << (lidar_end - lidar_beg)
-              << " imu_count=" << meas.imus.size();
-
-    if (!meas.imus.empty())
+    /*첫 measure_group*/
+    if(is_first_measure_group_) 
     {
-        const double first_imu_time = meas.imus.front().timestamp;
-        const double last_imu_time  = meas.imus.back().timestamp;
+        first_lidar_time_  = lidar_beg_time;
+        is_first_measure_group_ = false;
 
-        std::cout << " first_imu=" << first_imu_time
-                  << " last_imu=" << last_imu_time
-                  << " first_diff=" << (first_imu_time - lidar_beg)
-                  << " last_diff=" << (lidar_end - last_imu_time);
+        // std::cout << "[spinFrontendOnce] first measure group"
+        //     << " first_lidar_time=" << first_lidar_time_
+        //     << " imu_count=" << meas.imus.size()
+        //     << std::endl;
+        return;
     }
+    /*TODO: runDeskew*/
+    // std::cout << "[spinFrontendOnce] runDeskew entry"
+    //           << " lidar_beg=" << lidar_beg_time
+    //           << " lidar_end=" << lidar_end_time
+    //           << " imu_count=" << meas.imus.size()
+    //           << std::endl;
+    runDeskew(meas);
 
-    std::cout << std::endl;
 }
 
 
 
 void SlamCore::pushLidarFrame(const LidarFrame& lidar_frame)
 {
-    std::cout << "lidar" <<std::endl;
+    // std::cout << "lidar" <<std::endl;
     std::lock_guard<std::mutex> lock(mtx_buffer_);
 
     if(!is_first_lidar_ && lidar_frame.frame_end_time < last_frame_timestamp_)
@@ -79,6 +107,8 @@ void SlamCore::pushLidarFrame(const LidarFrame& lidar_frame)
 
 void SlamCore::pushImu(const ImuData& imu) 
 {
+    // std::cout << "Imu" <<std::endl;
+
     std::lock_guard<std::mutex> lock(mtx_buffer_);
     if(imu.timestamp < last_imu_timestamp_)
     {
@@ -94,6 +124,8 @@ void SlamCore::pushImu(const ImuData& imu)
 /*syncMeasure*/
 bool SlamCore::syncMeasure(MeasureGroup& meas)
 {
+    // std::cout << "syncMeasure" <<std::endl;
+
     std::lock_guard<std::mutex> lock(mtx_buffer_);
     if(lidar_frame_buffer_.empty() || imu_buffer_.empty())  return false;
 
@@ -137,3 +169,21 @@ bool SlamCore::syncMeasure(MeasureGroup& meas)
     return true;
     //lidar_frame_pushed_ = false해야됨
 }
+
+
+/*Deskew*/
+//실제 pose구하는 알고리즘 파트
+void SlamCore::runDeskew(const MeasureGroup& meas)
+{
+
+        std::cout << "[SlamCore::runDeskew] this=" << this
+              << " esekfom_api_=" << &esekfom_api_
+              << std::endl;
+    imu_processor_.process(meas, esekfom_api_);
+
+
+    //later
+    //imu_processor_.undistort(meas, esekfom_api_);
+    //feats_undistort_ = imu_processor_.getUndistortedCloud();
+}
+/*      Deskew*/
