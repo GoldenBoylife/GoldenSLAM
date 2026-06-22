@@ -13,6 +13,9 @@
 #include <nav_msgs/msg/path.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 #include <livox_ros_driver2/msg/custom_msg.hpp>
+#include <pcl_conversions/pcl_conversions.h>
+#include <cmath>
+
 
 #include "core/types/slam_types.hpp"
 #include "core/preprocess.hpp"
@@ -29,6 +32,10 @@ public:
     static void rosInit(int argc, char** argv);
     static void rosShutdown();
     void spin();
+
+
+public: //params
+
 
 private:
     /*setup*/
@@ -56,9 +63,12 @@ private:
     void pubOdometry(const SlamSnapShot& snap); //현재 추정된 로봇 pose를 publish
     void pubPath(const SlamSnapShot& snap); //odometry를 쌓아서 궤적으로 보여줌
     void pubMap(const SlamSnapShot& snap);
+    void publishCloudBody(const CloudTPtr cloud,const std::string& frame_id,double stamp_sec, const rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr& pub) ;
+
+    void updateDebugPredictedMap(const CloudTPtr& cloud_world);
 
 
-private:
+private: //params
     SlamCore* core_;
     //소유자 아니고, 누가 만든 것을 가져다 쓰겠다는 뜻, 진짜 소유자는 GoldenSlamApp
 
@@ -73,9 +83,10 @@ private:
 
     /*topic pub*/
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr pub_odom_ ;
-    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pub_frame_body_;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pub_raw_;
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pub_undistort_;
     rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr               pub_path_;
-
+    rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pub_debug_map_predicted_;
 
     /*timer*/
     rclcpp::TimerBase::SharedPtr frontend_timer_;
@@ -91,4 +102,7 @@ private:
     /*tf*/
     std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
     
+
+    CloudTPtr debug_msg_predicted_;
+    std::size_t debug_magp_frame_limit_ = 30;
 };

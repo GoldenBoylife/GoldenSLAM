@@ -1,10 +1,16 @@
 #pragma once
 
-#include "core/types/slam_types.hpp"
 #include <Eigen/Dense>
 #include "third_party/IKFoM_toolkit/esekfom/esekfom.hpp"
 
 #include "core/api/use_ikfom.hpp"
+
+
+#include "core/types/slam_types.hpp"
+// #include "core/types/common.hpp"
+
+
+
 // #include <Eigen/Core>
 /*
 Esekfom : Error-State Extended Kalman Filter on Manifold
@@ -71,12 +77,14 @@ public:
     state_ikfom getState() const ;
 
 
-
+    PoseState getPoseState() const;
 
     // void propagateOnce();
     // void updateOnce();
 
-private: 
+
+
+private:  //parmas
     SlamParams params_;
     //IEkf iekf_;
     esekfom::esekf<state_ikfom, 12,input_ikfom> kf_;

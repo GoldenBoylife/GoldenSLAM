@@ -361,3 +361,27 @@ void EsekfomApi::updateResidual(double lidar_point_cov, double& solve_time)
             kf_.update_iterated_dyn_share_modified(lidar_point_cov, solve_time)들어가 예정.
     */
 }
+
+
+PoseState EsekfomApi::getPoseState() const 
+{
+    const state_ikfom kf_state = getState();
+
+    PoseState pose_state;
+    
+    pose_state.pos = kf_state.pos;
+    pose_state.vel = kf_state.vel;
+
+    pose_state.rot = Eigen::Quaterniond(kf_state.rot.toRotationMatrix());
+    pose_state.rot.normalize();
+
+    pose_state.gyr_bias = kf_state.bg;
+    pose_state.acc_bias = kf_state.ba;
+    pose_state.gravity = kf_state.grav;
+
+    pose_state.offset_R_L_I = kf_state.offset_R_L_I.toRotationMatrix();
+
+    pose_state.offset_T_L_I = kf_state.offset_T_L_I;
+
+    return pose_state;
+}
