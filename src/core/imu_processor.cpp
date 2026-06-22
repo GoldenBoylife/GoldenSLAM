@@ -170,6 +170,11 @@ void ImuProcessor::process(const MeasureGroup& meas, EsekfomApi& esekfom_api)
     }
     /*초기화 마무리되면,  propagate로 IMU적분*/
     propagateImu(meas, esekfom_api);
+
+    debugPointTimeAndPoseHistory(
+    meas.lidar_frame.cloud,
+    meas.lidar_frame.frame_beg_time,
+    meas.lidar_frame.frame_end_time);
 }
 
 
@@ -216,6 +221,14 @@ void ImuProcessor::propagateImu(const MeasureGroup& meas, EsekfomApi& esekfom_ap
     const double lidar_end_time = meas.lidar_frame.frame_end_time;
     const double lidar_dt = lidar_end_time - lidar_beg_time;
 
+    imu_pose_history_.clear();
+    //이번 LiDAR frame의 undistortion에 사용할 pose history를 새로 만듬.
+
+    savePoseHistory(0.0,esekfom_api);
+    //LiDAR frame의 시작 시점 pose 저장
+    //offset time이 0임. 즉, 시작지점이라는 뜻임. 
+    //이 pose는 last_lidar_end_time_ 기준으로 이미 예측되어 있다고 본다.
+
 
     /*
         EKF state가 어느 시간까지 predict 되었는지 추정함. 
@@ -246,24 +259,21 @@ void ImuProcessor::propagateImu(const MeasureGroup& meas, EsekfomApi& esekfom_ap
         double dt = 0.0;
 
         /*        
-        시작 경계 처리
-            형태 : head < last_lidar_end_time  < tail
-            head_stamp가 이전 프레임의 imu이라면. dt구할때 앞쪽은 last_lidar_end_time이다.
-
-        일반 적분 
-            형태: last_lidar_end_time < head < tail < cur_lidar_end_time    
-            경계가 아닌 일반적인 IMU 간격은 tail - head다.
-            
-
+            시작 경계 처리
+                형태 : head < last_lidar_end_time  < tail
+                head_stamp가 이전 프레임의 imu이라면. dt구할때 앞쪽은 last_lidar_end_time이다.
         */
-       //imu의 head가 
         if(head.timestamp < last_lidar_end_time_)
         {
             dt = tail.timestamp - last_lidar_end_time_;
         }
-        /*대다수 여기다*/
         else
         {
+        /*
+            일반 적분 
+                형태: last_lidar_end_time < head < tail < cur_lidar_end_time    
+                경계가 아닌 일반적인 IMU 간격은 tail - head다.            
+        */
             dt = tail.timestamp - head.timestamp;
         }
 
@@ -396,6 +406,8 @@ void ImuProcessor::propagateImu(const MeasureGroup& meas, EsekfomApi& esekfom_ap
             << " lidar_end=" << lidar_end_time
             << " pos=" << state.pos.transpose()
             << " vel=" << state.vel.transpose()
+            << " pose_history=" << imu_pose_history_.size()
+
             << std::endl;
 
     last_imu_ = meas.imus.back();
@@ -419,7 +431,65 @@ void ImuProcessor::propagateImu(const MeasureGroup& meas, EsekfomApi& esekfom_ap
 
 void ImuProcessor::savePoseHistory(double offset_time, const EsekfomApi& esekfom_api)
 {
-    //TODO: esekfom_api에서 현재 state를 읽어서 pose history로 저장
+    const state_ikfom state = esekfom_api.getState();
+
+    ImuPoseHistory pose;
+    pose.offset_time = offset_time;
+    pose.pos = state.pos;
+    pose.rot = state.rot.toRotationMatrix();
+
+    imu_pose_history_.push_back(pose);
+}
+
+void ImuProcessor::debugPointTimeAndPoseHistory(
+    const CloudT::Ptr& cloud,
+    double lidar_beg_time,
+    double lidar_end_time) const
+{
+    if (!cloud || cloud->empty())
+    {
+        std::cout << "[ImuProcessor::debugPointTimeAndPoseHistory][WARN] "
+                  << "cloud is empty"
+                  << std::endl;
+        return;
+    }
+
+    double point_time_min = std::numeric_limits<double>::max();
+    double point_time_max = -std::numeric_limits<double>::max();
+
+    for (const auto& pt : cloud->points)
+    {
+        const double t = static_cast<double>(pt.relative_time);
+
+        if (t < point_time_min)
+        {
+            point_time_min = t;
+        }
+
+        if (t > point_time_max)
+        {
+            point_time_max = t;
+        }
+    }
+
+    const double lidar_dt = lidar_end_time - lidar_beg_time;
+
+    std::cout << "[ImuProcessor::debugPointTimeAndPoseHistory] "
+              << " cloud_size=" << cloud->size()
+              << " point_time_min=" << point_time_min
+              << " point_time_max=" << point_time_max
+              << " lidar_dt=" << lidar_dt
+              << " lidar_beg=" << lidar_beg_time
+              << " lidar_end=" << lidar_end_time
+              << " pose_history=" << imu_pose_history_.size();
+
+    if (!imu_pose_history_.empty())
+    {
+        std::cout << " pose_time_first=" << imu_pose_history_.front().offset_time
+                  << " pose_time_last=" << imu_pose_history_.back().offset_time;
+    }
+
+    std::cout << std::endl;
 }
 
 void ImuProcessor::undistort(const MeasureGroup& meas, EsekfomApi& esekfom_api)
@@ -427,3 +497,5 @@ void ImuProcessor::undistort(const MeasureGroup& meas, EsekfomApi& esekfom_api)
     //TODO : pose history 사용해서 LiDAR point cloud를 distort한다.
 
 }
+
+

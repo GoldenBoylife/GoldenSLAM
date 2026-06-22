@@ -182,8 +182,160 @@ void SlamCore::runDeskew(const MeasureGroup& meas)
     imu_processor_.process(meas, esekfom_api_);
 
 
+    SlamSnapShot snapshot;
+    snapshot.valid = true;
+    snapshot.lidar_beg_time = meas.lidar_frame.frame_beg_time;
+    snapshot.lidar_end_time = meas.lidar_frame.frame_end_time;
+
+    snapshot.state = esekfom_api_.getPoseState();
+
+
+    /* 
+        1차 publish 검증
+            아직 실제 undistortion은 하지 읂는다.
+            raw와 deskewd같은 cloud를 pulish해서, publish pipline부터 검증한다.
+    */
+    //포인터를 새 cloud로 reset하면서 그 안에 meas 내용으로 초기화
+    snapshot.cloud_raw =std::make_shared<CloudT> (*meas.lidar_frame.cloud);
+    snapshot.cloud_undistort = std::make_shared<CloudT> (*meas.lidar_frame.cloud);
+
+    {
+        std::lock_guard<std::mutex> lock(mtx_snapshot_);
+        latest_snapshot_ = snapshot;
+        has_new_snapshot_ = true;
+    }
+
+    CloudTPtr cloud_world = transformCloudBodyToWorld( snapshot.cloud_undistort,snapshot.state);
+    updateDebugPredictedMap(cloud_world);
+
+    if(debug_map_predicted_)
+    {
+        snapshot.cloud_map_predicted = std::make_shared<CloudT>(*debug_map_predicted_);
+
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(mtx_snapshot_);
+        latest_snapshot_ = snapshot;
+        has_new_snapshot_ = true;
+    }
+
+
     //later
     //imu_processor_.undistort(meas, esekfom_api_);
     //feats_undistort_ = imu_processor_.getUndistortedCloud();
 }
-/*      Deskew*/
+
+
+
+bool SlamCore::popSnapshot(SlamSnapShot& snapshot)
+{
+    std::lock_guard<std::mutex> lock(mtx_snapshot_);
+
+
+    if(!has_new_snapshot_) return false;
+
+    snapshot = latest_snapshot_;
+    has_new_snapshot_ = false;
+
+    return snapshot.valid;
+}
+
+
+CloudTPtr SlamCore::transformCloudBodyToWorld(
+    const CloudTPtr& cloud,
+    const PoseState& state) const
+{
+    CloudTPtr cloud_world = std::make_shared<CloudT>();
+
+    if(!cloud || cloud->empty())    return cloud_world;
+
+    cloud_world->reserve(cloud->size());
+
+    const M3D R_WI = state.rot.toRotationMatrix(); //state로 구한 World기준 IMU 자세
+    const V3D p_WI = state.pos;                     // state로 구한 World기준 IMU 위치
+
+    const M3D R_LI = state.offset_R_L_I;
+    const V3D T_LI = state.offset_T_L_I;
+
+    for(const auto& pt : cloud->points)
+    {
+
+        const V3D p_L(
+            static_cast<double>(pt.x),
+            static_cast<double>(pt.y),
+            static_cast<double>(pt.z));
+        
+        /*LiDAR frame -> IMU frame*/
+        const V3D p_I = R_LI * p_L + T_LI;
+
+
+        /* IMU frame -> World frame*/
+        const V3D p_W = R_WI * p_I + p_WI;
+
+        PointT world_pt = pt;
+        world_pt.x = static_cast<float>(p_W.x());
+        world_pt.y = static_cast<float>(p_W.y());
+        world_pt.z = static_cast<float>(p_W.z());
+
+        cloud_world->push_back(world_pt);
+    }
+
+    cloud_world->width = static_cast<std::uint32_t>(cloud_world->points.size());
+    cloud_world->height =1;
+    cloud_world->is_dense = false;
+
+    return cloud_world;
+
+    
+
+}
+
+
+
+void SlamCore::updateDebugPredictedMap(const CloudTPtr& cloud_world)
+{
+    if (!cloud_world || cloud_world->empty())
+    {
+        return;
+    }
+
+    debug_world_cloud_frames_.push_back(cloud_world);
+
+    while (debug_world_cloud_frames_.size() > debug_map_frame_limit_)
+    {
+        debug_world_cloud_frames_.pop_front();
+    }
+
+    debug_map_predicted_ = std::make_shared<CloudT>();
+
+    std::size_t total_size = 0;
+    for (const auto& cloud : debug_world_cloud_frames_)
+    {
+        if (cloud)
+        {
+            total_size += cloud->size();
+        }
+    }
+
+    debug_map_predicted_->reserve(total_size);
+
+    for (const auto& cloud : debug_world_cloud_frames_)
+    {
+        if (!cloud)
+        {
+            continue;
+        }
+
+        debug_map_predicted_->points.insert(
+            debug_map_predicted_->points.end(),
+            cloud->points.begin(),
+            cloud->points.end());
+    }
+
+    debug_map_predicted_->width =
+        static_cast<std::uint32_t>(debug_map_predicted_->points.size());
+
+    debug_map_predicted_->height = 1;
+    debug_map_predicted_->is_dense = false;
+}

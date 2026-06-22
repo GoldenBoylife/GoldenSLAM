@@ -16,7 +16,7 @@
 
 class SlamCore 
 {
-public: 
+public:  
     SlamCore();
     ~SlamCore();
 
@@ -27,11 +27,20 @@ public:
 
     void pushImu(const ImuData& imu);
     void pushLidarFrame(const LidarFrame& lidar_frame);
-    /*syncMeasure*/
-    bool syncMeasure(MeasureGroup& meas);
-    /*      syncMeasure*/
 
-private:
+    bool syncMeasure(MeasureGroup& meas);
+    bool popSnapshot(SlamSnapShot& snapshot);
+
+public: //params
+
+private: 
+    void runDeskew(const MeasureGroup& meas);
+    CloudTPtr transformCloudBodyToWorld(
+        const CloudTPtr& cloud,
+        const PoseState& state) const;
+    void updateDebugPredictedMap(const CloudTPtr& cloud_world);
+
+private: //params
     static SlamCore* s_instance_;
     SlamParams sp_;
 
@@ -53,11 +62,17 @@ private:
     LidarFrame current_lidar_frame_;
     double  last_imu_timestamp_;
     double last_frame_timestamp_;
-    /*syncMeasure*/
+    
 
-    /*deskew*/
-    void runDeskew(const MeasureGroup& meas);
+    SlamSnapShot latest_snapshot_;
+    bool has_new_snapshot_ = false;
+    std::mutex mtx_snapshot_;
 
-    /*      deskew*/
+    std::shared_ptr<CloudT> debug_map_predicted_;
+
+
+    std::deque<CloudTPtr> debug_world_cloud_frames_;
+    std::size_t debug_map_frame_limit_ = 200;  // ori 20 , 한번에 보여주는 accumulated cloud?
+
 
 };

@@ -11,6 +11,18 @@ static double stamp_to_sec(const builtin_interfaces::msg::Time& t)
     return static_cast<double>(t.sec) + static_cast<double>(t.nanosec) * 1e-9;
 }
 
+builtin_interfaces::msg::Time secToRosTime(double stamp_sec)  
+{
+    builtin_interfaces::msg::Time t;
+
+    const double sec_floor = std::floor(stamp_sec);
+
+    t.sec = static_cast<int32_t>(sec_floor);
+    t.nanosec = static_cast<uint8_t>((stamp_sec - sec_floor) * 1e9);
+
+    return t;
+}
+
 RosBridge::RosBridge(SlamCore* core) 
     :   rclcpp::Node("laser_mapping"),
         core_(core)
@@ -109,8 +121,14 @@ void RosBridge::setupPublishers()
         20
     );
 
-    pub_frame_body_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
-        "/cloud_deskewed_body",
+
+    pub_raw_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+        "/cloud_raw",
+        20
+    );
+
+    pub_undistort_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+        "/cloud_undistort",
         20
     );
     //deskew된 현재 LiDAr frame 확인
@@ -123,6 +141,11 @@ void RosBridge::setupPublishers()
 
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
     //rviz frame 관계 확인 
+
+    pub_debug_map_predicted_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(
+         "/golden_slam/debug_map_predicted",
+        20
+    );
 }
 
 void RosBridge::setupTimer()
@@ -253,7 +276,78 @@ void RosBridge::mapSaveCB(std_srvs::srv::Trigger::Request::ConstSharedPtr req, s
 void RosBridge::onFrontendTimer()
 {
     core_->spinFrontendOnce();
+
+    SlamSnapShot snapshot;
+    if(!core_->popSnapshot(snapshot))
+    {
+        return;
+    }
+
+    publishCloudBody(
+        snapshot.cloud_raw,
+        "map",
+        snapshot.lidar_end_time,
+        pub_raw_
+    );
+    publishCloudBody(
+        snapshot.cloud_undistort,
+        "map",  //ori : camera_init
+        snapshot.lidar_end_time,
+        pub_undistort_
+    );
+
+    if(snapshot.cloud_map_predicted && !snapshot.cloud_map_predicted->empty())
+    {
+        publishCloudBody(
+            snapshot.cloud_map_predicted,
+            "map",
+            snapshot.lidar_end_time,
+            pub_debug_map_predicted_
+        );
+    }
+
+
+    static int pub_count = 0;
+    ++pub_count;
+    if (pub_count % 10 == 0)
+    {
+        const std::size_t raw_size =
+            snapshot.cloud_raw ? snapshot.cloud_raw->size() : 0;
+
+        const std::size_t undistort_size =
+            snapshot.cloud_undistort ? snapshot.cloud_undistort->size() : 0;
+
+        const std::size_t map_size =
+            snapshot.cloud_map_predicted ? snapshot.cloud_map_predicted->size() : 0;
+
+        std::cout << "[RosBridge::onFrontendTimer][publish snapshot] "
+                << " count=" << pub_count
+                << " raw=" << raw_size
+                << " undistort=" << undistort_size
+                << " debug_map=" << map_size
+                << " stamp=" << snapshot.lidar_end_time
+                << std::endl;
+    }
 }
+
+void RosBridge::publishCloudBody(
+    const CloudTPtr cloud,
+    const std::string& frame_id,
+    double stamp_sec,
+    const rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr& pub) 
+{
+    if(!cloud || cloud->empty())        return;
+
+    sensor_msgs::msg::PointCloud2 cloud_msg;
+    pcl::toROSMsg(*cloud, cloud_msg);
+
+    cloud_msg.header.frame_id = frame_id;
+    cloud_msg.header.stamp = secToRosTime(stamp_sec);
+
+    pub->publish(cloud_msg);
+}
+
+
 
 void RosBridge::onMapPubTimer()
 {

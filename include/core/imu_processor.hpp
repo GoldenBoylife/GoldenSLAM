@@ -6,7 +6,7 @@
 
 #include <Eigen/Dense>
 #include <pcl/point_cloud.h>
-
+#include <limits>
 
 #include "core/types/slam_types.hpp"
 #include "api/esekfom_api.hpp" //이걸써?
@@ -53,12 +53,6 @@ public:
     // void process(const MeasureGroup& meas, IEkf& kf)
     //이거 runDeskew할때 해결해야 함. 
 
-    void savePoseHistory(double offset_time, const EsekfomApi& esekfom_api) ;
-        //IMU propagation 이후의 state를 pose_history에 저장
-
-    void debugPointTimeAndPoseHistory(const CloudT::Ptr& cloud, double lidar_beg_time, double lidar_end_time) const;
-
-
 public: //(param)
 
 
@@ -70,8 +64,17 @@ private:
     void propagateImu(const MeasureGroup& meas, EsekfomApi& esekfom_api);
     //MeasureGroup 안의 IMU들을 순회하면서 EsekfomApi::predictImu()호출
 
+    
+    void savePoseHistory(double offset_time, const EsekfomApi& esekfom_api) ;
+    //IMU propagation 이후의 state를 pose_history에 저장   
+        //imuPropagation에서 eskfom_api.predictImu()로 값을 넣어놓고, 
+        //이 savePoseHistory에서 값을 가져와서 저장한다.
+
+    void debugPointTimeAndPoseHistory(const CloudT::Ptr& cloud, double lidar_beg_time, double lidar_end_time) const;
+
     void undistort(const MeasureGroup& meas, EsekfomApi& esekfom_api);
     //pose history를 사용해서 LiDAR point deskew
+
 
 
 private: //(param)
