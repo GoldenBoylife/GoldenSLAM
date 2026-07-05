@@ -67,7 +67,7 @@ struct SlamSnapShot
     double lidar_end_time = 0.0; //이번 프레임 시간
     PoseState                  state;
     CloudTPtr   cloud_raw;      //원본
-    CloudTPtr   cloud_undistort;    //LiDAR body기준 cloud
+    CloudTPtr   cloud_undistorted;    //LiDAR body기준 cloud
 
     CloudTPtr cloud_map_predicted; 
 };

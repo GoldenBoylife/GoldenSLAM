@@ -22,6 +22,7 @@ void IkdTreeApi::setParams(const SlamParams& params)
 bool IkdTreeApi::hasFrame() const
 {
     // return !lidar_frames_.empty();
+    return false;
 
 }
 

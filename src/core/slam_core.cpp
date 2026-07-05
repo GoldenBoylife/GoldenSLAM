@@ -176,9 +176,7 @@ bool SlamCore::syncMeasure(MeasureGroup& meas)
 void SlamCore::runDeskew(const MeasureGroup& meas)
 {
 
-        std::cout << "[SlamCore::runDeskew] this=" << this
-              << " esekfom_api_=" << &esekfom_api_
-              << std::endl;
+
     imu_processor_.process(meas, esekfom_api_);
 
 
@@ -197,15 +195,23 @@ void SlamCore::runDeskew(const MeasureGroup& meas)
     */
     //포인터를 새 cloud로 reset하면서 그 안에 meas 내용으로 초기화
     snapshot.cloud_raw =std::make_shared<CloudT> (*meas.lidar_frame.cloud);
-    snapshot.cloud_undistort = std::make_shared<CloudT> (*meas.lidar_frame.cloud);
 
+    imu_processor_.undistort(meas, esekfom_api_);
+
+    CloudTPtr undistorted = imu_processor_.getUndistortedCloud();
+
+    if(undistorted && !undistorted->empty()) 
     {
-        std::lock_guard<std::mutex> lock(mtx_snapshot_);
-        latest_snapshot_ = snapshot;
-        has_new_snapshot_ = true;
+        snapshot.cloud_undistorted = std::make_shared<CloudT>(*undistorted);
+    }
+    else 
+    {
+        snapshot.cloud_undistorted = std::make_shared<CloudT>(*meas.lidar_frame.cloud);
     }
 
-    CloudTPtr cloud_world = transformCloudBodyToWorld( snapshot.cloud_undistort,snapshot.state);
+
+
+    CloudTPtr cloud_world = transformCloudBodyToWorld( snapshot.cloud_undistorted,snapshot.state);
     updateDebugPredictedMap(cloud_world);
 
     if(debug_map_predicted_)
@@ -221,9 +227,9 @@ void SlamCore::runDeskew(const MeasureGroup& meas)
     }
 
 
-    //later
-    //imu_processor_.undistort(meas, esekfom_api_);
-    //feats_undistort_ = imu_processor_.getUndistortedCloud();
+    //latera
+    // imu_processor_.undistort(meas, esekfom_api_);
+    // feats_undistort_ = imu_processor_.getUndistortedCloud();
 }
 
 
