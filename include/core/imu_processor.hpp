@@ -53,6 +53,15 @@ public:
     // void process(const MeasureGroup& meas, IEkf& kf)
     //이거 runDeskew할때 해결해야 함. 
 
+    void undistort(const MeasureGroup& meas, EsekfomApi& esekfom_api);
+    //pose history를 사용해서 LiDAR point deskew
+    //기능1: 현재 LiDAR raw cloud의 각 point를 그 point가 찍힌 시간의 pose로 world로 
+    //기능2: LiDAR frame end 시점의 LiDAR 좌표계로 가져와서 왜곡 제거된 cloud를 만듬
+
+    CloudTPtr getUndistortedCloud() const;
+
+
+
 public: //(param)
 
 
@@ -72,8 +81,9 @@ private:
 
     void debugPointTimeAndPoseHistory(const CloudT::Ptr& cloud, double lidar_beg_time, double lidar_end_time) const;
 
-    void undistort(const MeasureGroup& meas, EsekfomApi& esekfom_api);
-    //pose history를 사용해서 LiDAR point deskew
+    bool interpolatePose(double offset_time, V3D& out_pos, M3D& out_rot) const;
+    //imu가 아니라 LiDAR point의 시간에 맞는 pose를 poseHistory에서 보간해서 꺼냄.
+    //point의 time을 poseHistory에 있는 time과 비교하여 보간하여 point의 rot과 pos를 다시 수정함.
 
 
 
@@ -116,6 +126,9 @@ private: //(param)
     //gyro noise, acc noise, gyro bias random walk, acc bias random walk,
 
     std::vector<ImuPoseHistory> imu_pose_history_;
+
+    CloudTPtr undistorted_cloud_;
+
     
 
 

@@ -492,10 +492,227 @@ void ImuProcessor::debugPointTimeAndPoseHistory(
     std::cout << std::endl;
 }
 
+/*
+    기능1: 현재 scan된 point의 각 시간을 보간해서 pose 옮기고 world 기준 좌표계로 
+    기능2: LiDAR frame end 시점의 LiDAR 좌표계로 가져와서 왜곡 제거 된 cloud 만듬
+*/
 void ImuProcessor::undistort(const MeasureGroup& meas, EsekfomApi& esekfom_api)
 {
-    //TODO : pose history 사용해서 LiDAR point cloud를 distort한다.
+    undistorted_cloud_ = std::make_shared<CloudT>();
 
+    const CloudTPtr& cloud_raw = meas.lidar_frame.cloud;
+
+    if(!cloud_raw || cloud_raw->empty())
+    {
+        std::cout << " [imuProcess::undistort] raw cloud is empty()" << std::endl;
+        return; 
+    }
+
+    if(imu_pose_history_.size() < 2)
+    {
+        *undistorted_cloud_ = *cloud_raw;
+        std::cout << "[imuProcess::undistort][WARN] pose history too small"
+                << " pose_history = " << imu_pose_history_.size()
+                << " cloud_size = " << cloud_raw->size()
+                << std::endl;
+
+        return;
+    }
+
+    undistorted_cloud_->points.reserve(cloud_raw->points.size());
+    const PoseState end_state = esekfom_api.getPoseState();
+    //undistort()가 선언되는 시점에서는 getPoseState()는 LiDAR frame의 마지막 state다.  그래서 end_state라 칭함
+    
+
+    const M3D R_WI_end =  end_state.rot.toRotationMatrix();
+    const V3D p_WI_end = end_state.pos;
+
+    const M3D R_LI = end_state.offset_R_L_I;
+    const V3D t_LI = end_state.offset_T_L_I;
+
+    const M3D R_IL = R_LI.transpose();
+
+    double sum_corr = 0.0;
+    double max_corr = 0.0;
+
+    for(const auto& pt : cloud_raw->points)
+    {
+        const double point_time = static_cast<double>(pt.relative_time);
+
+        V3D p_WI_point = V3D::Zero();
+        M3D R_WI_point = M3D::Identity();
+
+        const bool ok = interpolatePose(point_time, p_WI_point, R_WI_point);
+        //interpolatePose의 결과가 out_pos, out_rot인데, 이건 적분된 pose값이므로 결국 world기준 IMU pose돠.
+
+
+        if(!ok) 
+        {
+            undistorted_cloud_->points.push_back(pt);
+            continue;
+        }
+
+        const V3D p_L(
+            static_cast<double>(pt.x),
+            static_cast<double>(pt.y),
+            static_cast<double>(pt.z)
+        );
+        //raw point 위치들
+
+        const V3D p_I = R_LI * p_L + t_LI;
+        //Lidar frame을  IMU 기준 좌표계로 이동
+
+
+        const V3D p_W = R_WI_point * p_I + p_WI_point;
+        //point time IMU 좌표계 -> World기준 좌표계
+
+        const V3D p_I_end = R_WI_end.transpose() * (p_W - p_WI_end);
+        //world 좌표계를  frame_end 기준의 IMU 좌표계로 
+
+        const V3D p_L_end = R_IL * (p_I_end - t_LI);
+        //IMU 좌표계 -> LiDAR frame end시간의 좌표계로
+
+        
+        PointT out_pt = pt;
+        out_pt.x = static_cast<float>(p_L_end.x());
+        out_pt.y = static_cast<float>(p_L_end.y());
+        out_pt.z = static_cast<float>(p_L_end.z());
+
+        const double corr = (p_L_end - p_L).norm();
+        //원래 point  좌표 p_L과  undistortion 후 point 좌표 p_L_end가 얼마나 이동했는지 거리로 계산
+        //corr : 보정량의 크기임.
+
+        /*distortion 얼마나 적용되었는지 debug위해서*/
+        sum_corr += corr;
+
+        if(corr > max_corr)
+        {
+            max_corr = corr;
+        }
+
+        undistorted_cloud_->points.push_back(out_pt);
+
+
+    }
+
+    undistorted_cloud_->width = static_cast<std::uint32_t>(undistorted_cloud_->points.size());
+
+    undistorted_cloud_->height= 1;
+    undistorted_cloud_->is_dense = false;
+
+    static int undistort_count =0;
+    ++undistort_count;
+
+    if(undistort_count % 10 ==0)
+    {
+        const double avg_corr =  cloud_raw->empty()
+                                            ? 0.0
+                                            : sum_corr / static_cast<double>(cloud_raw->size());
+        std::cout << "[ImuProcessor::undistort] "
+                << " count=" << undistort_count
+                << " cloud_size=" << cloud_raw->size()
+                << " pose_history=" << imu_pose_history_.size()
+                << " point_time_first=" << imu_pose_history_.front().offset_time
+                << " point_time_last=" << imu_pose_history_.back().offset_time
+                << " avg_corr=" << avg_corr
+                << " max_corr=" << max_corr
+                << std::endl;                                
+    }
+ 
 }
 
 
+CloudTPtr ImuProcessor::getUndistortedCloud() const 
+{
+
+    return undistorted_cloud_;
+}
+
+
+/*point의 상대시간(offset_time)을  pose history에 잇는 time에 맞추어서 pose를 다시 interpolate한다.*/
+//여기서 나온 pose는 적분값이므로 World기준이다. 
+bool ImuProcessor::interpolatePose(double offset_time, V3D& out_pos, M3D& out_rot) const 
+{
+    if(imu_pose_history_.empty())        return false;
+
+    if(imu_pose_history_.size() ==1) 
+    {
+        out_pos = imu_pose_history_.front().pos;
+        out_rot = imu_pose_history_.front().rot;
+        return true;
+    }
+
+    /*pose history의 맨앞보다 더 작은 시간일때-> 맨 앞 처리*/
+    if(offset_time <= imu_pose_history_.front().offset_time)
+    {
+        out_pos = imu_pose_history_.front().pos;
+        out_rot = imu_pose_history_.front().rot;
+        return true;
+    }
+    /*맨 뒤보다 더 큰 시간일때 -> 맨 뒤 처리*/
+    if(offset_time >= imu_pose_history_.back().offset_time)
+    {
+        out_pos = imu_pose_history_.back().pos;
+        out_rot = imu_pose_history_.back().rot;
+        return true;
+    }
+
+    /*나머지, 보통 이리로 옴*/
+    for(int i = 1; i < imu_pose_history_.size() ;++i) 
+    {
+        const auto& prev = imu_pose_history_[i-1];
+        const auto& next = imu_pose_history_[i];
+
+        /*next보다 더 크면 무시*/
+        if(offset_time > next.offset_time)
+        {
+            continue;
+        }
+
+        const double dt = next.offset_time - prev.offset_time;
+
+        double ratio = 0.0;
+        if(dt > 1e-9) 
+        {
+            ratio = (offset_time - prev.offset_time) /dt;
+        }
+
+        if( ratio < 0.0)
+        {
+            ratio = 0.0;
+        }
+        else if (ratio > 1.0)
+        {
+            ratio = 1.0;
+        }
+
+        out_pos = prev.pos + (next.pos - prev.pos) * ratio;
+
+        Eigen::Quaterniond q_prev(prev.rot);
+        Eigen::Quaterniond q_next(next.rot);
+
+        q_prev.normalize();
+        q_next.normalize();
+
+        Eigen::Quaterniond q_interp = q_prev.slerp(ratio, q_next);
+        q_interp.normalize();
+
+        out_rot = q_interp.toRotationMatrix();
+
+        return true;
+    }
+
+    /*fallback*/
+    std::cerr << "[ImuProcessor::interpolatePose][WARN] "
+          << "failed to find interpolation interval. "
+          << "offset_time=" << offset_time
+          << " first=" << imu_pose_history_.front().offset_time
+          << " last=" << imu_pose_history_.back().offset_time
+          << " history_size=" << imu_pose_history_.size()
+          << std::endl;
+    out_pos = imu_pose_history_.back().pos;
+    out_rot = imu_pose_history_.back().rot;
+
+    return true;
+
+}

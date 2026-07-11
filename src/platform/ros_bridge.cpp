@@ -290,7 +290,7 @@ void RosBridge::onFrontendTimer()
         pub_raw_
     );
     publishCloudBody(
-        snapshot.cloud_undistort,
+        snapshot.cloud_undistorted,
         "map",  //ori : camera_init
         snapshot.lidar_end_time,
         pub_undistort_
@@ -315,7 +315,7 @@ void RosBridge::onFrontendTimer()
             snapshot.cloud_raw ? snapshot.cloud_raw->size() : 0;
 
         const std::size_t undistort_size =
-            snapshot.cloud_undistort ? snapshot.cloud_undistort->size() : 0;
+            snapshot.cloud_undistorted ? snapshot.cloud_undistorted->size() : 0;
 
         const std::size_t map_size =
             snapshot.cloud_map_predicted ? snapshot.cloud_map_predicted->size() : 0;

@@ -67,7 +67,7 @@ struct SlamSnapShot
     double lidar_end_time = 0.0; //이번 프레임 시간
     PoseState                  state;
     CloudTPtr   cloud_raw;      //원본
-    CloudTPtr   cloud_undistort;    //LiDAR body기준 cloud
+    CloudTPtr   cloud_undistorted;    //LiDAR body기준 cloud
 
     CloudTPtr cloud_map_predicted; 
 };
@@ -105,4 +105,58 @@ struct MeasureGroup
 {
     LidarFrame lidar_frame;
     std::deque<ImuData> imus;
+};
+
+
+struct PlaneResidual
+{
+    PointT point_world;
+    Eigen::Vector3d normal;
+    Eigen::Vector3d center;
+
+    double residual = 0.0;
+    double abs_residual = 0.0;
+    double dist5 = 0.0;
+};
+struct IkdTreeProcessResult
+{
+    bool map_initialized_this_frame = false;
+    bool should_add_to_map = false;
+
+    std::vector<PlaneResidual> update_residuals;
+
+    int search_found = 0;
+    int search_fail = 0;
+
+    int residual_candidate = 0;
+    int distance_reject = 0;
+
+    int plane_ok = 0;
+    int plane_fail = 0;
+
+    int residual_update_candidate = 0;
+    int residual_reject = 0;
+
+    double avg_dist5 = 0.0;
+    double max_dist5 = 0.0;
+
+    double avg_abs_residual = 0.0;
+    double max_abs_residual = 0.0;
+
+    double avg_update_abs_residual = 0.0;
+    double max_update_abs_residual = 0.0;
+};
+
+
+struct PoseCorrectionResult
+{
+    bool valid = false;
+
+    Eigen::Matrix<double, 6, 1> dx =
+        Eigen::Matrix<double, 6, 1>::Zero();
+
+    int update_count = 0;
+
+    double rot_norm = 0.0;
+    double trans_norm = 0.0;
 };

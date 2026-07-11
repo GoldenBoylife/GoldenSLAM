@@ -385,3 +385,70 @@ PoseState EsekfomApi::getPoseState() const
 
     return pose_state;
 }
+
+void EsekfomApi::applyPoseCorrection(
+    const Eigen::Matrix<double, 6, 1>& dx)
+{
+    if (!dx.allFinite())
+    {
+        std::cout << "[EsekfomApi::applyPoseCorrection][WARN] dx not finite"
+                  << std::endl;
+        return;
+    }
+
+    const Eigen::Vector3d dtheta = dx.head<3>();
+    const Eigen::Vector3d dt = dx.tail<3>();
+
+    const double rot_norm = dtheta.norm();
+    const double trans_norm = dt.norm();
+
+    if (rot_norm > 0.05 || trans_norm > 0.3)
+    {
+        std::cout << "[EsekfomApi::applyPoseCorrection][WARN] too large dx "
+                  << " rot_norm=" << rot_norm
+                  << " trans_norm=" << trans_norm
+                  << " dx=" << dx.transpose()
+                  << std::endl;
+        return;
+    }
+
+    PoseState before = getPoseState();
+
+    state_ikfom corrected_state = kf_.get_x();
+
+    /*
+        estimatePoseCorrection()의 dx 순서:
+            dx.head<3>() = dtheta
+            dx.tail<3>() = dt
+
+        IKFoM state boxplus 순서:
+            0~2   : pos
+            3~5   : rot
+            6~8   : offset_R_L_I
+            9~11  : offset_T_L_I
+            12~14 : vel
+            15~17 : bg
+            18~20 : ba
+            21~22 : grav
+    */
+    Eigen::Matrix<double, 23, 1> dx_full =
+        Eigen::Matrix<double, 23, 1>::Zero();
+
+    dx_full.segment<3>(0) = dt;
+    dx_full.segment<3>(3) = dtheta;
+
+    corrected_state.boxplus(dx_full, 1.0);
+
+    kf_.change_x(corrected_state);
+
+    PoseState after = getPoseState();
+
+    std::cout << "[EsekfomApi::applyPoseCorrection] "
+              << " before_pos=" << before.pos.transpose()
+              << " after_pos=" << after.pos.transpose()
+              << " delta_pos=" << (after.pos - before.pos).transpose()
+              << " rot_norm=" << rot_norm
+              << " trans_norm=" << trans_norm
+              << " dx=" << dx.transpose()
+              << std::endl;
+}
