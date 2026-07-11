@@ -81,7 +81,7 @@ public:
 
     // void propagateOnce();
     // void updateOnce();
-
+    void applyPoseCorrection(const Eigen::Matrix<double, 6, 1>& dx);
 
 
 private:  //parmas

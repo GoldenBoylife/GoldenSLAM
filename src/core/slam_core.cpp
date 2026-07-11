@@ -1,4 +1,15 @@
 #include "core/slam_core.hpp"
+#include <pcl/filters/voxel_grid.h>
+#include <cmath>
+
+static Eigen::Matrix3d skewSymmetric(const Eigen::Vector3d& v)
+{
+    Eigen::Matrix3d m;
+    m << 0.0, -v.z(), v.y(),
+         v.z(), 0.0, -v.x(),
+        -v.y(), v.x(), 0.0;
+    return m;
+}
 
 SlamCore::SlamCore()
 {
@@ -173,6 +184,20 @@ bool SlamCore::syncMeasure(MeasureGroup& meas)
 
 /*Deskew*/
 //실제 pose구하는 알고리즘 파트
+/*
+    순서
+        정지상태의 imu초기값 얻기
+        raw값에서 undistorted_cloud 로 얻기
+        cloud를 world frame으로 transform
+        downsampled
+        ikd-tree로 residual candidate 얻기
+        estimatePoseCorrrection
+
+
+
+
+
+*/
 void SlamCore::runDeskew(const MeasureGroup& meas)
 {
 
@@ -199,6 +224,7 @@ void SlamCore::runDeskew(const MeasureGroup& meas)
     imu_processor_.undistort(meas, esekfom_api_);
 
     CloudTPtr undistorted = imu_processor_.getUndistortedCloud();
+    //여기서 undistorted cloud 얻음.
 
     if(undistorted && !undistorted->empty()) 
     {
@@ -212,7 +238,75 @@ void SlamCore::runDeskew(const MeasureGroup& meas)
 
 
     CloudTPtr cloud_world = transformCloudBodyToWorld( snapshot.cloud_undistorted,snapshot.state);
-    updateDebugPredictedMap(cloud_world);
+
+    CloudTPtr cloud_world_down = voxelDownsample(cloud_world, 0.2);
+
+    std::cout << "[SlamCore::runDeskew][voxel] " 
+                << " world= " << cloud_world->size()
+                << " down= " << cloud_world_down->size()
+                << " leaf=0.2"
+                << std::endl;
+
+    // processIkdTree(cloud_world_down);
+
+
+    IkdTreeProcessResult ikd_result = processIkdTree(cloud_world_down);
+    
+    CloudTPtr map_cloud_to_add = cloud_world_down;
+
+    if (ikd_result.should_add_to_map)
+    {
+        PoseCorrectionResult correction = estimatePoseCorrection(
+                ikd_result.update_residuals,
+                snapshot.state
+            );
+        
+        bool correction_accepted = false;
+        CloudTPtr accepted_cloud_to_add;
+
+
+        if (correction.valid)
+        {
+            /* v0 안전장치:
+                    dx를 100% 다 적용하지 않고 일부만 적용해봄
+                    처음에는 0.5정도가 안전
+            */
+            esekfom_api_.applyPoseCorrection(correction.dx);
+
+            snapshot.state = esekfom_api_.getPoseState();
+
+            CloudTPtr corrected_world =
+                transformCloudBodyToWorld(
+                    snapshot.cloud_undistorted,
+                    snapshot.state);
+
+            CloudTPtr corrected_world_down =
+                voxelDownsample(corrected_world, 0.2);
+
+            map_cloud_to_add = corrected_world_down;
+
+            std::cout << "[SlamCore::correction][apply] "
+                    << " valid=" << correction.valid
+                    << " update_count=" << correction.update_count
+                    << " rot_norm=" << correction.rot_norm
+                    << " trans_norm=" << correction.trans_norm
+                    << " dx=" << correction.dx.transpose()
+                    << " corrected_down=" << corrected_world_down->size()
+                    << std::endl;
+        }
+
+        ikd_tree_api_.addPoints(map_cloud_to_add);
+
+        std::cout << "[SlamCore::processIkdTree][add] "
+                << " new_map_size=" << ikd_tree_api_.size()
+                << std::endl;
+
+        updateDebugPredictedMap(map_cloud_to_add);
+    }
+    else
+    {
+        updateDebugPredictedMap(cloud_world_down);
+    }
 
     if(debug_map_predicted_)
     {
@@ -344,4 +438,440 @@ void SlamCore::updateDebugPredictedMap(const CloudTPtr& cloud_world)
 
     debug_map_predicted_->height = 1;
     debug_map_predicted_->is_dense = false;
+}
+
+
+
+
+CloudTPtr SlamCore::voxelDownsample(const CloudTPtr& cloud, double leaf_size) const
+{
+    CloudTPtr filtered = std::make_shared<CloudT>();
+
+    if(!cloud || cloud->empty())    return filtered;
+
+
+    pcl::VoxelGrid<PointT> voxel;
+    voxel.setInputCloud(cloud);
+    voxel.setLeafSize(
+        static_cast<float>(leaf_size),
+        static_cast<float>(leaf_size),
+        static_cast<float>(leaf_size)
+    );
+
+
+    voxel.filter(*filtered);
+
+    filtered->width = static_cast<std::uint32_t>(filtered->points.size());
+    filtered->height = 1;
+    filtered->is_dense = false;
+
+    return filtered;
+}
+
+/**
+ * 새로운 스캔 cloud_world
+ * 처음 맵이면 ikd-tree에서 build하고, 
+ * 이미 map 이 있으면 현재 scan point 마다 nearest search 해본 뒤, 마지막에 현재 cloud를 map 에 추가하는 함수.
+ * 
+ * 순서
+ *  방어코드(비어 있는지?)
+ *  if (ikd_tree가 처음)
+ *      ikd tree build() 후 return
+ *  for(모든 점)
+ *      nearestSearch()-> nearest point 알아내고 거리 제곱 알아냄.
+ *      필터링1 (현scan point와 점 거리 1m 이하)
+ *      필터링2 (현scan point와 plane 거리 0.2m이하
+ * 
+ *  residual 후보들 result return
+  */
+// void SlamCore::processIkdTree(const CloudTPtr& cloud_world) 
+IkdTreeProcessResult SlamCore::processIkdTree(const CloudTPtr& cloud_world)
+{
+    IkdTreeProcessResult result;
+
+    if (!cloud_world)
+    {
+        std::cout << "[SlamCore::processIkdTree][WARN] null cloud "
+                  << " map_size=" << ikd_tree_api_.size()
+                  << std::endl;
+        return result;
+    }
+
+    if (cloud_world->empty())
+    {
+        std::cout << "[SlamCore::processIkdTree][WARN] empty cloud "
+                  << " map_size=" << ikd_tree_api_.size()
+                  << " input_size=0"
+                  << std::endl;
+        return result;
+    }
+    /*초기화 안되었으면 ikd-tree에서 build하고 retsurn */
+    if (!ikd_tree_api_.isInitialized())
+    {
+        ikd_tree_api_.build(cloud_world);
+
+        result.map_initialized_this_frame = true;
+        result.should_add_to_map = false;
+
+        std::cout << "[SlamCore::processIkdTree][Init] "
+                  << " input_size=" << cloud_world->size()
+                  << " map_size=" << ikd_tree_api_.size()
+                  << std::endl;
+
+        return result;
+    }
+
+    result.should_add_to_map = true;
+
+    const double dist5_thresh = 1.0;
+    const double residual_thresh = 0.2;
+
+    double sum_dist5 = 0.0;
+    int dist_count = 0;
+
+    double sum_abs_residual = 0.0;
+    int residual_count = 0;
+
+    double sum_update_abs_residual = 0.0;
+    int update_residual_count = 0;
+
+    result.update_residuals.clear();
+    result.update_residuals.reserve(cloud_world->size());
+
+    /*현재 scan point에서 ikdt-ree를 search함.*/
+    for (const auto& pt : cloud_world->points)
+    {
+        std::vector<PointT> nearest_points;
+        std::vector<float> squared_distances;
+
+        const bool ok =
+            ikd_tree_api_.nearestSearch(
+                pt,
+                5,
+                nearest_points,
+                squared_distances);
+
+        if (!ok || nearest_points.size() < 5 || squared_distances.size() < 5)
+        {
+            ++result.search_fail;
+            continue;
+        }
+        /*여기부터는 이미 nearest_points, squared_distances가 존재함. */
+        ++result.search_found;
+
+        const double dist5 =
+            std::sqrt(static_cast<double>(squared_distances[4]));
+
+        sum_dist5 += dist5;
+        ++dist_count;
+
+        if (dist5 > result.max_dist5)
+        {
+            result.max_dist5 = dist5;
+        }
+
+        if (dist5 >= dist5_thresh)
+        {
+            ++result.distance_reject;
+            continue;
+        }
+
+        ++result.residual_candidate;
+
+        PlaneResidual residual_info;
+        residual_info.dist5 = dist5;
+
+        const bool residual_ok =
+            computePointToPlaneResidual(
+                pt,
+                nearest_points,
+                residual_info);
+
+        if (!residual_ok)
+        {
+            ++result.plane_fail;
+            continue;
+        }
+
+        ++result.plane_ok;
+
+        sum_abs_residual += residual_info.abs_residual;
+        ++residual_count;
+
+        if (residual_info.abs_residual > result.max_abs_residual)
+        {
+            result.max_abs_residual = residual_info.abs_residual;
+        }
+
+        if (residual_info.abs_residual >= residual_thresh)
+        {
+            ++result.residual_reject;
+            continue;
+        }
+
+        ++result.residual_update_candidate;
+
+        sum_update_abs_residual += residual_info.abs_residual;
+        ++update_residual_count;
+
+        if (residual_info.abs_residual > result.max_update_abs_residual)
+        {
+            result.max_update_abs_residual = residual_info.abs_residual;
+        }
+
+        result.update_residuals.push_back(residual_info);
+    }
+
+    result.avg_dist5 =
+        dist_count > 0
+            ? sum_dist5 / static_cast<double>(dist_count)
+            : 0.0;
+
+    result.avg_abs_residual =
+        residual_count > 0
+            ? sum_abs_residual / static_cast<double>(residual_count)
+            : 0.0;
+
+    result.avg_update_abs_residual =
+        update_residual_count > 0
+            ? sum_update_abs_residual / static_cast<double>(update_residual_count)
+            : 0.0;
+
+    std::cout << "[SlamCore::processIkdTree][search] "
+              << " scan_size=" << cloud_world->size()
+              << " map_size=" << ikd_tree_api_.size()
+              << " search_found=" << result.search_found
+              << " search_fail=" << result.search_fail
+              << " avg_dist5=" << result.avg_dist5
+              << " max_dist5=" << result.max_dist5
+              << " dist5_thresh=" << dist5_thresh
+              << " residual_candidate=" << result.residual_candidate
+              << " distance_reject=" << result.distance_reject
+              << " plane_ok=" << result.plane_ok
+              << " plane_fail=" << result.plane_fail
+              << " avg_abs_residual=" << result.avg_abs_residual
+              << " max_abs_residual=" << result.max_abs_residual
+              << " residual_thresh=" << residual_thresh
+              << " residual_update_candidate=" << result.residual_update_candidate
+              << " residual_reject=" << result.residual_reject
+              << " avg_update_abs_residual=" << result.avg_update_abs_residual
+              << " max_update_abs_residual=" << result.max_update_abs_residual
+              << std::endl;
+
+    return result;
+}
+
+
+/*
+    correction 후보 residual 이용해서 pose 보정량 dx를 계산함.
+    1. point-to-plane residual이용해서 pose-only least squares correction 추정
+*/
+PoseCorrectionResult SlamCore::estimatePoseCorrection(
+    const std::vector<PlaneResidual>& update_residuals,
+    const PoseState& state) const
+{
+    PoseCorrectionResult result;
+    result.update_count = static_cast<int>(update_residuals.size());
+
+    if (update_residuals.size() < 50)
+    {
+        std::cout << "[SlamCore::correction][skip] "
+                  << " reason=not_enough_residual "
+                  << " update_count=" << update_residuals.size()
+                  << std::endl;
+        return result;
+    }
+
+    Eigen::Matrix<double, 6, 6> H =
+        Eigen::Matrix<double, 6, 6>::Zero();
+
+    Eigen::Matrix<double, 6, 1> b =
+        Eigen::Matrix<double, 6, 1>::Zero();
+
+    const Eigen::Vector3d pose_pos = state.pos;
+
+    for (const auto& residual_info : update_residuals)
+    {
+        const Eigen::Vector3d point_world(
+            residual_info.point_world.x,
+            residual_info.point_world.y,
+            residual_info.point_world.z);
+
+        const Eigen::Vector3d lever = point_world - pose_pos;
+
+        Eigen::Matrix<double, 1, 6> J;
+        J.setZero();
+
+        J.block<1, 3>(0, 0) =
+            -residual_info.normal.transpose() * skewSymmetric(lever);
+
+        J.block<1, 3>(0, 3) =
+            residual_info.normal.transpose();
+
+        const double r = residual_info.residual;
+
+        H += J.transpose() * J;
+        b += -J.transpose() * r;
+    }
+
+    Eigen::Matrix<double, 6, 6> H_damped = H;
+    H_damped += 1e-6 * Eigen::Matrix<double, 6, 6>::Identity();
+
+    Eigen::Matrix<double, 6, 1> dx =
+        H_damped.ldlt().solve(b);
+
+    if (!dx.allFinite())
+    {
+        std::cout << "[SlamCore::correction][skip] "
+                  << " reason=dx_not_finite"
+                  << std::endl;
+        return result;
+    }
+
+    result.dx = dx;
+    result.rot_norm = dx.head<3>().norm();
+    result.trans_norm = dx.tail<3>().norm();
+
+    result.valid =
+        result.rot_norm < 0.05 &&
+        result.trans_norm < 0.3;
+
+    std::cout << "[SlamCore::correction][solve] "
+              << " update_count=" << result.update_count
+              << " rot_norm=" << result.rot_norm
+              << " trans_norm=" << result.trans_norm
+              << " valid=" << result.valid
+              << " dx=" << result.dx.transpose()
+              << std::endl;
+
+    return result;
+}
+/*
+    nearest point 5개로 local plane을 PCA 방식으로 추정하는 함수
+
+    nearest map point 5개
+    -> 평균점 계산
+    -> 점들이 center 주변에서 어느 방향으로 퍼져 잇는지 계산 (covariance)
+    -> 가장 덜 퍼진 방향을 palne normal로 선택(SelfAdjointEigenSolver)
+
+    즉 이 함수는 평면 방정식의 기준점과 법선 벡터를 구하는 함수
+
+    방어코드(NaN, Inf가 생겼으면 falsse)
+
+*/
+bool SlamCore::fitPlaneFromNearestPoints(
+    const std::vector<PointT>& nearest_points,
+    Eigen::Vector3d& plane_normal,
+    Eigen::Vector3d& plane_center) const
+{
+    /*5개 구한거 맞는지?*/
+    if(nearest_points.size() < 5) 
+    {
+        return false;
+    }
+
+    plane_center.setZero();
+
+    /*plane_center값 구함*/
+    for(const auto& p: nearest_points) 
+    {
+        plane_center += Eigen::Vector3d(p.x, p.y, p.z);
+    }
+
+    plane_center /= static_cast<double>(nearest_points.size());
+    //5개로 나누어서 평균 위치를 구함.
+
+
+    /*점들이 center 주변에서 어느 방향으로 퍼져 있는지 계산(cov)-> 가장 덜 퍼진 방향을 plane normal로 선택*/
+    Eigen::Matrix3d cov = Eigen::Matrix3d::Zero();
+    for(const auto& p : nearest_points)
+    {
+        const Eigen::Vector3d q(p.x, p.y, p.z);
+        const Eigen::Vector3d d = q- plane_center;
+        cov += d* d.transpose();
+    }
+
+
+    cov /= static_cast<double>(nearest_points.size());
+
+    Eigen::SelfAdjointEigenSolver<Eigen::Matrix3d> solver(cov);
+
+    if(solver.info() != Eigen::Success) 
+    {
+        return false;
+    }
+
+
+    /*
+        가장 작은 eigenvalue에 대응하는 eigenvector가 local plane의 normal 방향이다.
+    */
+    plane_normal = solver.eigenvectors().col(0);
+    //col(0): 가장 작은 eigenvalue의 egienvector , 점들이 가장적게 퍼진 방향이 바로 평면의 normal 벡터값임. 
+    plane_normal.normalize();
+    //normal값이 1이 되어야 residual도 실제 거리로 나오게됨.
+
+    if(!plane_normal.allFinite())   return false;
+    //계산 중 NaN이나 Inf가 생겼는지 확인하고, 이런 값 쓰면 안되니까 false 반환
+
+    return true;
+}
+
+bool SlamCore::computePointToPlaneResidual(
+    const PointT& point_world,
+    const std::vector<PointT>& nearest_points,
+    PlaneResidual& residual_info) const
+{
+    Eigen::Vector3d normal;
+    Eigen::Vector3d center;
+
+    const bool plane_ok = fitPlaneFromNearestPoints(nearest_points, normal, center);
+
+    if(!plane_ok)   return false;
+
+
+    const Eigen::Vector3d p(
+        point_world.x,
+        point_world.y,
+        point_world.z
+    );
+
+    const double residual = normal.dot(p -center);
+
+    residual_info.point_world = point_world;
+    residual_info.normal = normal;
+    residual_info.center = center;
+    residual_info.residual = residual;
+    residual_info.abs_residual =std::abs(residual);
+
+
+    return true;
+}
+/*
+    EKF state를 실제로 바꾸지 않음.
+    만약 dx를 적용하면 pose가 어떻게 될지를 미리 계산하는 preview함수
+
+
+*/
+PostState SlamCore::applyPoseCorrectionToState(const PostState& state, const Eigen::Matrix<double,6,1>& dx, double scale) const
+{
+    PostState corrected_state = state;
+    const Eigen::Vector3d dtheta = scale & dx.head<3>();
+    const Eigen::Vector3d dt = scale * dx.tail<3>();
+
+    corrected_state.pos = corrected_state.pos + dt;
+
+    const double angle = dtheta.norm();
+
+    if(angle > 1e-12) 
+    {
+        const Eigen::Vector3d axis = dtheta / angle;
+        const Eigen::Quaterniond dq(Eigen::AngleAxisd(angle,axis));
+
+        /*estimatePoseCorrection()의 Jacobian은  Left perturbation 기준이다.
+            따라서 R-new = Exp(dtheta) * R 형태로 적용한다.
+        */
+       corrected_state.rot = (dq * corrected_state.rot).normalized();
+    }
+    return corrected_state;
+
 }
