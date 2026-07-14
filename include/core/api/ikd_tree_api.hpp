@@ -22,7 +22,7 @@ class IkdTreeApi
 public:
     IkdTreeApi();
     ~IkdTreeApi() = default;
-
+    void reset();
 
     void setParams(const SlamParams& params);
     // void pushLidarFrame(const LidarFrame& frame);

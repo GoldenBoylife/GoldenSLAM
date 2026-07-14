@@ -200,130 +200,233 @@ bool SlamCore::syncMeasure(MeasureGroup& meas)
 */
 void SlamCore::runDeskew(const MeasureGroup& meas)
 {
+    /*
+        1. IMU propagation
 
-
+        meas 안의 IMU를 이용해서 EKF state를 LiDAR frame end 시점까지 예측한다.
+        이 과정에서 undistortion에 사용할 pose history도 만들어진다.
+    */
     imu_processor_.process(meas, esekfom_api_);
-
 
     SlamSnapShot snapshot;
     snapshot.valid = true;
     snapshot.lidar_beg_time = meas.lidar_frame.frame_beg_time;
     snapshot.lidar_end_time = meas.lidar_frame.frame_end_time;
 
+    /*
+        현재 state는 IMU propagation 이후의 predicted state다.
+        아직 LiDAR correction 전이다.
+    */
     snapshot.state = esekfom_api_.getPoseState();
 
-
-    /* 
-        1차 publish 검증
-            아직 실제 undistortion은 하지 읂는다.
-            raw와 deskewd같은 cloud를 pulish해서, publish pipline부터 검증한다.
+    /*
+        raw cloud 보관.
+        RViz debug publish용.
     */
-    //포인터를 새 cloud로 reset하면서 그 안에 meas 내용으로 초기화
-    snapshot.cloud_raw =std::make_shared<CloudT> (*meas.lidar_frame.cloud);
+    snapshot.cloud_raw =
+        std::make_shared<CloudT>(*meas.lidar_frame.cloud);
 
+    /*
+        2. Point cloud undistortion
+
+        결과 cloud는 LiDAR frame end 기준 body/LiDAR frame cloud다.
+    */
     imu_processor_.undistort(meas, esekfom_api_);
 
     CloudTPtr undistorted = imu_processor_.getUndistortedCloud();
-    //여기서 undistorted cloud 얻음.
 
-    if(undistorted && !undistorted->empty()) 
+    if (undistorted && !undistorted->empty())
     {
-        snapshot.cloud_undistorted = std::make_shared<CloudT>(*undistorted);
-    }
-    else 
-    {
-        snapshot.cloud_undistorted = std::make_shared<CloudT>(*meas.lidar_frame.cloud);
-    }
-
-
-
-    CloudTPtr cloud_world = transformCloudBodyToWorld( snapshot.cloud_undistorted,snapshot.state);
-
-    CloudTPtr cloud_world_down = voxelDownsample(cloud_world, 0.2);
-
-    std::cout << "[SlamCore::runDeskew][voxel] " 
-                << " world= " << cloud_world->size()
-                << " down= " << cloud_world_down->size()
-                << " leaf=0.2"
-                << std::endl;
-
-    // processIkdTree(cloud_world_down);
-
-
-    IkdTreeProcessResult ikd_result = processIkdTree(cloud_world_down);
-    
-    CloudTPtr map_cloud_to_add = cloud_world_down;
-
-    if (ikd_result.should_add_to_map)
-    {
-        PoseCorrectionResult correction = estimatePoseCorrection(
-                ikd_result.update_residuals,
-                snapshot.state
-            );
-        
-        bool correction_accepted = false;
-        CloudTPtr accepted_cloud_to_add;
-
-
-        if (correction.valid)
-        {
-            /* v0 안전장치:
-                    dx를 100% 다 적용하지 않고 일부만 적용해봄
-                    처음에는 0.5정도가 안전
-            */
-            esekfom_api_.applyPoseCorrection(correction.dx);
-
-            snapshot.state = esekfom_api_.getPoseState();
-
-            CloudTPtr corrected_world =
-                transformCloudBodyToWorld(
-                    snapshot.cloud_undistorted,
-                    snapshot.state);
-
-            CloudTPtr corrected_world_down =
-                voxelDownsample(corrected_world, 0.2);
-
-            map_cloud_to_add = corrected_world_down;
-
-            std::cout << "[SlamCore::correction][apply] "
-                    << " valid=" << correction.valid
-                    << " update_count=" << correction.update_count
-                    << " rot_norm=" << correction.rot_norm
-                    << " trans_norm=" << correction.trans_norm
-                    << " dx=" << correction.dx.transpose()
-                    << " corrected_down=" << corrected_world_down->size()
-                    << std::endl;
-        }
-
-        ikd_tree_api_.addPoints(map_cloud_to_add);
-
-        std::cout << "[SlamCore::processIkdTree][add] "
-                << " new_map_size=" << ikd_tree_api_.size()
-                << std::endl;
-
-        updateDebugPredictedMap(map_cloud_to_add);
+        snapshot.cloud_undistorted =
+            std::make_shared<CloudT>(*undistorted);
     }
     else
     {
-        updateDebugPredictedMap(cloud_world_down);
+        snapshot.cloud_undistorted =
+            std::make_shared<CloudT>(*meas.lidar_frame.cloud);
     }
 
-    if(debug_map_predicted_)
+    /*
+        3. Downsample
+
+        h_share_model 방식에서는 world cloud를 먼저 만들지 않는다.
+        body frame cloud를 downsample한 뒤 EsekfomApi로 넘긴다.
+    */
+    CloudTPtr cloud_body_down =
+        voxelDownsample(snapshot.cloud_undistorted, 0.2);
+
+    std::cout << "[SlamCore::runDeskew][voxel] "
+              << " body=" << snapshot.cloud_undistorted->size()
+              << " down=" << (cloud_body_down ? cloud_body_down->size() : 0)
+              << " leaf=0.2"
+              << std::endl;
+
+    if (!cloud_body_down || cloud_body_down->empty())
     {
-        snapshot.cloud_map_predicted = std::make_shared<CloudT>(*debug_map_predicted_);
+        std::cout << "[SlamCore::runDeskew][WARN] empty cloud_body_down"
+                  << std::endl;
 
+        {
+            std::lock_guard<std::mutex> lock(mtx_snapshot_);
+            latest_snapshot_ = snapshot;
+            has_new_snapshot_ = true;
+        }
+
+        return;
     }
 
+    /*
+        4. Map initialization
+
+        map이 없으면 scan-to-map matching을 할 수 없다.
+        첫 frame은 현재 predicted state 기준으로 world frame에 올려서 map을 build한다.
+    */
+    if (!ikd_tree_api_.isInitialized())
+    {
+        CloudTPtr cloud_world_init =
+            transformCloudBodyToWorld(
+                cloud_body_down,
+                snapshot.state);
+
+        ikd_tree_api_.build(cloud_world_init);
+
+        std::cout << "[SlamCore::runDeskew][map init] "
+                  << " init_cloud=" << cloud_world_init->size()
+                  << " map_size=" << ikd_tree_api_.size()
+                  << std::endl;
+
+        updateDebugPredictedMap(cloud_world_init);
+
+        if (debug_map_predicted_)
+        {
+            snapshot.cloud_map_predicted =
+                std::make_shared<CloudT>(*debug_map_predicted_);
+        }
+
+        {
+            std::lock_guard<std::mutex> lock(mtx_snapshot_);
+            latest_snapshot_ = snapshot;
+            has_new_snapshot_ = true;
+        }
+
+        return;
+    }
+
+    /*
+        5. LiDAR measurement update
+
+        여기서 h_share_model 기반 iEKF update가 수행된다.
+
+        내부 흐름:
+            updateLidarWithMap()
+            -> kf_.update_iterated_dyn_share_modified()
+            -> hShareModel()
+            -> residual/Jacobian 계산
+            -> IKFoM update
+    */
+    double solve_time = 0.0;
+
+    const bool lidar_update_ok =
+        esekfom_api_.updateLidarWithMap(
+            cloud_body_down,
+            ikd_tree_api_,
+            0.001,
+            solve_time);
+
+    /*
+        6. update 이후 state 다시 읽기
+
+        update 성공 시 corrected state,
+        실패 시 predicted state에 가까운 상태다.
+    */
+    snapshot.state = esekfom_api_.getPoseState();
+
+    /*
+        7. 현재 state 기준으로 world cloud 생성
+
+        성공했으면 corrected state 기준 cloud.
+        실패했으면 predicted state 기준 cloud.
+    */
+    CloudTPtr cloud_world_after_update =
+        transformCloudBodyToWorld(
+            cloud_body_down,
+            snapshot.state);
+
+    /*
+        8. LiDAR update 실패 처리
+
+        중요:
+        실패한 frame은 map에 추가하지 않는다.
+        단, RViz 확인을 위해 debug map에는 현재 cloud를 보여줄 수 있다.
+    */
+    if (!lidar_update_ok)
+    {
+        std::cout << "[SlamCore::lidar_update][skip] "
+                  << " reason=lidar_update_failed"
+                  << " solve_time=" << solve_time
+                  << " cloud_body_down=" << cloud_body_down->size()
+                  << " cloud_world_after_update=" << cloud_world_after_update->size()
+                  << " map_size=" << ikd_tree_api_.size()
+                  << std::endl;
+
+        updateDebugPredictedMap(cloud_world_after_update);
+
+        if (debug_map_predicted_)
+        {
+            snapshot.cloud_map_predicted =
+                std::make_shared<CloudT>(*debug_map_predicted_);
+        }
+
+        {
+            std::lock_guard<std::mutex> lock(mtx_snapshot_);
+            latest_snapshot_ = snapshot;
+            has_new_snapshot_ = true;
+        }
+
+        return;
+    }
+
+    /*
+        9. LiDAR update 성공한 경우에만 map add
+
+        이 순서가 중요하다.
+        h_share_model update가 성공했을 때만 map에 넣어야 map 오염을 줄일 수 있다.
+    */
+    ikd_tree_api_.addPoints(cloud_world_after_update);
+
+    std::cout << "[SlamCore::lidar_update] "
+              << " ok=" << lidar_update_ok
+              << " solve_time=" << solve_time
+              << " cloud_body_down=" << cloud_body_down->size()
+              << " cloud_world_after_update=" << cloud_world_after_update->size()
+              << " map_size=" << ikd_tree_api_.size()
+              << std::endl;
+
+    /*
+        10. RViz debug map 갱신
+
+        성공 path에서도 반드시 해야 한다.
+        이전 코드에서는 이 부분이 빠져서 map이 안 보이는 느낌이 날 수 있었다.
+    */
+    updateDebugPredictedMap(cloud_world_after_update);
+
+    if (debug_map_predicted_)
+    {
+        snapshot.cloud_map_predicted =
+            std::make_shared<CloudT>(*debug_map_predicted_);
+    }
+
+    /*
+        11. Snapshot 저장
+
+        성공 path에서도 반드시 latest_snapshot_을 갱신해야
+        RosBridge::onFrontendTimer()에서 publish할 수 있다.
+    */
     {
         std::lock_guard<std::mutex> lock(mtx_snapshot_);
         latest_snapshot_ = snapshot;
         has_new_snapshot_ = true;
     }
-
-
-    //latera
-    // imu_processor_.undistort(meas, esekfom_api_);
-    // feats_undistort_ = imu_processor_.getUndistortedCloud();
 }
 
 
@@ -852,26 +955,26 @@ bool SlamCore::computePointToPlaneResidual(
 
 
 */
-PostState SlamCore::applyPoseCorrectionToState(const PostState& state, const Eigen::Matrix<double,6,1>& dx, double scale) const
-{
-    PostState corrected_state = state;
-    const Eigen::Vector3d dtheta = scale & dx.head<3>();
-    const Eigen::Vector3d dt = scale * dx.tail<3>();
+// PoseState SlamCore::applyPoseCorrectionToState(const PoseState& state, const Eigen::Matrix<double,6,1>& dx, double scale) const
+// {
+//     PoseState corrected_state = state;
+//     const Eigen::Vector3d dtheta = scale & dx.head<3>();
+//     const Eigen::Vector3d dt = scale * dx.tail<3>();
 
-    corrected_state.pos = corrected_state.pos + dt;
+//     corrected_state.pos = corrected_state.pos + dt;
 
-    const double angle = dtheta.norm();
+//     const double angle = dtheta.norm();
 
-    if(angle > 1e-12) 
-    {
-        const Eigen::Vector3d axis = dtheta / angle;
-        const Eigen::Quaterniond dq(Eigen::AngleAxisd(angle,axis));
+//     if(angle > 1e-12) 
+//     {
+//         const Eigen::Vector3d axis = dtheta / angle;
+//         const Eigen::Quaterniond dq(Eigen::AngleAxisd(angle,axis));
 
-        /*estimatePoseCorrection()의 Jacobian은  Left perturbation 기준이다.
-            따라서 R-new = Exp(dtheta) * R 형태로 적용한다.
-        */
-       corrected_state.rot = (dq * corrected_state.rot).normalized();
-    }
-    return corrected_state;
+//         /*estimatePoseCorrection()의 Jacobian은  Left perturbation 기준이다.
+//             따라서 R-new = Exp(dtheta) * R 형태로 적용한다.
+//         */
+//        corrected_state.rot = (dq * corrected_state.rot).normalized();
+//     }
+//     return corrected_state;
 
-}
+// }

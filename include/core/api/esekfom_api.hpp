@@ -7,6 +7,8 @@
 
 
 #include "core/types/slam_types.hpp"
+#include "core/api/ikd_tree_api.hpp"
+
 // #include "core/types/common.hpp"
 
 
@@ -42,7 +44,15 @@ EsekfomApi : EKF state 실제 갱신 담당
 
 
 */
+struct LidarUpdateContext
+{
+    CloudTPtr cloud_body_down;
+    const IkdTreeApi* ikd_tree = nullptr;
 
+    int nearest_num = 5;
+    double dist5_thresh = 1.0;
+    double residual_thresh = 0.2;
+};
 
 class EsekfomApi
 {
@@ -83,6 +93,11 @@ public:
     // void updateOnce();
     void applyPoseCorrection(const Eigen::Matrix<double, 6, 1>& dx);
 
+    bool updateLidarWithMap(const CloudTPtr& cloud_body_down, const IkdTreeApi& ikd_tree, double lidar_point_cov, double& solve_time);
+
+public: //params
+
+private: 
 
 private:  //parmas
     SlamParams params_;
@@ -99,4 +114,17 @@ private:  //parmas
     bool has_params_ = false;
     int imu_count_ =0;
 
+    LidarUpdateContext lidar_update_context_;
+    static EsekfomApi* active_instance_;
+
+    static void hShareModelWrapper(
+        state_ikfom& s,
+        esekfom::dyn_share_datastruct<double>& ekfom_data);
+
+    void hShareModel(
+        state_ikfom& s,
+        esekfom::dyn_share_datastruct<double>& ekfom_data);
+
+    int last_lidar_effective_num_ = 0;
+    bool last_lidar_update_valid_ = false;
 };

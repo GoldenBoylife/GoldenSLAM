@@ -63,7 +63,7 @@ private:
     //residual들을 이용해서 dx계산
     // dx = [회전 보정량 3개, 위치 보정량 3개]
 
-    PostState applyPoseCorrectionToState(const PostState& state, const Eigen::Matrix<double,6,1>& dx, double scale) const;
+    // PoseState applyPoseCorrectionToState(const PoseState& state, const Eigen::Matrix<double,6,1>& dx, double scale) const;
     
 private: //params
     static SlamCore* s_instance_;

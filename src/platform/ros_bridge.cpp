@@ -11,14 +11,15 @@ static double stamp_to_sec(const builtin_interfaces::msg::Time& t)
     return static_cast<double>(t.sec) + static_cast<double>(t.nanosec) * 1e-9;
 }
 
-builtin_interfaces::msg::Time secToRosTime(double stamp_sec)  
+builtin_interfaces::msg::Time secToRosTime(double stamp_sec)
 {
     builtin_interfaces::msg::Time t;
 
     const double sec_floor = std::floor(stamp_sec);
 
     t.sec = static_cast<int32_t>(sec_floor);
-    t.nanosec = static_cast<uint8_t>((stamp_sec - sec_floor) * 1e9);
+    t.nanosec =
+        static_cast<uint32_t>((stamp_sec - sec_floor) * 1e9);
 
     return t;
 }

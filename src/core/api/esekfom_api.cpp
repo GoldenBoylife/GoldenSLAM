@@ -1,6 +1,70 @@
 #include "include/core/api/esekfom_api.hpp"
 #include <iostream>
 
+EsekfomApi* EsekfomApi::active_instance_ = nullptr;
+
+
+
+namespace
+{
+Eigen::Matrix3d skewSymmetric(const Eigen::Vector3d& v)
+{
+    Eigen::Matrix3d m;
+    m << 0.0, -v.z(), v.y(),
+         v.z(), 0.0, -v.x(),
+        -v.y(), v.x(), 0.0;
+    return m;
+}
+
+bool fitPlaneFromNearestPoints(
+    const std::vector<PointT>& nearest_points,
+    Eigen::Vector3d& plane_normal,
+    Eigen::Vector3d& plane_center)
+{
+    if (nearest_points.size() < 5)
+    {
+        return false;
+    }
+
+    plane_center.setZero();
+
+    for (const auto& p : nearest_points)
+    {
+        plane_center += Eigen::Vector3d(p.x, p.y, p.z);
+    }
+
+    plane_center /= static_cast<double>(nearest_points.size());
+
+    Eigen::Matrix3d cov = Eigen::Matrix3d::Zero();
+
+    for (const auto& p : nearest_points)
+    {
+        const Eigen::Vector3d q(p.x, p.y, p.z);
+        const Eigen::Vector3d d = q - plane_center;
+        cov += d * d.transpose();
+    }
+
+    cov /= static_cast<double>(nearest_points.size());
+
+    Eigen::SelfAdjointEigenSolver<Eigen::Matrix3d> solver(cov);
+
+    if (solver.info() != Eigen::Success)
+    {
+        return false;
+    }
+
+    plane_normal = solver.eigenvectors().col(0);
+    plane_normal.normalize();
+
+    if (!plane_normal.allFinite())
+    {
+        return false;
+    }
+
+    return true;
+}
+}
+
 namespace 
 {
     /*
@@ -59,15 +123,16 @@ void EsekfomApi::setParams(const SlamParams& params)
         epsi[i] = 0.001;
     }
 
-   kf_.init_dyn_share(
-    get_f,
-    df_dx,
-    df_dw,
-    hShareModelStub,
-    NUM_MAX_ITERATIONS,
-    epsi
-   );
+    active_instance_ = this;
 
+    kf_.init_dyn_share(
+        get_f,
+        df_dx,
+        df_dw,
+        hShareModelWrapper,
+        NUM_MAX_ITERATIONS,
+        epsi
+    );
 
    is_filter_initialized_ = true; 
     std::cout << "[EsekfomApi::setParams] this=" << this
@@ -450,5 +515,295 @@ void EsekfomApi::applyPoseCorrection(
               << " rot_norm=" << rot_norm
               << " trans_norm=" << trans_norm
               << " dx=" << dx.transpose()
+              << std::endl;
+}
+bool EsekfomApi::updateLidarWithMap(
+    const CloudTPtr& cloud_body_down,
+    const IkdTreeApi& ikd_tree,
+    double lidar_point_cov,
+    double& solve_time)
+{
+    solve_time = 0.0;
+
+    if (!is_filter_initialized_)
+    {
+        std::cout << "[EsekfomApi::updateLidarWithMap][WARN] "
+                  << "filter not initialized"
+                  << std::endl;
+        return false;
+    }
+
+    if (!cloud_body_down || cloud_body_down->empty())
+    {
+        std::cout << "[EsekfomApi::updateLidarWithMap][WARN] "
+                  << "empty cloud_body_down"
+                  << std::endl;
+        return false;
+    }
+
+    if (!ikd_tree.isInitialized())
+    {
+        std::cout << "[EsekfomApi::updateLidarWithMap][WARN] "
+                  << "map not initialized"
+                  << std::endl;
+        return false;
+    }
+
+    lidar_update_context_.cloud_body_down = cloud_body_down;
+    lidar_update_context_.ikd_tree = &ikd_tree;
+    lidar_update_context_.nearest_num = 5;
+    lidar_update_context_.dist5_thresh = 1.0;
+    lidar_update_context_.residual_thresh = 0.2;
+
+    last_lidar_effective_num_ = 0;
+    last_lidar_update_valid_ = false;
+
+    /*
+        여기서 IKFoM의 iterated EKF update가 실행된다.
+        이 함수 내부에서 hShareModelWrapper()가 반복 호출된다.
+    */
+    kf_.update_iterated_dyn_share_modified(
+        lidar_point_cov,
+        solve_time);
+
+    std::cout << "[EsekfomApi::updateLidarWithMap] "
+              << " valid=" << last_lidar_update_valid_
+              << " eff=" << last_lidar_effective_num_
+              << " solve_time=" << solve_time
+              << " cloud_body_down=" << cloud_body_down->size()
+              << " map_size=" << ikd_tree.size()
+              << std::endl;
+
+    return last_lidar_update_valid_;
+}
+
+
+void EsekfomApi::hShareModelWrapper(
+    state_ikfom& s,
+    esekfom::dyn_share_datastruct<double>& ekfom_data)
+{
+    if (!active_instance_)
+    {
+        ekfom_data.valid = false;
+        return;
+    }
+
+    active_instance_->hShareModel(s, ekfom_data);
+}
+
+void EsekfomApi::hShareModel(
+    state_ikfom& s,
+    esekfom::dyn_share_datastruct<double>& ekfom_data)
+{
+    ekfom_data.valid = false;
+
+    const auto& ctx = lidar_update_context_;
+
+    if (!ctx.cloud_body_down || ctx.cloud_body_down->empty())
+    {
+        return;
+    }
+
+    if (!ctx.ikd_tree || !ctx.ikd_tree->isInitialized())
+    {
+        return;
+    }
+
+    const Eigen::Matrix3d R_WI = s.rot.toRotationMatrix();
+    const Eigen::Vector3d p_WI = s.pos;
+
+    const Eigen::Matrix3d R_LI = s.offset_R_L_I.toRotationMatrix();
+    const Eigen::Vector3d t_LI = s.offset_T_L_I;
+
+    struct EffectiveFeature
+    {
+        Eigen::Vector3d p_imu;
+        Eigen::Vector3d normal;
+        Eigen::Vector3d center;
+        double residual = 0.0;
+    };
+
+    std::vector<EffectiveFeature> effective_features;
+    effective_features.reserve(ctx.cloud_body_down->size());
+
+    int search_found = 0;
+    int search_fail = 0;
+    int distance_reject = 0;
+    int plane_fail = 0;
+    int residual_reject = 0;
+
+    for (const auto& pt : ctx.cloud_body_down->points)
+    {
+        const Eigen::Vector3d p_L(
+            static_cast<double>(pt.x),
+            static_cast<double>(pt.y),
+            static_cast<double>(pt.z));
+
+        /*
+            LiDAR frame -> IMU frame
+        */
+        const Eigen::Vector3d p_I = R_LI * p_L + t_LI;
+
+        /*
+            IMU frame -> World frame
+        */
+        const Eigen::Vector3d p_W = R_WI * p_I + p_WI;
+
+        PointT query = pt;
+        query.x = static_cast<float>(p_W.x());
+        query.y = static_cast<float>(p_W.y());
+        query.z = static_cast<float>(p_W.z());
+
+        std::vector<PointT> nearest_points;
+        std::vector<float> squared_distances;
+
+        const bool search_ok =
+            ctx.ikd_tree->nearestSearch(
+                query,
+                ctx.nearest_num,
+                nearest_points,
+                squared_distances);
+
+        if (!search_ok ||
+            nearest_points.size() < static_cast<std::size_t>(ctx.nearest_num) ||
+            squared_distances.size() < static_cast<std::size_t>(ctx.nearest_num))
+        {
+            ++search_fail;
+            continue;
+        }
+
+        ++search_found;
+
+        const double dist5 =
+            std::sqrt(
+                static_cast<double>(
+                    squared_distances[ctx.nearest_num - 1]));
+
+        if (dist5 >= ctx.dist5_thresh)
+        {
+            ++distance_reject;
+            continue;
+        }
+
+        Eigen::Vector3d normal;
+        Eigen::Vector3d center;
+
+        const bool plane_ok =
+            fitPlaneFromNearestPoints(
+                nearest_points,
+                normal,
+                center);
+
+        if (!plane_ok)
+        {
+            ++plane_fail;
+            continue;
+        }
+
+        const double residual = normal.dot(p_W - center);
+
+        if (std::abs(residual) >= ctx.residual_thresh)
+        {
+            ++residual_reject;
+            continue;
+        }
+
+        EffectiveFeature feature;
+        feature.p_imu = p_I;
+        feature.normal = normal;
+        feature.center = center;
+        feature.residual = residual;
+
+        effective_features.push_back(feature);
+    }
+
+    const int eff_num =
+        static_cast<int>(effective_features.size());
+
+    last_lidar_effective_num_ = eff_num;
+
+    if (eff_num < 50)
+    {
+        std::cout << "[EsekfomApi::hShareModel][skip] "
+                  << " reason=not_enough_effective "
+                  << " eff=" << eff_num
+                  << " search_found=" << search_found
+                  << " search_fail=" << search_fail
+                  << " distance_reject=" << distance_reject
+                  << " plane_fail=" << plane_fail
+                  << " residual_reject=" << residual_reject
+                  << std::endl;
+
+        ekfom_data.valid = false;
+        last_lidar_update_valid_ = false;
+        return;
+    }
+
+    /*
+        FAST-LIO2 스타일:
+        h_x는 보통 12열이다.
+
+        0~2   position
+        3~5   rotation
+        6~8   extrinsic rotation
+        9~11  extrinsic translation
+
+        EKF 전체 error-state는 23차원이지만,
+        LiDAR residual이 직접 관측하는 항목은 주로 이 12개다.
+    */
+    ekfom_data.h_x =
+        Eigen::MatrixXd::Zero(eff_num, 12);
+
+    ekfom_data.h =
+        Eigen::VectorXd::Zero(eff_num);
+
+    for (int i = 0; i < eff_num; ++i)
+    {
+        const auto& feature = effective_features[i];
+
+        /*
+            residual = n^T ( R * p_I + p - plane_center )
+
+            position Jacobian:
+                n^T
+
+            rotation Jacobian:
+                (p_I x R^T n) 형태
+        */
+        const Eigen::Vector3d C =
+            R_WI.transpose() * feature.normal;
+
+        const Eigen::Vector3d A =
+            skewSymmetric(feature.p_imu) * C;
+
+        ekfom_data.h_x.block<1, 3>(i, 0) =
+            feature.normal.transpose();
+
+        ekfom_data.h_x.block<1, 3>(i, 3) =
+            A.transpose();
+
+        /*
+            일단 extrinsic correction은 막아둔다.
+            추후 안정화되면 6~11 column도 채운다.
+        */
+        ekfom_data.h_x.block<1, 3>(i, 6).setZero();
+        ekfom_data.h_x.block<1, 3>(i, 9).setZero();
+
+        /*
+            IKFoM update에서는 h = -residual 형태로 넣는다.
+        */
+        ekfom_data.h(i) = -feature.residual;
+    }
+
+    ekfom_data.valid = true;
+    last_lidar_update_valid_ = true;
+
+    std::cout << "[EsekfomApi::hShareModel] "
+              << " eff=" << eff_num
+              << " search_found=" << search_found
+              << " search_fail=" << search_fail
+              << " distance_reject=" << distance_reject
+              << " plane_fail=" << plane_fail
+              << " residual_reject=" << residual_reject
               << std::endl;
 }

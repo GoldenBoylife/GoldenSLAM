@@ -9,6 +9,16 @@ IkdTreeApi::IkdTreeApi()
     has_params_ = false;
 }
 
+void IkdTreeApi::reset()
+{
+    map_cloud_ = std::make_shared<CloudT>();
+    kdtree_ = std::make_shared<pcl::KdTreeFLANN<PointT>>();
+
+    is_initialized_ = false;
+
+    std::cout << "[IkdTreeApi::reset]" << std::endl;
+}
+
 void IkdTreeApi::setParams(const SlamParams& params)
 {
     params_ =params;
